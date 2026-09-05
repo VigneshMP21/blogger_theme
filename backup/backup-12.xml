@@ -612,7 +612,6 @@
   }
   .nav-subscribe-item[href*='youtube'] svg { fill: #FF0000; }
   .nav-subscribe-item[href*='instagram'] svg { fill: #E4405F; }
-  .nav-subscribe-item[href*='whatsapp'] svg { fill: #25D366; }
   html.dark .nav-subscribe-dropdown {
     background: var(--bg-elevated);
   }
@@ -647,260 +646,84 @@
     transition: var(--transition);
   }
 
-/* ============================================================
-     LIVE RECOMMENDATION SEARCH SYSTEM
+  /* ============================================================
+     5. SEARCH OVERLAY
   ============================================================ */
   .search-overlay {
     position: fixed;
     inset: 0;
-    z-index: 9999;
-    background: rgba(10, 15, 30, 0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    z-index: 500;
+    background: rgba(10,15,30,0.97);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 60px 16px 40px;
+    padding-top: 120px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.25s ease, visibility 0.25s ease;
-    overflow-y: auto;
-    box-sizing: border-box;
+    transition: var(--transition-slow);
   }
-  .search-overlay.active {
-    opacity: 1;
-    visibility: visible;
-  }
-  .search-overlay-content {
-    width: 100%;
-    max-width: 680px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  .search-overlay.active { opacity: 1; visibility: visible; }
   .search-overlay-close {
-    position: fixed;
-    top: 18px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #FFFFFF;
-    font-size: 1.5rem;
+    position: absolute;
+    top: 1.5rem; right: 2rem;
+    font-size: 2rem;
+    color: rgba(255,255,255,0.6);
     line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
-    transition: all 0.2s ease;
-    z-index: 10000;
+    transition: var(--transition-fast);
+    background: none;
+    border: none;
+    padding: 0.5rem;
   }
-  .search-overlay-close:hover {
-    background: rgba(239, 68, 68, 0.8);
-    transform: rotate(90deg);
-  }
+  .search-overlay-close:hover { color: #fff; transform: rotate(90deg); }
   .search-overlay-label {
-    font-family: var(--font-heading, sans-serif);
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #38BDF8;
-    margin-bottom: 16px;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
   }
   .search-overlay-form {
     display: flex;
     align-items: center;
     width: 100%;
-    background: rgba(255, 255, 255, 0.08);
-    border: 2px solid rgba(255, 255, 255, 0.18);
-    border-radius: 16px;
-    padding: 6px 8px 6px 16px;
-    gap: 12px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    box-sizing: border-box;
+    max-width: 680px;
+    padding: 0 1.5rem;
+    border-bottom: 2px solid rgba(255,255,255,0.15);
+    position: relative;
   }
   .search-overlay-form:focus-within {
-    border-color: #2563EB;
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25);
-  }
-  .search-overlay-icon {
-    color: #94A3B8;
-    flex-shrink: 0;
+    border-bottom-color: var(--primary);
   }
   .search-overlay-input {
     flex: 1;
     background: none;
     border: none;
-    color: #FFFFFF;
-    font-family: var(--font-heading, sans-serif);
-    font-size: 1.25rem;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
     font-weight: 600;
-    padding: 10px 0;
+    padding: 0.75rem 0;
     outline: none;
-    caret-color: #38BDF8;
-    min-width: 0;
+    caret-color: var(--primary);
   }
-  .search-overlay-input::placeholder {
-    color: rgba(255, 255, 255, 0.35);
-  }
+  .search-overlay-input::placeholder { color: rgba(255,255,255,0.25); }
   .search-overlay-btn {
-    background: #2563EB;
+    background: var(--gradient-main);
     border: none;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 0.88rem;
+    color: #fff;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.85rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: var(--transition);
     flex-shrink: 0;
   }
-  .search-overlay-btn:hover {
-    background: #1D4ED8;
-    transform: translateY(-1px);
-  }
-
-  /* Quick Tags */
-  .search-quick-tags {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 14px;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .quick-tag-label {
-    font-size: 0.75rem;
-    color: #94A3B8;
-    font-weight: 600;
-  }
-  .quick-tag-btn {
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #CBD5E1;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-  }
-  .quick-tag-btn:hover {
-    background: rgba(37, 99, 235, 0.25);
-    border-color: #2563EB;
-    color: #FFFFFF;
-  }
-
-  /* Live Results Container */
-  .search-overlay-results {
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-height: calc(100vh - 280px);
-    overflow-y: auto;
-    padding-right: 4px;
-  }
-  .search-overlay-results::-webkit-scrollbar {
-    width: 6px;
-  }
-  .search-overlay-results::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-  }
-  .search-results-count {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #38BDF8;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 4px;
-  }
-  .search-result-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    padding: 10px 14px;
-    text-decoration: none;
-    color: #FFFFFF;
-    transition: all 0.2s ease;
-  }
-  .search-result-item:hover {
-    background: rgba(37, 99, 235, 0.15);
-    border-color: rgba(37, 99, 235, 0.4);
-    transform: translateY(-2px);
-  }
-  .search-result-thumb {
-    width: 80px;
-    height: 60px;
-    border-radius: 8px;
-    object-fit: cover;
-    flex-shrink: 0;
-    background: rgba(255, 255, 255, 0.05);
-  }
-  .search-result-info {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .search-result-badge {
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: #38BDF8;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-  .search-result-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: #FFFFFF;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .search-result-title mark,
-  .search-result-desc mark {
-    background: rgba(37, 99, 235, 0.4);
-    color: #38BDF8;
-    padding: 0 2px;
-    border-radius: 3px;
-  }
-  .search-result-desc {
-    font-size: 0.78rem;
-    color: #94A3B8;
-    line-height: 1.35;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .search-no-results {
-    text-align: center;
-    padding: 30px 16px;
-    color: #94A3B8;
-    font-size: 0.9rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    border: 1px dashed rgba(255, 255, 255, 0.1);
-  }
-  .search-no-results strong {
-    color: #FFFFFF;
-  }
+  .search-overlay-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-colored); }
 
   /* ============================================================
      6. MOBILE DRAWER
@@ -5903,13 +5726,13 @@
   .vtj-home-container,
   .vtj-latest-tech-container,
   .vtj-cat-container {
-    padding-left: 14px !important;
-    padding-right: 14px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* 2 & 3. MOBILE HEADER (2-ROW STRICT CSS GRID) */
+  /* 2 & 3. MOBILE HEADER & CATEGORY SUB-NAV */
   .site-header {
     position: sticky !important;
     top: 0 !important;
@@ -5919,7 +5742,6 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
     height: auto !important;
     padding: 0 !important;
-    overflow: visible !important;
   }
   html.dark .site-header {
     background: #0F172A !important;
@@ -5927,44 +5749,35 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
   }
   .header-container {
-    padding: 0 12px !important;
-    max-width: 100% !important;
+    padding: 0 16px !important;
   }
   .nav-inner {
-    display: grid !important;
-    grid-template-columns: auto 1fr auto !important;
-    grid-template-rows: 56px auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
     align-items: center !important;
-    height: auto !important;
-    min-height: unset !important;
-    padding: 0 !important;
+    justify-content: space-between !important;
+    min-height: 64px !important;
     gap: 0 !important;
   }
-
-  /* ROW 1: Hamburger (Col 1), Logo (Col 2), Search+Subscribe (Col 3) */
   .nav-hamburger {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 4px !important;
-    width: 36px !important;
-    height: 36px !important;
+    gap: 4.5px !important;
+    width: 40px !important;
+    height: 40px !important;
     background: transparent !important;
     border: none !important;
     cursor: pointer !important;
     padding: 0 !important;
     margin-right: 6px !important;
     flex-shrink: 0 !important;
-    justify-self: start !important;
-    align-self: center !important;
   }
   .nav-hamburger span {
     display: block !important;
-    width: 20px !important;
-    height: 2px !important;
+    width: 22px !important;
+    height: 2.2px !important;
     background: #0F172A !important;
     border-radius: 2px !important;
     transition: all 0.2s ease !important;
@@ -5972,27 +5785,22 @@
   html.dark .nav-hamburger span {
     background: #F8FAFC !important;
   }
-
   .header-logo-area {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
     display: flex !important;
     align-items: center !important;
+    flex: 1 !important;
     min-width: 0 !important;
-    justify-self: start !important;
-    align-self: center !important;
-    overflow: hidden !important;
   }
   .nav-logo {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 10px !important;
     text-decoration: none !important;
     min-width: 0 !important;
   }
   .nav-logo-img {
-    width: 34px !important;
-    height: 34px !important;
+    width: 38px !important;
+    height: 38px !important;
     border-radius: 8px !important;
     object-fit: contain !important;
     flex-shrink: 0 !important;
@@ -6003,7 +5811,7 @@
     min-width: 0 !important;
   }
   .nav-brand-title {
-    font-size: 0.85rem !important;
+    font-size: 0.92rem !important;
     font-weight: 800 !important;
     letter-spacing: -0.01em !important;
     line-height: 1.15 !important;
@@ -6012,31 +5820,25 @@
     text-overflow: ellipsis !important;
   }
   .nav-brand-tagline {
-    font-size: 0.54rem !important;
+    font-size: 0.58rem !important;
     font-weight: 700 !important;
-    letter-spacing: 0.06em !important;
+    letter-spacing: 0.08em !important;
     color: #64748B !important;
     line-height: 1.2 !important;
     white-space: nowrap !important;
   }
-
   .nav-actions {
-    grid-column: 3 !important;
-    grid-row: 1 !important;
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    justify-self: end !important;
-    align-self: center !important;
+    gap: 8px !important;
     flex-shrink: 0 !important;
-    position: relative !important;
   }
   .nav-actions #nav-theme-btn {
     display: none !important;
   }
   .nav-icon-btn {
-    width: 34px !important;
-    height: 34px !important;
+    width: 38px !important;
+    height: 38px !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
@@ -6044,7 +5846,6 @@
     background: #F1F5F9 !important;
     border: 1px solid #E2E8F0 !important;
     color: #0F172A !important;
-    flex-shrink: 0 !important;
   }
   html.dark .nav-icon-btn {
     background: #1E293B !important;
@@ -6052,8 +5853,8 @@
     color: #F8FAFC !important;
   }
   .nav-icon-btn svg {
-    width: 16px !important;
-    height: 16px !important;
+    width: 18px !important;
+    height: 18px !important;
   }
   .nav-subscribe-wrap {
     position: relative !important;
@@ -6061,56 +5862,36 @@
   .nav-subscribe-btn {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 5px !important;
+    gap: 6px !important;
     background: #2563EB !important;
     color: #FFFFFF !important;
     border: none !important;
     border-radius: 999px !important;
-    padding: 6px 12px !important;
-    font-size: 0.76rem !important;
+    padding: 7px 14px !important;
+    font-size: 0.8rem !important;
     font-weight: 700 !important;
     cursor: pointer !important;
     line-height: 1 !important;
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25) !important;
-    white-space: nowrap !important;
-    flex-shrink: 0 !important;
   }
   .nav-subscribe-btn svg {
-    width: 13px !important;
-    height: 13px !important;
+    width: 14px !important;
+    height: 14px !important;
     fill: currentColor !important;
   }
-  .nav-subscribe-dropdown {
-    position: absolute !important;
-    top: calc(100% + 6px) !important;
-    right: 0 !important;
-    min-width: 180px !important;
-    background: #FFFFFF !important;
-    border: 1px solid #E2E8F0 !important;
-    border-radius: 12px !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
-    z-index: 1001 !important;
-  }
-  html.dark .nav-subscribe-dropdown {
-    background: #0F172A !important;
-    border-color: #1E293B !important;
-  }
 
-  /* ROW 2: Horizontal Category Sub-Bar */
+  /* HORIZONTAL CATEGORY SUB-NAV BAR */
   .nav-menu {
-    grid-column: 1 / -1 !important;
-    grid-row: 2 !important;
-    width: 100% !important;
     display: flex !important;
+    width: 100% !important;
     overflow-x: auto !important;
     white-space: nowrap !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: none !important;
-    gap: 18px !important;
-    padding: 6px 4px 4px !important;
+    gap: 22px !important;
+    padding: 8px 4px 0 !important;
     border-top: 1px solid #F1F5F9 !important;
-    margin: 0 !important;
-    background: transparent !important;
+    margin-top: 2px !important;
   }
   html.dark .nav-menu {
     border-top-color: #1E293B !important;
@@ -6119,12 +5900,13 @@
     display: none !important;
   }
   .nav-menu-link {
-    font-size: 0.84rem !important;
+    font-size: 0.86rem !important;
     font-weight: 600 !important;
     color: #64748B !important;
-    padding: 4px 2px 8px !important;
+    padding: 6px 2px 10px !important;
     text-decoration: none !important;
     position: relative !important;
+    transition: color 0.15s ease !important;
     flex-shrink: 0 !important;
   }
   .nav-menu-link.active,
@@ -6144,111 +5926,73 @@
 
   /* 4 & 5. MOBILE HERO SECTION */
   .vtj-hero-editorial {
-    padding: 14px 0 16px !important;
-    margin: 0 !important;
-    position: relative !important;
-    clear: both !important;
+    padding: 16px 0 20px !important;
   }
   .vtj-hero-editorial-grid {
     display: flex !important;
     flex-direction: column !important;
     gap: 14px !important;
-    width: 100% !important;
   }
   /* Primary Hero Card */
   .vtj-hero-card-large {
-    border-radius: 18px !important;
+    border-radius: 20px !important;
     overflow: hidden !important;
     margin: 0 !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
-    background: #0F172A !important;
-    position: relative !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .vtj-hero-card-large .vtj-hero-card-link {
-    display: block !important;
-    position: relative !important;
-    width: 100% !important;
-    height: 100% !important;
-    text-decoration: none !important;
   }
   .vtj-hero-card-large .vtj-hero-img-wrapper {
-    width: 100% !important;
-    height: 380px !important;
-    min-height: 360px !important;
-    max-height: 420px !important;
+    min-height: 420px !important;
+    max-height: 480px !important;
     position: relative !important;
-    overflow: hidden !important;
   }
   .vtj-hero-card-large .vtj-hero-card-img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center 20% !important;
-    display: block !important;
+    object-position: center !important;
   }
   .vtj-hero-card-large .vtj-hero-gradient-overlay {
-    display: block !important;
-    position: absolute !important;
-    inset: 0 !important;
-    background: linear-gradient(to top, rgba(10, 15, 30, 0.98) 0%, rgba(10, 15, 30, 0.85) 45%, rgba(10, 15, 30, 0.25) 75%, transparent 100%) !important;
-    pointer-events: none !important;
+    background: linear-gradient(to top, rgba(10, 15, 30, 0.96) 0%, rgba(10, 15, 30, 0.78) 45%, rgba(10, 15, 30, 0.2) 75%, transparent 100%) !important;
   }
   .vtj-hero-card-large .vtj-hero-card-body {
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    padding: 18px 16px !important;
-    z-index: 2 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-end !important;
-    box-sizing: border-box !important;
+    padding: 20px 16px !important;
   }
   .vtj-hero-badge {
-    font-size: 0.65rem !important;
+    font-size: 0.68rem !important;
     font-weight: 700 !important;
-    padding: 3px 9px !important;
+    padding: 4px 10px !important;
     border-radius: 6px !important;
     letter-spacing: 0.04em !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 10px !important;
     display: inline-block !important;
-    align-self: flex-start !important;
   }
   .vtj-hero-title-main {
-    font-size: 1.25rem !important;
+    font-size: 1.42rem !important;
     font-weight: 800 !important;
-    line-height: 1.25 !important;
+    line-height: 1.22 !important;
     color: #FFFFFF !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 8px !important;
+  }
+  .vtj-hero-desc {
+    font-size: 0.86rem !important;
+    line-height: 1.45 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    margin-bottom: 12px !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 3 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
   }
-  .vtj-hero-desc {
-    font-size: 0.82rem !important;
-    line-height: 1.4 !important;
-    color: rgba(255, 255, 255, 0.85) !important;
-    margin-bottom: 10px !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
-  }
   .vtj-hero-meta {
-    font-size: 0.72rem !important;
+    font-size: 0.75rem !important;
     color: rgba(255, 255, 255, 0.8) !important;
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
-    flex-wrap: wrap !important;
   }
   .vtj-hero-author-avatar {
-    width: 20px !important;
-    height: 20px !important;
+    width: 22px !important;
+    height: 22px !important;
     border-radius: 50% !important;
   }
 
@@ -6257,7 +6001,6 @@
     display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
-    width: 100% !important;
   }
   .vtj-hero-card-small {
     border-radius: 16px !important;
@@ -6265,8 +6008,6 @@
     border: 1px solid #E2E8F0 !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
     overflow: hidden !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
   }
   html.dark .vtj-hero-card-small {
     background: #0F172A !important;
@@ -6277,16 +6018,16 @@
     flex-direction: row !important;
     align-items: center !important;
     padding: 12px !important;
-    gap: 12px !important;
+    gap: 14px !important;
     text-decoration: none !important;
-    min-height: 115px !important;
+    min-height: 128px !important;
     box-sizing: border-box !important;
   }
   .vtj-hero-card-small .vtj-hero-img-wrapper {
-    width: 110px !important;
-    min-width: 100px !important;
-    max-width: 120px !important;
-    height: 90px !important;
+    width: 36% !important;
+    min-width: 105px !important;
+    max-width: 130px !important;
+    height: 100px !important;
     border-radius: 12px !important;
     overflow: hidden !important;
     flex-shrink: 0 !important;
@@ -6306,23 +6047,23 @@
     background: transparent !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 4px !important;
+    gap: 6px !important;
     flex: 1 !important;
     min-width: 0 !important;
   }
   .vtj-hero-card-small .vtj-hero-badge {
     align-self: flex-start !important;
-    padding: 2px 7px !important;
-    font-size: 0.62rem !important;
-    border-radius: 5px !important;
+    padding: 3px 8px !important;
+    font-size: 0.65rem !important;
+    border-radius: 6px !important;
     font-weight: 700 !important;
     margin-bottom: 2px !important;
   }
   .vtj-hero-card-small .vtj-hero-title-sub {
-    font-size: 0.88rem !important;
+    font-size: 0.95rem !important;
     font-weight: 700 !important;
     color: #0F172A !important;
-    line-height: 1.3 !important;
+    line-height: 1.35 !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
@@ -6333,16 +6074,16 @@
     color: #F8FAFC !important;
   }
   .vtj-hero-card-small .vtj-hero-meta {
-    font-size: 0.7rem !important;
+    font-size: 0.72rem !important;
     color: #64748B !important;
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
-    margin-top: 4px !important;
+    margin-top: auto !important;
   }
   .vtj-hero-card-small .vtj-hero-meta svg {
-    width: 11px !important;
-    height: 11px !important;
+    width: 12px !important;
+    height: 12px !important;
     stroke: #64748B !important;
     fill: none !important;
   }
@@ -6351,7 +6092,7 @@
     justify-content: center !important;
     align-items: center !important;
     gap: 6px !important;
-    margin: 12px 0 4px !important;
+    margin: 14px 0 6px !important;
   }
   .vtj-hero-dots-indicator .vtj-dot {
     width: 7px !important;
@@ -6421,8 +6162,8 @@
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: none !important;
     gap: 12px !important;
-    padding: 4px 14px 12px !important;
-    margin: 0 -14px !important;
+    padding: 4px 16px 12px !important;
+    margin: 0 -16px !important;
   }
   .vtj-topic-grid::-webkit-scrollbar {
     display: none !important;
@@ -6843,25 +6584,25 @@
 /* Small Screens (320px - 400px adjustments) */
 @media (max-width: 400px) {
   .nav-brand-title {
-    font-size: 0.8rem !important;
+    font-size: 0.82rem !important;
   }
   .nav-brand-tagline {
     display: none !important;
   }
   .nav-subscribe-btn {
-    padding: 5px 8px !important;
-    font-size: 0.72rem !important;
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
   }
   .vtj-hero-title-main {
-    font-size: 1.18rem !important;
+    font-size: 1.25rem !important;
   }
   .vtj-hero-card-small .vtj-hero-img-wrapper {
-    width: 95px !important;
+    width: 32% !important;
     min-width: 90px !important;
-    height: 80px !important;
+    height: 85px !important;
   }
   .vtj-hero-card-small .vtj-hero-title-sub {
-    font-size: 0.82rem !important;
+    font-size: 0.86rem !important;
   }
 }
   ]]></b:skin>
@@ -6960,10 +6701,6 @@
               Subscribe
             </button>
             <div class='nav-subscribe-dropdown' id='nav-subscribe-dropdown'>
-              <a class='nav-subscribe-item' href='https://whatsapp.com/channel/0029VbDaR7nBlHpmWEEcTO3O' rel='noopener noreferrer' target='_blank'>
-                <svg viewBox='0 0 24 24'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
-                WhatsApp Channel
-              </a>
               <a class='nav-subscribe-item' href='https://www.youtube.com/@VickyTechJournal' rel='noopener noreferrer' target='_blank'>
                 <svg viewBox='0 0 24 24'><path d='M21.58 7.19a2.75 2.75 0 00-1.94-1.94C18 4.75 12 4.75 12 4.75s-6 0-7.64.5a2.75 2.75 0 00-1.94 1.94C2 8.83 2 12.25 2 12.25s0 3.42.42 5.06a2.75 2.75 0 001.94 1.94c1.64.5 7.64.5 7.64.5s6 0 7.64-.5a2.75 2.75 0 001.94-1.94c.42-1.64.42-5.06.42-5.06s0-3.42-.42-5.06zM9.75 15.5v-6.5l5.5 3.25-5.5 3.25z'/></svg>
                 YouTube
@@ -6982,23 +6719,11 @@
   <!-- Search Overlay -->
   <div aria-label='Search' class='search-overlay' id='search-overlay' role='dialog'>
     <button aria-label='Close Search' class='search-overlay-close' id='search-overlay-close'>&#215;</button>
-    <div class='search-overlay-content'>
-      <p class='search-overlay-label'>Search Vicky Tech Journal</p>
-      <form class='search-overlay-form' expr:action='data:blog.searchUrl' method='get'>
-        <svg class='search-overlay-icon' fill='none' height='20' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='20'><circle cx='11' cy='11' r='8'/><line x1='21' x2='16.65' y1='21' y2='16.65'/></svg>
-        <input autocomplete='off' class='search-overlay-input' id='search-overlay-input' name='q' placeholder='Search articles, AI tools, coding, software...' type='search'/>
-        <button class='search-overlay-btn' type='submit'>Search</button>
-      </form>
-      <div class='search-quick-tags' id='search-quick-tags'>
-        <span class='quick-tag-label'>Popular:</span>
-        <button class='quick-tag-btn' type='button'>AI Tools</button>
-        <button class='quick-tag-btn' type='button'>Python</button>
-        <button class='quick-tag-btn' type='button'>Coding</button>
-        <button class='quick-tag-btn' type='button'>Developer Tools</button>
-        <button class='quick-tag-btn' type='button'>Jobs</button>
-      </div>
-      <div class='search-overlay-results' id='search-overlay-results'/>
-    </div>
+    <p class='search-overlay-label'>Search Vicky Tech Journal</p>
+    <form class='search-overlay-form' expr:action='data:blog.searchUrl' method='get'>
+      <input autocomplete='off' class='search-overlay-input' id='search-overlay-input' name='q' placeholder='Type to search articles...' type='search'/>
+      <button class='search-overlay-btn' type='submit'>Search</button>
+    </form>
   </div>
 
   <!-- Mobile Drawer -->
@@ -7479,7 +7204,7 @@
               <div class='vtj-social-list'>
 
                 <!-- WhatsApp Channel -->
-                <a class='vtj-social-item' href='https://whatsapp.com/channel/0029VbDaR7nBlHpmWEEcTO3O' rel='noopener noreferrer' target='_blank' title='WhatsApp Channel'>
+                <a class='vtj-social-item' href='https://whatsapp.com/channel/' rel='noopener noreferrer' target='_blank' title='WhatsApp Channel'>
                   <div class='vtj-social-item-left'>
                     <div class='vtj-social-icon-box vtj-social-icon-whatsapp'>
                       <svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'>
@@ -7606,7 +7331,7 @@
               </div>
               <h3 class='vtj-whatsapp-title'>Join Our WhatsApp Community</h3>
               <p class='vtj-whatsapp-desc'>Exclusive updates, tech tips &amp; resources. Be part of our growing community.</p>
-              <a class='vtj-whatsapp-cta' href='https://whatsapp.com/channel/0029VbDaR7nBlHpmWEEcTO3O' rel='noopener noreferrer' target='_blank'>
+              <a class='vtj-whatsapp-cta' href='https://whatsapp.com/channel/' rel='noopener noreferrer' target='_blank'>
                 <span>Join Now</span>
                 <svg fill='none' height='15' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' viewBox='0 0 24 24' width='15'>
                   <line x1='5' x2='19' y1='12' y2='12'/>
@@ -9420,7 +9145,7 @@
               </div>
               <h3 class='vtj-wa-title'>Join Our <span class='vtj-wa-highlight'>WhatsApp</span> Channel</h3>
               <p class='vtj-wa-desc'>Get instant updates, tech tips, article alerts and exclusive content directly on WhatsApp.</p>
-              <a aria-label='Join WhatsApp Channel' class='vtj-wa-btn' href='https://whatsapp.com/channel/0029VbDaR7nBlHpmWEEcTO3O' rel='noopener noreferrer' target='_blank'>
+              <a aria-label='Join WhatsApp Channel' class='vtj-wa-btn' href='https://whatsapp.com/channel/' rel='noopener noreferrer' target='_blank'>
                 <svg fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
                 <span>Join Now</span>
                 <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' viewBox='0 0 24 24' width='14'><path d='M5 12h14M12 5l7 7-7 7'/></svg>
@@ -9479,7 +9204,7 @@
           </div>
           <p class='vtj-footer-desc'>Your trusted hub for AI, technology, coding, developer tools, and in-depth guides to help you learn, build, and grow in the tech world.</p>
           <div class='vtj-footer-socials'>
-            <a aria-label='WhatsApp Channel' class='vtj-footer-social-btn vtj-soc-wa' href='https://whatsapp.com/channel/0029VbDaR7nBlHpmWEEcTO3O' rel='noopener noreferrer' target='_blank'>
+            <a aria-label='WhatsApp Channel' class='vtj-footer-social-btn vtj-soc-wa' href='https://whatsapp.com/channel/' rel='noopener noreferrer' target='_blank'>
               <svg fill='currentColor' height='16' viewBox='0 0 24 24' width='16'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
             </a>
             <a aria-label='YouTube' class='vtj-footer-social-btn vtj-soc-yt' href='https://www.youtube.com/@VickyTechJournal' rel='noopener noreferrer' target='_blank'>
@@ -9575,7 +9300,7 @@
               </a>
             </li>
             <li>
-              <a class='vtj-footer-link vtj-link-wa' href='https://whatsapp.com/channel/0029VbDaR7nBlHpmWEEcTO3O' rel='noopener noreferrer' target='_blank'>
+              <a class='vtj-footer-link vtj-link-wa' href='https://whatsapp.com/channel/' rel='noopener noreferrer' target='_blank'>
                 <svg fill='currentColor' height='15' viewBox='0 0 24 24' width='15'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
                 <span>WhatsApp Channel</span>
               </a>
@@ -9695,259 +9420,18 @@
     var navThemeBtn = document.getElementById('nav-theme-btn');
     if (navThemeBtn) navThemeBtn.addEventListener('click', toggleTheme);
 
-    /* ---- Enhanced Live Search with Instant Matching & Recommendations ---- */
-    (function () {
-      var overlay = document.getElementById('search-overlay');
-      var overlayClose = document.getElementById('search-overlay-close');
-      var overlayInput = document.getElementById('search-overlay-input');
-      var resultsContainer = document.getElementById('search-overlay-results');
-      var quickTags = document.getElementById('search-quick-tags');
-      var navSearchBtn = document.getElementById('nav-search-btn');
-
-      var searchIndex = [];
-      var searchIndexMap = {};
-
-      // Helper to add article to search index
-      function addToIndex(item) {
-        if (!item || !item.url || !item.title) return;
-        var cleanUrl = item.url.split('?')[0].split('#')[0];
-        if (searchIndexMap[cleanUrl]) return;
-        searchIndexMap[cleanUrl] = true;
-        searchIndex.push({
-          title: item.title.trim(),
-          url: item.url,
-          thumb: item.thumb || '',
-          label: item.label || 'Technology',
-          desc: item.desc ? item.desc.trim() : ''
-        });
-      }
-
-      // Index all articles already rendered on the page immediately
-      function indexPageArticles() {
-        var selectors = [
-          '.vtj-hero-card',
-          '.vtj-article-card',
-          '.vtj-tech-card',
-          '.vtj-ai-featured',
-          '.vtj-ai-secondary-card',
-          '.vtj-coding-card',
-          '.vtj-devtool-card',
-          '.vtj-mustread-featured',
-          '.vtj-mustread-compact-card',
-          '.vtj-popular-item'
-        ];
-
-        selectors.forEach(function (sel) {
-          document.querySelectorAll(sel).forEach(function (card) {
-            var link = card.querySelector('a') || (card.tagName === 'A' ? card : null);
-            var titleEl = card.querySelector('h1, h2, h3, .post-title, .vtj-card-title, .vtj-tech-card-title, .vtj-ai-featured-title, .vtj-ai-secondary-title, .vtj-coding-card-title, .vtj-devtool-title, .vtj-mustread-featured-title, .vtj-mustread-compact-title, .vtj-popular-title');
-            var imgEl = card.querySelector('img');
-            var badgeEl = card.querySelector('.vtj-hero-badge, .vtj-card-badge-overlay, .vtj-tech-badge, .vtj-cat-badge, .vtj-devtool-badge, .vtj-mustread-featured-badge, .vtj-editors-badge');
-            var descEl = card.querySelector('p, .vtj-hero-desc, .vtj-card-desc, .vtj-tech-card-excerpt, .vtj-ai-featured-desc, .vtj-coding-card-desc, .vtj-devtool-excerpt, .vtj-mustread-featured-desc');
-
-            if (link && titleEl) {
-              addToIndex({
-                title: titleEl.textContent || '',
-                url: link.href || '',
-                thumb: imgEl ? (imgEl.getAttribute('src') || '') : '',
-                label: badgeEl ? badgeEl.textContent.trim() : 'Technology',
-                desc: descEl ? descEl.textContent.trim() : ''
-              });
-            }
-          });
-        });
-      }
-
-      // Fetch additional articles from Blogger Feed JSONP
-      window.vtjSearchFeedCallback = function (data) {
-        if (data && data.feed && data.feed.entry) {
-          data.feed.entry.forEach(function (entry) {
-            var title = entry.title ? entry.title.$t : '';
-            var summary = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : '');
-            var text = summary.replace(/<[^>]*>/g, ' ').replace(/\\s+/g, ' ').trim();
-            var label = (entry.category && entry.category.length) ? entry.category[0].term : 'Article';
-            var url = '';
-            if (entry.link) {
-              for (var i = 0; i < entry.link.length; i++) {
-                if (entry.link[i].rel === 'alternate') {
-                  url = entry.link[i].href;
-                  break;
-                }
-              }
-            }
-            var thumb = '';
-            if (entry.media$thumbnail && entry.media$thumbnail.url) {
-              thumb = entry.media$thumbnail.url.replace('/s72-c/', '/w200-h140-c-rw/');
-            }
-            addToIndex({
-              title: title,
-              url: url,
-              thumb: thumb,
-              label: label,
-              desc: text.slice(0, 160)
-            });
-          });
-        }
-      };
-
-      function loadBloggerFeed() {
-        if (window.__vtjFeedLoaded) return;
-        window.__vtjFeedLoaded = true;
-        var s = document.createElement('script');
-        s.src = (window.location.origin || '') + '/feeds/posts/summary?alt=json-in-script&max-results=150&callback=vtjSearchFeedCallback';
-        s.async = true;
-        document.head.appendChild(s);
-      }
-
-      function openSearch() {
-        if (overlay) {
-          overlay.classList.add('active');
-          document.body.style.overflow = 'hidden';
-          indexPageArticles();
-          loadBloggerFeed();
-          setTimeout(function () {
-            if (overlayInput) overlayInput.focus();
-          }, 100);
-        }
-      }
-
-      function closeSearch() {
-        if (overlay) {
-          overlay.classList.remove('active');
-          document.body.style.overflow = '';
-          if (overlayInput) overlayInput.value = '';
-          if (resultsContainer) resultsContainer.innerHTML = '';
-        }
-      }
-
-      if (navSearchBtn) {
-        navSearchBtn.addEventListener('click', function (e) {
-          e.preventDefault();
-          openSearch();
-        });
-      }
-      if (overlayClose) {
-        overlayClose.addEventListener('click', closeSearch);
-      }
-      if (overlay) {
-        overlay.addEventListener('click', function (e) {
-          if (e.target === overlay) closeSearch();
-        });
-      }
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeSearch();
-      });
-
-      // Highlight matching words helper
-      function highlight(text, words) {
-        if (!text || !words || !words.length) return text || '';
-        var escaped = words.map(function (w) {
-          return w.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-        }).join('|');
-        var regex = new RegExp('(' + escaped + ')', 'gi');
-        return text.replace(regex, '<mark>$1</mark>');
-      }
-
-      // Live search filter execution
-      var debounceTimer = null;
-      function performLiveSearch() {
-        if (!overlayInput || !resultsContainer) return;
-        var q = overlayInput.value.trim().toLowerCase();
-
-        if (q.length < 2) {
-          resultsContainer.innerHTML = '';
-          if (quickTags) quickTags.style.display = 'flex';
-          return;
-        }
-
-        if (quickTags) quickTags.style.display = 'none';
-
-        var words = q.split(/\\s+/).filter(Boolean);
-        var matches = [];
-
-        searchIndex.forEach(function (item) {
-          var titleLow = item.title.toLowerCase();
-          var descLow = item.desc.toLowerCase();
-          var labelLow = item.label.toLowerCase();
-          var score = 0;
-
-          // Full phrase match
-          if (titleLow.indexOf(q) !== -1) score += 120;
-          if (labelLow.indexOf(q) !== -1) score += 80;
-          if (descLow.indexOf(q) !== -1) score += 40;
-
-          // Word by word matching
-          var allWordsFound = true;
-          words.forEach(function (w) {
-            var inTitle = titleLow.indexOf(w) !== -1;
-            var inLabel = labelLow.indexOf(w) !== -1;
-            var inDesc = descLow.indexOf(w) !== -1;
-
-            if (inTitle) score += 30;
-            if (inLabel) score += 20;
-            if (inDesc) score += 10;
-
-            if (!inTitle && !inLabel && !inDesc) {
-              allWordsFound = false;
-            }
-          });
-
-          if (score > 0 || allWordsFound) {
-            matches.push({ item: item, score: score });
-          }
-        });
-
-        // Sort by score descending
-        matches.sort(function (a, b) {
-          return b.score - a.score;
-        });
-
-        if (matches.length === 0) {
-          resultsContainer.innerHTML = '<div class="search-no-results">' +
-            '<p>No articles found matching <strong>"' + q.replace(/</g, '&lt;') + '"</strong></p>' +
-            '<p style="margin-top:6px;font-size:0.8rem;color:#64748B;">Try searching for: AI, Python, Coding, Tools, Jobs, or Guides.</p>' +
-            '</div>';
-          return;
-        }
-
-        var html = '<div class="search-results-count">Found ' + matches.length + ' matching ' + (matches.length === 1 ? 'article' : 'articles') + '</div>';
-
-        matches.slice(0, 10).forEach(function (m) {
-          var art = m.item;
-          var thumbHtml = art.thumb ? '<img class="search-result-thumb" src="' + art.thumb + '" alt="" loading="lazy"/>' : '<div class="search-result-thumb" style="display:flex;align-items:center;justify-content:center;color:#38BDF8;font-size:1.2rem;">&#9889;</div>';
-          html += '<a class="search-result-item" href="' + art.url + '">' +
-            thumbHtml +
-            '<div class="search-result-info">' +
-              '<span class="search-result-badge">' + highlight(art.label, words) + '</span>' +
-              '<h4 class="search-result-title">' + highlight(art.title, words) + '</h4>' +
-              (art.desc ? '<p class="search-result-desc">' + highlight(art.desc, words) + '</p>' : '') +
-            '</div>' +
-          '</a>';
-        });
-
-        resultsContainer.innerHTML = html;
-      }
-
-      if (overlayInput) {
-        overlayInput.addEventListener('input', function () {
-          clearTimeout(debounceTimer);
-          debounceTimer = setTimeout(performLiveSearch, 100);
-        });
-      }
-
-      // Quick Tags click handler
-      document.querySelectorAll('.quick-tag-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          if (overlayInput) {
-            overlayInput.value = btn.textContent.trim();
-            performLiveSearch();
-          }
-        });
-      });
-
-      // Init on load
-      indexPageArticles();
-    })();
+    /* ---- Search Overlay ---- */
+    var overlay = document.getElementById('search-overlay');
+    var overlayClose = document.getElementById('search-overlay-close');
+    var overlayInput = document.getElementById('search-overlay-input');
+    function openSearch() {
+      if (overlay) { overlay.classList.add('active'); if (overlayInput) overlayInput.focus(); }
+    }
+    function closeSearch() { if (overlay) overlay.classList.remove('active'); }
+    var navSearchBtn = document.getElementById('nav-search-btn');
+    if (navSearchBtn) navSearchBtn.addEventListener('click', function(e) { e.preventDefault(); openSearch(); });
+    if (overlayClose) overlayClose.addEventListener('click', closeSearch);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeSearch(); closeDrawer(); } });
 
     /* ---- Mobile Drawer ---- */
     var drawer = document.getElementById('mobile-drawer');
