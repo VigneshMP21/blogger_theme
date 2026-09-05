@@ -9181,7 +9181,7 @@ html.dark .vtj-sidebar-nl-input {
               </p>
               <div class='vtj-articles-hero-stats'>
                 <div class='vtj-articles-stat-chip'>
-                  <strong id='vtj-stat-total-articles'>Loading...</strong> Total Articles
+                  <strong id='vtj-stat-total-articles'>24+</strong> Total Articles
                 </div>
                 <div class='vtj-articles-stat-chip'>
                   <strong>8+</strong> Topic Categories
@@ -9214,7 +9214,7 @@ html.dark .vtj-sidebar-nl-input {
 
               <!-- Filter Pills Bar -->
               <div class='vtj-articles-pills-bar' id='vtj-articles-pills-bar'>
-                <button class='vtj-articles-pill-btn active' data-category='all' type='button'>All Articles <span class='vtj-articles-pill-count' id='vtj-pill-count-all'>...</span></button>
+                <button class='vtj-articles-pill-btn active' data-category='all' type='button'>All Articles <span class='vtj-articles-pill-count' id='vtj-pill-count-all'>24</span></button>
                 <button class='vtj-articles-pill-btn' data-category='ai' type='button'>AI Tools</button>
                 <button class='vtj-articles-pill-btn' data-category='coding' type='button'>Coding</button>
                 <button class='vtj-articles-pill-btn' data-category='dev-tools' type='button'>Developer Tools</button>
@@ -11935,120 +11935,60 @@ html.dark .vtj-sidebar-nl-input {
         if (emptyBtn) emptyBtn.addEventListener('click', resetFilters);
       }
 
-      var totalPostsCount = 0;
-      var eventsSetupDone = false;
-
-      function parseEntry(e) {
-        var title = e.title ? e.title.$t : '';
-        var url = getUrl(e);
-        var rawDate = e.published ? e.published.$t : '';
-        var date = formatDate(rawDate);
-        var categories = [];
-        if (e.category) {
-          for (var c = 0; c < e.category.length; c++) {
-            if (e.category[c].term) categories.push(e.category[c].term);
-          }
-        }
-        var primaryCat = getPrimaryCat(categories);
-        var img = getFirstImgSrc(e);
-        var summary = '';
-        if (e.summary && e.summary.$t) {
-          summary = e.summary.$t.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-        } else if (e.content && e.content.$t) {
-          summary = e.content.$t.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-        }
-        if (summary.length > 175) {
-          summary = summary.substring(0, 175).trim() + '...';
-        }
-        var readTime = getReadingTime(e) + ' min read';
-
-        return {
-          title: title,
-          url: url,
-          rawDate: rawDate,
-          date: date,
-          categories: categories,
-          primaryCat: primaryCat,
-          img: img,
-          summary: summary,
-          readTime: readTime
-        };
-      }
-
-      function updateCategoryPillCounts() {
-        var catCounts = { all: allArticlesList.length };
-        for (var i = 0; i < allArticlesList.length; i++) {
-          var p = allArticlesList[i];
-          var cats = (p.categories || []).join(' ').toLowerCase();
-          var title = (p.title || '').toLowerCase();
-          if (cats.indexOf('ai') !== -1 || title.indexOf('ai') !== -1) catCounts['ai'] = (catCounts['ai'] || 0) + 1;
-          if (cats.indexOf('coding') !== -1 || cats.indexOf('programming') !== -1 || title.indexOf('coding') !== -1) catCounts['coding'] = (catCounts['coding'] || 0) + 1;
-          if (cats.indexOf('tool') !== -1 || title.indexOf('tool') !== -1) catCounts['dev-tools'] = (catCounts['dev-tools'] || 0) + 1;
-          if (cats.indexOf('career') !== -1 || cats.indexOf('job') !== -1 || title.indexOf('job') !== -1) catCounts['career'] = (catCounts['career'] || 0) + 1;
-          if (cats.indexOf('security') !== -1 || cats.indexOf('cyber') !== -1) catCounts['security'] = (catCounts['security'] || 0) + 1;
-          if (cats.indexOf('tech') !== -1 || title.indexOf('tech') !== -1) catCounts['tech'] = (catCounts['tech'] || 0) + 1;
+      window.vtjArticlesCb = function(data) {
+        var entries = data.feed && data.feed.entry ? data.feed.entry : [];
+        if (entries.length === 0) {
+          var g = document.getElementById('articles-page-grid');
+          if (g) g.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:3rem 0;grid-column:1/-1;">No articles found.</p>';
+          return;
         }
 
-        var pills = document.querySelectorAll('.vtj-articles-pill-btn');
-        for (var j = 0; j < pills.length; j++) {
-          var catKey = pills[j].getAttribute('data-category');
-          var countSpan = pills[j].querySelector('.vtj-articles-pill-count');
-          var countVal = catCounts[catKey] || 0;
-          if (countSpan) {
-            countSpan.textContent = countVal;
-          } else if (countVal > 0) {
-            var span = document.createElement('span');
-            span.className = 'vtj-articles-pill-count';
-            span.textContent = countVal;
-            pills[j].appendChild(span);
+        allArticlesList = [];
+        for (var i = 0; i < entries.length; i++) {
+          var e = entries[i];
+          var title = e.title ? e.title.$t : '';
+          var url = getUrl(e);
+          var rawDate = e.published ? e.published.$t : '';
+          var date = formatDate(rawDate);
+          var categories = [];
+          if (e.category) {
+            for (var c = 0; c < e.category.length; c++) {
+              if (e.category[c].term) categories.push(e.category[c].term);
+            }
           }
+          var primaryCat = getPrimaryCat(categories);
+          var img = getFirstImgSrc(e);
+          var summary = '';
+          if (e.summary && e.summary.$t) {
+            summary = e.summary.$t.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+          } else if (e.content && e.content.$t) {
+            summary = e.content.$t.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+          }
+          if (summary.length > 175) {
+            summary = summary.substring(0, 175).trim() + '...';
+          }
+          var readTime = getReadingTime(e) + ' min read';
+
+          allArticlesList.push({
+            title: title,
+            url: url,
+            rawDate: rawDate,
+            date: date,
+            categories: categories,
+            primaryCat: primaryCat,
+            img: img,
+            summary: summary,
+            readTime: readTime
+          });
         }
-      }
 
-      function fetchFeedBatch(startIndex) {
-        var callbackName = 'vtjArticlesBatch_' + startIndex;
-        window[callbackName] = function(data) {
-          try { delete window[callbackName]; } catch(e) {}
+        setupEvents();
+        renderArticles();
+      };
 
-          var feed = data && data.feed ? data.feed : {};
-          if (feed.openSearch$totalResults && feed.openSearch$totalResults.$t) {
-            var tr = parseInt(feed.openSearch$totalResults.$t, 10);
-            if (!isNaN(tr) && tr > 0) totalPostsCount = tr;
-          }
-
-          var entries = feed.entry || [];
-          for (var i = 0; i < entries.length; i++) {
-            allArticlesList.push(parseEntry(entries[i]));
-          }
-
-          if (allArticlesList.length === 0 && entries.length === 0) {
-            var g = document.getElementById('articles-page-grid');
-            if (g) g.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:3rem 0;grid-column:1/-1;">No articles found.</p>';
-            return;
-          }
-
-          if (!eventsSetupDone) {
-            setupEvents();
-            eventsSetupDone = true;
-          }
-
-          updateCategoryPillCounts();
-          renderArticles();
-
-          // Auto-paginate until ALL posts are fetched!
-          if (entries.length > 0 && allArticlesList.length < totalPostsCount) {
-            var nextIndex = allArticlesList.length + 1;
-            fetchFeedBatch(nextIndex);
-          }
-        };
-
-        var s = document.createElement("script");
-        s.src = BLOG_URL + "feeds/posts/summary?alt=json-in-script&start-index=" + startIndex + "&max-results=50&callback=" + callbackName;
-        document.body.appendChild(s);
-      }
-
-      // Initial batch fetch starting at index 1
-      fetchFeedBatch(1);
+      var s = document.createElement("script");
+      s.src = BLOG_URL + "feeds/posts/summary?alt=json-in-script&max-results=500&callback=vtjArticlesCb";
+      document.body.appendChild(s);
 
       setTimeout(function() {
         var skel = document.querySelector('.vtj-article-skeleton-card');
