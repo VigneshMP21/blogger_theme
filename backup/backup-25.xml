@@ -608,13 +608,9 @@
     background: var(--bg-muted);
   }
   .nav-subscribe-item svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
-  }
-  .nav-subscribe-item[href*='whatsapp'] svg {
-    width: 21px;
-    height: 21px;
   }
   .nav-subscribe-item[href*='youtube'] svg { fill: #FF0000; }
   .nav-subscribe-item[href*='instagram'] svg { fill: #E4405F; }
@@ -6785,10 +6781,6 @@ html.dark .vtj-sidebar-nl-input {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
-  .vtj-soc-wa svg {
-    width: 18px;
-    height: 18px;
-  }
   .vtj-soc-wa:hover { border-color: #25D366; color: #25D366; background: rgba(37, 211, 102, 0.1); }
   .vtj-soc-yt:hover { border-color: #EF4444; color: #EF4444; background: rgba(239, 68, 68, 0.1); }
   .vtj-soc-ig:hover { border-color: #EC4899; color: #EC4899; background: rgba(236, 72, 153, 0.1); }
@@ -8161,11 +8153,12 @@ html.dark .vtj-sidebar-nl-input {
         <nav aria-label='Main Navigation' class='nav-menu'>
           <a class='nav-menu-link' expr:class='data:view.isHomepage ? &quot;active&quot; : &quot;&quot;' href='/'>Home</a>
           <a class='nav-menu-link' href='/p/articles.html'>Articles</a>
-          <a class='nav-menu-link' href='/search/label/AI%20Tools'>AI Tools</a>
-          <a class='nav-menu-link' href='/search/label/Roadmaps'>Roadmaps</a>
-          <a class='nav-menu-link' href='/search/label/Coding%20Websites'>Coding Websites</a>
+          <a class='nav-menu-link' href='/search/label/AI%20Tools'>AI</a>
+          <a class='nav-menu-link' href='/search/label/Software'>Technology</a>
+          <a class='nav-menu-link' href='/search/label/Coding%20Websites'>Coding</a>
           <a class='nav-menu-link' href='/search/label/Developer%20Tools'>Developer Tools</a>
-          <a class='nav-menu-link' href='/p/about-us.html'>About Us</a>
+          <a class='nav-menu-link' href='/search/label/Tutorials'>Guides</a>
+          <a class='nav-menu-link' href='/search/label/News'>News</a>
         </nav>
 
         <!-- Right Side Actions -->
@@ -8184,7 +8177,7 @@ html.dark .vtj-sidebar-nl-input {
             </button>
             <div class='nav-subscribe-dropdown' id='nav-subscribe-dropdown'>
               <a class='nav-subscribe-item' href='https://whatsapp.com/channel/0029VbDaR7nBlHpmWEEcTO3O' rel='noopener noreferrer' target='_blank'>
-                <svg viewBox='0 0 24 24'><path d='M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z'/></svg>
+                <svg viewBox='0 0 24 24'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
                 WhatsApp Channel
               </a>
               <a class='nav-subscribe-item' href='https://www.youtube.com/@VickyTechJournal' rel='noopener noreferrer' target='_blank'>
@@ -8237,11 +8230,14 @@ html.dark .vtj-sidebar-nl-input {
     <nav class='drawer-nav'>
       <a class='drawer-nav-link' href='/'>Home</a>
       <a class='drawer-nav-link' href='/p/articles.html'>Articles</a>
-      <a class='drawer-nav-link' href='/search/label/AI%20Tools'>AI Tools</a>
-      <a class='drawer-nav-link' href='/search/label/Roadmaps'>Roadmaps</a>
-      <a class='drawer-nav-link' href='/search/label/Coding%20Websites'>Coding Websites</a>
+      <a class='drawer-nav-link' href='/search/label/AI%20Tools'>AI</a>
+      <a class='drawer-nav-link' href='/search/label/Software'>Technology</a>
+      <a class='drawer-nav-link' href='/search/label/Coding%20Websites'>Coding</a>
       <a class='drawer-nav-link' href='/search/label/Developer%20Tools'>Developer Tools</a>
+      <a class='drawer-nav-link' href='/search/label/Tutorials'>Guides</a>
+      <a class='drawer-nav-link' href='/search/label/News'>News</a>
       <a class='drawer-nav-link' href='/p/about-us.html'>About Us</a>
+      <a class='drawer-nav-link' href='/p/contact-us.html'>Contact</a>
     </nav>
     <div class='drawer-socials'>
       <a class='drawer-social-btn' href='https://www.youtube.com/@VickyTechJournal' rel='noopener noreferrer' target='_blank' title='YouTube'>
@@ -8704,8 +8700,8 @@ html.dark .vtj-sidebar-nl-input {
                 <a class='vtj-social-item' href='https://whatsapp.com/channel/0029VbDaR7nBlHpmWEEcTO3O' rel='noopener noreferrer' target='_blank' title='WhatsApp Channel'>
                   <div class='vtj-social-item-left'>
                     <div class='vtj-social-icon-box vtj-social-icon-whatsapp'>
-                      <svg fill='currentColor' height='22' viewBox='0 0 24 24' width='22'>
-                        <path d='M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z'/>
+                      <svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'>
+                        <path d='M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.477-.15-.678.15-.2.3-.778.98-.954 1.181-.176.2-.351.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.2.05-.376-.025-.527-.075-.15-.678-1.632-.929-2.235-.245-.588-.493-.509-.678-.519l-.578-.01c-.2 0-.527.075-.803.376s-1.054 1.03-1.054 2.511c0 1.481 1.079 2.911 1.23 3.112.15.2 2.122 3.24 5.14 4.544.718.31 1.278.495 1.716.634.722.23 1.379.197 1.898.12.578-.087 1.78-.727 2.031-1.429.251-.702.251-1.304.176-1.429-.075-.125-.276-.2-.577-.35zM12 2a10 10 0 0 0-8.59 15.11L2 22l4.99-1.31A10 10 0 1 0 12 2z'/>
                       </svg>
                     </div>
                     <div>
@@ -10727,7 +10723,7 @@ html.dark .vtj-sidebar-nl-input {
           <p class='vtj-footer-desc'>Your trusted hub for AI, technology, coding, developer tools, and in-depth guides to help you learn, build, and grow in the tech world.</p>
           <div class='vtj-footer-socials'>
             <a aria-label='WhatsApp Channel' class='vtj-footer-social-btn vtj-soc-wa' href='https://whatsapp.com/channel/0029VbDaR7nBlHpmWEEcTO3O' rel='noopener noreferrer' target='_blank'>
-              <svg fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z'/></svg>
+              <svg fill='currentColor' height='16' viewBox='0 0 24 24' width='16'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
             </a>
             <a aria-label='YouTube' class='vtj-footer-social-btn vtj-soc-yt' href='https://www.youtube.com/@VickyTechJournal' rel='noopener noreferrer' target='_blank'>
               <svg fill='currentColor' height='16' viewBox='0 0 24 24' width='16'><path d='M21.58 7.19a2.75 2.75 0 00-1.94-1.94C18 4.75 12 4.75 12 4.75s-6 0-7.64.5a2.75 2.75 0 00-1.94 1.94C2 8.83 2 12.25 2 12.25s0 3.42.42 5.06a2.75 2.75 0 001.94 1.94c1.64.5 7.64.5 7.64.5s6 0 7.64-.5a2.75 2.75 0 001.94-1.94c.42-1.64.42-5.06.42-5.06s0-3.42-.42-5.06zM9.75 15.5v-6.5l5.5 3.25-5.5 3.25z'/></svg>
@@ -11019,25 +11015,10 @@ html.dark .vtj-sidebar-nl-input {
         });
       }
 
-      // Multi-batch full blog post indexing (fetches ALL posts dynamically across batches)
-      var totalSearchPostsCount = 50;
-      var searchPostsLoaded = 0;
-
-      function fetchSearchFeedBatch(startIndex) {
-        var cbName = 'vtjSearchBatch_' + startIndex;
-        window[cbName] = function (data) {
-          try { delete window[cbName]; } catch (e) {}
-
-          var feed = data && data.feed ? data.feed : {};
-          if (feed.openSearch$totalResults && feed.openSearch$totalResults.$t) {
-            var tr = parseInt(feed.openSearch$totalResults.$t, 10);
-            if (!isNaN(tr) && tr > 0) totalSearchPostsCount = tr;
-          }
-
-          var entries = feed.entry || [];
-          searchPostsLoaded += entries.length;
-
-          entries.forEach(function (entry) {
+      // Fetch additional articles from Blogger Feed JSONP
+      window.vtjSearchFeedCallback = function (data) {
+        if (data && data.feed && data.feed.entry) {
+          data.feed.entry.forEach(function (entry) {
             var title = entry.title ? entry.title.$t : '';
             var summary = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : '');
             var text = summary.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -11075,27 +11056,20 @@ html.dark .vtj-sidebar-nl-input {
             }, true);
           });
 
-          // Refresh live search results if user is currently searching
+          // If search popup is open and has user query, refresh immediately with updated thumbs
           if (overlay && overlay.classList.contains('active') && overlayInput && overlayInput.value.trim().length >= 2) {
             performLiveSearch();
           }
-
-          // Auto-fetch next batch until ALL posts in the blog are indexed!
-          if (entries.length > 0 && searchPostsLoaded < totalSearchPostsCount) {
-            var nextIndex = searchPostsLoaded + 1;
-            fetchSearchFeedBatch(nextIndex);
-          }
-        };
-
-        var s = document.createElement('script');
-        s.src = (window.location.origin || '') + '/feeds/posts/summary?alt=json-in-script&start-index=' + startIndex + '&max-results=50&callback=' + cbName;
-        document.head.appendChild(s);
-      }
+        }
+      };
 
       function loadBloggerFeed() {
         if (window.__vtjFeedLoaded) return;
         window.__vtjFeedLoaded = true;
-        fetchSearchFeedBatch(1);
+        var s = document.createElement('script');
+        s.src = (window.location.origin || '') + '/feeds/posts/summary?alt=json-in-script&max-results=150&callback=vtjSearchFeedCallback';
+        s.async = true;
+        document.head.appendChild(s);
       }
 
       function openSearch() {
