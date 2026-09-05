@@ -3434,7 +3434,7 @@
     margin-bottom: 2.25rem;
     overflow: hidden;
   }
-  .vtj-articles-hero-badge { display: none !important; /* Removed per user request */
+  .vtj-articles-hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
@@ -4128,163 +4128,18 @@
     }
   }
   @media (max-width: 680px) {
-    body.articles-view .main-layout {
-      padding-top: 4px !important;
-    }
-    .articles-page-wrap {
-      padding: 4px 4px 2rem !important;
-    }
-
-    /* 4. Remove VTJ Knowledge Archive badge in both mobile & desktop */
-    .vtj-articles-hero-badge {
-      display: none !important;
-    }
-
-    /* Hero container compact padding & margin (2 to 5px rule) */
     .vtj-articles-hero {
-      padding: 8px 6px !important;
-      margin-bottom: 5px !important;
-      border-radius: 14px !important;
+      padding: 2.25rem 1.25rem 2rem;
     }
-
-    /* 1. 'All Articles & Tech Guides' shown in single line only */
-    .vtj-articles-hero-title {
-      font-size: clamp(0.96rem, 4.6vw, 1.28rem) !important;
-      white-space: nowrap !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
-      line-height: 1.2 !important;
-      margin-bottom: 4px !important;
-      letter-spacing: -0.2px !important;
-      padding: 0 2px !important;
-    }
-
-    /* 2. Below paragraph shown in 2 lines only */
-    .vtj-articles-hero-subtitle {
-      display: -webkit-box !important;
-      -webkit-line-clamp: 2 !important;
-      -webkit-box-orient: vertical !important;
-      overflow: hidden !important;
-      font-size: 0.78rem !important;
-      line-height: 1.4 !important;
-      margin: 0 auto 5px !important;
-      padding: 0 4px !important;
-      max-width: 100% !important;
-    }
-
-    /* 3. Below total articles, topic categories, instant filter shown in single line only */
-    .vtj-articles-hero-stats {
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 4px !important;
-      width: 100% !important;
-      overflow-x: auto !important;
-      scrollbar-width: none !important;
-      -webkit-overflow-scrolling: touch !important;
-      margin: 0 !important;
-      padding: 2px 0 !important;
-    }
-    .vtj-articles-hero-stats::-webkit-scrollbar {
-      display: none !important;
-    }
-    .vtj-articles-stat-chip {
-      padding: 2px 6px !important;
-      font-size: 0.68rem !important;
-      white-space: nowrap !important;
-      flex-shrink: 0 !important;
-      gap: 3px !important;
-      border-radius: 999px !important;
-    }
-    .vtj-articles-stat-chip svg {
-      width: 11px !important;
-      height: 11px !important;
-    }
-
-    /* 5. Search bar and sort by shown in single line only */
     .vtj-articles-toolbar {
-      padding: 5px !important;
-      margin-bottom: 5px !important;
-      gap: 5px !important;
-      border-radius: 14px !important;
-    }
-    .vtj-articles-toolbar-top {
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      align-items: center !important;
-      gap: 5px !important;
-      width: 100% !important;
-    }
-    .vtj-articles-search-box {
-      flex: 1 1 auto !important;
-      min-width: 0 !important;
-    }
-    .vtj-articles-search-input {
-      height: 38px !important;
-      font-size: 0.78rem !important;
-      padding: 0 24px 0 28px !important;
-      border-radius: 10px !important;
-    }
-    .vtj-articles-search-icon {
-      left: 8px !important;
-      width: 13px !important;
-      height: 13px !important;
-    }
-    .vtj-articles-search-clear {
-      right: 6px !important;
-      font-size: 1rem !important;
-    }
-    .vtj-articles-sort-wrap {
-      flex: 0 0 auto !important;
-      display: flex !important;
-      align-items: center !important;
-      gap: 0 !important;
-      margin: 0 !important;
-    }
-    .vtj-articles-sort-label {
-      display: none !important;
-    }
-    .vtj-articles-sort-select {
-      height: 38px !important;
-      font-size: 0.76rem !important;
-      font-weight: 600 !important;
-      padding: 0 20px 0 6px !important;
-      background-position: right 5px center !important;
-      background-size: 10px !important;
-      border-radius: 10px !important;
-      width: auto !important;
-      max-width: 112px !important;
-    }
-
-    /* Pills bar compact styling */
-    .vtj-articles-pills-bar {
-      padding-bottom: 2px !important;
-      gap: 4px !important;
-    }
-    .vtj-articles-pill-btn {
-      padding: 4px 9px !important;
-      font-size: 0.74rem !important;
-      gap: 4px !important;
-    }
-    .vtj-articles-pill-count {
-      font-size: 0.66rem !important;
-      padding: 1px 5px !important;
-    }
-
-    .vtj-articles-results-info {
-      margin-bottom: 5px !important;
-      padding: 0 4px !important;
-      font-size: 0.8rem !important;
+      padding: 1rem;
     }
     .vtj-articles-grid {
-      grid-template-columns: 1fr !important;
-      gap: 10px !important;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
     }
     .vtj-spotlight-body {
-      padding: 1.25rem !important;
+      padding: 1.5rem;
     }
   }
 
@@ -9320,6 +9175,10 @@ html.dark .vtj-sidebar-nl-input {
           <div class='articles-page-wrap' id='articles-page-wrap'>
             <!-- Hero Header -->
             <header class='vtj-articles-hero'>
+              <div class='vtj-articles-hero-badge'>
+                <svg viewBox='0 0 24 24'><path d='M12 2L14.4 8.6L21 11L14.4 13.4L12 20L9.6 13.4L3 11L9.6 8.6L12 2Z'/></svg>
+                VTJ KNOWLEDGE ARCHIVE
+              </div>
               <h1 class='vtj-articles-hero-title'>All Articles &amp; <span>Tech Guides</span></h1>
               <p class='vtj-articles-hero-subtitle'>
                 Explore comprehensive tutorials, developer workflows, artificial intelligence tools, career roadmaps, and software engineering deep-dives.
