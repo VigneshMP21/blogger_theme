@@ -4397,19 +4397,6 @@ html.dark {
   --post-accent: #38BDF8;
 }
 
-/* Completely remove old default sidebar widgets from Blog Post page */
-body.item-view .sidebar-area,
-.vtj-hidden-on-post,
-.main-grid.vtj-post-wide-layout .sidebar-area,
-.vtj-post-container ~ .sidebar-area {
-  display: none !important;
-  visibility: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-}
-
 /* Post Container Wrappers */
 .container.vtj-post-container {
   max-width: 1400px !important;
@@ -9148,7 +9135,7 @@ html.dark .vtj-sidebar-nl-input {
         </div>
 
         <!-- SIDEBAR -->
-        <aside expr:class='data:view.isHomepage ? &quot;sidebar-area home-sidebar&quot; : (data:view.isPost ? &quot;sidebar-area vtj-hidden-on-post&quot; : &quot;sidebar-area&quot;)'>
+        <aside expr:class='data:view.isHomepage ? &quot;sidebar-area home-sidebar&quot; : &quot;sidebar-area&quot;'>
           <b:section class='sidebar-widgets-area' id='sidebar_section' name='Sidebar' preferred='yes'>
             <b:widget id='BlogSearch1' locked='false' title='Search' type='BlogSearch' version='2' visible='true'>
               <b:includable id='main'>
