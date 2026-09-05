@@ -38,8 +38,8 @@
     <meta content='Vicky Tech Journal | AI Tools, Software Guides &amp; Coding' property='og:title'/>
     <meta content='Discover tested AI tools, coding tutorials, student technology stacks, and productivity software guides. Upgrade your digital workflow with Vicky Tech Journal.' property='og:description'/>
     <meta content='website' property='og:type'/>
-    <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' rel='icon' type='image/png'/>
-  <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' rel='apple-touch-icon'/>
+    <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' rel='icon' type='image/png'/>
+  <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' rel='apple-touch-icon'/>
   <meta content='summary_large_image' name='twitter:card'/>
     <meta content='Vicky Tech Journal | AI Tools, Software Guides &amp; Coding' name='twitter:title'/>
     <meta content='Discover tested AI tools, coding tutorials, student technology stacks, and productivity software guides.' name='twitter:description'/>
@@ -92,7 +92,7 @@
               &quot;url&quot;: &quot;https://vickytechjournal.blogspot.com/&quot;,
               &quot;logo&quot;: {
                 &quot;@type&quot;: &quot;ImageObject&quot;,
-                &quot;url&quot;: &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png&quot;
+                &quot;url&quot;: &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png&quot;
               }
             }<b:if cond='data:p.featuredImage'>,
             &quot;image&quot;: {
@@ -169,7 +169,7 @@
           "@id": "https://vickytechjournal.blogspot.com/#organization",
           "name": "Vicky Tech Journal",
           "url": "https://vickytechjournal.blogspot.com/",
-          "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png",
+          "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png",
           "sameAs": [
             "https://www.youtube.com/@VickyTechJournal",
             "https://www.instagram.com/vicky_tech_journal/",
@@ -7779,7 +7779,7 @@ html.dark .vtj-sidebar-nl-input {
         <b:section class='header-logo-area' id='header' name='Header' showaddelement='false'>
           <b:widget id='Header1' locked='true' title='Vicky Tech Journal (Header)' type='Header' version='2' visible='true'>
             <b:widget-settings>
-              <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png</b:widget-setting>
+              <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png</b:widget-setting>
               <b:widget-setting name='displayHeight'>1254</b:widget-setting>
               <b:widget-setting name='sectionWidth'>1615</b:widget-setting>
               <b:widget-setting name='useImage'>true</b:widget-setting>
@@ -7789,7 +7789,7 @@ html.dark .vtj-sidebar-nl-input {
             </b:widget-settings>
             <b:includable id='main'>
               <a class='nav-logo' expr:href='data:blog.homepageUrl' title='Vicky Tech Journal'>
-                <img alt='Vicky Tech Journal' class='nav-logo-img' id='header-logo-img' onerror='this.onerror=null;this.src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png";' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png'/>
+                <img alt='Vicky Tech Journal' class='nav-logo-img' id='header-logo-img' onerror='this.onerror=null;this.src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png";' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png'/>
                 <div class='nav-brand-wrap'>
                   <span class='nav-brand-title'><span class='brand-dark'>VICKY</span> <span class='brand-blue'>TECH JOURNAL</span></span>
                   <span class='nav-brand-tagline'>LEARN &#8226; EXPLORE &#8226; GROW</span>
@@ -7901,7 +7901,7 @@ html.dark .vtj-sidebar-nl-input {
   <div class='mobile-drawer' id='mobile-drawer'>
     <div class='drawer-header'>
       <div class='drawer-brand-wrap' style='display:flex;align-items:center;gap:10px;'>
-        <img alt='Vicky Tech Journal' class='drawer-logo-img' id='drawer-logo-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' style='display:block;width:38px;height:38px;border-radius:10px;object-fit:cover;'/>
+        <img alt='Vicky Tech Journal' class='drawer-logo-img' id='drawer-logo-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' style='display:block;width:38px;height:38px;border-radius:10px;object-fit:cover;'/>
         <span class='drawer-logo' id='drawer-logo-text'>Vicky Tech <span class='logo-accent'>Journal</span></span>
       </div>
       <button aria-label='Close Menu' class='drawer-close' id='drawer-close'>&#215;</button>
@@ -7955,7 +7955,7 @@ html.dark .vtj-sidebar-nl-input {
                 <h1 class='vtj-hero-title-main'>10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide</h1>
                 <p class='vtj-hero-desc'>Explore top in-demand IT entry-level career paths, required skills, high-growth roles, and actionable roadmap strategies for freshers in 2026.</p>
                 <div class='vtj-hero-meta'>
-                  <img alt='Vicky TJ' class='vtj-hero-author-avatar' height='20' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='20'/>
+                  <img alt='Vicky TJ' class='vtj-hero-author-avatar' height='20' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' width='20'/>
                   <span class='vtj-hero-author'>Vicky TJ</span>
                   <span class='vtj-hero-dot'>&#8226;</span>
                   <span class='vtj-hero-date'>Sep 4, 2026</span>
@@ -8991,7 +8991,7 @@ html.dark .vtj-sidebar-nl-input {
               </h3>
               <p class='vtj-mustread-featured-desc'>A complete step-by-step guide to building your own AI agent, even if you&apos;re a beginner.</p>
               <div class='vtj-mustread-author-row'>
-                <img alt='Vicky TJ' class='vtj-mustread-avatar' height='26' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='26'/>
+                <img alt='Vicky TJ' class='vtj-mustread-avatar' height='26' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' width='26'/>
                 <span class='vtj-mustread-author-name'>Vicky TJ</span>
                 <span>&#8226;</span>
                 <span>May 25, 2026</span>
@@ -9256,7 +9256,7 @@ html.dark .vtj-sidebar-nl-input {
                 <p class='vtj-spotlight-desc' id='vtj-spotlight-desc'>Summary snippet...</p>
                 <div class='vtj-spotlight-footer'>
                   <div class='vtj-spotlight-author'>
-                    <img alt='Vicky TJ' class='vtj-spotlight-author-img' id='vtj-spotlight-author-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png'/>
+                    <img alt='Vicky TJ' class='vtj-spotlight-author-img' id='vtj-spotlight-author-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png'/>
                     <span class='vtj-spotlight-author-name'>Vicky TJ</span>
                   </div>
                   <a class='vtj-spotlight-cta' href='#' id='vtj-spotlight-cta'>
@@ -9470,7 +9470,7 @@ html.dark .vtj-sidebar-nl-input {
                               <b:if cond='data:post.author.authorPhoto.url'>
                                 <img expr:alt='data:post.author.name' expr:src='data:post.author.authorPhoto.url'/>
                               <b:else/>
-                                <img alt='Vicky TJ' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' style='width:100%;height:100%;object-fit:cover;border-radius:50%;'/>
+                                <img alt='Vicky TJ' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' style='width:100%;height:100%;object-fit:cover;border-radius:50%;'/>
                               </b:if>
                             </div>
                             <div class='vtj-post-author-details'>
@@ -10483,7 +10483,7 @@ html.dark .vtj-sidebar-nl-input {
         <div class='vtj-footer-col vtj-col-brand'>
           <div class='vtj-footer-brand-header'>
             <div class='vtj-footer-logo-badge' style='overflow:hidden;border-radius:10px;padding:0;'>
-              <img alt='Vicky Tech Journal' class='vtj-footer-logo-img' id='footer-logo-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' style='width:100%;height:100%;object-fit:cover;display:block;'/>
+              <img alt='Vicky Tech Journal' class='vtj-footer-logo-img' id='footer-logo-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' style='width:100%;height:100%;object-fit:cover;display:block;'/>
             </div>
             <div class='vtj-footer-brand-title'>
               <span class='vtj-footer-brand-name'>VICKY <span class='vtj-footer-brand-accent'>TECH JOURNAL</span></span>
@@ -10981,145 +10981,55 @@ html.dark .vtj-sidebar-nl-input {
       else { siteHeader.classList.add('scrolled'); }
     }, { passive: true });
 
-    /* ====================================================
-       AUTOMATIC DYNAMIC BLOGGER PROFILE LOGO SYNCHRONIZATION
-       Whenever you change your profile image in Blogger, it
-       automatically updates across the entire website.
-    ==================================================== */
-    var VTJ_DEFAULT_LOGO = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png';
+    /* ---- Sync Logo Images ---- */
+    var VTJ_OFFICIAL_LOGO = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png';
 
-    function getHighResProfileImg(url) {
-      if (!url) return '';
-      return url
-        .replace(/\/s\d+(-c)?\//, '/s1600/')
-        .replace(/\/w\d+-h\d+(-c)?\//, '/s1600/')
-        .replace(/=s\d+.*$/, '=s1600')
-        .replace(/=w\d+-h\d+.*$/, '=s1600');
-    }
-
-    function applyLogoToAllElements(src) {
-      if (!src) return;
+    function setLogoSrc(src) {
+      var finalSrc = src || VTJ_OFFICIAL_LOGO;
       var h = document.getElementById('header-logo-img');
-      if (h && h.src !== src) { h.src = src; h.style.display = ''; }
-
       var d = document.getElementById('drawer-logo-img');
-      if (d && d.src !== src) { d.src = src; d.style.display = 'block'; }
-
       var f = document.getElementById('footer-logo-img');
-      if (f && f.src !== src) { f.src = src; f.style.display = 'block'; }
-
-      var heroAvatars = document.querySelectorAll('.vtj-hero-author-avatar');
-      for (var i = 0; i < heroAvatars.length; i++) {
-        if (heroAvatars[i].src !== src) heroAvatars[i].src = src;
-      }
-
-      var spotAvatar = document.getElementById('vtj-spotlight-author-img');
-      if (spotAvatar && spotAvatar.src !== src) { spotAvatar.src = src; }
-
-      var postAvatar = document.getElementById('post-author-avatar-img');
-      if (postAvatar && postAvatar.src !== src) { postAvatar.src = src; postAvatar.style.display = ''; }
-      var bioAvatar = document.getElementById('author-bio-avatar-img');
-      if (bioAvatar && bioAvatar.src !== src) { bioAvatar.src = src; bioAvatar.style.display = ''; }
-      var postColAvatars = document.querySelectorAll('.vtj-post-author-avatar img');
-      for (var k = 0; k < postColAvatars.length; k++) {
-        if (postColAvatars[k].src !== src) postColAvatars[k].src = src;
-      }
-
+      if (h) { h.src = finalSrc; h.style.display = ''; }
+      if (d) { d.src = finalSrc; d.style.display = 'block'; }
+      if (f) { f.src = finalSrc; f.style.display = 'block'; }
       var ab = document.getElementById('about-sidebar-logo');
-      if (ab) {
-        var existingAb = ab.querySelector('img');
-        if (existingAb) {
-          if (existingAb.src !== src) existingAb.src = src;
-        } else {
-          var aimg = document.createElement('img');
-          aimg.src = src;
-          aimg.alt = 'Vicky Tech Journal';
-          aimg.width = 120;
-          aimg.height = 120;
-          aimg.loading = 'lazy';
-          ab.appendChild(aimg);
-        }
+      if (ab && !ab.querySelector('img')) {
+        var aimg = document.createElement('img');
+        aimg.src = finalSrc;
+        aimg.alt = 'Vicky Tech Journal';
+        aimg.width = 120;
+        aimg.height = 120;
+        aimg.loading = 'lazy';
+        ab.appendChild(aimg);
       }
-
       var ytAv = document.getElementById('social-avatar-yt');
-      if (ytAv) {
-        var existingYt = ytAv.querySelector('img');
-        if (existingYt) { if (existingYt.src !== src) existingYt.src = src; }
-        else {
-          var ytImg = document.createElement('img');
-          ytImg.src = src;
-          ytImg.alt = 'Vicky Tech Journal';
-          ytImg.width = 72;
-          ytImg.height = 72;
-          ytImg.loading = 'lazy';
-          ytAv.appendChild(ytImg);
-        }
+      if (ytAv && !ytAv.querySelector('img')) {
+        var ytImg = document.createElement('img');
+        ytImg.src = finalSrc;
+        ytImg.alt = 'Vicky Tech Journal';
+        ytImg.width = 72;
+        ytImg.height = 72;
+        ytImg.loading = 'lazy';
+        ytAv.appendChild(ytImg);
       }
-
       var igAv = document.getElementById('social-avatar-ig');
-      if (igAv) {
-        var existingIg = igAv.querySelector('img');
-        if (existingIg) { if (existingIg.src !== src) existingIg.src = src; }
-        else {
-          var igImg = document.createElement('img');
-          igImg.src = src;
-          igImg.alt = 'Vicky Tech Journal';
-          igImg.width = 72;
-          igImg.height = 72;
-          igImg.loading = 'lazy';
-          igAv.appendChild(igImg);
-        }
+      if (igAv && !igAv.querySelector('img')) {
+        var igImg = document.createElement('img');
+        igImg.src = finalSrc;
+        igImg.alt = 'Vicky Tech Journal';
+        igImg.width = 72;
+        igImg.height = 72;
+        igImg.loading = 'lazy';
+        igAv.appendChild(igImg);
       }
-
-      try {
-        var favicons = document.querySelectorAll("link[rel*='icon']");
-        for (var fv = 0; fv < favicons.length; fv++) {
-          favicons[fv].href = src;
-        }
-      } catch(e) {}
     }
-
-    function initDynamicProfileSync() {
-      // 1. Immediately apply cached logo if available (0ms instant render)
-      var activeLogo = VTJ_DEFAULT_LOGO;
-      try {
-        var cached = localStorage.getItem('vtj_current_profile_logo');
-        if (cached) activeLogo = cached;
-      } catch(e) {}
-      applyLogoToAllElements(activeLogo);
-
-      // 2. Fetch Blogger feed to detect any live profile image updates
-      window.vtjLiveProfileCb = function(data) {
-        var liveImg = '';
-        try {
-          if (data && data.feed) {
-            if (data.feed.author && data.feed.author[0] && data.feed.author[0].gd$image) {
-              liveImg = data.feed.author[0].gd$image.src || '';
-            }
-            if (!liveImg && data.feed.entry && data.feed.entry[0] && data.feed.entry[0].author && data.feed.entry[0].author[0] && data.feed.entry[0].author[0].gd$image) {
-              liveImg = data.feed.entry[0].author[0].gd$image.src || '';
-            }
-          }
-        } catch(e) {}
-
-        if (liveImg) {
-          var hiResLive = getHighResProfileImg(liveImg);
-          try {
-            localStorage.setItem('vtj_current_profile_logo', hiResLive);
-          } catch(e) {}
-          applyLogoToAllElements(hiResLive);
-        }
-      };
-
-      var BLOG_FEED_BASE = document.body.getAttribute('data-url') || '/';
-      if (BLOG_FEED_BASE.charAt(BLOG_FEED_BASE.length - 1) !== '/') BLOG_FEED_BASE += '/';
-
-      var s = document.createElement('script');
-      s.src = BLOG_FEED_BASE + 'feeds/posts/summary?alt=json-in-script&max-results=1&callback=vtjLiveProfileCb';
-      document.body.appendChild(s);
+    function resolveLogo() {
+      var h = document.getElementById('header-logo-img');
+      var src = (h && h.getAttribute('src')) || VTJ_OFFICIAL_LOGO;
+      setLogoSrc(src);
     }
-
-    initDynamicProfileSync();
+    resolveLogo();
+    setTimeout(resolveLogo, 500);
 
     /* ---- Subscribe Dropdown ---- */
     (function(){
