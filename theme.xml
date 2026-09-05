@@ -5499,6 +5499,46 @@ body.item-view .sidebar-area,
   padding: 0 !important;
 }
 
+/* Static Page Layout (About, Contact, Privacy, Terms, Disclaimer) */
+.vtj-static-page-layout {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 10px 20px 60px;
+  box-sizing: border-box;
+}
+
+.vtj-static-page-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vtj-static-page-title {
+  font-family: var(--font-heading, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text-primary, #0f172a);
+  line-height: 1.25;
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
+}
+html.dark .vtj-static-page-title {
+  color: #f8fafc;
+}
+
+/* Hide default h1 title if custom hero banner or vtj static page wrapper is present */
+.vtj-static-page-card:has(.vtj-page-hero) .vtj-static-page-title,
+.vtj-static-page-card:has(.vtj-static-page) .vtj-static-page-title,
+.vtj-static-page-card:has(.entry-content .vtj-static-page) .vtj-static-page-title {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .vtj-static-page-layout {
+    padding: 10px 12px 40px;
+  }
+}
+
 /* Base Post Page 3-Column Layout: Left TOC, Center Article, Right Sidebar */
 .vtj-post-page-layout {
   display: grid;
@@ -7119,7 +7159,7 @@ html.dark .vtj-sidebar-nl-input {
   .vtj-connected-links .vtj-footer-link {
     gap: 10px;
   }
-  .vtj-link-wa svg { color: #25D366 !important; }
+  .vtj-link-wa svg { width: 18px !important; height: 18px !important; color: #25D366 !important; }
   .vtj-link-yt svg { color: #EF4444 !important; }
   .vtj-link-ig svg { color: #EC4899 !important; }
   .vtj-link-x svg { color: #F8FAFC !important; }
@@ -9699,13 +9739,13 @@ html.dark .vtj-sidebar-nl-input {
        MAIN CONTENT + SIDEBAR
   &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
   <main expr:class='data:view.isHomepage ? &quot;main-layout vtj-home-hidden&quot; : &quot;main-layout&quot;'>
-    <div expr:class='data:view.isHomepage ? &quot;container home-layout&quot; : (data:view.isPost ? &quot;container vtj-post-container&quot; : &quot;container&quot;)'>
-      <div expr:class='data:view.isHomepage ? &quot;main-grid home-main-grid&quot; : (data:view.isPost ? &quot;main-grid vtj-post-wide-layout&quot; : &quot;main-grid&quot;)'>
+    <div expr:class='data:view.isHomepage ? &quot;container home-layout&quot; : ((data:view.isPost or data:view.isPage or data:blog.pageType == &quot;static_page&quot;) ? &quot;container vtj-post-container&quot; : &quot;container&quot;)'>
+      <div expr:class='data:view.isHomepage ? &quot;main-grid home-main-grid&quot; : ((data:view.isPost or data:view.isPage or data:blog.pageType == &quot;static_page&quot;) ? &quot;main-grid vtj-post-wide-layout&quot; : &quot;main-grid&quot;)'>
 
 
 
         <!-- CONTENT AREA -->
-        <div expr:class='data:view.isPost ? &quot;content-area vtj-post-main-column&quot; : &quot;content-area&quot;'>
+        <div expr:class='(data:view.isPost or data:view.isPage or data:blog.pageType == &quot;static_page&quot;) ? &quot;content-area vtj-post-main-column&quot; : &quot;content-area&quot;'>
           <b:if cond='data:view.isLabelSearch'>
             <div class='section-head fade-in-ready'>
               <div class='section-head-left'>
@@ -9980,6 +10020,19 @@ html.dark .vtj-sidebar-nl-input {
                       </div>
                     </b:if>
                   </b:if>
+
+                <!-- &#9472;&#9472; STATIC PAGE VIEW (ABOUT, CONTACT, PRIVACY, DISCLAIMER, TERMS) &#9472;&#9472; -->
+                <b:elseif cond='data:view.isPage or data:blog.pageType == &quot;static_page&quot;'/>
+                  <b:loop values='data:posts' var='post'>
+                    <div class='vtj-static-page-layout'>
+                      <article class='vtj-static-page-card'>
+                        <h1 class='vtj-static-page-title entry-title' id='vtj-static-title'><data:post.title/></h1>
+                        <div class='vtj-post-body entry-content' id='post-content'>
+                          <data:post.body/>
+                        </div>
+                      </article>
+                    </div>
+                  </b:loop>
 
                 <!-- &#9472;&#9472; SINGLE POST VIEW (REDESIGNED EDITORIAL LAYOUT) &#9472;&#9472; -->
                 <b:else/>
@@ -11006,7 +11059,7 @@ html.dark .vtj-sidebar-nl-input {
             <li><a class='vtj-footer-link' href='/p/contact-us.html'>Write for Us</a></li>
             <li><a class='vtj-footer-link' href='/p/privacy-policy.html'>Privacy Policy</a></li>
             <li><a class='vtj-footer-link' href='/p/disclaimer.html'>Disclaimer</a></li>
-            <li><a class='vtj-footer-link' href='/p/privacy-policy.html'>Terms of Use</a></li>
+            <li><a class='vtj-footer-link' href='/p/terms-conditions.html'>Terms of Use</a></li>
           </ul>
         </div>
 
@@ -11049,7 +11102,7 @@ html.dark .vtj-sidebar-nl-input {
             </li>
             <li>
               <a class='vtj-footer-link vtj-link-wa' href='https://whatsapp.com/channel/0029VbDaR7nBlHpmWEEcTO3O' rel='noopener noreferrer' target='_blank'>
-                <svg fill='currentColor' height='15' viewBox='0 0 24 24' width='15'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
+                <svg fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z'/></svg>
                 <span>WhatsApp Channel</span>
               </a>
             </li>
@@ -12836,6 +12889,13 @@ html.dark .vtj-sidebar-nl-input {
       }
 
       // 3. TABLE OF CONTENTS GENERATOR (H1, H2 ONLY; IF NO H1, SHOW ONLY H2; NEVER H3)
+      // Hide static page duplicate title if hero banner exists
+      var staticHero = document.querySelector('.vtj-static-page-card .vtj-page-hero, .vtj-static-page-layout .vtj-page-hero, .vtj-static-page');
+      var staticTitle = document.getElementById('vtj-static-title');
+      if (staticHero && staticTitle) {
+        staticTitle.style.display = 'none';
+      }
+
       var tocCard = document.getElementById('vtj-toc-card');
       var tocList = document.getElementById('vtj-post-toc-list');
       var tocRail = document.getElementById('vtj-toc-rail');
