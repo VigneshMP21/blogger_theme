@@ -4922,728 +4922,143 @@
   .avatar-image-container img { border-radius: 50% !important; }
 
   /* ============================================================
-     17. PREMIUM DARK FOOTER & NEWSLETTER + WHATSAPP CTA
+     17. FOOTER
   ============================================================ */
-  /* CTA SECTION (Above Footer) */
-  .vtj-cta-section {
-    padding: 30px 0 50px;
-    background: transparent;
-  }
-  .vtj-cta-card {
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 20px;
-    padding: 36px 44px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-    display: grid;
-    grid-template-columns: 1.25fr 1fr;
-    gap: 48px;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  html.dark .vtj-cta-card {
-    background: #0F172A;
-    border-color: #1E293B;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
-  }
-  .vtj-cta-left {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .vtj-cta-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #EFF6FF;
-    color: #2563EB;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    align-self: flex-start;
-  }
-  html.dark .vtj-cta-badge {
-    background: rgba(37, 99, 235, 0.15);
-    color: #60A5FA;
-  }
-  .vtj-cta-title {
-    font-family: var(--font-heading);
-    font-size: 1.85rem;
-    font-weight: 800;
-    color: #0F172A;
-    letter-spacing: -0.02em;
-    line-height: 1.25;
-    margin: 0;
-  }
-  html.dark .vtj-cta-title {
-    color: #F8FAFC;
-  }
-  .vtj-cta-desc {
-    font-size: 0.92rem;
-    color: #64748B;
-    line-height: 1.55;
-    margin: 0;
-    max-width: 520px;
-  }
-  html.dark .vtj-cta-desc {
+  .site-footer {
+    background: #0A0F1E;
     color: #94A3B8;
-  }
-  .vtj-cta-form {
-    display: flex;
-    gap: 12px;
-    margin-top: 6px;
-    max-width: 520px;
-  }
-  .vtj-cta-input-group {
+    margin-top: auto;
     position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
-  .vtj-cta-input-icon {
+  .site-footer::before {
+    content: '';
     position: absolute;
-    left: 14px;
-    color: #94A3B8;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.4), transparent);
     pointer-events: none;
   }
-  .vtj-cta-input {
-    width: 100%;
-    height: 48px;
-    padding: 0 16px 0 42px;
-    background: #FFFFFF;
-    border: 1px solid #CBD5E1;
-    border-radius: 10px;
-    font-size: 0.92rem;
-    color: #0F172A;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    box-sizing: border-box;
-  }
-  html.dark .vtj-cta-input {
-    background: #1E293B;
-    border-color: #334155;
-    color: #FFFFFF;
-  }
-  .vtj-cta-input:focus {
-    border-color: #2563EB;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-  }
-  .vtj-cta-btn {
-    height: 48px;
-    padding: 0 26px;
-    background: #2563EB;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    font-family: var(--font-heading);
-    font-size: 0.92rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-    flex-shrink: 0;
-  }
-  .vtj-cta-btn:hover {
-    background: #1D4ED8;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
-  }
-  .vtj-cta-trust-row {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-top: 8px;
-    flex-wrap: wrap;
-  }
-  .vtj-trust-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .vtj-trust-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.25;
-  }
-  .vtj-trust-text strong {
-    font-size: 0.78rem;
-    color: #0F172A;
-  }
-  html.dark .vtj-trust-text strong {
-    color: #F8FAFC;
-  }
-  .vtj-trust-text span {
-    font-size: 0.70rem;
-    color: #94A3B8;
-  }
-
-  /* WhatsApp Right Box */
-  .vtj-cta-right {
+  .footer-top { padding: 48px 0 32px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+  .footer-grid {
     display: grid;
-    grid-template-columns: 1fr 180px;
-    gap: 20px;
-    align-items: center;
-    position: relative;
-    padding-left: 20px;
-    border-left: 1px solid #F1F5F9;
-  }
-  html.dark .vtj-cta-right {
-    border-left-color: #1E293B;
-  }
-  .vtj-cta-wa-info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .vtj-wa-icon-box {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: #25D366;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-    margin-bottom: 2px;
-  }
-  .vtj-wa-title {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #0F172A;
-    line-height: 1.3;
-    margin: 0;
-  }
-  html.dark .vtj-wa-title {
-    color: #F8FAFC;
-  }
-  .vtj-wa-highlight {
-    color: #16A34A;
-  }
-  html.dark .vtj-wa-highlight {
-    color: #22C55E;
-  }
-  .vtj-wa-desc {
-    font-size: 0.82rem;
-    color: #64748B;
-    line-height: 1.45;
-    margin: 0;
-  }
-  html.dark .vtj-wa-desc {
-    color: #94A3B8;
-  }
-  .vtj-wa-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1.5px solid #22C55E;
-    color: #16A34A;
-    background: transparent;
-    padding: 8px 18px;
-    border-radius: 24px;
-    font-size: 0.84rem;
-    font-weight: 700;
-    text-decoration: none;
-    align-self: flex-start;
-    margin-top: 6px;
-    transition: all 0.2s ease;
-  }
-  html.dark .vtj-wa-btn {
-    color: #22C55E;
-  }
-  .vtj-wa-btn:hover {
-    background: #22C55E;
-    color: #FFFFFF;
-    transform: translateX(2px);
-    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.25);
-  }
-
-  /* Isometric Tech Phone Graphic */
-  .vtj-cta-tech-graphic {
-    position: relative;
-    width: 170px;
-    height: 190px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .vtj-tech-platform-glow {
-    position: absolute;
-    bottom: 12px;
-    width: 130px;
-    height: 38px;
-    background: radial-gradient(ellipse, #38BDF8 0%, rgba(56, 189, 248, 0.4) 40%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(4px);
-    transform: rotateX(60deg);
-  }
-  .vtj-tech-phone-mock {
-    position: relative;
-    width: 96px;
-    height: 154px;
-    background: #0B1329;
-    border-radius: 18px;
-    border: 3px solid #1E293B;
-    box-shadow: -8px 12px 24px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.08);
-    display: flex;
-    flex-direction: column;
-    padding: 6px;
-    box-sizing: border-box;
-    transform: perspective(600px) rotateY(-12deg) rotateX(6deg);
-    transition: transform 0.3s ease;
-  }
-  .vtj-tech-phone-mock:hover {
-    transform: perspective(600px) rotateY(-4deg) rotateX(2deg) translateY(-4px);
-  }
-  .vtj-phone-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    margin-bottom: 6px;
-  }
-  .vtj-phone-speaker {
-    width: 22px;
-    height: 3px;
-    background: #334155;
-    border-radius: 2px;
-  }
-  .vtj-phone-camera {
-    width: 4px;
-    height: 4px;
-    background: #1E293B;
-    border-radius: 50%;
-  }
-  .vtj-phone-screen {
-    flex: 1;
-    background: linear-gradient(180deg, #1E293B 0%, #0F172A 100%);
-    border-radius: 12px;
-    padding: 10px 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-  }
-  .vtj-phone-logo {
-    font-family: var(--font-heading);
-    font-size: 0.95rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #38BDF8, #818CF8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .vtj-phone-channel {
-    font-size: 0.62rem;
-    color: #94A3B8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: -2px;
-  }
-  .vtj-phone-chat-bubble {
-    background: rgba(34, 197, 94, 0.2);
-    border: 1px solid rgba(34, 197, 94, 0.4);
-    border-radius: 8px;
-    padding: 4px 6px;
-    font-size: 0.58rem;
-    color: #4ADE80;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    margin-top: 4px;
-  }
-  .vtj-phone-chat-dots {
-    display: flex;
-    gap: 3px;
-  }
-  .vtj-phone-chat-dots span {
-    width: 4px;
-    height: 4px;
-    background: #38BDF8;
-    border-radius: 50%;
-    opacity: 0.7;
-  }
-  .vtj-tech-float-pill {
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-  }
-  html.dark .vtj-tech-float-pill {
-    background: #1E293B;
-  }
-  .vtj-float-bell {
-    top: 18px;
-    right: 4px;
-    animation: vtjFloat 3s ease-in-out infinite;
-  }
-  .vtj-float-chart {
-    bottom: 24px;
-    left: 4px;
-    animation: vtjFloat 3.5s ease-in-out infinite reverse;
-  }
-  @keyframes vtjFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
-
-  /* PREMIUM DARK FOOTER */
-  .vtj-premium-footer {
-    background: #070D18 !important;
-    color: #94A3B8;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 56px 0 28px;
-    font-size: 0.85rem;
-    position: relative;
-  }
-  .vtj-footer-grid {
-    display: grid;
-    grid-template-columns: 1.45fr 1.05fr 1fr 0.95fr 1.15fr 1.05fr;
+    grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
     gap: 32px;
     align-items: start;
   }
-  .vtj-footer-col {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
+  .footer-col { display: flex; flex-direction: column; gap: 0.85rem; }
+  .footer-logo-wrapper { display: flex; align-items: center; gap: 12px; }
+  .footer-logo-text {
+    font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800;
+    color: #FFFFFF; letter-spacing: -0.5px; line-height: 1.2; margin: 0;
   }
-
-  /* Col 1: Brand */
-  .vtj-footer-brand-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
+  .footer-logo-text .logo-accent {
+    background: linear-gradient(135deg, #3B82F6 0%, #A855F7 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
-  .vtj-footer-logo-badge {
-    width: 38px;
-    height: 38px;
-    background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-heading);
-    font-weight: 900;
-    font-size: 1.15rem;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-    flex-shrink: 0;
-  }
-  .vtj-logo-v { color: #38BDF8; }
-  .vtj-logo-j { color: #FFFFFF; }
-  .vtj-footer-brand-title {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.15;
-  }
-  .vtj-footer-brand-name {
-    font-family: var(--font-heading);
-    font-size: 1.05rem;
-    font-weight: 800;
-    color: #FFFFFF;
-    letter-spacing: -0.2px;
-  }
-  .vtj-footer-brand-accent {
-    color: #38BDF8;
-  }
-  .vtj-footer-brand-tagline {
-    font-size: 0.68rem;
-    color: #64748B;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    margin-top: 2px;
-  }
-  .vtj-footer-desc {
-    font-size: 0.82rem;
-    color: #94A3B8;
-    line-height: 1.6;
-    margin: 0 0 16px;
-  }
-  .vtj-footer-socials {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .vtj-footer-social-btn {
-    width: 34px;
-    height: 34px;
+  .footer-logo-img {
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #94A3B8;
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-  .vtj-footer-social-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
-  .vtj-soc-wa:hover { border-color: #25D366; color: #25D366; background: rgba(37, 211, 102, 0.1); }
-  .vtj-soc-yt:hover { border-color: #EF4444; color: #EF4444; background: rgba(239, 68, 68, 0.1); }
-  .vtj-soc-ig:hover { border-color: #EC4899; color: #EC4899; background: rgba(236, 72, 153, 0.1); }
-  .vtj-soc-x:hover { border-color: #F8FAFC; color: #F8FAFC; background: rgba(255, 255, 255, 0.08); }
-  .vtj-soc-in:hover { border-color: #0A66C2; color: #0A66C2; background: rgba(10, 102, 194, 0.1); }
-
-  /* Headings & Links */
-  .vtj-footer-heading {
-    font-family: var(--font-heading);
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    margin: 0 0 16px;
-    padding-bottom: 6px;
-    position: relative;
-    display: inline-block;
-  }
-  .vtj-footer-heading::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 20px;
-    height: 2px;
-    background: #2563EB;
-    border-radius: 1px;
-  }
-  .vtj-footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .vtj-footer-link {
-    font-size: 0.82rem;
-    color: #94A3B8;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.2s ease, transform 0.2s ease;
-  }
-  .vtj-footer-link svg {
+    object-fit: cover;
     flex-shrink: 0;
-    color: #64748B;
-    transition: color 0.2s ease;
+    border: 2px solid rgba(255, 255, 255, 0.15);
   }
-  .vtj-footer-link:hover {
-    color: #FFFFFF;
-    transform: translateX(3px);
+  .footer-tagline { font-size: 0.7rem; font-weight: 700; color: #3B82F6; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 2px; }
+  .footer-about { font-size: 0.84rem; line-height: 1.6; color: #94A3B8; margin-top: 4px; }
+  .footer-col-title {
+    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700;
+    color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid rgba(37, 99, 235, 0.3);
+    position: relative; display: inline-block;
   }
-  .vtj-footer-link:hover svg {
-    color: #38BDF8;
+  .footer-col-title::after {
+    content: ''; position: absolute; bottom: -2px; left: 0; width: 24px; height: 2px;
+    background: linear-gradient(90deg, #2563EB, #7C3AED);
   }
-  .vtj-chevron-link {
-    gap: 6px;
+  .footer-links { display: flex; flex-direction: column; gap: 8px; }
+  .footer-link {
+    font-size: 0.85rem; color: #94A3B8; transition: all 0.2s ease;
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
   }
-  .vtj-chevron {
-    font-weight: 800;
-    font-size: 1.05rem;
-    color: #38BDF8;
-    line-height: 1;
+  .footer-link svg {
+    width: 14px; height: 14px; fill: none; stroke: #3B82F6; stroke-width: 2.5;
+    stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s ease, stroke 0.2s ease; flex-shrink: 0;
   }
-
-  /* Col 5: Popular Topics Pills */
-  .vtj-footer-pills {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .vtj-topic-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 14px;
-    border-radius: 20px;
+  .footer-link:hover { color: #60A5FA; transform: translateX(4px); }
+  .footer-link:hover svg { stroke: #93C5FD; transform: translateX(2px); }
+  .footer-socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .footer-social-btn {
+    width: 38px; height: 38px;
+    display: inline-flex; align-items: center; justify-content: center;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #CBD5E1;
-    font-size: 0.80rem;
-    font-weight: 600;
+    border-radius: 10px;
+    color: #94A3B8;
+    transition: all 0.25s ease;
     text-decoration: none;
-    transition: all 0.2s ease;
-    align-self: flex-start;
   }
-  .vtj-topic-pill svg {
-    flex-shrink: 0;
-    color: #38BDF8;
-  }
-  .vtj-topic-pill:hover {
-    background: rgba(37, 99, 235, 0.18);
-    border-color: #3B82F6;
-    color: #FFFFFF;
-    transform: translateX(3px);
-  }
+  .footer-social-btn:hover { transform: translateY(-3px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3); }
+  .footer-social-btn[title*='YouTube']:hover { background: #FF0000; border-color: #FF0000; color: #FFFFFF; }
+  .footer-social-btn[title*='Instagram']:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: transparent; color: #FFFFFF; }
+  .footer-social-btn[title*='Facebook']:hover { background: #1877F2; border-color: #1877F2; color: #FFFFFF; }
+  .footer-social-btn[title*='Twitter']:hover, .footer-social-btn[title*='X']:hover { background: #111111; border-color: #333333; color: #FFFFFF; }
+  .footer-social-btn[title*='LinkedIn']:hover { background: #0A66C2; border-color: #0A66C2; color: #FFFFFF; }
+  .footer-social-btn svg { width: 16px; height: 16px; fill: currentColor; }
 
-  /* Col 6: Stay Connected Links */
-  .vtj-connected-links .vtj-footer-link {
-    gap: 10px;
+  /* Newsletter Card Column */
+  .footer-newsletter-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
-  .vtj-link-wa svg { color: #25D366 !important; }
-  .vtj-link-yt svg { color: #EF4444 !important; }
-  .vtj-link-ig svg { color: #EC4899 !important; }
-  .vtj-link-x svg { color: #F8FAFC !important; }
+  .footer-newsletter-card p { font-size: 0.82rem; color: #94A3B8; line-height: 1.5; margin-bottom: 12px; }
+  .footer-newsletter-form { display: flex; flex-direction: column; gap: 10px; }
+  .footer-newsletter-input {
+    width: 100%; padding: 10px 14px; border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(15, 23, 42, 0.6);
+    color: #FFFFFF; font-size: 0.84rem; outline: none; transition: all 0.2s ease;
+  }
+  .footer-newsletter-input::placeholder { color: #64748B; }
+  .footer-newsletter-input:focus {
+    border-color: #3B82F6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); background: rgba(15, 23, 42, 0.9);
+  }
+  .footer-newsletter-btn {
+    width: 100%; padding: 11px 16px;
+    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+    color: #FFFFFF; border: none; border-radius: 8px;
+    font-weight: 600; font-size: 0.84rem; cursor: pointer;
+    transition: all 0.25s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .footer-newsletter-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35); }
+  .footer-newsletter-note { font-size: 0.73rem; color: #94A3B8; margin-top: 8px; display: flex; align-items: center; gap: 5px; }
 
   /* Footer Bottom Bar */
-  .vtj-footer-bottom {
-    margin-top: 48px;
-    padding-top: 22px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-    font-size: 0.80rem;
-    color: #64748B;
+  .footer-bottom {
+    padding: 24px 0;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+    font-size: 0.8rem; color: #94A3B8;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
-  .vtj-footer-copyright {
-    color: #94A3B8;
-  }
-  .vtj-footer-center-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #94A3B8;
-  }
-  .vtj-footer-back-to-top {
-    margin-left: auto;
-  }
-  .vtj-btt-btn {
-    background: transparent;
-    border: none;
-    color: #94A3B8;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.80rem;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-  }
-  .vtj-btt-btn:hover {
-    color: #FFFFFF;
-  }
-  .vtj-btt-btn:hover .vtj-btt-circle {
-    background: #2563EB;
-    color: #FFFFFF;
-    transform: translateY(-2px);
-  }
-  .vtj-btt-sun {
-    color: #F59E0B;
-  }
-  .vtj-btt-circle {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    transition: all 0.2s ease;
-  }
+  .footer-copyright { color: #94A3B8; font-size: 0.8rem; }
+  .footer-bottom-links { display: flex; align-items: center; gap: 16px; }
+  .footer-bottom-link { color: #94A3B8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s ease; }
+  .footer-bottom-link:hover { color: #60A5FA; }
 
-  /* Responsive Rules for Footer & CTA */
-  @media (max-width: 1200px) {
-    .vtj-footer-grid {
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    }
-    .vtj-footer-col:nth-child(5),
-    .vtj-footer-col:nth-child(6) {
-      grid-column: span 2;
-    }
-    .vtj-cta-card {
-      grid-template-columns: 1.15fr 1fr;
-      gap: 32px;
-      padding: 32px 30px;
-    }
-  }
-  @media (max-width: 992px) {
-    .vtj-cta-card {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-    .vtj-cta-right {
-      border-left: none;
-      border-top: 1px solid #F1F5F9;
-      padding-left: 0;
-      padding-top: 24px;
-    }
-    html.dark .vtj-cta-right {
-      border-top-color: #1E293B;
-    }
-    .vtj-footer-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-    .vtj-footer-col:nth-child(5),
-    .vtj-footer-col:nth-child(6) {
-      grid-column: span 1;
-    }
-  }
-  @media (max-width: 768px) {
-    .vtj-cta-card {
-      padding: 24px 20px;
-      border-radius: 16px;
-    }
-    .vtj-cta-title {
-      font-size: 1.45rem;
-    }
-    .vtj-cta-form {
-      flex-direction: column;
-    }
-    .vtj-cta-btn {
-      width: 100%;
-    }
-    .vtj-cta-trust-row {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    .vtj-cta-right {
-      grid-template-columns: 1fr;
-    }
-    .vtj-cta-tech-graphic {
-      display: none;
-    }
-    .vtj-footer-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-    .vtj-footer-bottom {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 14px;
-    }
-    .vtj-footer-back-to-top {
-      margin-left: 0;
-      width: 100%;
-    }
-    .vtj-btt-btn {
-      width: 100%;
-      justify-content: space-between;
-      padding: 8px 12px;
-      background: rgba(255, 255, 255, 0.04);
-    }
-  }
+  /* Blogger Attribution Override */
+  .footer-attr-area { display: inline-flex; align-items: center; }
+  .footer-attr-area .widget.Attribution { margin: 0; padding: 0; background: none; border: none; }
+  .footer-attr-area .widget-content { font-size: 0.8rem; color: #94A3B8; margin: 0; padding: 0; border: none; background: none; }
+  .footer-attr-area .blogger a { color: #94A3B8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s ease; display: inline-flex; align-items: center; }
+  .footer-attr-area .blogger a:hover { color: #60A5FA; }
+  .footer-attr-area svg, .footer-attr-area .flatBloggerIcon, .footer-attr-area img { display: none !important; }
 
   /* ============================================================
      18. FADE-IN ANIMATION
@@ -8744,285 +8159,133 @@
       </div>
     </div>
 
-<!-- ============================================================
-         NEWSLETTER + WHATSAPP CTA SECTION
-    ============================================================ -->
-    <section class='vtj-cta-section fade-in-ready'>
-      <div class='container'>
-        <div class='vtj-cta-card'>
-          <!-- LEFT: Newsletter Sign-up -->
-          <div class='vtj-cta-left'>
-            <div class='vtj-cta-badge'>
-              <svg fill='currentColor' height='12' viewBox='0 0 24 24' width='12'><path d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/></svg>
-              <span>STAY AHEAD</span>
-            </div>
-            <h2 class='vtj-cta-title'>Stay Ahead of the Tech Curve <span class='vtj-cta-emoji'>&#128640;</span></h2>
-            <p class='vtj-cta-desc'>Get the latest AI, coding, technology news and in-depth guides delivered to your inbox. Join thousands of tech enthusiasts learning and growing together.</p>
-
-            <form action='https://feedburner.google.com/fb/a/mailverify' class='vtj-cta-form' method='post' onsubmit='window.open(&quot;https://feedburner.google.com/fb/a/mailverify?uri=VickyTechJournal&quot;,&quot;popupwindow&quot;,&quot;scrollbars=yes,width=550,height=520&quot;);return true;' target='popupwindow'>
-              <input name='uri' type='hidden' value='VickyTechJournal'/>
-              <input name='loc' type='hidden' value='en_US'/>
-              <div class='vtj-cta-input-group'>
-                <svg class='vtj-cta-input-icon' fill='none' height='18' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='18'><rect height='16' rx='2' width='20' x='2' y='4'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg>
-                <input aria-label='Enter your email address' class='vtj-cta-input' name='email' placeholder='Enter your email address' required='required' type='email'/>
-              </div>
-              <button class='vtj-cta-btn' type='submit'>Subscribe</button>
-            </form>
-
-            <div class='vtj-cta-trust-row'>
-              <div class='vtj-trust-item'>
-                <svg class='vtj-trust-icon' fill='none' height='18' stroke='#2563EB' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.2' viewBox='0 0 24 24' width='18'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/><path d='m9 12 2 2 4-4'/></svg>
-                <div class='vtj-trust-text'>
-                  <strong>No Spam</strong>
-                  <span>We respect your inbox</span>
-                </div>
-              </div>
-              <div class='vtj-trust-item'>
-                <svg class='vtj-trust-icon' fill='none' height='18' stroke='#2563EB' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.2' viewBox='0 0 24 24' width='18'><circle cx='12' cy='8' r='6'/><path d='M15.477 12.89 17 22l-5-3-5 3 1.523-9.11'/></svg>
-                <div class='vtj-trust-text'>
-                  <strong>Quality Content</strong>
-                  <span>Curated with care</span>
-                </div>
-              </div>
-              <div class='vtj-trust-item'>
-                <svg class='vtj-trust-icon' fill='none' height='18' stroke='#2563EB' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.2' viewBox='0 0 24 24' width='18'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>
-                <div class='vtj-trust-text'>
-                  <strong>Weekly Insights</strong>
-                  <span>Stay updated always</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- RIGHT: WhatsApp Community CTA -->
-          <div class='vtj-cta-right'>
-            <div class='vtj-cta-wa-info'>
-              <div class='vtj-wa-icon-box'>
-                <svg fill='currentColor' height='28' viewBox='0 0 24 24' width='28'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
-              </div>
-              <h3 class='vtj-wa-title'>Join Our <span class='vtj-wa-highlight'>WhatsApp</span> Channel</h3>
-              <p class='vtj-wa-desc'>Get instant updates, tech tips, article alerts and exclusive content directly on WhatsApp.</p>
-              <a aria-label='Join WhatsApp Channel' class='vtj-wa-btn' href='https://whatsapp.com/channel/' rel='noopener noreferrer' target='_blank'>
-                <svg fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
-                <span>Join Now</span>
-                <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' viewBox='0 0 24 24' width='14'><path d='M5 12h14M12 5l7 7-7 7'/></svg>
-              </a>
-            </div>
-
-            <!-- Tech Isometric Illustration Graphic -->
-            <div class='vtj-cta-tech-graphic'>
-              <div class='vtj-tech-platform-glow'/>
-              <div class='vtj-tech-phone-mock'>
-                <div class='vtj-phone-header'>
-                  <span class='vtj-phone-camera'/>
-                  <span class='vtj-phone-speaker'/>
-                </div>
-                <div class='vtj-phone-screen'>
-                  <div class='vtj-phone-logo'>VTJ</div>
-                  <div class='vtj-phone-channel'>Community</div>
-                  <div class='vtj-phone-chat-bubble'>
-                    <svg fill='currentColor' height='16' viewBox='0 0 24 24' width='16'><path d='M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.22-1.31C8.63 21.49 10.26 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/></svg>
-                    <span>New Guide Alert!</span>
-                  </div>
-                  <div class='vtj-phone-chat-dots'>
-                    <span/><span/><span/>
-                  </div>
-                </div>
-              </div>
-              <div class='vtj-tech-float-pill vtj-float-bell'>
-                <svg fill='none' height='14' stroke='#2563EB' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' viewBox='0 0 24 24' width='14'><path d='M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9'/><path d='M13.73 21a2 2 0 0 1-3.46 0'/></svg>
-              </div>
-              <div class='vtj-tech-float-pill vtj-float-chart'>
-                <svg fill='none' height='14' stroke='#059669' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' viewBox='0 0 24 24' width='14'><line x1='18' x2='18' y1='20' y2='10'/><line x1='12' x2='12' y1='20' y2='4'/><line x1='6' x2='6' y1='20' y2='14'/></svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Placeholder: New feature section to be added here -->
   </b:if>
 
-<!-- ============================================================
-       PREMIUM DARK FOOTER
-  ============================================================ -->
-  <footer class='site-footer vtj-premium-footer'>
-    <div class='container'>
-      <div class='vtj-footer-grid'>
-        <!-- COLUMN 1: Brand -->
-        <div class='vtj-footer-col vtj-col-brand'>
-          <div class='vtj-footer-brand-header'>
-            <div class='vtj-footer-logo-badge'>
-              <span class='vtj-logo-v'>V</span><span class='vtj-logo-j'>J</span>
+  <!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;
+       FOOTER
+  &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
+  <footer class='site-footer'>
+    <div class='footer-top'>
+      <div class='container'>
+        <div class='footer-grid'>
+          <div class='footer-col footer-col-brand'>
+            <div id='footer-logo-area'>
+              <div class='footer-logo-wrapper'>
+                <img alt='Vicky Tech Journal' class='footer-logo-img' id='footer-logo-img' style='display:none'/>
+                <p class='footer-logo-text' id='footer-logo-text'>Vicky Tech <span class='logo-accent'>Journal</span></p>
+              </div>
+              <p class='footer-tagline'>Explore. Learn. Upgrade.</p>
             </div>
-            <div class='vtj-footer-brand-title'>
-              <span class='vtj-footer-brand-name'>VICKY <span class='vtj-footer-brand-accent'>TECH JOURNAL</span></span>
-              <span class='vtj-footer-brand-tagline'>Learn &#8226; Explore &#8226; Grow</span>
+            <p class='footer-about'>Simple guides on AI tools, coding, useful websites, apps and student technology.</p>
+            <div class='footer-socials'>
+              <a class='footer-social-btn' href='https://www.youtube.com/@VickyTechJournal' rel='noopener noreferrer' target='_blank' title='YouTube'>
+                <svg viewBox='0 0 24 24'><path d='M21.58 7.19a2.75 2.75 0 00-1.94-1.94C18 4.75 12 4.75 12 4.75s-6 0-7.64.5a2.75 2.75 0 00-1.94 1.94C2 8.83 2 12.25 2 12.25s0 3.42.42 5.06a2.75 2.75 0 001.94 1.94c1.64.5 7.64.5 7.64.5s6 0 7.64-.5a2.75 2.75 0 001.94-1.94c.42-1.64.42-5.06.42-5.06s0-3.42-.42-5.06zM9.75 15.5v-6.5l5.5 3.25-5.5 3.25z'/></svg>
+              </a>
+              <a class='footer-social-btn' href='https://www.instagram.com/vicky_tech_journal/' rel='noopener noreferrer' target='_blank' title='Instagram'>
+                <svg viewBox='0 0 24 24'><path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z'/></svg>
+              </a>
+              <a class='footer-social-btn' href='#' rel='noopener noreferrer' target='_blank' title='Facebook'>
+                <svg viewBox='0 0 24 24'><path d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/></svg>
+              </a>
+              <a class='footer-social-btn' href='#' rel='noopener noreferrer' target='_blank' title='X Twitter'>
+                <svg viewBox='0 0 24 24'><path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/></svg>
+              </a>
+              <a class='footer-social-btn' href='#' rel='noopener noreferrer' target='_blank' title='LinkedIn'>
+                <svg viewBox='0 0 24 24'><path d='M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z'/></svg>
+              </a>
             </div>
           </div>
-          <p class='vtj-footer-desc'>Your trusted hub for AI, technology, coding, developer tools, and in-depth guides to help you learn, build, and grow in the tech world.</p>
-          <div class='vtj-footer-socials'>
-            <a aria-label='WhatsApp Channel' class='vtj-footer-social-btn vtj-soc-wa' href='https://whatsapp.com/channel/' rel='noopener noreferrer' target='_blank'>
-              <svg fill='currentColor' height='16' viewBox='0 0 24 24' width='16'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
-            </a>
-            <a aria-label='YouTube' class='vtj-footer-social-btn vtj-soc-yt' href='https://www.youtube.com/@VickyTechJournal' rel='noopener noreferrer' target='_blank'>
-              <svg fill='currentColor' height='16' viewBox='0 0 24 24' width='16'><path d='M21.58 7.19a2.75 2.75 0 00-1.94-1.94C18 4.75 12 4.75 12 4.75s-6 0-7.64.5a2.75 2.75 0 00-1.94 1.94C2 8.83 2 12.25 2 12.25s0 3.42.42 5.06a2.75 2.75 0 001.94 1.94c1.64.5 7.64.5 7.64.5s6 0 7.64-.5a2.75 2.75 0 001.94-1.94c.42-1.64.42-5.06.42-5.06s0-3.42-.42-5.06zM9.75 15.5v-6.5l5.5 3.25-5.5 3.25z'/></svg>
-            </a>
-            <a aria-label='Instagram' class='vtj-footer-social-btn vtj-soc-ig' href='https://www.instagram.com/vicky_tech_journal/' rel='noopener noreferrer' target='_blank'>
-              <svg fill='currentColor' height='16' viewBox='0 0 24 24' width='16'><path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z'/></svg>
-            </a>
-            <a aria-label='X' class='vtj-footer-social-btn vtj-soc-x' href='https://twitter.com/VickyTechJournal' rel='noopener noreferrer' target='_blank'>
-              <svg fill='currentColor' height='14' viewBox='0 0 24 24' width='14'><path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/></svg>
-            </a>
-            <a aria-label='LinkedIn' class='vtj-footer-social-btn vtj-soc-in' href='https://www.linkedin.com/company/vickytechjournal' rel='noopener noreferrer' target='_blank'>
-              <svg fill='currentColor' height='15' viewBox='0 0 24 24' width='15'><path d='M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z'/></svg>
-            </a>
+          <div class='footer-col'>
+            <h3 class='footer-col-title'>Quick Links</h3>
+            <div class='footer-links'>
+              <a class='footer-link' href='/'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Home</a>
+              <a class='footer-link' href='/p/articles.html'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Articles</a>
+              <a class='footer-link' href='/p/about-us.html'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> About Us</a>
+              <a class='footer-link' href='/p/contact-us.html'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Contact</a>
+              <a class='footer-link' href='/p/privacy-policy.html'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Privacy Policy</a>
+              <a class='footer-link' href='/p/disclaimer.html'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Disclaimer</a>
+              <a class='footer-link' href='/sitemap.xml'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Sitemap</a>
+            </div>
           </div>
-        </div>
-
-        <!-- COLUMN 2: Explore -->
-        <div class='vtj-footer-col'>
-          <h3 class='vtj-footer-heading'>EXPLORE</h3>
-          <ul class='vtj-footer-links'>
-            <li><a class='vtj-footer-link' href='/search/label/AI%20Tools'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><rect height='16' rx='2' ry='2' width='16' x='4' y='4'/><rect height='6' width='6' x='9' y='9'/><line x1='9' x2='9' y1='1' y2='4'/><line x1='15' x2='15' y1='1' y2='4'/><line x1='9' x2='9' y1='20' y2='23'/><line x1='15' x2='15' y1='20' y2='23'/><line x1='20' x2='23' y1='9' y2='9'/><line x1='20' x2='23' y1='14' y2='14'/><line x1='1' x2='4' y1='9' y2='9'/><line x1='1' x2='4' y1='14' y2='14'/></svg> AI &amp; Artificial Intelligence</a></li>
-            <li><a class='vtj-footer-link' href='/search/label/Coding'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg> Coding &amp; Development</a></li>
-            <li><a class='vtj-footer-link' href='/search/label/Technology'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><rect height='14' rx='2' width='20' x='2' y='3'/><line x1='8' x2='16' y1='21' y2='21'/><line x1='12' x2='12' y1='17' y2='21'/></svg> Technology</a></li>
-            <li><a class='vtj-footer-link' href='/search/label/Developer%20Tools'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/></svg> Developer Tools</a></li>
-            <li><a class='vtj-footer-link' href='/search/label/Guides'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/><path d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'/></svg> Guides &amp; Tutorials</a></li>
-            <li><a class='vtj-footer-link' href='/search/label/News'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2'/><path d='M18 14h-8'/><path d='M15 18h-5'/><path d='M10 6h8v4h-8V6Z'/></svg> Tech News</a></li>
-            <li><a class='vtj-footer-link' href='/search/label/Reviews'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/></svg> Reviews</a></li>
-          </ul>
-        </div>
-
-        <!-- COLUMN 3: Resources -->
-        <div class='vtj-footer-col'>
-          <h3 class='vtj-footer-heading'>RESOURCES</h3>
-          <ul class='vtj-footer-links'>
-            <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Guides'><span class='vtj-chevron'>&#8250;</span> Beginner Guides</a></li>
-            <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Roadmaps'><span class='vtj-chevron'>&#8250;</span> Roadmaps</a></li>
-            <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Developer%20Tools'><span class='vtj-chevron'>&#8250;</span> Best Tools</a></li>
-            <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Cheat%20Sheets'><span class='vtj-chevron'>&#8250;</span> Cheat Sheets</a></li>
-            <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Resources'><span class='vtj-chevron'>&#8250;</span> Free Resources</a></li>
-            <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Newsletter'><span class='vtj-chevron'>&#8250;</span> Newsletter Archive</a></li>
-          </ul>
-        </div>
-
-        <!-- COLUMN 4: Company -->
-        <div class='vtj-footer-col'>
-          <h3 class='vtj-footer-heading'>COMPANY</h3>
-          <ul class='vtj-footer-links'>
-            <li><a class='vtj-footer-link' href='/p/about-us.html'>About Us</a></li>
-            <li><a class='vtj-footer-link' href='/p/contact-us.html'>Contact</a></li>
-            <li><a class='vtj-footer-link' href='/p/contact-us.html'>Write for Us</a></li>
-            <li><a class='vtj-footer-link' href='/p/privacy-policy.html'>Privacy Policy</a></li>
-            <li><a class='vtj-footer-link' href='/p/disclaimer.html'>Disclaimer</a></li>
-            <li><a class='vtj-footer-link' href='/p/privacy-policy.html'>Terms of Use</a></li>
-          </ul>
-        </div>
-
-        <!-- COLUMN 5: Popular Topics -->
-        <div class='vtj-footer-col'>
-          <h3 class='vtj-footer-heading'>POPULAR TOPICS</h3>
-          <div class='vtj-footer-pills'>
-            <a class='vtj-topic-pill' href='/search/label/AI%20Tools'>
-              <svg fill='currentColor' height='14' viewBox='0 0 24 24' width='14'><path d='M12 2a2 2 0 0 1 2 2v1h1a3 3 0 0 1 3 3v1h1a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1v1a3 3 0 0 1-3 3h-1v1a2 2 0 0 1-4 0v-1H9a3 3 0 0 1-3-3v-1H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1V8a3 3 0 0 1 3-3h1V4a2 2 0 0 1 2-2zm-3 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z'/></svg>
-              <span>Artificial Intelligence</span>
-            </a>
-            <a class='vtj-topic-pill' href='/search/label/Python'>
-              <svg fill='currentColor' height='14' viewBox='0 0 24 24' width='14'><path d='M11.91 0c-3.19 0-5.06 1.4-5.06 3.66v2.11h5.18v.75H4.85C2.16 6.52 0 8.35 0 11.23c0 2.89 1.83 4.6 4.7 4.6h1.61v-2.29c0-1.8 1.56-3.32 3.39-3.32h5.17c1.55 0 2.8-1.25 2.8-2.8V3.66C17.67 1.4 15.1 0 11.91 0zm-2.47 1.5c.52 0 .94.42.94.94 0 .52-.42.94-.94.94-.52 0-.94-.42-.94-.94 0-.52.42-.94.94-.94zm2.65 22.5c3.19 0 5.06-1.4 5.06-3.66v-2.11h-5.18v-.75h7.18c2.69 0 4.85-1.83 4.85-4.71 0-2.89-1.83-4.6-4.7-4.6h-1.61v2.29c0 1.8-1.56 3.32-3.39 3.32h-5.17c-1.55 0-2.8 1.25-2.8 2.8v3.76c0 2.26 2.57 3.66 5.76 3.66zm2.47-1.5c-.52 0-.94-.42-.94-.94 0-.52.42-.94.94-.94.52 0 .94.42.94.94 0 .52-.42.94-.94.94z'/></svg>
-              <span>Python</span>
-            </a>
-            <a class='vtj-topic-pill' href='/search/label/Coding'>
-              <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><circle cx='12' cy='12' r='10'/><line x1='2' x2='22' y1='12' y2='12'/><path d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/></svg>
-              <span>Web Development</span>
-            </a>
-            <a class='vtj-topic-pill' href='/search/label/Developer%20Tools'>
-              <svg fill='currentColor' height='14' viewBox='0 0 24 24' width='14'><path d='M23.15 2.587L18.21.21a1.49 1.49 0 0 0-1.705.29l-9.46 9.07-4.14-3.13a1.5 1.5 0 0 0-1.82.02l-.67.55a1.5 1.5 0 0 0-.02 2.14l3.52 3.33-3.52 3.33a1.5 1.5 0 0 0 .02 2.14l.67.55a1.5 1.5 0 0 0 1.82.02l4.14-3.13 9.46 9.07a1.49 1.49 0 0 0 1.705.29l4.94-2.377a1.5 1.5 0 0 0 .85-1.353V3.94a1.5 1.5 0 0 0-.85-1.353z'/></svg>
-              <span>VS Code</span>
-            </a>
-            <a class='vtj-topic-pill' href='/search/label/Cybersecurity'>
-              <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>
-              <span>Cybersecurity</span>
-            </a>
+          <div class='footer-col'>
+            <h3 class='footer-col-title'>Categories</h3>
+            <div class='footer-links'>
+              <a class='footer-link' href='/search/label/AI%20Tools'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> AI Tools</a>
+              <a class='footer-link' href='/search/label/Coding'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Coding</a>
+              <a class='footer-link' href='/search/label/Useful%20Websites'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Useful Websites</a>
+              <a class='footer-link' href='/search/label/Student%20Tech'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Student Tech</a>
+              <a class='footer-link' href='/search/label/Productivity'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Productivity</a>
+              <a class='footer-link' href='/search/label/Software'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Software</a>
+              <a class='footer-link' href='/search/label/Apps'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Apps</a>
+              <a class='footer-link' href='/search/label/Reviews'><svg viewBox='0 0 24 24'><path d='M9 18l6-6-6-6'/></svg> Reviews</a>
+            </div>
           </div>
-        </div>
-
-        <!-- COLUMN 6: Stay Connected -->
-        <div class='vtj-footer-col'>
-          <h3 class='vtj-footer-heading'>STAY CONNECTED</h3>
-          <ul class='vtj-footer-links vtj-connected-links'>
-            <li>
-              <a class='vtj-footer-link' href='mailto:hello@vickytechjournal.com'>
-                <svg fill='none' height='15' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='15'><rect height='16' rx='2' width='20' x='2' y='4'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg>
-                <span>hello@vickytechjournal.com</span>
-              </a>
-            </li>
-            <li>
-              <a class='vtj-footer-link vtj-link-wa' href='https://whatsapp.com/channel/' rel='noopener noreferrer' target='_blank'>
-                <svg fill='currentColor' height='15' viewBox='0 0 24 24' width='15'><path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.782-.397-1.47-.604-2.42-2.102-2.493-2.199-.074-.096-.583-.775-.583-1.479 0-.703.367-1.05.498-1.193.13-.143.285-.179.38-.179.096 0 .192.001.275.006.088.005.205-.033.321.246.12.289.41 1.002.447 1.074.036.073.06.158.012.253-.048.096-.073.156-.144.24-.072.083-.151.185-.216.248-.072.072-.147.151-.063.295.084.144.373.615.801.996.551.49 1.015.642 1.159.714.144.072.228.06.313-.036.084-.096.36-.42.456-.564.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z'/></svg>
-                <span>WhatsApp Channel</span>
-              </a>
-            </li>
-            <li>
-              <a class='vtj-footer-link vtj-link-yt' href='https://www.youtube.com/@VickyTechJournal' rel='noopener noreferrer' target='_blank'>
-                <svg fill='currentColor' height='15' viewBox='0 0 24 24' width='15'><path d='M21.58 7.19a2.75 2.75 0 00-1.94-1.94C18 4.75 12 4.75 12 4.75s-6 0-7.64.5a2.75 2.75 0 00-1.94 1.94C2 8.83 2 12.25 2 12.25s0 3.42.42 5.06a2.75 2.75 0 001.94 1.94c1.64.5 7.64.5 7.64.5s6 0 7.64-.5a2.75 2.75 0 001.94-1.94c.42-1.64.42-5.06.42-5.06s0-3.42-.42-5.06zM9.75 15.5v-6.5l5.5 3.25-5.5 3.25z'/></svg>
-                <span>YouTube</span>
-              </a>
-            </li>
-            <li>
-              <a class='vtj-footer-link vtj-link-ig' href='https://www.instagram.com/vicky_tech_journal/' rel='noopener noreferrer' target='_blank'>
-                <svg fill='currentColor' height='15' viewBox='0 0 24 24' width='15'><path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z'/></svg>
-                <span>Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a class='vtj-footer-link vtj-link-x' href='https://twitter.com/VickyTechJournal' rel='noopener noreferrer' target='_blank'>
-                <svg fill='currentColor' height='13' viewBox='0 0 24 24' width='13'><path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/></svg>
-                <span>X (Twitter)</span>
-              </a>
-            </li>
-          </ul>
+          <div class='footer-col'>
+            <div class='footer-newsletter-card'>
+              <h3 class='footer-col-title' style='border:none;margin-bottom:6px;padding:0;'>Get New Posts by Email</h3>
+              <p>Subscribe and receive every new Vicky Tech Journal article directly in your inbox.</p>
+              <form action='https://feedburner.google.com/fb/a/mailverify' class='footer-newsletter-form' method='post' onsubmit='window.open(&quot;https://feedburner.google.com/fb/a/mailverify?uri=VickyTechJournal&quot;,&quot;popupwindow&quot;,&quot;scrollbars=yes,width=550,height=520&quot;);return true;' target='popupwindow'>
+                <input name='uri' type='hidden' value='VickyTechJournal'/>
+                <input name='loc' type='hidden' value='en_US'/>
+                <input class='footer-newsletter-input' name='email' placeholder='Enter your email address...' required='required' type='email'/>
+                <button class='footer-newsletter-btn' type='submit'>Subscribe &#8594;</button>
+              </form>
+              <div class='footer-newsletter-note'>
+                <svg style='width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.5' viewBox='0 0 24 24'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>
+                No spam. Unsubscribe anytime.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+    <div class='container'>
+      <div class='footer-bottom'>
+        <span class='footer-copyright'>&#169; 2026 Vicky Tech Journal. All rights reserved.</span>
+        <div class='footer-bottom-links'>
+          <a class='footer-bottom-link' href='/p/privacy-policy.html'>Privacy Policy</a>
+          <span>&#8226;</span>
+          <a class='footer-bottom-link' href='/p/disclaimer.html'>Disclaimer</a>
+          <span>&#8226;</span>
+          <a class='footer-bottom-link' href='/p/contact-us.html'>Contact</a>
+        </div>
+        <b:section class='footer-attr-area' id='footer_section' name='Footer Attribution' showaddelement='false'>
+          <b:widget id='Attribution1' locked='true' title='' type='Attribution' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='copyright'/>
+            </b:widget-settings>
+            <b:includable id='main' var='this'>
+  <div class='widget-content'>
+    <div class='blogger'>
+      <a expr:href='data:bloggerUrl' rel='nofollow'>
+        <b:include name='flatBloggerIcon'/>
+        <b:message name='messages.poweredByBlogger'/>
+      </a>
+    </div>
 
-      <!-- FOOTER DIVIDER & BOTTOM BAR -->
-      <div class='vtj-footer-bottom'>
-        <div class='vtj-footer-copyright'>
-          &#169; 2026 Vicky Tech Journal. All Rights Reserved.
-        </div>
-        <div class='vtj-footer-center-tag'>
-          <svg fill='none' height='14' stroke='#EC4899' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/></svg>
-          <span>Made with passion for learners &amp; builders</span>
-        </div>
-        <div class='vtj-footer-back-to-top'>
-          <button aria-label='Back to top' class='vtj-btt-btn' id='vtj-btt-btn' type='button'>
-            <svg class='vtj-btt-sun' fill='none' height='15' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='15'><circle cx='12' cy='12' r='5'/><line x1='12' x2='12' y1='1' y2='3'/><line x1='12' x2='12' y1='21' y2='23'/><line x1='4.22' x2='5.64' y1='4.22' y2='5.64'/><line x1='18.36' x2='19.78' y1='18.36' y2='19.78'/><line x1='1' x2='3' y1='12' y2='12'/><line x1='21' x2='23' y1='12' y2='12'/><line x1='4.22' x2='5.64' y1='19.78' y2='18.36'/><line x1='18.36' x2='19.78' y1='5.64' y2='4.22'/></svg>
-            <span>Back to Top</span>
-            <span class='vtj-btt-circle'>
-              <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' viewBox='0 0 24 24' width='14'><line x1='12' x2='12' y1='19' y2='5'/><polyline points='5 12 12 5 19 12'/></svg>
-            </span>
-          </button>
-        </div>
+    <b:if cond='data:imageAuthor'>
+      <div class='image-attribution'>
+        <b:if cond='data:imageAuthor.url'>
+          <b:message name='messages.templateImagesByLink'>
+            <b:param expr:value='data:imageAuthor.url'/>
+            <b:param expr:value='data:imageAuthor.name'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.templateImagesBy'>
+            <b:param expr:value='data:imageAuthor.name'/>
+          </b:message>
+        </b:if>
+      </div>
+    </b:if>
 
-        <!-- Hidden Blogger Attribution Section to preserve widget schema -->
-        <div style='display:none !important;'>
-          <b:section class='footer-attr-area' id='footer_section' name='Footer Attribution' showaddelement='false'>
-            <b:widget id='Attribution1' locked='true' title='' type='Attribution' visible='true'>
-              <b:widget-settings>
-                <b:widget-setting name='copyright'/>
-              </b:widget-settings>
-              <b:includable id='main' var='this'>
-                <div class='widget-content'>
-                  <div class='blogger'>
-                    <a expr:href='data:bloggerUrl' rel='nofollow'>
-                      <b:include name='flatBloggerIcon'/>
-                      <b:message name='messages.poweredByBlogger'/>
-                    </a>
-                  </div>
-                </div>
-              </b:includable>
-            </b:widget>
-          </b:section>
-        </div>
+    <b:if cond='data:copyright != &quot;&quot;'>
+      <div class='copyright'><data:copyright/></div>
+    </b:if>
+  </div>
+</b:includable>
+          </b:widget>
+        </b:section>
       </div>
     </div>
   </footer>
@@ -10462,14 +9725,6 @@
       } else {
         initCodeBlocks();
       }
-    }
-    /* ---- Back to Top Smooth Scroll ---- */
-    var bttBtn = document.getElementById('vtj-btt-btn');
-    if (bttBtn) {
-      bttBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
     }
   })();
   //]]></script>
