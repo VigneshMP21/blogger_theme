@@ -4060,82 +4060,6 @@
     background: var(--primary-hover);
   }
 
-  /* Articles Pagination */
-  .vtj-articles-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2.5rem 0 1.5rem;
-    width: 100%;
-  }
-  .vtj-articles-pagination-inner {
-    display: inline-flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px;
-    padding: 6px 10px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-  }
-  .vtj-page-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 38px;
-    height: 38px;
-    padding: 0 12px;
-    border-radius: 999px;
-    border: 1px solid transparent;
-    background: transparent;
-    color: var(--text-secondary);
-    font-family: var(--font-sans);
-    font-size: 0.88rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    user-select: none;
-    text-decoration: none;
-  }
-  .vtj-page-btn:hover:not(.disabled):not(.active) {
-    background: rgba(37, 99, 235, 0.08);
-    color: var(--primary);
-    border-color: rgba(37, 99, 235, 0.2);
-  }
-  .vtj-page-btn.active {
-    background: var(--primary);
-    color: #FFFFFF;
-    font-weight: 700;
-    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.35);
-    cursor: default;
-  }
-  .vtj-page-btn.disabled {
-    opacity: 0.38;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
-  .vtj-page-prev, .vtj-page-next {
-    padding: 0 16px;
-    font-weight: 600;
-  }
-  .vtj-page-next {
-    background: rgba(37, 99, 235, 0.06);
-    color: var(--primary);
-  }
-  .vtj-page-dots {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 38px;
-    color: var(--text-muted);
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-  }
-
   /* Dark Theme Overrides for Articles Page */
   body.dark-theme .vtj-articles-hero {
     background: radial-gradient(circle at 50% -20%, rgba(37,99,235,0.18), transparent 70%), #131B2E;
@@ -4184,31 +4108,6 @@
   body.dark-theme .vtj-article-card {
     background: #131B2E;
     border-color: #1E293B;
-  }
-  body.dark-theme .vtj-articles-pagination-inner {
-    background: #131B2E;
-    border-color: #1E293B;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  }
-  body.dark-theme .vtj-page-btn {
-    color: #94A3B8;
-  }
-  body.dark-theme .vtj-page-btn:hover:not(.disabled):not(.active) {
-    background: rgba(37, 99, 235, 0.2);
-    color: #60A5FA;
-    border-color: rgba(96, 165, 250, 0.3);
-  }
-  body.dark-theme .vtj-page-btn.active {
-    background: #2563EB;
-    color: #FFFFFF;
-    box-shadow: 0 2px 12px rgba(37, 99, 235, 0.5);
-  }
-  body.dark-theme .vtj-page-next {
-    background: rgba(37, 99, 235, 0.15);
-    color: #60A5FA;
-  }
-  body.dark-theme .vtj-page-dots {
-    color: #64748B;
   }
   body.dark-theme .vtj-skel-thumb,
   body.dark-theme .vtj-skel-line {
@@ -4386,30 +4285,6 @@
     }
     .vtj-spotlight-body {
       padding: 1.25rem !important;
-    }
-    .vtj-articles-pagination {
-      margin: 5px 0 5px !important;
-      padding: 0 2px !important;
-    }
-    .vtj-articles-pagination-inner {
-      gap: 3px !important;
-      padding: 3px 4px !important;
-      max-width: 100% !important;
-    }
-    .vtj-page-btn {
-      min-width: 28px !important;
-      height: 32px !important;
-      padding: 0 6px !important;
-      font-size: 0.76rem !important;
-    }
-    .vtj-page-prev, .vtj-page-next {
-      padding: 0 8px !important;
-      font-size: 0.74rem !important;
-    }
-    .vtj-page-dots {
-      width: 14px !important;
-      height: 32px !important;
-      font-size: 0.72rem !important;
     }
   }
 
@@ -9551,10 +9426,6 @@ html.dark .vtj-sidebar-nl-input {
               <p class='vtj-articles-empty-desc'>We couldn&#39;t find any articles matching your search criteria. Try different keywords or reset your filters.</p>
               <button class='vtj-articles-empty-btn' id='vtj-articles-empty-reset-btn' type='button'>Reset All Filters</button>
             </div>
-
-            <!-- Articles Pagination -->
-            <nav aria-label='Articles Pagination' class='vtj-articles-pagination' id='vtj-articles-pagination' style='display:none'>
-            </nav>
           </div>
 
           <!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;
@@ -11995,8 +11866,6 @@ html.dark .vtj-sidebar-nl-input {
       var currentSort = 'newest';
       var currentSearch = '';
       var allArticlesList = [];
-      var currentPage = 1;
-      var PAGE_SIZE = 10;
 
       function getPrimaryCat(categories) {
         if (categories && categories.length > 0) {
@@ -12027,81 +11896,6 @@ html.dark .vtj-sidebar-nl-input {
         return cats.indexOf(filter.toLowerCase()) !== -1;
       }
 
-      function renderPagination(totalPages, page) {
-        var pagEl = document.getElementById('vtj-articles-pagination');
-        if (!pagEl) return;
-
-        if (totalPages <= 1) {
-          pagEl.style.display = 'none';
-          pagEl.innerHTML = '';
-          return;
-        }
-
-        pagEl.style.display = 'flex';
-
-        var html = '<div class="vtj-articles-pagination-inner">';
-
-        // Prev Button
-        if (page > 1) {
-          html += '<button type="button" class="vtj-page-btn vtj-page-prev" data-page="' + (page - 1) + '" aria-label="Previous Page">&laquo; Prev</button>';
-        } else {
-          html += '<button type="button" class="vtj-page-btn vtj-page-prev disabled" disabled aria-label="Previous Page">&laquo; Prev</button>';
-        }
-
-        // Page Numbers
-        var pages = [];
-        if (totalPages <= 7) {
-          for (var p = 1; p <= totalPages; p++) pages.push(p);
-        } else {
-          pages.push(1);
-          if (page > 3) pages.push('...');
-          var start = Math.max(2, page - 1);
-          var end = Math.min(totalPages - 1, page + 1);
-          for (var p = start; p <= end; p++) {
-            if (pages.indexOf(p) === -1) pages.push(p);
-          }
-          if (page < totalPages - 2) pages.push('...');
-          if (pages.indexOf(totalPages) === -1) pages.push(totalPages);
-        }
-
-        for (var i = 0; i < pages.length; i++) {
-          var item = pages[i];
-          if (item === '...') {
-            html += '<span class="vtj-page-dots">&hellip;</span>';
-          } else if (item === page) {
-            html += '<button type="button" class="vtj-page-btn vtj-page-num active" data-page="' + item + '" aria-current="page">' + item + '</button>';
-          } else {
-            html += '<button type="button" class="vtj-page-btn vtj-page-num" data-page="' + item + '">' + item + '</button>';
-          }
-        }
-
-        // Next Button
-        if (page < totalPages) {
-          html += '<button type="button" class="vtj-page-btn vtj-page-next" data-page="' + (page + 1) + '" aria-label="Next Page">Next Page &raquo;</button>';
-        } else {
-          html += '<button type="button" class="vtj-page-btn vtj-page-next disabled" disabled aria-label="Next Page">Next Page &raquo;</button>';
-        }
-
-        html += '</div>';
-        pagEl.innerHTML = html;
-
-        // Attach pagination click handlers
-        var btns = pagEl.querySelectorAll('.vtj-page-btn:not(.disabled):not(.active)');
-        for (var b = 0; b < btns.length; b++) {
-          btns[b].addEventListener('click', function() {
-            var target = parseInt(this.getAttribute('data-page'), 10);
-            if (!isNaN(target) && target !== currentPage) {
-              currentPage = target;
-              renderArticles();
-              var anchor = document.getElementById('vtj-articles-toolbar') || document.getElementById('articles-page-grid');
-              if (anchor) {
-                anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }
-          });
-        }
-      }
-
       function renderArticles() {
         var grid = document.getElementById('articles-page-grid');
         var spotlight = document.getElementById('vtj-articles-spotlight');
@@ -12111,7 +11905,6 @@ html.dark .vtj-sidebar-nl-input {
         var resetBtn = document.getElementById('vtj-articles-reset-link');
         var statTotal = document.getElementById('vtj-stat-total-articles');
         var pillCountAll = document.getElementById('vtj-pill-count-all');
-        var pagEl = document.getElementById('vtj-articles-pagination');
 
         if (statTotal) statTotal.textContent = allArticlesList.length;
         if (pillCountAll) pillCountAll.textContent = allArticlesList.length;
@@ -12136,63 +11929,41 @@ html.dark .vtj-sidebar-nl-input {
           return 0;
         });
 
+        if (countEl) countEl.textContent = filtered.length;
         if (resetBtn) resetBtn.style.display = (currentFilter !== 'all' || currentSearch) ? 'inline-flex' : 'none';
 
         if (filtered.length === 0) {
-          if (countEl) countEl.textContent = '0';
           if (spotlight) spotlight.style.display = 'none';
           if (grid) grid.innerHTML = '';
-          if (pagEl) pagEl.style.display = 'none';
           if (empty) empty.style.display = 'block';
           return;
         }
         if (empty) empty.style.display = 'none';
 
-        var totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-        if (currentPage > totalPages) currentPage = totalPages;
-        if (currentPage < 1) currentPage = 1;
-
-        var displayList = [];
-        var hasSpotlight = (currentFilter === 'all' && !currentSearch && filtered.length > 0);
-
-        if (hasSpotlight) {
-          if (currentPage === 1) {
-            var spot = filtered[0];
-            if (spotlight) {
-              spotlight.style.display = 'grid';
-              var sImg = document.getElementById('vtj-spotlight-img');
-              if (sImg) { sImg.src = spot.img; sImg.alt = spot.title; }
-              var sCat = document.getElementById('vtj-spotlight-cat');
-              if (sCat) sCat.textContent = spot.primaryCat;
-              var sDate = document.getElementById('vtj-spotlight-date');
-              if (sDate) sDate.textContent = spot.date;
-              var sRead = document.getElementById('vtj-spotlight-readtime');
-              if (sRead) sRead.textContent = spot.readTime;
-              var sLink = document.getElementById('vtj-spotlight-title-link');
-              if (sLink) { sLink.textContent = spot.title; sLink.href = spot.url; }
-              var sDesc = document.getElementById('vtj-spotlight-desc');
-              if (sDesc) sDesc.textContent = spot.summary;
-              var sCta = document.getElementById('vtj-spotlight-cta');
-              if (sCta) sCta.href = spot.url;
-            }
-            displayList = filtered.slice(1, PAGE_SIZE);
-          } else {
-            if (spotlight) spotlight.style.display = 'none';
-            var startIdx = (currentPage - 1) * PAGE_SIZE;
-            var endIdx = startIdx + PAGE_SIZE;
-            displayList = filtered.slice(startIdx, endIdx);
+        var displayList = filtered;
+        // Spotlight only when browsing 'all' with no search query
+        if (currentFilter === 'all' && !currentSearch && filtered.length > 0) {
+          var spot = filtered[0];
+          if (spotlight) {
+            spotlight.style.display = 'grid';
+            var sImg = document.getElementById('vtj-spotlight-img');
+            if (sImg) { sImg.src = spot.img; sImg.alt = spot.title; }
+            var sCat = document.getElementById('vtj-spotlight-cat');
+            if (sCat) sCat.textContent = spot.primaryCat;
+            var sDate = document.getElementById('vtj-spotlight-date');
+            if (sDate) sDate.textContent = spot.date;
+            var sRead = document.getElementById('vtj-spotlight-readtime');
+            if (sRead) sRead.textContent = spot.readTime;
+            var sLink = document.getElementById('vtj-spotlight-title-link');
+            if (sLink) { sLink.textContent = spot.title; sLink.href = spot.url; }
+            var sDesc = document.getElementById('vtj-spotlight-desc');
+            if (sDesc) sDesc.textContent = spot.summary;
+            var sCta = document.getElementById('vtj-spotlight-cta');
+            if (sCta) sCta.href = spot.url;
           }
+          displayList = filtered.slice(1);
         } else {
           if (spotlight) spotlight.style.display = 'none';
-          var startIdx = (currentPage - 1) * PAGE_SIZE;
-          var endIdx = startIdx + PAGE_SIZE;
-          displayList = filtered.slice(startIdx, endIdx);
-        }
-
-        if (countEl) {
-          var fromNum = (currentPage - 1) * PAGE_SIZE + 1;
-          var toNum = Math.min(currentPage * PAGE_SIZE, filtered.length);
-          countEl.textContent = (fromNum === toNum) ? fromNum : (fromNum + '–' + toNum);
         }
 
         var html = '';
@@ -12231,8 +12002,6 @@ html.dark .vtj-sidebar-nl-input {
           '</article>';
         }
         if (grid) grid.innerHTML = html;
-
-        renderPagination(totalPages, currentPage);
       }
 
       function setupEvents() {
@@ -12242,7 +12011,6 @@ html.dark .vtj-sidebar-nl-input {
             for (var j = 0; j < pills.length; j++) pills[j].classList.remove('active');
             this.classList.add('active');
             currentFilter = this.getAttribute('data-category');
-            currentPage = 1;
             renderArticles();
           });
         }
@@ -12253,7 +12021,6 @@ html.dark .vtj-sidebar-nl-input {
           searchIn.addEventListener('input', function() {
             currentSearch = searchIn.value.trim();
             if (searchClr) searchClr.style.display = currentSearch ? 'flex' : 'none';
-            currentPage = 1;
             renderArticles();
           });
         }
@@ -12262,7 +12029,6 @@ html.dark .vtj-sidebar-nl-input {
             if (searchIn) searchIn.value = '';
             currentSearch = '';
             searchClr.style.display = 'none';
-            currentPage = 1;
             renderArticles();
           });
         }
@@ -12271,7 +12037,6 @@ html.dark .vtj-sidebar-nl-input {
         if (sortSel) {
           sortSel.addEventListener('change', function(e) {
             currentSort = e.target.value;
-            currentPage = 1;
             renderArticles();
           });
         }
@@ -12279,7 +12044,6 @@ html.dark .vtj-sidebar-nl-input {
         function resetFilters() {
           currentFilter = 'all';
           currentSearch = '';
-          currentPage = 1;
           if (searchIn) searchIn.value = '';
           if (searchClr) searchClr.style.display = 'none';
           for (var p = 0; p < pills.length; p++) {
