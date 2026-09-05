@@ -38,9 +38,7 @@
     <meta content='Vicky Tech Journal | AI Tools, Software Guides &amp; Coding' property='og:title'/>
     <meta content='Discover tested AI tools, coding tutorials, student technology stacks, and productivity software guides. Upgrade your digital workflow with Vicky Tech Journal.' property='og:description'/>
     <meta content='website' property='og:type'/>
-    <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' rel='icon' type='image/png'/>
-  <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' rel='apple-touch-icon'/>
-  <meta content='summary_large_image' name='twitter:card'/>
+    <meta content='summary_large_image' name='twitter:card'/>
     <meta content='Vicky Tech Journal | AI Tools, Software Guides &amp; Coding' name='twitter:title'/>
     <meta content='Discover tested AI tools, coding tutorials, student technology stacks, and productivity software guides.' name='twitter:description'/>
   </b:if>
@@ -92,7 +90,7 @@
               &quot;url&quot;: &quot;https://vickytechjournal.blogspot.com/&quot;,
               &quot;logo&quot;: {
                 &quot;@type&quot;: &quot;ImageObject&quot;,
-                &quot;url&quot;: &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png&quot;
+                &quot;url&quot;: &quot;https://vickytechjournal.blogspot.com/favicon.ico&quot;
               }
             }<b:if cond='data:p.featuredImage'>,
             &quot;image&quot;: {
@@ -169,7 +167,7 @@
           "@id": "https://vickytechjournal.blogspot.com/#organization",
           "name": "Vicky Tech Journal",
           "url": "https://vickytechjournal.blogspot.com/",
-          "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png",
+          "logo": "https://vickytechjournal.blogspot.com/favicon.ico",
           "sameAs": [
             "https://www.youtube.com/@VickyTechJournal",
             "https://www.instagram.com/vicky_tech_journal/",
@@ -7779,7 +7777,7 @@ html.dark .vtj-sidebar-nl-input {
         <b:section class='header-logo-area' id='header' name='Header' showaddelement='false'>
           <b:widget id='Header1' locked='true' title='Vicky Tech Journal (Header)' type='Header' version='2' visible='true'>
             <b:widget-settings>
-              <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png</b:widget-setting>
+              <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEiBnPCf08qvn0WlvQVOfr_8pM-R-BF6HuCc9AuoZUXqZFaGZmz9FmlDMz46qSAW5l1wBE30ZGYHlKpEVbNflmoa-k3s3Y1AxMGrMtAmSxbV1JgnwPJp9dvGw6W1vvTfQe1wh6ipnt-cskx1CL60s2do374-vkH4uegnx9d3Xn8ore_Zw7HFwrnNMLF0q_R0=s1254</b:widget-setting>
               <b:widget-setting name='displayHeight'>1254</b:widget-setting>
               <b:widget-setting name='sectionWidth'>1615</b:widget-setting>
               <b:widget-setting name='useImage'>true</b:widget-setting>
@@ -7789,7 +7787,7 @@ html.dark .vtj-sidebar-nl-input {
             </b:widget-settings>
             <b:includable id='main'>
               <a class='nav-logo' expr:href='data:blog.homepageUrl' title='Vicky Tech Journal'>
-                <img alt='Vicky Tech Journal' class='nav-logo-img' id='header-logo-img' onerror='this.onerror=null;this.src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png";' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png'/>
+                <img class='nav-logo-img' expr:alt='data:title' expr:src='data:image ? data:image : &quot;/favicon.ico&quot;' id='header-logo-img' onerror='this.onerror=null;this.src=&quot;https://blogger.googleusercontent.com/img/a/AVvXsEiBnPCf08qvn0WlvQVOfr_8pM-R-BF6HuCc9AuoZUXqZFaGZmz9FmlDMz46qSAW5l1wBE30ZGYHlKpEVbNflmoa-k3s3Y1AxMGrMtAmSxbV1JgnwPJp9dvGw6W1vvTfQe1wh6ipnt-cskx1CL60s2do374-vkH4uegnx9d3Xn8ore_Zw7HFwrnNMLF0q_R0=s1254&quot;'/>
                 <div class='nav-brand-wrap'>
                   <span class='nav-brand-title'><span class='brand-dark'>VICKY</span> <span class='brand-blue'>TECH JOURNAL</span></span>
                   <span class='nav-brand-tagline'>LEARN &#8226; EXPLORE &#8226; GROW</span>
@@ -7900,10 +7898,8 @@ html.dark .vtj-sidebar-nl-input {
   <div class='drawer-overlay' id='drawer-overlay'/>
   <div class='mobile-drawer' id='mobile-drawer'>
     <div class='drawer-header'>
-      <div class='drawer-brand-wrap' style='display:flex;align-items:center;gap:10px;'>
-        <img alt='Vicky Tech Journal' class='drawer-logo-img' id='drawer-logo-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' style='display:block;width:38px;height:38px;border-radius:10px;object-fit:cover;'/>
-        <span class='drawer-logo' id='drawer-logo-text'>Vicky Tech <span class='logo-accent'>Journal</span></span>
-      </div>
+      <span class='drawer-logo' id='drawer-logo-text'>Vicky Tech <span class='logo-accent'>Journal</span></span>
+      <img alt='Logo' class='drawer-logo-img' id='drawer-logo-img' style='display:none'/>
       <button aria-label='Close Menu' class='drawer-close' id='drawer-close'>&#215;</button>
     </div>
     <nav class='drawer-nav'>
@@ -7955,7 +7951,7 @@ html.dark .vtj-sidebar-nl-input {
                 <h1 class='vtj-hero-title-main'>10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide</h1>
                 <p class='vtj-hero-desc'>Explore top in-demand IT entry-level career paths, required skills, high-growth roles, and actionable roadmap strategies for freshers in 2026.</p>
                 <div class='vtj-hero-meta'>
-                  <img alt='Vicky TJ' class='vtj-hero-author-avatar' height='20' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' width='20'/>
+                  <img alt='Vicky TJ' class='vtj-hero-author-avatar' height='20' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8iBfQK5zuZyscpN2ac2NHMViJyUm2OwvIAHXGWDA__0s6eDyjMwiKr1O9WVlMGPFJuwBVyTG2p43OXQdVpz7BFXx4ZPuCZjaAbO4F-td5M6X-nxskzaNBuB0liQcoilPHIuLdC224vERG7Vv8SCIVWzobFo6b-jHhSLrALShxOhoB_Ps/s120-c/vickytechjournal.png' width='20'/>
                   <span class='vtj-hero-author'>Vicky TJ</span>
                   <span class='vtj-hero-dot'>&#8226;</span>
                   <span class='vtj-hero-date'>Sep 4, 2026</span>
@@ -8991,7 +8987,7 @@ html.dark .vtj-sidebar-nl-input {
               </h3>
               <p class='vtj-mustread-featured-desc'>A complete step-by-step guide to building your own AI agent, even if you&apos;re a beginner.</p>
               <div class='vtj-mustread-author-row'>
-                <img alt='Vicky TJ' class='vtj-mustread-avatar' height='26' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' width='26'/>
+                <img alt='Vicky TJ' class='vtj-mustread-avatar' height='26' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8iBfQK5zuZyscpN2ac2NHMViJyUm2OwvIAHXGWDA__0s6eDyjMwiKr1O9WVlMGPFJuwBVyTG2p43OXQdVpz7BFXx4ZPuCZjaAbO4F-td5M6X-nxskzaNBuB0liQcoilPHIuLdC224vERG7Vv8SCIVWzobFo6b-jHhSLrALShxOhoB_Ps/s120-c/vickytechjournal.png' width='26'/>
                 <span class='vtj-mustread-author-name'>Vicky TJ</span>
                 <span>&#8226;</span>
                 <span>May 25, 2026</span>
@@ -9256,7 +9252,7 @@ html.dark .vtj-sidebar-nl-input {
                 <p class='vtj-spotlight-desc' id='vtj-spotlight-desc'>Summary snippet...</p>
                 <div class='vtj-spotlight-footer'>
                   <div class='vtj-spotlight-author'>
-                    <img alt='Vicky TJ' class='vtj-spotlight-author-img' id='vtj-spotlight-author-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png'/>
+                    <img alt='Vicky TJ' class='vtj-spotlight-author-img' id='vtj-spotlight-author-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8iBfQK5zuZyscpN2ac2NHMViJyUm2OwvIAHXGWDA__0s6eDyjMwiKr1O9WVlMGPFJuwBVyTG2p43OXQdVpz7BFXx4ZPuCZjaAbO4F-td5M6X-nxskzaNBuB0liQcoilPHIuLdC224vERG7Vv8SCIVWzobFo6b-jHhSLrALShxOhoB_Ps/s120-c/vickytechjournal.png'/>
                     <span class='vtj-spotlight-author-name'>Vicky TJ</span>
                   </div>
                   <a class='vtj-spotlight-cta' href='#' id='vtj-spotlight-cta'>
@@ -9470,7 +9466,7 @@ html.dark .vtj-sidebar-nl-input {
                               <b:if cond='data:post.author.authorPhoto.url'>
                                 <img expr:alt='data:post.author.name' expr:src='data:post.author.authorPhoto.url'/>
                               <b:else/>
-                                <img alt='Vicky TJ' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' style='width:100%;height:100%;object-fit:cover;border-radius:50%;'/>
+                                <span>VTJ</span>
                               </b:if>
                             </div>
                             <div class='vtj-post-author-details'>
@@ -10482,8 +10478,8 @@ html.dark .vtj-sidebar-nl-input {
         <!-- COLUMN 1: Brand -->
         <div class='vtj-footer-col vtj-col-brand'>
           <div class='vtj-footer-brand-header'>
-            <div class='vtj-footer-logo-badge' style='overflow:hidden;border-radius:10px;padding:0;'>
-              <img alt='Vicky Tech Journal' class='vtj-footer-logo-img' id='footer-logo-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png' style='width:100%;height:100%;object-fit:cover;display:block;'/>
+            <div class='vtj-footer-logo-badge'>
+              <span class='vtj-logo-v'>V</span><span class='vtj-logo-j'>J</span>
             </div>
             <div class='vtj-footer-brand-title'>
               <span class='vtj-footer-brand-name'>VICKY <span class='vtj-footer-brand-accent'>TECH JOURNAL</span></span>
@@ -10982,20 +10978,26 @@ html.dark .vtj-sidebar-nl-input {
     }, { passive: true });
 
     /* ---- Sync Logo Images ---- */
-    var VTJ_OFFICIAL_LOGO = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioLb_ziz4IMuSUqAHTeVKGz_7Y3mSyZ0f1DwPWHDx3IYh5DmlB40THQF_5axXHr9lBAheAjOmbnYO1e9aXHaa1a2m6vx5RphVE9w-ulb2StJQIh7pYBEhk9CIe2gbbt6C5hKEvY33hFoX4PE8x-zeZXX4z6ceTcr_c9B6haiAU9yjUMdY/s1600/favicon.png';
-
+    function extractUrl(str) {
+      var m = str.match(/url\(["']?([^"')]+)["']?\)/);
+      return m ? m[1] : null;
+    }
     function setLogoSrc(src) {
-      var finalSrc = src || VTJ_OFFICIAL_LOGO;
+      if (!src) return;
       var h = document.getElementById('header-logo-img');
       var d = document.getElementById('drawer-logo-img');
       var f = document.getElementById('footer-logo-img');
-      if (h) { h.src = finalSrc; h.style.display = ''; }
-      if (d) { d.src = finalSrc; d.style.display = 'block'; }
-      if (f) { f.src = finalSrc; f.style.display = 'block'; }
+      var dt = document.getElementById('drawer-logo-text');
+      var ft = document.getElementById('footer-logo-text');
+      if (h) { h.setAttribute('src', src); h.style.display = ''; }
+      if (d) { d.src = src; d.style.display = 'block'; }
+      if (f) { f.src = src; f.style.display = 'block'; }
+      if (dt) dt.style.display = 'none';
+      if (ft) ft.style.display = 'block';
       var ab = document.getElementById('about-sidebar-logo');
       if (ab && !ab.querySelector('img')) {
         var aimg = document.createElement('img');
-        aimg.src = finalSrc;
+        aimg.src = src;
         aimg.alt = 'Vicky Tech Journal';
         aimg.width = 120;
         aimg.height = 120;
@@ -11005,7 +11007,7 @@ html.dark .vtj-sidebar-nl-input {
       var ytAv = document.getElementById('social-avatar-yt');
       if (ytAv && !ytAv.querySelector('img')) {
         var ytImg = document.createElement('img');
-        ytImg.src = finalSrc;
+        ytImg.src = src;
         ytImg.alt = 'Vicky Tech Journal';
         ytImg.width = 72;
         ytImg.height = 72;
@@ -11015,18 +11017,32 @@ html.dark .vtj-sidebar-nl-input {
       var igAv = document.getElementById('social-avatar-ig');
       if (igAv && !igAv.querySelector('img')) {
         var igImg = document.createElement('img');
-        igImg.src = finalSrc;
+        igImg.src = src;
         igImg.alt = 'Vicky Tech Journal';
         igImg.width = 72;
         igImg.height = 72;
         igImg.loading = 'lazy';
         igAv.appendChild(igImg);
       }
+
     }
     function resolveLogo() {
       var h = document.getElementById('header-logo-img');
-      var src = (h && h.getAttribute('src')) || VTJ_OFFICIAL_LOGO;
-      setLogoSrc(src);
+      if (!h) return;
+      var src = h.getAttribute('src');
+      if (!src || src.indexOf('/') < 0) {
+        var els = document.querySelectorAll('.header-logo-area, .header-widget');
+        for (var i = 0; i < els.length; i++) {
+          var bg = window.getComputedStyle(els[i]).backgroundImage;
+          if (bg && bg !== 'none') {
+            var url = extractUrl(bg);
+            if (url) { setLogoSrc(url); return; }
+          }
+        }
+        h.style.display = 'none';
+      } else {
+        setLogoSrc(src);
+      }
     }
     resolveLogo();
     setTimeout(resolveLogo, 500);
