@@ -8159,7 +8159,28 @@
       </div>
     </div>
 
-    <!-- Placeholder: New feature section to be added here -->
+
+    <!-- NEWSLETTER FULL WIDTH -->
+    <div class='container'>
+      <div class='newsletter-fullwidth fade-in-ready'>
+        <div class='newsletter-inner'>
+          <div class='newsletter-text-col'>
+            <span class='newsletter-eyebrow'>📬 Free Newsletter</span>
+            <h2 class='newsletter-heading'>Stay Updated with<br/>Latest Tech Guides</h2>
+            <p class='newsletter-subtext'>Join thousands of readers who get the best AI tools, app reviews, student tech guides, and software tutorials delivered directly to their inbox.</p>
+          </div>
+          <div class='newsletter-form-col'>
+            <form action='https://feedburner.google.com/fb/a/mailverify' class='newsletter-form-group' method='post' onsubmit='window.open(&quot;https://feedburner.google.com/fb/a/mailverify?uri=VickyTechJournal&quot;,&quot;popupwindow&quot;,&quot;scrollbars=yes,width=550,height=520&quot;);return true;' target='popupwindow'>
+              <input name='uri' type='hidden' value='VickyTechJournal'/>
+              <input name='loc' type='hidden' value='en_US'/>
+              <input class='newsletter-form-input' name='email' placeholder='Enter your email address...' required='required' type='email'/>
+              <button class='newsletter-form-btn' type='submit'>Subscribe Now &#8212; It&#39;s Free</button>
+              <p class='newsletter-disclaimer'>No spam. Unsubscribe any time.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </b:if>
 
   <!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;
