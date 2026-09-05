@@ -4924,7 +4924,7 @@
   /* ============================================================
      14. MAGAZINE CATEGORY BLOCKS
   ============================================================ */
-  .magazine-blocks-section, .magazine-block, .mag-skel { display: none !important; }
+  .magazine-blocks-section { padding: 1rem 0 3rem; }
   .magazine-block { margin-bottom: 3rem; }
   .mag-inner {
     display: grid;
@@ -10284,6 +10284,97 @@ html.dark .vtj-sidebar-nl-input {
        HOMEPAGE: MAGAZINE BLOCKS + NEWSLETTER
   &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
   <b:if cond='data:view.isHomepage'>
+    <!-- MAGAZINE CATEGORY BLOCKS -->
+    <div class='magazine-blocks-section'>
+      <div class='container'>
+
+        <!-- AI Tools Block -->
+        <div class='magazine-block fade-in-ready' id='mag-block-ai-tools'>
+          <div class='section-head'>
+            <div class='section-head-left'>
+              <h2 class='section-title'>🤖 AI Tools</h2>
+            </div>
+            <a class='section-view-all' href='/search/label/AI%20Tools'>View AI Tools <svg viewBox='0 0 24 24'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg></a>
+          </div>
+          <div class='mag-inner' id='mag-ai-tools'>
+            <div class='mag-skel'><div class='mag-skel-img skel'/><div class='mag-skel-body'><div class='mag-skel-line skel'/><div class='mag-skel-line skel' style='width:80%'/><div class='mag-skel-line skel' style='width:65%'/></div></div>
+            <div class='mag-small-group'><div class='mag-skel' style='height:100px'><div style='padding:1rem'><div class='mag-skel-line skel'/></div></div><div class='mag-skel' style='height:100px'><div style='padding:1rem'><div class='mag-skel-line skel'/></div></div><div class='mag-skel' style='height:100px'><div style='padding:1rem'><div class='mag-skel-line skel'/></div></div></div>
+          </div>
+        </div>
+
+        <!-- Useful Websites Block -->
+        <div class='magazine-block fade-in-ready' id='mag-block-websites'>
+          <div class='section-head'>
+            <div class='section-head-left'>
+              <h2 class='section-title'>🌐 Useful Websites</h2>
+            </div>
+            <a class='section-view-all' href='/search/label/Useful%20Websites'>View Useful Websites <svg viewBox='0 0 24 24'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg></a>
+          </div>
+          <div class='mag-inner' id='mag-useful-websites'>
+            <div class='mag-skel'><div class='mag-skel-img skel'/><div class='mag-skel-body'><div class='mag-skel-line skel'/><div class='mag-skel-line skel' style='width:75%'/></div></div>
+            <div class='mag-small-group'><div class='mag-skel' style='height:100px'/><div class='mag-skel' style='height:100px'/><div class='mag-skel' style='height:100px'/></div>
+          </div>
+        </div>
+
+        <!-- Apps Block -->
+        <div class='magazine-block fade-in-ready' id='mag-block-apps'>
+          <div class='section-head'>
+            <div class='section-head-left'>
+              <h2 class='section-title'>📱 Apps</h2>
+            </div>
+            <a class='section-view-all' href='/search/label/Apps'>View App Guides <svg viewBox='0 0 24 24'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg></a>
+          </div>
+          <div class='mag-inner' id='mag-apps'>
+            <div class='mag-skel'><div class='mag-skel-img skel'/><div class='mag-skel-body'><div class='mag-skel-line skel'/><div class='mag-skel-line skel' style='width:70%'/></div></div>
+            <div class='mag-small-group'><div class='mag-skel' style='height:100px'/><div class='mag-skel' style='height:100px'/><div class='mag-skel' style='height:100px'/></div>
+          </div>
+        </div>
+
+        <!-- Software Block -->
+        <div class='magazine-block fade-in-ready' id='mag-block-software'>
+          <div class='section-head'>
+            <div class='section-head-left'>
+              <h2 class='section-title'>💻 Software</h2>
+            </div>
+            <a class='section-view-all' href='/search/label/Software'>View Software Guides <svg viewBox='0 0 24 24'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg></a>
+          </div>
+          <div class='mag-inner' id='mag-software'>
+            <div class='mag-skel'><div class='mag-skel-img skel'/><div class='mag-skel-body'><div class='mag-skel-line skel'/><div class='mag-skel-line skel' style='width:80%'/></div></div>
+            <div class='mag-small-group'><div class='mag-skel' style='height:100px'/><div class='mag-skel' style='height:100px'/><div class='mag-skel' style='height:100px'/></div>
+          </div>
+        </div>
+
+        <!-- Student Tech Block -->
+        <div class='magazine-block fade-in-ready' id='mag-block-student'>
+          <div class='section-head'>
+            <div class='section-head-left'>
+              <h2 class='section-title'>🎓 Student Tech</h2>
+            </div>
+            <a class='section-view-all' href='/search/label/Student%20Tech'>View Student Tech <svg viewBox='0 0 24 24'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg></a>
+          </div>
+          <div class='mag-inner' id='mag-student-tech'>
+            <div class='mag-skel'><div class='mag-skel-img skel'/><div class='mag-skel-body'><div class='mag-skel-line skel'/><div class='mag-skel-line skel' style='width:72%'/></div></div>
+            <div class='mag-small-group'><div class='mag-skel' style='height:100px'/><div class='mag-skel' style='height:100px'/><div class='mag-skel' style='height:100px'/></div>
+          </div>
+        </div>
+
+        <!-- Productivity Block -->
+        <div class='magazine-block fade-in-ready' id='mag-block-productivity'>
+          <div class='section-head'>
+            <div class='section-head-left'>
+              <h2 class='section-title'>&#9889; Productivity</h2>
+            </div>
+            <a class='section-view-all' href='/search/label/Productivity'>View Productivity Hacks <svg viewBox='0 0 24 24'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg></a>
+          </div>
+          <div class='mag-inner' id='mag-productivity'>
+            <div class='mag-skel'><div class='mag-skel-img skel'/><div class='mag-skel-body'><div class='mag-skel-line skel'/><div class='mag-skel-line skel' style='width:78%'/></div></div>
+            <div class='mag-small-group'><div class='mag-skel' style='height:100px'/><div class='mag-skel' style='height:100px'/><div class='mag-skel' style='height:100px'/></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
 <!-- ============================================================
          NEWSLETTER + WHATSAPP CTA SECTION
     ============================================================ -->
@@ -11684,6 +11775,7 @@ html.dark .vtj-sidebar-nl-input {
 
     /* ---- Init All ---- */
     loadHeroSlider();
+    loadMagazineBlocks();
     loadLatestArticles();
     buildPagination();
 
