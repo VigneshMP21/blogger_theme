@@ -2962,21 +2962,20 @@
   }
 
   /* Center Column (2 Compact Cards) */
-  /* Center Column (3 Compact Cards Stacked) */
   .vtj-mustread-center-stack {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     min-width: 0;
   }
   .vtj-mustread-compact-card {
     background: #FFFFFF;
     border: 1px solid #E2E8F0;
     border-radius: 14px;
-    padding: 10px 14px;
+    padding: 14px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
     display: flex;
-    gap: 12px;
+    gap: 14px;
     align-items: center;
     flex: 1;
     text-decoration: none;
@@ -2997,7 +2996,7 @@
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
   }
   .vtj-mustread-compact-img-wrap {
-    width: 112px;
+    width: 42%;
     aspect-ratio: 16 / 10;
     border-radius: 8px;
     overflow: hidden;
@@ -3023,11 +3022,11 @@
   }
   .vtj-mustread-compact-title {
     font-family: var(--font-heading);
-    font-size: 0.90rem;
+    font-size: 0.98rem;
     font-weight: 700;
     color: #0F172A;
-    line-height: 1.32;
-    margin: 0 0 0.35rem;
+    line-height: 1.35;
+    margin: 0 0 0.4rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -6901,7 +6900,7 @@
             </div>
           </article>
 
-          <!-- CENTER: Three Compact Articles Stacked Vertically -->
+          <!-- CENTER: Two Compact Articles Stacked Vertically -->
           <div class='vtj-mustread-center-stack'>
             <!-- Compact 1 -->
             <article class='vtj-mustread-compact-card'>
@@ -6941,27 +6940,6 @@
                   <span>&#8226;</span>
                   <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>
                   <span>6 min read</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Compact 3 -->
-            <article class='vtj-mustread-compact-card'>
-              <a class='vtj-card-link-overlay' href='https://vickytechjournal.blogspot.com/2026/08/ai-agents-vs-ai-chatbots-difference.html'/>
-              <div class='vtj-mustread-compact-img-wrap'>
-                <img alt='AI Agents vs AI Chatbots: What&apos;s the Difference?' class='vtj-mustread-compact-img' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgeTwYiExeEb00ryNiAHbhGlZ-TJcqjD7l7TS8_xtywfE1wYD_mYADZzrvYjj3OiftZw78HnXquRJWbfe9uFC4KazdIIUSGAqe4BTZfpS-oy2G5TIkHqbyMGOlNQXYwBiAtGP8A17cRqW6dgiTv3VRGthpq3ctBO5rSFwoxl60iGhMTWnJh9BY0K-redv0W=w600-h380-c-rw' width='240'/>
-              </div>
-              <div class='vtj-mustread-compact-body'>
-                <span class='vtj-editors-badge vtj-badge-green'>Comparison</span>
-                <h3 class='vtj-mustread-compact-title'>
-                  <a href='https://vickytechjournal.blogspot.com/2026/08/ai-agents-vs-ai-chatbots-difference.html'>AI Agents vs AI Chatbots: What&apos;s the Difference?</a>
-                </h3>
-                <div class='vtj-mustread-compact-meta'>
-                  <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg>
-                  <span>May 22, 2026</span>
-                  <span>&#8226;</span>
-                  <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>
-                  <span>5 min read</span>
                 </div>
               </div>
             </article>
