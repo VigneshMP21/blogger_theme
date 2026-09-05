@@ -13228,7 +13228,7 @@ html.dark .vtj-sidebar-nl-input {
       initCodeBlocks();
     }
 
-        /* ============================================================
+    /* ============================================================
        PREMIUM CODE BLOCKS SYSTEM - SYNTAX HIGHLIGHTING & COPY
     ============================================================ */
     function initCodeBlocks() {
@@ -13337,20 +13337,17 @@ html.dark .vtj-sidebar-nl-input {
         }
 
         var kwList = 'class|public|private|protected|static|final|void|int|float|double|boolean|char|byte|short|long|new|this|super|return|if|else|switch|case|default|break|continue|for|while|do|try|catch|finally|throw|throws|import|package|instanceof|interface|extends|implements|enum|abstract|synchronized|volatile|transient|native|strictfp|assert|const|goto|def|lambda|async|await|let|var|function|yield|typeof|null|undefined|true|false|None|True|False';
-
+        
         if (l === 'sql') {
           kwList = 'SELECT|FROM|WHERE|INSERT|INTO|UPDATE|DELETE|JOIN|LEFT|RIGHT|INNER|OUTER|GROUP|BY|ORDER|HAVING|LIMIT|CREATE|TABLE|DROP|ALTER|ADD|COLUMN|PRIMARY|KEY|FOREIGN|REFERENCES|NOT|NULL|AND|OR|AS|IN|ON|SET|VALUES';
         } else if (l === 'bash' || l === 'sh') {
           kwList = 'if|then|else|elif|fi|case|esac|for|select|while|until|do|done|in|function|time|echo|exit|export|source|alias|cd|curl|bash|sudo|python|pip|npm|git';
         }
 
-        var stringPattern = '"(?:[^"\\\\]|\\\\.)*"|\'(?:[^\'\\\\]|\\\\.)*\'|`(?:[^`\\\\]|\\\\.)*`';
-        var tagPattern = (l === 'html' || l === 'xml') ? '(<\\/?[a-zA-Z0-9:-]+(?:\\s+[^>]*)?>)|' : '';
-
         var masterRegex = new RegExp(
           '(' + commentPattern + ')|' +
-          '(' + stringPattern + ')|' +
-          tagPattern +
+          '("(?:\\\\.|[^"\\\\])*"|'(?:\\\\.|[^'\\\\])*'|`(?:\\\\.|[^`\\\\])*`)|' +
+          (l === 'html' || l === 'xml' ? '(<\\/?[a-zA-Z0-9:-]+(?:\\s+[^>]*)?>)|' : '') +
           '(\\b\\d+(?:\\.\\d+)?\\b)|' +
           '(\\b(?:' + kwList + ')\\b)|' +
           '(\\b[A-Z][a-zA-Z0-9_$]*\\b)|' +
@@ -13372,13 +13369,13 @@ html.dark .vtj-sidebar-nl-input {
 
           if (match[1]) {
             result += '<span class="token comment">' + escapeHtml(text) + '</span>';
-          } else if (text.charAt(0) === '"' || text.charAt(0) === "'" || text.charAt(0) === '`') {
+          } else if (text.startsWith('"') || text.startsWith("'") || text.startsWith('`')) {
             result += '<span class="token string">' + escapeHtml(text) + '</span>';
-          } else if ((l === 'html' || l === 'xml') && text.charAt(0) === '<') {
-            var isClose = text.indexOf('</') === 0;
+          } else if ((l === 'html' || l === 'xml') && text.startsWith('<')) {
+            var isClose = text.startsWith('</');
             var openMatch = text.match(/^<\/?([a-zA-Z0-9:-]+)/);
             var tagName = openMatch ? openMatch[1] : '';
-            var rest = text.slice(openMatch ? openMatch[0].length : 1, text.lastIndexOf('>'));
+            var rest = text.slice(openMatch ? openMatch[0].length : 1, text.endsWith('>') ? -1 : undefined);
             var restHighlighted = rest.replace(/([a-zA-Z0-9:-]+)(\s*=\s*)(".*?"|'.*?'|[^\s>]+)/g, function(m, attr, eq, val) {
               return '<span class="token attr-name">' + escapeHtml(attr) + '</span>' + eq + '<span class="token attr-value">' + escapeHtml(val) + '</span>';
             });
@@ -13532,7 +13529,6 @@ html.dark .vtj-sidebar-nl-input {
     } else {
       initCodeBlocks();
     }
-
     /* ---- Mobile Footer Accordion ---- */
     var footerCols = document.querySelectorAll('.site-footer .vtj-footer-col:not(.vtj-col-brand)');
     footerCols.forEach(function (col) {
