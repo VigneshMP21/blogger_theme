@@ -1500,6 +1500,595 @@
   }
 
   /* ============================================================
+     8B. VTJ HOMEPAGE: LATEST IN TECHNOLOGY + STAY CONNECTED
+  ============================================================ */
+  .vtj-latest-tech-section {
+    background: #FAFAFB;
+    padding: 3.5rem 0 4rem;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  html.dark .vtj-latest-tech-section {
+    background: #090D16;
+    border-bottom-color: #1E293B;
+  }
+  .vtj-latest-tech-container {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+  .vtj-latest-tech-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 350px;
+    gap: 32px;
+    align-items: start;
+  }
+
+  /* Left: Feed Area */
+  .vtj-latest-tech-main {
+    min-width: 0;
+  }
+  .vtj-tech-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .vtj-tech-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex;
+    gap: 22px;
+    align-items: stretch;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+  }
+  html.dark .vtj-tech-card {
+    background: #111827;
+    border-color: #1E293B;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  .vtj-tech-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+    border-color: #CBD5E1;
+  }
+  html.dark .vtj-tech-card:hover {
+    border-color: #334155;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  }
+  .vtj-tech-card-img-wrap {
+    width: 48%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #0F172A;
+    position: relative;
+  }
+  .vtj-tech-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .vtj-tech-card:hover .vtj-tech-card-img {
+    transform: scale(1.025);
+  }
+  .vtj-tech-card-content {
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 4px 0;
+  }
+  .vtj-tech-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+    align-self: flex-start;
+  }
+  .vtj-tech-badge-ai {
+    border: 1px solid #BFDBFE;
+    background: #EFF6FF;
+    color: #2563EB;
+  }
+  .vtj-tech-badge-tools {
+    border: 1px solid #E9D5FF;
+    background: #FAF5FF;
+    color: #7C3AED;
+  }
+  .vtj-tech-badge-cloud {
+    border: 1px solid #BAE6FD;
+    background: #F0F9FF;
+    color: #0284C7;
+  }
+  .vtj-tech-badge-security {
+    border: 1px solid #FED7AA;
+    background: #FFF7ED;
+    color: #EA580C;
+  }
+  html.dark .vtj-tech-badge-ai {
+    background: rgba(37, 99, 235, 0.15);
+    border-color: rgba(37, 99, 235, 0.3);
+    color: #93C5FD;
+  }
+  html.dark .vtj-tech-badge-tools {
+    background: rgba(124, 58, 237, 0.15);
+    border-color: rgba(124, 58, 237, 0.3);
+    color: #C4B5FD;
+  }
+  html.dark .vtj-tech-badge-cloud {
+    background: rgba(2, 132, 199, 0.15);
+    border-color: rgba(2, 132, 199, 0.3);
+    color: #7DD3FC;
+  }
+  html.dark .vtj-tech-badge-security {
+    background: rgba(234, 88, 12, 0.15);
+    border-color: rgba(234, 88, 12, 0.3);
+    color: #FDBA74;
+  }
+  .vtj-tech-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.16rem;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.38;
+    margin: 0 0 0.55rem;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+  }
+  html.dark .vtj-tech-card-title {
+    color: #F8FAFC;
+  }
+  .vtj-tech-card:hover .vtj-tech-card-title {
+    color: #2563EB;
+  }
+  html.dark .vtj-tech-card:hover .vtj-tech-card-title {
+    color: #60A5FA;
+  }
+  .vtj-tech-card-excerpt {
+    font-size: 0.88rem;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0 0 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  html.dark .vtj-tech-card-excerpt {
+    color: #94A3B8;
+  }
+  .vtj-tech-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: #64748B;
+    margin-top: auto;
+    padding-top: 0.4rem;
+  }
+  html.dark .vtj-tech-card-footer {
+    color: #94A3B8;
+  }
+  .vtj-tech-meta-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .vtj-tech-save-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #64748B;
+    font-size: 0.78rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  .vtj-tech-save-btn:hover {
+    color: #2563EB;
+    background: rgba(37, 99, 235, 0.08);
+  }
+  .vtj-tech-save-btn.saved {
+    color: #2563EB;
+    font-weight: 600;
+  }
+  .vtj-tech-save-btn.saved svg {
+    fill: currentColor;
+  }
+  .vtj-tech-load-more-wrap {
+    text-align: center;
+    margin-top: 2.25rem;
+  }
+  .vtj-tech-load-more-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    background: #FFFFFF;
+    border: 1.5px solid #2563EB;
+    color: #2563EB;
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 0.72rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    box-shadow: 0 1px 4px rgba(37, 99, 235, 0.08);
+  }
+  html.dark .vtj-tech-load-more-btn {
+    background: #1E293B;
+    border-color: #3B82F6;
+    color: #60A5FA;
+  }
+  .vtj-tech-load-more-btn:hover {
+    background: #2563EB;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+  }
+  html.dark .vtj-tech-load-more-btn:hover {
+    background: #2563EB;
+    color: #FFFFFF;
+    border-color: #2563EB;
+  }
+
+  /* Right: Sidebar Area */
+  .vtj-tech-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .vtj-stay-connected-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  html.dark .vtj-stay-connected-card {
+    background: #111827;
+    border-color: #1E293B;
+  }
+  .vtj-sidebar-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+  .vtj-sidebar-accent-bar {
+    width: 4px;
+    height: 1.35rem;
+    background: #2563EB;
+    border-radius: 3px;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .vtj-sidebar-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  html.dark .vtj-sidebar-title {
+    color: #F8FAFC;
+  }
+  .vtj-social-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .vtj-social-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid #F1F5F9;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  html.dark .vtj-social-item {
+    border-bottom-color: #1E293B;
+  }
+  .vtj-social-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .vtj-social-item-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .vtj-social-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .vtj-social-icon-whatsapp {
+    background: #25D366;
+    color: #FFFFFF;
+  }
+  .vtj-social-icon-youtube {
+    background: #FF0000;
+    color: #FFFFFF;
+  }
+  .vtj-social-icon-instagram {
+    background: linear-gradient(45deg, #F09433 0%, #E6683C 25%, #DC2743 50%, #CC2366 75%, #BC1888 100%);
+    color: #FFFFFF;
+  }
+  .vtj-social-icon-x {
+    background: #000000;
+    color: #FFFFFF;
+  }
+  .vtj-social-icon-linkedin {
+    background: #0A66C2;
+    color: #FFFFFF;
+  }
+  .vtj-social-name {
+    font-family: var(--font-heading);
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: #0F172A;
+    margin: 0;
+    line-height: 1.25;
+  }
+  html.dark .vtj-social-name {
+    color: #F8FAFC;
+  }
+  .vtj-social-sub {
+    font-size: 0.78rem;
+    color: #64748B;
+    margin: 3px 0 0;
+  }
+  html.dark .vtj-social-sub {
+    color: #94A3B8;
+  }
+  .vtj-social-arrow {
+    color: #94A3B8;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+  }
+  .vtj-social-item:hover .vtj-social-arrow {
+    transform: translateX(4px);
+    color: #2563EB;
+  }
+
+  /* Newsletter Card */
+  .vtj-newsletter-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  html.dark .vtj-newsletter-card {
+    background: #111827;
+    border-color: #1E293B;
+  }
+  .vtj-newsletter-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #EFF6FF;
+    border: 1px solid #DBEAFE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+    color: #2563EB;
+  }
+  html.dark .vtj-newsletter-icon {
+    background: rgba(37, 99, 235, 0.15);
+    border-color: rgba(37, 99, 235, 0.3);
+    color: #60A5FA;
+  }
+  .vtj-newsletter-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.32;
+    margin: 0 0 0.55rem;
+    letter-spacing: -0.01em;
+  }
+  html.dark .vtj-newsletter-title {
+    color: #F8FAFC;
+  }
+  .vtj-newsletter-desc {
+    font-size: 0.85rem;
+    color: #64748B;
+    line-height: 1.48;
+    margin: 0 0 1.25rem;
+  }
+  html.dark .vtj-newsletter-desc {
+    color: #94A3B8;
+  }
+  .vtj-newsletter-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 14px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-family: var(--font-body);
+    color: #0F172A;
+    background: #FFFFFF;
+    margin-bottom: 0.75rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .vtj-newsletter-input:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  }
+  html.dark .vtj-newsletter-input {
+    background: #1E293B;
+    border-color: #334155;
+    color: #F8FAFC;
+  }
+  .vtj-newsletter-btn {
+    width: 100%;
+    padding: 11px;
+    background: #2563EB;
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 0.94rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  .vtj-newsletter-btn:hover {
+    background: #1D4ED8;
+  }
+  .vtj-newsletter-disclaimer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    color: #94A3B8;
+    margin-top: 0.85rem;
+  }
+
+  /* WhatsApp Community Card */
+  .vtj-whatsapp-card {
+    background: #F0F7FF;
+    border: 1px solid #BAE6FD;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.04);
+  }
+  html.dark .vtj-whatsapp-card {
+    background: #0D1B2A;
+    border-color: #1E3A5F;
+  }
+  .vtj-whatsapp-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #2563EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+    color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+  }
+  .vtj-whatsapp-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.32;
+    margin: 0 0 0.55rem;
+    letter-spacing: -0.01em;
+  }
+  html.dark .vtj-whatsapp-title {
+    color: #F8FAFC;
+  }
+  .vtj-whatsapp-desc {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.48;
+    margin: 0 0 1.25rem;
+  }
+  html.dark .vtj-whatsapp-desc {
+    color: #94A3B8;
+  }
+  .vtj-whatsapp-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-heading);
+    font-size: 0.94rem;
+    font-weight: 700;
+    color: #2563EB;
+    text-decoration: none;
+    transition: gap 0.2s ease, color 0.2s ease;
+  }
+  .vtj-whatsapp-cta:hover {
+    color: #1D4ED8;
+    gap: 0.7rem;
+  }
+
+  /* Responsive Media Queries for Section 8B */
+  @media (max-width: 1100px) {
+    .vtj-latest-tech-grid {
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 24px;
+    }
+  }
+  @media (max-width: 992px) {
+    .vtj-latest-tech-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .vtj-latest-tech-container {
+      padding: 0 1.5rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .vtj-latest-tech-section {
+      padding: 2.25rem 0 2.75rem;
+    }
+    .vtj-latest-tech-container {
+      padding: 0 1rem;
+    }
+    .vtj-tech-card {
+      flex-direction: column;
+      padding: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      gap: 0;
+    }
+    .vtj-tech-card-img-wrap {
+      width: 100%;
+      border-radius: 12px 12px 0 0;
+      aspect-ratio: 16 / 9;
+    }
+    .vtj-tech-card-content {
+      width: 100%;
+      padding: 14px 16px 16px;
+      box-sizing: border-box;
+    }
+    .vtj-tech-card-title {
+      font-size: 1.08rem;
+    }
+    .vtj-tech-load-more-btn {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  /* ============================================================
      10. ARTICLES PAGE (alphabetical listing)
   ============================================================ */
   .articles-page-wrap {
@@ -4396,6 +4985,323 @@
 
       </div>
     </div>
+
+    <!-- VTJ HOMEPAGE SECTION: LATEST IN TECHNOLOGY + STAY CONNECTED -->
+    <section class='vtj-latest-tech-section'>
+      <div class='vtj-latest-tech-container'>
+        <div class='vtj-latest-tech-grid'>
+
+          <!-- LEFT: Latest in Technology article feed -->
+          <div class='vtj-latest-tech-main'>
+            <div class='vtj-section-header'>
+              <div class='vtj-section-header-left'>
+                <div class='vtj-section-title-wrap'>
+                  <span class='vtj-section-accent-bar'/>
+                  <h2 class='vtj-section-heading'>Latest in Technology</h2>
+                </div>
+                <p class='vtj-section-subtitle'>Stay updated with the latest tech news, insights, and expert analysis.</p>
+              </div>
+              <a class='vtj-section-view-all' href='https://vickytechjournal.blogspot.com/p/articles.html' title='View All Articles'>
+                <span>View All Articles</span>
+                <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'>
+                  <line x1='5' x2='19' y1='12' y2='12'/>
+                  <polyline points='12 5 19 12 12 19'/>
+                </svg>
+              </a>
+            </div>
+
+            <div class='vtj-tech-feed'>
+
+              <!-- ARTICLE 1: Artificial Intelligence -->
+              <article class='vtj-tech-card'>
+                <div class='vtj-tech-card-img-wrap'>
+                  <img alt='How to Build an AI Agent from Scratch in 2026' class='vtj-tech-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEjYNtPxsYdPjuWUd3Y9fahvEvsy3F1SSmpDZtqK4KuVHk2RIIPST_bssTRJP5K2NtfWLFwbJC7yAQdWmz2ThMZT0vQZCKnCMx5K9AOFQf0wyPCb-WL7I-FIoVi6NR-XlFOKKqD_Y0EFy8GknHsElr_kA1RHIT5RVH8WOZG1Jj_vQOz92jNhBqK7PghW-la2=w800-h450-c-rw' width='800'/>
+                </div>
+                <div class='vtj-tech-card-content'>
+                  <div>
+                    <span class='vtj-tech-badge vtj-tech-badge-ai'>Artificial Intelligence</span>
+                    <h3 class='vtj-tech-card-title'>
+                      <a href='https://vickytechjournal.blogspot.com/2026/08/how-to-build-ai-agent-from-scratch-2026.html' style='color:inherit; text-decoration:none;'>How to Build an AI Agent from Scratch in 2026 (Beginner&#39;s Step-by-Step Guide)</a>
+                    </h3>
+                    <p class='vtj-tech-card-excerpt'>Learn how to build an AI agent from scratch in 2026 — even with zero coding background. A complete beginner&#39;s guide covering tools, memory, and orchestration.</p>
+                  </div>
+                  <div class='vtj-tech-card-footer'>
+                    <div class='vtj-tech-meta-left'>
+                      <span class='vtj-card-meta-item'>
+                        <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Aug 28, 2026
+                      </span>
+                      <span class='vtj-meta-dot'>&#8226;</span>
+                      <span class='vtj-card-meta-item'>
+                        <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 6 min read
+                      </span>
+                    </div>
+                    <button aria-label='Save article' class='vtj-tech-save-btn' onclick='event.preventDefault(); this.classList.toggle(&quot;saved&quot;); this.querySelector(&quot;span&quot;).textContent = this.classList.contains(&quot;saved&quot;) ? &quot;Saved&quot; : &quot;Save&quot;;' type='button'>
+                      <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'/></svg>
+                      <span>Save</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ARTICLE 2: Developer Tools -->
+              <article class='vtj-tech-card'>
+                <div class='vtj-tech-card-img-wrap'>
+                  <img alt='Best AI Coding Agents for Developers in 2026' class='vtj-tech-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgUcoJ9U2L7JDlUViWRVWUegunYtsTugK0hhBiuADCjNOfI8FYR9TubL2rNrtZOa-OD9-g5LxdZmvyWmNoipMCMLnoAYdwHcg9wvhRmZw7jIbxj95O70QNaWvzDx-DjwKW0HullrGRiEVL00HT5sFFbScXDruaTW2qx9aCtaoBvpaJ7IqHwNmg0KGsCTFiu=w800-h450-c-rw' width='800'/>
+                </div>
+                <div class='vtj-tech-card-content'>
+                  <div>
+                    <span class='vtj-tech-badge vtj-tech-badge-tools'>Developer Tools</span>
+                    <h3 class='vtj-tech-card-title'>
+                      <a href='https://vickytechjournal.blogspot.com/2026/08/best-ai-coding-agents-developers-2026.html' style='color:inherit; text-decoration:none;'>Best AI Coding Agents for Developers in 2026 (Simple Guide)</a>
+                    </h3>
+                    <p class='vtj-tech-card-excerpt'>A simple, beginner-friendly guide to the best AI coding agents for developers in 2026 — Claude Code, Cursor, GitHub Copilot, Codex, and workflow automation.</p>
+                  </div>
+                  <div class='vtj-tech-card-footer'>
+                    <div class='vtj-tech-meta-left'>
+                      <span class='vtj-card-meta-item'>
+                        <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Aug 29, 2026
+                      </span>
+                      <span class='vtj-meta-dot'>&#8226;</span>
+                      <span class='vtj-card-meta-item'>
+                        <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 5 min read
+                      </span>
+                    </div>
+                    <button aria-label='Save article' class='vtj-tech-save-btn' onclick='event.preventDefault(); this.classList.toggle(&quot;saved&quot;); this.querySelector(&quot;span&quot;).textContent = this.classList.contains(&quot;saved&quot;) ? &quot;Saved&quot; : &quot;Save&quot;;' type='button'>
+                      <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'/></svg>
+                      <span>Save</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ARTICLE 3: Cloud Computing -->
+              <article class='vtj-tech-card'>
+                <div class='vtj-tech-card-img-wrap'>
+                  <img alt='Cloud Engineer Roadmap for Beginners in 2026' class='vtj-tech-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEi3NxtMyBYUfomAlc3Le-bdfM1o_fxirh1CKMo3HPFVt_6P-xeKZBqhsEUk66-WWCZKFBalefF4wZQlPJg2MATdmWv2QxK3DmGA1JueQ2x0GIfscpUYuCdXGVhsWrE1lyp3lvKdH_BI2_k0_u75s2sLLdcWk-rmRWSlLYZitSDPAQRi25JoWkwtdM72q4gk=w800-h450-c-rw' width='800'/>
+                </div>
+                <div class='vtj-tech-card-content'>
+                  <div>
+                    <span class='vtj-tech-badge vtj-tech-badge-cloud'>Cloud Computing</span>
+                    <h3 class='vtj-tech-card-title'>
+                      <a href='https://vickytechjournal.blogspot.com/2026/08/cloud-engineer-roadmap-for-beginners-2026.html' style='color:inherit; text-decoration:none;'>Cloud Engineer Roadmap for Beginners in 2026: Step-by-Step</a>
+                    </h3>
+                    <p class='vtj-tech-card-excerpt'>Master the Cloud Engineer roadmap for beginners in 2026. Learn AWS/Azure/GCP, Linux, Terraform, Docker, and CI/CD with real-world projects.</p>
+                  </div>
+                  <div class='vtj-tech-card-footer'>
+                    <div class='vtj-tech-meta-left'>
+                      <span class='vtj-card-meta-item'>
+                        <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Aug 24, 2026
+                      </span>
+                      <span class='vtj-meta-dot'>&#8226;</span>
+                      <span class='vtj-card-meta-item'>
+                        <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 6 min read
+                      </span>
+                    </div>
+                    <button aria-label='Save article' class='vtj-tech-save-btn' onclick='event.preventDefault(); this.classList.toggle(&quot;saved&quot;); this.querySelector(&quot;span&quot;).textContent = this.classList.contains(&quot;saved&quot;) ? &quot;Saved&quot; : &quot;Save&quot;;' type='button'>
+                      <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'/></svg>
+                      <span>Save</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ARTICLE 4: Cybersecurity -->
+              <article class='vtj-tech-card'>
+                <div class='vtj-tech-card-img-wrap'>
+                  <img alt='How to Protect Your Data: 10 Practical Cybersecurity Tips for Everyday Users' class='vtj-tech-card-img' decoding='async' height='450' loading='lazy' src='https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vpLHe__0Vx1Mmjq9Nu8w4JpvUSkEsXbRlr39Xrh6Rx2nuyDtLkJNtj9F9yMVfKtogtudBZsT3_o0B8_sPINK2ECEEYF-EH2IMIyj2Ez9BEpAGZm6_-l4r7hRGF9E6ZRJthKYWXc-A1A39PoS_P89bL3TC8_7Oiw4cNfvuoER345mVj8aCtgqcgkZEPagA=w800-h450-c-rw' width='800'/>
+                </div>
+                <div class='vtj-tech-card-content'>
+                  <div>
+                    <span class='vtj-tech-badge vtj-tech-badge-security'>Cybersecurity</span>
+                    <h3 class='vtj-tech-card-title'>
+                      <a href='https://vickytechjournal.blogspot.com/2026/08/how-to-protect-your-data-2026.html' style='color:inherit; text-decoration:none;'>How to Protect Your Data: 10 Practical Cybersecurity Tips for Everyday Users</a>
+                    </h3>
+                    <p class='vtj-tech-card-excerpt'>Learn how to protect your data online in 2026 with 10 practical, fact-checked cybersecurity tips — passwords, MFA, Wi-Fi safety, backups, and more.</p>
+                  </div>
+                  <div class='vtj-tech-card-footer'>
+                    <div class='vtj-tech-meta-left'>
+                      <span class='vtj-card-meta-item'>
+                        <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Aug 30, 2026
+                      </span>
+                      <span class='vtj-meta-dot'>&#8226;</span>
+                      <span class='vtj-card-meta-item'>
+                        <svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 5 min read
+                      </span>
+                    </div>
+                    <button aria-label='Save article' class='vtj-tech-save-btn' onclick='event.preventDefault(); this.classList.toggle(&quot;saved&quot;); this.querySelector(&quot;span&quot;).textContent = this.classList.contains(&quot;saved&quot;) ? &quot;Saved&quot; : &quot;Save&quot;;' type='button'>
+                      <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'/></svg>
+                      <span>Save</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- LOAD MORE BUTTON -->
+            <div class='vtj-tech-load-more-wrap'>
+              <a class='vtj-tech-load-more-btn' href='https://vickytechjournal.blogspot.com/p/articles.html' title='Load More Articles'>
+                <span>Load More Articles</span>
+                <svg fill='none' height='15' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='15'>
+                  <path d='M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67'/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: Sidebar (Stay Connected + Newsletter + WhatsApp) -->
+          <aside class='vtj-tech-sidebar'>
+
+            <!-- CARD 1: Stay Connected -->
+            <div class='vtj-stay-connected-card'>
+              <div class='vtj-sidebar-title-wrap'>
+                <span class='vtj-sidebar-accent-bar'/>
+                <h3 class='vtj-sidebar-title'>Stay Connected</h3>
+              </div>
+              <div class='vtj-social-list'>
+
+                <!-- WhatsApp Channel -->
+                <a class='vtj-social-item' href='https://whatsapp.com/channel/' rel='noopener noreferrer' target='_blank' title='WhatsApp Channel'>
+                  <div class='vtj-social-item-left'>
+                    <div class='vtj-social-icon-box vtj-social-icon-whatsapp'>
+                      <svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'>
+                        <path d='M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.477-.15-.678.15-.2.3-.778.98-.954 1.181-.176.2-.351.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.2.05-.376-.025-.527-.075-.15-.678-1.632-.929-2.235-.245-.588-.493-.509-.678-.519l-.578-.01c-.2 0-.527.075-.803.376s-1.054 1.03-1.054 2.511c0 1.481 1.079 2.911 1.23 3.112.15.2 2.122 3.24 5.14 4.544.718.31 1.278.495 1.716.634.722.23 1.379.197 1.898.12.578-.087 1.78-.727 2.031-1.429.251-.702.251-1.304.176-1.429-.075-.125-.276-.2-.577-.35zM12 2a10 10 0 0 0-8.59 15.11L2 22l4.99-1.31A10 10 0 1 0 12 2z'/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class='vtj-social-name'>WhatsApp Channel</h4>
+                      <p class='vtj-social-sub'>Get instant updates</p>
+                    </div>
+                  </div>
+                  <span class='vtj-social-arrow'>
+                    <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><polyline points='9 18 15 12 9 6'/></svg>
+                  </span>
+                </a>
+
+                <!-- YouTube -->
+                <a class='vtj-social-item' href='https://www.youtube.com/@VickyTechJournal' rel='noopener noreferrer' target='_blank' title='YouTube Channel'>
+                  <div class='vtj-social-item-left'>
+                    <div class='vtj-social-icon-box vtj-social-icon-youtube'>
+                      <svg fill='currentColor' height='18' viewBox='0 0 24 24' width='18'>
+                        <path d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class='vtj-social-name'>YouTube</h4>
+                      <p class='vtj-social-sub'>Watch our latest videos</p>
+                    </div>
+                  </div>
+                  <span class='vtj-social-arrow'>
+                    <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><polyline points='9 18 15 12 9 6'/></svg>
+                  </span>
+                </a>
+
+                <!-- Instagram -->
+                <a class='vtj-social-item' href='https://www.instagram.com/vicky_tech_journal/' rel='noopener noreferrer' target='_blank' title='Instagram Profile'>
+                  <div class='vtj-social-item-left'>
+                    <div class='vtj-social-icon-box vtj-social-icon-instagram'>
+                      <svg fill='none' height='18' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='18'>
+                        <rect height='20' rx='5' ry='5' width='20' x='2' y='2'/>
+                        <path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z'/>
+                        <line x1='17.5' x2='17.51' y1='6.5' y2='6.5'/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class='vtj-social-name'>Instagram</h4>
+                      <p class='vtj-social-sub'>Behind the scenes &amp; more</p>
+                    </div>
+                  </div>
+                  <span class='vtj-social-arrow'>
+                    <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><polyline points='9 18 15 12 9 6'/></svg>
+                  </span>
+                </a>
+
+                <!-- X (Twitter) -->
+                <a class='vtj-social-item' href='https://twitter.com/VickyTechJournal' rel='noopener noreferrer' target='_blank' title='X (Twitter) Profile'>
+                  <div class='vtj-social-item-left'>
+                    <div class='vtj-social-icon-box vtj-social-icon-x'>
+                      <svg fill='currentColor' height='16' viewBox='0 0 24 24' width='16'>
+                        <path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class='vtj-social-name'>X (Twitter)</h4>
+                      <p class='vtj-social-sub'>Join the conversation</p>
+                    </div>
+                  </div>
+                  <span class='vtj-social-arrow'>
+                    <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><polyline points='9 18 15 12 9 6'/></svg>
+                  </span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a class='vtj-social-item' href='https://www.linkedin.com/company/vickytechjournal' rel='noopener noreferrer' target='_blank' title='LinkedIn Page'>
+                  <div class='vtj-social-item-left'>
+                    <div class='vtj-social-icon-box vtj-social-icon-linkedin'>
+                      <svg fill='currentColor' height='16' viewBox='0 0 24 24' width='16'>
+                        <path d='M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z'/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class='vtj-social-name'>LinkedIn</h4>
+                      <p class='vtj-social-sub'>Connect with us</p>
+                    </div>
+                  </div>
+                  <span class='vtj-social-arrow'>
+                    <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><polyline points='9 18 15 12 9 6'/></svg>
+                  </span>
+                </a>
+
+              </div>
+            </div>
+
+            <!-- CARD 2: Newsletter Card -->
+            <div class='vtj-newsletter-card'>
+              <div class='vtj-newsletter-icon'>
+                <svg fill='none' height='22' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='22'>
+                  <path d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/>
+                  <polyline points='22,6 12,13 2,6'/>
+                </svg>
+              </div>
+              <h3 class='vtj-newsletter-title'>Get Tech Insights to Your Inbox</h3>
+              <p class='vtj-newsletter-desc'>Subscribe to our newsletter and get the latest AI, coding, and technology insights delivered weekly.</p>
+              <form class='vtj-newsletter-form' onsubmit='event.preventDefault(); alert(&quot;Thank you for subscribing! We will send you our next edition soon.&quot;);'>
+                <input class='vtj-newsletter-input' placeholder='Enter your email address' required='required' type='email'/>
+                <button class='vtj-newsletter-btn' type='submit'>Subscribe</button>
+              </form>
+              <div class='vtj-newsletter-disclaimer'>
+                <svg fill='none' height='13' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='13'>
+                  <circle cx='12' cy='12' r='10'/>
+                  <path d='m9 12 2 2 4-4'/>
+                </svg>
+                <span>No spam. Unsubscribe anytime.</span>
+              </div>
+            </div>
+
+            <!-- CARD 3: WhatsApp Community Card -->
+            <div class='vtj-whatsapp-card'>
+              <div class='vtj-whatsapp-icon'>
+                <svg fill='none' height='22' stroke='#FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='22'>
+                  <line x1='22' x2='11' y1='2' y2='13'/>
+                  <polygon points='22 2 15 22 11 13 2 9 22 2'/>
+                </svg>
+              </div>
+              <h3 class='vtj-whatsapp-title'>Join Our WhatsApp Community</h3>
+              <p class='vtj-whatsapp-desc'>Exclusive updates, tech tips &amp; resources. Be part of our growing community.</p>
+              <a class='vtj-whatsapp-cta' href='https://whatsapp.com/channel/' rel='noopener noreferrer' target='_blank'>
+                <span>Join Now</span>
+                <svg fill='none' height='15' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' viewBox='0 0 24 24' width='15'>
+                  <line x1='5' x2='19' y1='12' y2='12'/>
+                  <polyline points='12 5 19 12 12 19'/>
+                </svg>
+              </a>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
 
   </b:if>
 

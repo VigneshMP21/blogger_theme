@@ -1150,7 +1150,354 @@
      .vtj-hero-meta {
        font-size: 0.68rem;
      }
-   }
+    }
+
+  /* ============================================================
+     8. VTJ HOMEPAGE: LATEST ARTICLES & TRENDING TOPICS
+  ============================================================ */
+  .vtj-home-sections-wrap {
+    background: #FAFAFB;
+    padding: 3.25rem 0 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  html.dark .vtj-home-sections-wrap {
+    background: #090D16;
+    border-bottom-color: #1E293B;
+  }
+  .vtj-home-container {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .vtj-section-block {
+    margin-bottom: 3.5rem;
+  }
+  .vtj-section-block:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Section Header */
+  .vtj-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;
+    gap: 1.5rem;
+  }
+  .vtj-section-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .vtj-section-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .vtj-section-accent-bar {
+    width: 4.5px;
+    height: 1.5rem;
+    background: #2563EB;
+    border-radius: 4px;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .vtj-section-heading {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  html.dark .vtj-section-heading {
+    color: #F8FAFC;
+  }
+  .vtj-section-subtitle {
+    font-size: 0.95rem;
+    color: #64748B;
+    margin: 0;
+    font-weight: 400;
+  }
+  html.dark .vtj-section-subtitle {
+    color: #94A3B8;
+  }
+  .vtj-section-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #2563EB;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    padding-bottom: 4px;
+  }
+  .vtj-section-view-all:hover {
+    color: #1D4ED8;
+    gap: 0.65rem;
+  }
+  .vtj-section-view-all svg {
+    transition: transform 0.2s ease;
+  }
+  .vtj-section-view-all:hover svg {
+    transform: translateX(3px);
+  }
+
+  /* Section A: Latest Articles Grid (16:9 Preview Image + Details) */
+  .vtj-article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+  .vtj-article-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  html.dark .vtj-article-card {
+    background: #111827;
+    border-color: #1E293B;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  .vtj-article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-color: #CBD5E1;
+  }
+  html.dark .vtj-article-card:hover {
+    border-color: #334155;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  }
+  .vtj-article-card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+  .vtj-card-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #0F172A;
+  }
+  .vtj-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .vtj-article-card:hover .vtj-card-img {
+    transform: scale(1.05);
+  }
+  .vtj-card-badge-overlay {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    background: #2563EB;
+    color: #FFFFFF;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  }
+  .vtj-badge-ai { background: #2563EB; }
+  .vtj-badge-coding { background: #7C3AED; }
+  .vtj-badge-tools { background: #0891B2; }
+  .vtj-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.35rem 1.4rem 1.25rem;
+  }
+  .vtj-article-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.4;
+    margin: 0 0 0.65rem;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+  }
+  html.dark .vtj-article-card-title {
+    color: #F8FAFC;
+  }
+  .vtj-article-card:hover .vtj-article-card-title {
+    color: #2563EB;
+  }
+  html.dark .vtj-article-card:hover .vtj-article-card-title {
+    color: #60A5FA;
+  }
+  .vtj-article-card-excerpt {
+    font-size: 0.88rem;
+    color: #64748B;
+    line-height: 1.55;
+    margin: 0 0 1.25rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  html.dark .vtj-article-card-excerpt {
+    color: #94A3B8;
+  }
+  .vtj-article-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    color: #64748B;
+    margin-top: auto;
+  }
+  html.dark .vtj-article-card-footer {
+    color: #94A3B8;
+  }
+  .vtj-card-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .vtj-meta-icon {
+    stroke-width: 2;
+    opacity: 0.75;
+  }
+  .vtj-meta-dot {
+    opacity: 0.5;
+  }
+
+  /* Section B: Trending Topics Grid */
+  .vtj-topic-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+  }
+  .vtj-topic-card {
+    position: relative;
+    height: 215px;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    padding: 1.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: radial-gradient(circle at 50% 25%, rgba(37, 99, 235, 0.18), transparent 70%), linear-gradient(155deg, #0B1120 0%, #111C35 100%);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
+  }
+  .vtj-topic-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 14px 14px;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  .vtj-topic-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.55);
+    box-shadow: 0 12px 28px rgba(11, 17, 32, 0.4), 0 0 20px rgba(37, 99, 235, 0.25);
+  }
+  .vtj-topic-icon-badge {
+    position: relative;
+    z-index: 1;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 0 16px rgba(37, 99, 235, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .vtj-topic-card:hover .vtj-topic-icon-badge {
+    transform: scale(1.08);
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 22px rgba(37, 99, 235, 0.4);
+    background: rgba(37, 99, 235, 0.12);
+  }
+  .vtj-topic-title {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-heading);
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.35;
+    margin: 0;
+    letter-spacing: -0.01em;
+    padding: 0 0.5rem;
+  }
+
+  /* Responsive Media Queries */
+  @media (max-width: 1024px) {
+    .vtj-home-container {
+      padding: 0 1.5rem;
+    }
+    .vtj-article-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    .vtj-topic-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .vtj-home-sections-wrap {
+      padding: 2.25rem 0 2.5rem;
+    }
+    .vtj-home-container {
+      padding: 0 1rem;
+    }
+    .vtj-section-block {
+      margin-bottom: 2.5rem;
+    }
+    .vtj-section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .vtj-section-heading {
+      font-size: 1.5rem;
+    }
+    .vtj-article-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .vtj-topic-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .vtj-topic-card {
+      height: 170px;
+    }
+  }
 
   /* ============================================================
      10. ARTICLES PAGE (alphabetical listing)
@@ -1278,15 +1625,12 @@
     max-width: 1600px;
     margin: 0 auto;
   }
-  .home-main-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 320px;
-    gap: 28px;
-    align-items: start;
-  }
+  /* Hide old homepage latest articles & sidebar sections */
+  .main-layout.vtj-home-hidden,
+  .home-layout,
+  .home-main-grid,
   .home-sidebar {
-    width: 100%;
-    min-width: 0;
+    display: none !important;
   }
 
   /* Section headers (for Latest Articles etc) */
@@ -3871,13 +4215,194 @@
       </div>
     </section>
 
+    <!-- VTJ HOMEPAGE SECTIONS: LATEST ARTICLES &amp; TRENDING TOPICS -->
+    <div class='vtj-home-sections-wrap'>
+      <div class='vtj-home-container'>
+
+        <!-- SECTION A: LATEST ARTICLES (TEXT-FIRST - NO IMAGES) -->
+        <section aria-labelledby='vtj-latest-heading' class='vtj-section-block vtj-latest-section'>
+          <div class='vtj-section-header'>
+            <div class='vtj-section-header-left'>
+              <div class='vtj-section-title-wrap'>
+                <span aria-hidden='true' class='vtj-section-accent-bar'></span>
+                <h2 class='vtj-section-heading' id='vtj-latest-heading'>Latest Articles</h2>
+              </div>
+              <p class='vtj-section-subtitle'>Explore our most recent updates from the world of technology.</p>
+            </div>
+            <a class='vtj-section-view-all' href='/p/articles.html' title='View All Articles'>
+              <span>View All Articles</span>
+              <svg class='vtj-arrow-icon' fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><line x1='5' x2='19' y1='12' y2='12'/><polyline points='12 5 19 12 12 19'/></svg>
+            </a>
+          </div>
+
+          <div class='vtj-article-grid'>
+
+            <!-- ARTICLE 1: AI Tools for Students -->
+            <article class='vtj-article-card'>
+              <a class='vtj-article-card-link' href='https://vickytechjournal.blogspot.com/2026/09/best-ai-tools-for-students-2026.html' title='10 Best AI Tools for Students in 2026 (Free)'>
+                <div class='vtj-card-img-wrap'>
+                  <span class='vtj-card-badge-overlay vtj-badge-ai'>AI</span>
+                  <img alt='10 Best AI Tools for Students in 2026 (Free)' class='vtj-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQsy7bwIGNnQFdUby88J4CHrFslIi52kw9y04tghCq8w_wOH4dG4nNAzrpHax0dQuZi-_4BmzoxqVGQgowIsfSK-OihT20NpB_6hvYBkx1jdQAck34o4HEh5AJG39XaYc8j8BG_guBNX5_E5LXouLVt-jH1aLkx09w2BTEBKC76L9Iugaa1f6plcGw_m6U/w800-h450-c-rw/best-ai-tools-for-students-2026.png' width='800'/>
+                </div>
+                <div class='vtj-card-body'>
+                  <h3 class='vtj-article-card-title'>10 Best AI Tools for Students in 2026 (Free)</h3>
+                  <p class='vtj-article-card-excerpt'>Discover the best AI tools for students in 2026. Compare free AI tools for studying, research, coding, writing, presentations, and exam preparation.</p>
+                  <div class='vtj-article-card-footer'>
+                    <span class='vtj-card-meta-item'>
+                      <svg class='vtj-meta-icon' fill='none' height='13' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='13'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg>
+                      <span>Sep 1, 2026</span>
+                    </span>
+                    <span class='vtj-meta-dot'>&#8226;</span>
+                    <span class='vtj-card-meta-item'>
+                      <svg class='vtj-meta-icon' fill='none' height='13' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='13'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>
+                      <span>6 min read</span>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- ARTICLE 2: Complete Python Roadmap -->
+            <article class='vtj-article-card'>
+              <a class='vtj-article-card-link' href='https://vickytechjournal.blogspot.com/2026/08/complete-python-roadmap-beginners-2026.html' title='Complete Python Roadmap for Beginners in 2026'>
+                <div class='vtj-card-img-wrap'>
+                  <span class='vtj-card-badge-overlay vtj-badge-coding'>CODING</span>
+                  <img alt='Complete Python Roadmap for Beginners in 2026' class='vtj-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEhaepw3UXasEta7qgJ2j6dW-zjZB20iAHYlX8Tq1ndvDurAZIhBy35RGmnyXTdW-eqvQRZEROaVZuUXQ-pdnQmUAz1XL_7iVsiz6VaxJ7L-FlM1nygheLIadku1hSARCwXI4c6pLawBUOpiOQ7WW8p967Jfoxm9LdO_G9f4351ncfXLhl-VtlnBEfjndBzf=w800-h450-c-rw' width='800'/>
+                </div>
+                <div class='vtj-card-body'>
+                  <h3 class='vtj-article-card-title'>Complete Python Roadmap for Beginners in 2026</h3>
+                  <p class='vtj-article-card-excerpt'>Learn Python step by step with this beginner-friendly 2026 roadmap covering basics, tools, projects, GitHub and career paths.</p>
+                  <div class='vtj-article-card-footer'>
+                    <span class='vtj-card-meta-item'>
+                      <svg class='vtj-meta-icon' fill='none' height='13' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='13'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg>
+                      <span>Aug 20, 2026</span>
+                    </span>
+                    <span class='vtj-meta-dot'>&#8226;</span>
+                    <span class='vtj-card-meta-item'>
+                      <svg class='vtj-meta-icon' fill='none' height='13' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='13'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>
+                      <span>7 min read</span>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- ARTICLE 3: Git and GitHub Roadmap -->
+            <article class='vtj-article-card'>
+              <a class='vtj-article-card-link' href='https://vickytechjournal.blogspot.com/2026/08/git-github-roadmap-beginners-2026.html' title='Git and GitHub Roadmap for Beginners in 2026'>
+                <div class='vtj-card-img-wrap'>
+                  <span class='vtj-card-badge-overlay vtj-badge-tools'>DEVELOPER TOOLS</span>
+                  <img alt='Git and GitHub Roadmap for Beginners in 2026' class='vtj-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEiGCnkIGOGY0KIXR17wR114lnVErt9UCh-d_eg6KMji43uzbq5hhOulM06Nez9xTOTY57qd3VKnsepX_T7r1ygmOfZ7LG6vDjk7aq8rQvSMMDNfQdKuFOoMGfBdMwuRqFgk7fDkvm2vDymJ_69HO6AdH83-HDQi0-4rrrYutvZhnisZF8HwwgXJXUEf9wo3=w800-h450-c-rw' width='800'/>
+                </div>
+                <div class='vtj-card-body'>
+                  <h3 class='vtj-article-card-title'>Git and GitHub Roadmap for Beginners in 2026</h3>
+                  <p class='vtj-article-card-excerpt'>Learn Git and GitHub step by step with commands, projects, free resources, collaboration skills, and a simple beginner roadmap.</p>
+                  <div class='vtj-article-card-footer'>
+                    <span class='vtj-card-meta-item'>
+                      <svg class='vtj-meta-icon' fill='none' height='13' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='13'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg>
+                      <span>Aug 22, 2026</span>
+                    </span>
+                    <span class='vtj-meta-dot'>&#8226;</span>
+                    <span class='vtj-card-meta-item'>
+                      <svg class='vtj-meta-icon' fill='none' height='13' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='13'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>
+                      <span>5 min read</span>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- SECTION B: TRENDING TOPICS (TOPIC NAVIGATION - NO ARTICLE IMAGES) -->
+        <section aria-labelledby='vtj-trending-heading' class='vtj-section-block vtj-trending-section'>
+          <div class='vtj-section-header'>
+            <div class='vtj-section-header-left'>
+              <div class='vtj-section-title-wrap'>
+                <span aria-hidden='true' class='vtj-section-accent-bar'></span>
+                <h2 class='vtj-section-heading' id='vtj-trending-heading'>Trending Topics</h2>
+              </div>
+              <p class='vtj-section-subtitle'>Browse popular topics and stay updated with what matters most.</p>
+            </div>
+            <a class='vtj-section-view-all' href='/p/articles.html' title='Explore All Topics'>
+              <span>Explore All Topics</span>
+              <svg class='vtj-arrow-icon' fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><line x1='5' x2='19' y1='12' y2='12'/><polyline points='12 5 19 12 12 19'/></svg>
+            </a>
+          </div>
+
+          <div class='vtj-topic-grid'>
+
+            <!-- TOPIC 1: Artificial Intelligence -->
+            <a class='vtj-topic-card' href='/search/label/AI%20Tools' title='Explore Artificial Intelligence'>
+              <div class='vtj-topic-icon-badge'>
+                <svg fill='none' height='26' stroke='#38BDF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='26'>
+                  <path d='M12 2a4 4 0 0 1 4 4v1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4v-1a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2V6a4 4 0 0 1 4-4z'/>
+                  <circle cx='9' cy='10' fill='#38BDF8' r='1'/>
+                  <circle cx='15' cy='10' fill='#38BDF8' r='1'/>
+                  <path d='M9.5 15a2.5 2.5 0 0 0 5 0'/>
+                </svg>
+              </div>
+              <h3 class='vtj-topic-title'>Artificial Intelligence</h3>
+            </a>
+
+            <!-- TOPIC 2: Coding &amp; Development -->
+            <a class='vtj-topic-card' href='/search/label/Coding%20Websites' title='Explore Coding &amp; Development'>
+              <div class='vtj-topic-icon-badge'>
+                <svg fill='none' height='26' stroke='#818CF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='26'>
+                  <polyline points='16 18 22 12 16 6'/>
+                  <polyline points='8 6 2 12 8 18'/>
+                </svg>
+              </div>
+              <h3 class='vtj-topic-title'>Coding &amp; Development</h3>
+            </a>
+
+            <!-- TOPIC 3: Technology -->
+            <a class='vtj-topic-card' href='/search/label/Software' title='Explore Technology'>
+              <div class='vtj-topic-icon-badge'>
+                <svg fill='none' height='26' stroke='#38BDF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='26'>
+                  <path d='M5 12.55a11 11 0 0 1 14.08 0'/>
+                  <path d='M1.42 9a16 16 0 0 1 21.16 0'/>
+                  <path d='M8.53 16.11a6 6 0 0 1 6.95 0'/>
+                  <line stroke-width='3' x1='12' x2='12.01' y1='20' y2='20'/>
+                </svg>
+              </div>
+              <h3 class='vtj-topic-title'>Technology</h3>
+            </a>
+
+            <!-- TOPIC 4: Developer Tools -->
+            <a class='vtj-topic-card' href='/search/label/Developer%20Tools' title='Explore Developer Tools'>
+              <div class='vtj-topic-icon-badge'>
+                <svg fill='none' height='26' stroke='#FBBF24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='26'>
+                  <path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/>
+                </svg>
+              </div>
+              <h3 class='vtj-topic-title'>Developer Tools</h3>
+            </a>
+
+            <!-- TOPIC 5: Cybersecurity -->
+            <a class='vtj-topic-card' href='/search/label/Cyber%20Security' title='Explore Cybersecurity'>
+              <div class='vtj-topic-icon-badge'>
+                <svg fill='none' height='26' stroke='#34D399' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='26'>
+                  <path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/>
+                  <polyline points='9 12 11 14 15 10'/>
+                </svg>
+              </div>
+              <h3 class='vtj-topic-title'>Cybersecurity</h3>
+            </a>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
 
   </b:if>
 
   <!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;
        MAIN CONTENT + SIDEBAR
   &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
-  <main class='main-layout'>
+  <main expr:class='data:view.isHomepage ? &quot;main-layout vtj-home-hidden&quot; : &quot;main-layout&quot;'>
     <div expr:class='data:view.isHomepage ? &quot;container home-layout&quot; : (data:view.isPost ? &quot;container vtj-post-container&quot; : &quot;container&quot;)'>
       <div expr:class='data:view.isHomepage ? &quot;main-grid home-main-grid&quot; : (data:view.isPost ? &quot;main-grid vtj-post-wide-layout&quot; : &quot;main-grid&quot;)'>
 
@@ -3895,18 +4420,6 @@
 
         <!-- CONTENT AREA -->
         <div expr:class='data:view.isPost ? &quot;content-area vtj-post-main-column&quot; : &quot;content-area&quot;'>
-          <b:if cond='data:view.isHomepage'>
-            <div class='section-head fade-in-ready'>
-              <div class='section-head-left'>
-                <h2 class='section-title'>Latest Articles</h2>
-                <p class='section-subtitle'>Fresh technology news and guides</p>
-              </div>
-              <a class='section-view-all' href='/p/articles.html'>
-                View All
-                <svg viewBox='0 0 24 24'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg>
-              </a>
-            </div>
-          </b:if>
           <b:if cond='data:view.isLabelSearch'>
             <div class='section-head fade-in-ready'>
               <div class='section-head-left'>
@@ -4017,64 +4530,66 @@
               </b:widget-settings>
               <b:includable id='main'>
 
-                <!-- &#9472;&#9472; LIST VIEW (homepage, labels, search) &#9472;&#9472; -->
+                <!-- &#9472;&#9472; LIST VIEW (labels, search) &#9472;&#9472; -->
                 <b:if cond='data:view.isMultipleItems'>
-                  <b:if cond='data:posts and data:posts.size &gt; 0'>
-                    <div class='posts-grid'>
-                      <b:loop values='data:posts' var='post'>
-                        <article class='post-card fade-in-ready'>
-                          <div class='post-card-thumb'>
-                            <a aria-label='Read article' expr:href='data:post.url'>
-                              <b:if cond='data:post.featuredImage'>
-                                <img decoding='async' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 800, &quot;16:9&quot;)' height='225' loading='lazy' width='400'/>
-                              <b:else/>
-                                <div class='post-card-thumb-placeholder'>Vicky Tech Journal</div>
-                              </b:if>
-                            </a>
-                            <b:if cond='data:post.labels'>
-                              <span class='post-card-category'>
-                                <b:loop index='i' values='data:post.labels' var='label'>
-                                  <b:if cond='data:i == 0'>
-                                    <data:label.name/>
-                                  </b:if>
-                                </b:loop>
-                              </span>
-                            </b:if>
-                          </div>
-                          <div class='post-card-body'>
-                            <h3 class='post-card-title'>
-                              <a expr:href='data:post.url'><data:post.title/></a>
-                            </h3>
-                            <p class='post-card-excerpt'><data:post.snippet/></p>
-                            <div class='post-card-footer'>
-                              <div class='post-card-meta'>
-                                <svg viewBox='0 0 24 24'><path d='M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z'/></svg>
-                                <data:post.date/>
-                                <span class='post-card-meta-dot'/>
-                                <svg viewBox='0 0 24 24'><path d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z'/></svg>
-                                <span class='post-read-time-val'>4 min</span>
-                              </div>
-                              <a class='post-card-readmore' expr:href='data:post.url'>
-                                Read
-                                <svg viewBox='0 0 24 24'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg>
+                  <b:if cond='!data:view.isHomepage'>
+                    <b:if cond='data:posts and data:posts.size &gt; 0'>
+                      <div class='posts-grid'>
+                        <b:loop values='data:posts' var='post'>
+                          <article class='post-card fade-in-ready'>
+                            <div class='post-card-thumb'>
+                              <a aria-label='Read article' expr:href='data:post.url'>
+                                <b:if cond='data:post.featuredImage'>
+                                  <img decoding='async' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 800, &quot;16:9&quot;)' height='225' loading='lazy' width='400'/>
+                                <b:else/>
+                                  <div class='post-card-thumb-placeholder'>Vicky Tech Journal</div>
+                                </b:if>
                               </a>
+                              <b:if cond='data:post.labels'>
+                                <span class='post-card-category'>
+                                  <b:loop index='i' values='data:post.labels' var='label'>
+                                    <b:if cond='data:i == 0'>
+                                      <data:label.name/>
+                                    </b:if>
+                                  </b:loop>
+                                </span>
+                              </b:if>
                             </div>
-                          </div>
-                        </article>
-                      </b:loop>
-                    </div>
+                            <div class='post-card-body'>
+                              <h3 class='post-card-title'>
+                                <a expr:href='data:post.url'><data:post.title/></a>
+                              </h3>
+                              <p class='post-card-excerpt'><data:post.snippet/></p>
+                              <div class='post-card-footer'>
+                                <div class='post-card-meta'>
+                                  <svg viewBox='0 0 24 24'><path d='M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z'/></svg>
+                                  <data:post.date/>
+                                  <span class='post-card-meta-dot'/>
+                                  <svg viewBox='0 0 24 24'><path d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z'/></svg>
+                                  <span class='post-read-time-val'>4 min</span>
+                                </div>
+                                <a class='post-card-readmore' expr:href='data:post.url'>
+                                  Read
+                                  <svg viewBox='0 0 24 24'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg>
+                                </a>
+                              </div>
+                            </div>
+                          </article>
+                        </b:loop>
+                      </div>
 
-                    <!-- Pagination (homepage only &#8212; numbered) -->
-                    <b:if cond='data:view.isHomepage and (data:newerPageUrl or data:olderPageUrl)'>
-                      <div aria-label='Pagination' class='pagination' expr:data-home='data:blog.homepageUrl' id='vtj-pagination'>
+                      <!-- Pagination (homepage only &#8212; numbered) -->
+                      <b:if cond='data:view.isHomepage and (data:newerPageUrl or data:olderPageUrl)'>
+                        <div aria-label='Pagination' class='pagination' expr:data-home='data:blog.homepageUrl' id='vtj-pagination'>
+                        </div>
+                      </b:if>
+                    <b:else/>
+                      <div class='empty-state fade-in-ready'>
+                        <h3>No articles found</h3>
+                        <p>We couldn&#39;t find any posts matching your criteria.</p>
+                        <a class='empty-state-btn' href='/'>Back to Home</a>
                       </div>
                     </b:if>
-                  <b:else/>
-                    <div class='empty-state fade-in-ready'>
-                      <h3>No articles found</h3>
-                      <p>We couldn&#39;t find any posts matching your criteria.</p>
-                      <a class='empty-state-btn' href='/'>Back to Home</a>
-                    </div>
                   </b:if>
 
                 <!-- &#9472;&#9472; SINGLE POST VIEW &#9472;&#9472; -->
