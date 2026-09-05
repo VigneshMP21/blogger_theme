@@ -6085,225 +6085,6 @@ html.dark .vtj-post-body table th {
   border-bottom: none !important;
 }
 
-/* ============================================================
-   PREMIUM CODE BOX STYLING (Dark Editor Theme - Image 2 Colors)
-============================================================ */
-.vtj-code-block {
-  position: relative;
-  margin: 24px 0 28px;
-  background: #181A1F;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-html.dark .vtj-code-block {
-  background: #14171D;
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-/* Header bar: left side code name, right side corner copy option */
-.vtj-code-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  background: #1E222B;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  user-select: none;
-}
-
-.vtj-code-header-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Terminal window dots */
-.vtj-code-dots {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.vtj-code-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.vtj-code-dot-red { background: #EF4444; opacity: 0.85; }
-.vtj-code-dot-yellow { background: #EAB308; opacity: 0.85; }
-.vtj-code-dot-green { background: #10B981; opacity: 0.85; }
-
-/* Left side language name badge */
-.vtj-code-lang {
-  font-family: 'Fira Code', Consolas, Monaco, monospace;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  color: #38BDF8;
-  background: rgba(56, 189, 248, 0.12);
-  padding: 3px 10px;
-  border-radius: 6px;
-  border: 1px solid rgba(56, 189, 248, 0.22);
-  line-height: 1.2;
-}
-
-/* Right side copy button */
-.vtj-code-copy-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #94A3B8;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  line-height: 1;
-}
-
-.vtj-code-copy-btn:hover {
-  background: rgba(255, 255, 255, 0.14);
-  color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-1px);
-}
-
-.vtj-code-copy-btn:active {
-  transform: translateY(0);
-}
-
-.vtj-code-copy-btn svg {
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
-  flex-shrink: 0;
-}
-
-.vtj-code-copy-btn.is-copied {
-  background: rgba(16, 185, 129, 0.18);
-  border-color: rgba(16, 185, 129, 0.4);
-  color: #34D399;
-}
-
-/* Conditions:
-   1. If code length > max length, comes scrolling type (max-height: 480px, overflow-y: auto)
-   2. If code length < max length, code box length adjusts to code length (height: auto)
-*/
-.vtj-code-wrapper {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-height: 480px;
-  overflow-y: auto;
-  overflow-x: auto;
-  overscroll-behavior: contain;
-}
-
-/* Sleek custom scrollbars */
-.vtj-code-wrapper::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-.vtj-code-wrapper::-webkit-scrollbar-track {
-  background: #181A1F;
-}
-.vtj-code-wrapper::-webkit-scrollbar-thumb {
-  background: #2D333F;
-  border-radius: 4px;
-}
-.vtj-code-wrapper::-webkit-scrollbar-thumb:hover {
-  background: #424B5C;
-}
-
-.vtj-code-wrapper pre {
-  margin: 0 !important;
-  padding: 18px 20px !important;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  font-family: 'Fira Code', 'JetBrains Mono', Consolas, Monaco, monospace !important;
-  font-size: 0.91rem !important;
-  line-height: 1.68 !important;
-  color: #ABB2BF !important;
-  white-space: pre !important;
-  word-spacing: normal !important;
-  word-break: normal !important;
-  word-wrap: normal !important;
-  tab-size: 2 !important;
-  box-shadow: none !important;
-}
-
-.vtj-code-wrapper code {
-  background: transparent !important;
-  padding: 0 !important;
-  font-family: inherit !important;
-  font-size: inherit !important;
-  color: inherit !important;
-  white-space: inherit !important;
-  border: none !important;
-}
-
-/* Syntax Highlighting Colors (Matching Image 2) */
-.token.keyword {
-  color: #C678DD !important;
-  font-weight: 500;
-}
-.token.class-name {
-  color: #E5C07B !important;
-}
-.token.function {
-  color: #61AFEF !important;
-}
-.token.variable,
-.token.attr-name {
-  color: #E06C75 !important;
-}
-.token.string,
-.token.attr-value {
-  color: #98C379 !important;
-}
-.token.number {
-  color: #D19A66 !important;
-}
-.token.comment {
-  color: #636D83 !important;
-  font-style: italic !important;
-}
-.token.punctuation {
-  color: #ABB2BF !important;
-}
-.token.tag {
-  color: #E06C75 !important;
-}
-
-/* Inline code in blog post text */
-.vtj-post-body :not(pre) > code {
-  background: rgba(99, 102, 241, 0.09);
-  color: #4F46E5;
-  padding: 2px 7px;
-  border-radius: 5px;
-  font-family: 'Fira Code', Consolas, monospace;
-  font-size: 0.88em;
-  border: 1px solid rgba(99, 102, 241, 0.18);
-}
-html.dark .vtj-post-body :not(pre) > code {
-  background: rgba(99, 102, 241, 0.18);
-  color: #818CF8;
-  border-color: rgba(99, 102, 241, 0.3);
-}
-
 /* Article Navigation */
 .vtj-post-nav {
   display: grid;
@@ -13229,14 +13010,16 @@ html.dark .vtj-sidebar-nl-input {
     }
 
     /* ============================================================
-       PREMIUM CODE BLOCKS SYSTEM - SYNTAX HIGHLIGHTING & COPY
+       PREMIUM CODE BLOCKS SYSTEM - AUTOMATIC CONVERSION & COPY
     ============================================================ */
     function initCodeBlocks() {
-      var postContainers = document.querySelectorAll('.post-content, #post-content, .post-body, .post-body-card, .vtj-post-body');
+      var postContainers = document.querySelectorAll('.post-content, #post-content, .post-body, .post-body-card');
       if (!postContainers || !postContainers.length) return;
 
       var copyIconSvg = '<svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
       var checkIconSvg = '<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+      var expandIconSvg = '<svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>';
+      var collapseIconSvg = '<svg viewBox="0 0 24 24"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></svg>';
 
       function normalizeLang(lang) {
         if (!lang) return '';
@@ -13287,7 +13070,7 @@ html.dark .vtj-sidebar-nl-input {
           case 'yml':
             return 'YAML';
         }
-        return l ? l.toUpperCase() : '';
+        return '';
       }
 
       function detectLanguage(preEl, codeEl) {
@@ -13295,8 +13078,7 @@ html.dark .vtj-sidebar-nl-input {
         if (preEl && preEl.className) classString += ' ' + preEl.className;
         if (codeEl && codeEl.className) classString += ' ' + codeEl.className;
 
-        var matches = classString.match(/(?:lang|language)-([a-z0-9+#-]+)/i) || 
-                      classString.match(/\b(html|css|javascript|js|python|py|java|sql|php|cpp|c\+\+|csharp|cs|c|json|bash|sh|shell|xml|markdown|md|typescript|ts)\b/i);
+        var matches = classString.match(/(?:lang|language)-([a-z0-9+#-]+)/i) || classString.match(/\b(html|css|javascript|js|python|py|java|sql|php|cpp|c\+\+|csharp|cs|c|json|bash|sh|shell|xml|markdown|md|typescript|ts)\b/i);
 
         if (matches) {
           var found = normalizeLang(matches[1] || matches[0]);
@@ -13304,104 +13086,15 @@ html.dark .vtj-sidebar-nl-input {
         }
 
         var text = (codeEl || preEl).textContent.trim();
-        if (/^<!DOCTYPE/i.test(text) || /^<html/i.test(text) || /^<div/i.test(text) || /^<svg/i.test(text)) return 'HTML';
-        if (/^import\s+[\w{}*,\s]+\s+from/i.test(text) || /^const\s+|^let\s+|^var\s+/i.test(text) || /^function\s*\w*\s*\(/.test(text) || /=>/.test(text)) return 'JavaScript';
+        if (/^<!DOCTYPE/i.test(text) || /^<html/i.test(text) || /^<div/i.test(text)) return 'HTML';
+        if (/^import\s+[\w{}*,\s]+\s+from/i.test(text) || /^const\s+|^let\s+|^var\s+/i.test(text) || /^function\s*\w*\s*\(/.test(text)) return 'JavaScript';
         if (/^def\s+\w+\s*\(|^import\s+\w+|^from\s+\w+\s+import/i.test(text)) return 'Python';
-        if (/^public\s+class\s+|^class\s+\w+\s*\{|^import\s+java\./i.test(text) || /System\.out\.println/.test(text)) return 'Java';
-        if (/^SELECT\s+|^INSERT\s+INTO|^UPDATE\s+|^DELETE\s+FROM|^CREATE\s+TABLE/i.test(text)) return 'SQL';
+        if (/^public\s+class\s+|^import\s+java\./i.test(text)) return 'Java';
+        if (/^SELECT\s+|^INSERT\s+INTO|^UPDATE\s+|^DELETE\s+FROM/i.test(text)) return 'SQL';
         if (/^<\?php/i.test(text)) return 'PHP';
         if (/^{\s*"|^\s*\[\s*{/i.test(text)) return 'JSON';
-        if (/^curl\s+|^npm\s+|^pip\s+|^git\s+|^apt\s+|^sudo\s+/i.test(text)) return 'Bash';
-        if (/^[.#]?[a-zA-Z0-9_-]+\s*\{\s*[a-zA-Z-]+:/i.test(text)) return 'CSS';
 
         return 'CODE';
-      }
-
-      function escapeHtml(str) {
-        return str.replace(/&/g, '&amp;')
-                  .replace(/</g, '&lt;')
-                  .replace(/>/g, '&gt;')
-                  .replace(/"/g, '&quot;')
-                  .replace(/'/g, '&#39;');
-      }
-
-      /* Single-pass non-colliding syntax tokenizer */
-      function highlightCode(code, lang) {
-        var l = (lang || '').toLowerCase();
-
-        var commentPattern = '\\/\\*([\\s\\S]*?)\\*\\/|\\/\\/(.*)';
-        if (l === 'python' || l === 'py' || l === 'bash' || l === 'sh') {
-          commentPattern = '#(.*)';
-        } else if (l === 'html' || l === 'xml') {
-          commentPattern = '<!--([\\s\\S]*?)-->';
-        }
-
-        var kwList = 'class|public|private|protected|static|final|void|int|float|double|boolean|char|byte|short|long|new|this|super|return|if|else|switch|case|default|break|continue|for|while|do|try|catch|finally|throw|throws|import|package|instanceof|interface|extends|implements|enum|abstract|synchronized|volatile|transient|native|strictfp|assert|const|goto|def|lambda|async|await|let|var|function|yield|typeof|null|undefined|true|false|None|True|False';
-        
-        if (l === 'sql') {
-          kwList = 'SELECT|FROM|WHERE|INSERT|INTO|UPDATE|DELETE|JOIN|LEFT|RIGHT|INNER|OUTER|GROUP|BY|ORDER|HAVING|LIMIT|CREATE|TABLE|DROP|ALTER|ADD|COLUMN|PRIMARY|KEY|FOREIGN|REFERENCES|NOT|NULL|AND|OR|AS|IN|ON|SET|VALUES';
-        } else if (l === 'bash' || l === 'sh') {
-          kwList = 'if|then|else|elif|fi|case|esac|for|select|while|until|do|done|in|function|time|echo|exit|export|source|alias|cd|curl|bash|sudo|python|pip|npm|git';
-        }
-
-        var masterRegex = new RegExp(
-          '(' + commentPattern + ')|' +
-          '("(?:\\\\.|[^"\\\\])*"|'(?:\\\\.|[^'\\\\])*'|`(?:\\\\.|[^`\\\\])*`)|' +
-          (l === 'html' || l === 'xml' ? '(<\\/?[a-zA-Z0-9:-]+(?:\\s+[^>]*)?>)|' : '') +
-          '(\\b\\d+(?:\\.\\d+)?\\b)|' +
-          '(\\b(?:' + kwList + ')\\b)|' +
-          '(\\b[A-Z][a-zA-Z0-9_$]*\\b)|' +
-          '(\\b[a-zA-Z_$][a-zA-Z0-9_$]*(?=\\s*\\())|' +
-          '([{}()\\[\\];,])',
-          l === 'sql' ? 'gi' : 'g'
-        );
-
-        var result = '';
-        var lastIndex = 0;
-        var match;
-
-        while ((match = masterRegex.exec(code)) !== null) {
-          if (match.index > lastIndex) {
-            result += escapeHtml(code.slice(lastIndex, match.index));
-          }
-
-          var text = match[0];
-
-          if (match[1]) {
-            result += '<span class="token comment">' + escapeHtml(text) + '</span>';
-          } else if (text.startsWith('"') || text.startsWith("'") || text.startsWith('`')) {
-            result += '<span class="token string">' + escapeHtml(text) + '</span>';
-          } else if ((l === 'html' || l === 'xml') && text.startsWith('<')) {
-            var isClose = text.startsWith('</');
-            var openMatch = text.match(/^<\/?([a-zA-Z0-9:-]+)/);
-            var tagName = openMatch ? openMatch[1] : '';
-            var rest = text.slice(openMatch ? openMatch[0].length : 1, text.endsWith('>') ? -1 : undefined);
-            var restHighlighted = rest.replace(/([a-zA-Z0-9:-]+)(\s*=\s*)(".*?"|'.*?'|[^\s>]+)/g, function(m, attr, eq, val) {
-              return '<span class="token attr-name">' + escapeHtml(attr) + '</span>' + eq + '<span class="token attr-value">' + escapeHtml(val) + '</span>';
-            });
-            result += '&lt;' + (isClose ? '/' : '') + '<span class="token tag">' + tagName + '</span>' + restHighlighted + '&gt;';
-          } else if (/^\d/.test(text)) {
-            result += '<span class="token number">' + escapeHtml(text) + '</span>';
-          } else if (new RegExp('^(?:' + kwList + ')$', l === 'sql' ? 'i' : '').test(text)) {
-            result += '<span class="token keyword">' + escapeHtml(text) + '</span>';
-          } else if (/^[A-Z]/.test(text)) {
-            result += '<span class="token class-name">' + escapeHtml(text) + '</span>';
-          } else if (code[match.index + text.length] === '(' || /^\s*\(/.test(code.slice(match.index + text.length))) {
-            result += '<span class="token function">' + escapeHtml(text) + '</span>';
-          } else if (/^[{}()[\];,]$/.test(text)) {
-            result += '<span class="token punctuation">' + escapeHtml(text) + '</span>';
-          } else {
-            result += escapeHtml(text);
-          }
-
-          lastIndex = masterRegex.lastIndex;
-        }
-
-        if (lastIndex < code.length) {
-          result += escapeHtml(code.slice(lastIndex));
-        }
-
-        return result;
       }
 
       for (var c = 0; c < postContainers.length; c++) {
@@ -13418,90 +13111,72 @@ html.dark .vtj-sidebar-nl-input {
           var codeChild = pre.querySelector('code');
           var langName = detectLanguage(pre, codeChild);
 
-          // Get raw text
-          var rawText = (codeChild ? codeChild.textContent : pre.textContent);
-
-          // Clean any Blogger gadget artifacts
-          rawText = rawText.replace(/^(?:HTML|CSS|JavaScript|Java|Python|Bash|SQL)\s+ExpandCopy\s+/i, '');
-          rawText = rawText.replace(/^ExpandCopy\s+/i, '');
-
-          // Container
           var blockWrapper = document.createElement('div');
           blockWrapper.className = 'vtj-code-block';
-          blockWrapper.setAttribute('data-lang', langName.toLowerCase());
 
-          // Header
           var header = document.createElement('div');
           header.className = 'vtj-code-header';
-
-          var headerLeft = document.createElement('div');
-          headerLeft.className = 'vtj-code-header-left';
-
-          var dotsDiv = document.createElement('div');
-          dotsDiv.className = 'vtj-code-dots';
-          dotsDiv.innerHTML = '<span class="vtj-code-dot vtj-code-dot-red"></span>' +
-                              '<span class="vtj-code-dot vtj-code-dot-yellow"></span>' +
-                              '<span class="vtj-code-dot vtj-code-dot-green"></span>';
 
           var langSpan = document.createElement('span');
           langSpan.className = 'vtj-code-lang';
           langSpan.textContent = langName;
 
-          headerLeft.appendChild(dotsDiv);
-          headerLeft.appendChild(langSpan);
+          var actionsDiv = document.createElement('div');
+          actionsDiv.className = 'vtj-code-actions';
 
-          // Copy button
+          var expandBtn = document.createElement('button');
+          expandBtn.type = 'button';
+          expandBtn.className = 'vtj-code-btn vtj-code-expand';
+          expandBtn.setAttribute('aria-label', 'Expand code block');
+          expandBtn.style.display = 'none';
+          expandBtn.innerHTML = expandIconSvg + '<span>Expand</span>';
+
           var copyBtn = document.createElement('button');
           copyBtn.type = 'button';
-          copyBtn.className = 'vtj-code-copy-btn';
-          copyBtn.setAttribute('aria-label', 'Copy code to clipboard');
-          copyBtn.innerHTML = copyIconSvg + '<span class="vtj-copy-label">Copy</span>';
+          copyBtn.className = 'vtj-code-btn vtj-code-copy';
+          copyBtn.setAttribute('aria-label', 'Copy code');
+          copyBtn.innerHTML = copyIconSvg + '<span class="vtj-copy-text">Copy</span>';
 
-          header.appendChild(headerLeft);
-          header.appendChild(copyBtn);
+          actionsDiv.appendChild(expandBtn);
+          actionsDiv.appendChild(copyBtn);
 
-          // Code area wrapper (Condition 1 & 2)
+          header.appendChild(langSpan);
+          header.appendChild(actionsDiv);
+
           var codeWrapper = document.createElement('div');
           codeWrapper.className = 'vtj-code-wrapper';
 
-          // Syntax Highlighting (Condition 3)
-          var highlightedHtml = highlightCode(rawText, langName);
+          pre.setAttribute('data-vtj-code', 'true');
 
-          var newPre = document.createElement('pre');
-          var newCode = document.createElement('code');
-          newCode.className = 'language-' + langName.toLowerCase();
-          newCode.innerHTML = highlightedHtml;
-          newPre.appendChild(newCode);
-
-          codeWrapper.appendChild(newPre);
+          pre.parentNode.insertBefore(blockWrapper, pre);
+          codeWrapper.appendChild(pre);
           blockWrapper.appendChild(header);
           blockWrapper.appendChild(codeWrapper);
 
-          // Replace old pre with styled block
-          pre.parentNode.insertBefore(blockWrapper, pre);
-          pre.parentNode.removeChild(pre);
-
-          // Copy functionality
-          (function (textToCopy, btn) {
+          // Copy Logic
+          (function (targetPre, btn) {
             btn.addEventListener('click', function () {
+              var codeElement = targetPre.querySelector('code') || targetPre;
+              var codeToCopy = codeElement.textContent;
+
               function onSuccess() {
                 btn.classList.add('is-copied');
-                btn.innerHTML = checkIconSvg + '<span class="vtj-copy-label">Copied!</span>';
+                btn.innerHTML = checkIconSvg + '<span class="vtj-copy-text">Copied!</span>';
                 setTimeout(function () {
                   btn.classList.remove('is-copied');
-                  btn.innerHTML = copyIconSvg + '<span class="vtj-copy-label">Copy</span>';
+                  btn.innerHTML = copyIconSvg + '<span class="vtj-copy-text">Copy</span>';
                 }, 2000);
               }
 
               if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(textToCopy).then(onSuccess).catch(function () {
-                  fallbackCopy(textToCopy, onSuccess);
+                navigator.clipboard.writeText(codeToCopy).then(onSuccess).catch(function () {
+                  fallbackCopy(codeToCopy, onSuccess);
                 });
               } else {
-                fallbackCopy(textToCopy, onSuccess);
+                fallbackCopy(codeToCopy, onSuccess);
               }
             });
-          })(rawText, copyBtn);
+          })(pre, copyBtn);
 
           function fallbackCopy(text, cb) {
             var ta = document.createElement('textarea');
@@ -13520,14 +13195,35 @@ html.dark .vtj-sidebar-nl-input {
             }
             document.body.removeChild(ta);
           }
+
+          // Expand / Collapse Logic
+          (function (wrapper, expBtn) {
+            setTimeout(function () {
+              if (wrapper.scrollHeight > 305) {
+                expBtn.style.display = 'inline-flex';
+                expBtn.addEventListener('click', function () {
+                  var isExpanded = wrapper.classList.contains('is-expanded');
+                  if (isExpanded) {
+                    wrapper.classList.remove('is-expanded');
+                    expBtn.innerHTML = expandIconSvg + '<span>Expand</span>';
+                    expBtn.setAttribute('aria-label', 'Expand code block');
+                  } else {
+                    wrapper.classList.add('is-expanded');
+                    expBtn.innerHTML = collapseIconSvg + '<span>Collapse</span>';
+                    expBtn.setAttribute('aria-label', 'Collapse code block');
+                  }
+                });
+              }
+            }, 100);
+          })(codeWrapper, expandBtn);
         }
       }
-    }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initCodeBlocks);
-    } else {
-      initCodeBlocks();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCodeBlocks);
+      } else {
+        initCodeBlocks();
+      }
     }
     /* ---- Mobile Footer Accordion ---- */
     var footerCols = document.querySelectorAll('.site-footer .vtj-footer-col:not(.vtj-col-brand)');
