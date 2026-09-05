@@ -12828,49 +12828,19 @@ html.dark .vtj-sidebar-nl-input {
         }, 2000);
       }
 
-      // 3. TABLE OF CONTENTS GENERATOR (H1, H2 ONLY; IF NO H1, SHOW ONLY H2; NEVER H3)
+      // 3. TABLE OF CONTENTS GENERATOR (H1, H2 ONLY WITH DISTINCT COLORS)
       var tocCard = document.getElementById('vtj-toc-card');
       var tocList = document.getElementById('vtj-post-toc-list');
       var tocRail = document.getElementById('vtj-toc-rail');
       if (tocCard && tocList && postContent) {
-        // Plain in-post manual TOC hiding if present
-        var allLists = postContent.querySelectorAll('ul, ol');
-        for (var j = 0; j < allLists.length; j++) {
-          var listPrev = allLists[j].previousElementSibling;
-          if (listPrev && (listPrev.tagName.toLowerCase() === 'h1' || listPrev.tagName.toLowerCase() === 'h2' || listPrev.tagName.toLowerCase() === 'h3') && listPrev.textContent.toLowerCase().indexOf('table of contents') !== -1) {
-            allLists[j].style.display = 'none';
-            listPrev.style.display = 'none';
-          }
-        }
-
-        // Check if H1 exists inside post body
-        var allH1s = postContent.querySelectorAll('h1');
-        var rawHeadings;
-        if (allH1s.length > 0) {
-          // If H1 exists, show only H1 and H2
-          rawHeadings = postContent.querySelectorAll('h1, h2');
-        } else {
-          // If H1 does not exist, show ONLY H2 (never H3)
-          rawHeadings = postContent.querySelectorAll('h2');
-        }
-
-        var validHeadings = [];
-        for (var i = 0; i < rawHeadings.length; i++) {
-          var h = rawHeadings[i];
-          var tag = h.tagName.toLowerCase();
-          // Guarantee strictly only h1 and h2
-          if (tag !== 'h1' && tag !== 'h2') continue;
-          if (h.closest('.vtj-code-block') || h.closest('pre')) continue;
-          var txt = (h.textContent || '').trim();
-          if (!txt || txt.toLowerCase().indexOf('table of contents') !== -1) continue;
-          validHeadings.push(h);
-        }
-
-        if (validHeadings.length >= 2) {
-          tocList.innerHTML = '';
+        // Query ONLY H1 and H2 headings inside #post-content
+        var headings = postContent.querySelectorAll('h1, h2');
+        if (headings.length >= 2) {
           var tocItems = [];
-          validHeadings.forEach(function (h, idx) {
+          headings.forEach(function (h, idx) {
             var txt = (h.textContent || '').trim();
+            if (!txt || txt.toLowerCase().indexOf('table of contents') !== -1) return;
+
             if (!h.id) {
               h.id = 'section-heading-' + idx;
             }
@@ -12922,7 +12892,7 @@ html.dark .vtj-sidebar-nl-input {
               threshold: 0
             });
 
-            validHeadings.forEach(function (h) {
+            headings.forEach(function (h) {
               observer.observe(h);
             });
           }
