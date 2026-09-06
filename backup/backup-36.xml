@@ -1279,57 +1279,11 @@
      margin: 0 auto;
      padding: 0 2rem;
    }
-   .vtj-hero-slider-wrap {
-     position: relative;
-     display: grid;
-     grid-template-areas: "slide";
-   }
-   .vtj-hero-slide {
-     grid-area: slide;
-     opacity: 0;
-     visibility: hidden;
-     transform: translateY(8px);
-     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
-     pointer-events: none;
-     z-index: 1;
-   }
-   .vtj-hero-slide.active {
-     opacity: 1;
-     visibility: visible;
-     transform: translateY(0);
-     pointer-events: auto;
-     z-index: 2;
-   }
    .vtj-hero-editorial-grid {
      display: grid;
      grid-template-columns: 2.08fr 1fr;
      gap: 20px;
      align-items: stretch;
-   }
-   .vtj-hero-dots-indicator {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 8px;
-     margin-top: 14px;
-   }
-   .vtj-hero-dots-indicator .vtj-dot {
-     width: 8px;
-     height: 8px;
-     border-radius: 50%;
-     background: #CBD5E1;
-     border: none;
-     padding: 0;
-     cursor: pointer;
-     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-   }
-   html.dark .vtj-hero-dots-indicator .vtj-dot {
-     background: #334155;
-   }
-   .vtj-hero-dots-indicator .vtj-dot.active {
-     width: 24px;
-     border-radius: 999px;
-     background: #2563EB;
    }
 
    /* Base Hero Card with 16:9 aspect ratio */
@@ -8821,218 +8775,81 @@ html.dark .vtj-sidebar-nl-input {
     <!-- HERO / FEATURED EDITORIAL SECTION -->
     <section class='vtj-hero-editorial' id='vtj-featured-slider-section'>
       <div class='container vtj-hero-container'>
-        <div class='vtj-hero-slider-wrap' id='vtj-hero-slider-wrap'>
+        <div class='vtj-hero-editorial-grid'>
 
-          <!-- SLIDE 1 (Posts 1, 2, 3) -->
-          <div class='vtj-hero-slide active' data-slide='0'>
-            <div class='vtj-hero-editorial-grid'>
-              <!-- LEFT: Large Featured Article (Post 1) -->
-              <article class='vtj-hero-card vtj-hero-card-large'>
-                <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/09/it-entry-level-jobs-for-freshers.html' title='10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide'>
-                  <div class='vtj-hero-img-wrapper'>
-                    <img alt='10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide' class='vtj-hero-card-img' fetchpriority='high' height='675' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzGy1FuQ9S2s2c_EqbgAkwCDvjdvkoGsO0qh8UxrOdXmRfXf2y79lrIWZmvV1hA57tJ0ZmmfrOg7fjauYx5g5Wtwkqdjwb1EkWu_GIBo6PRRKC1t-beTdbU6kbTlHvM3w61OFl63oR6WGdANrEvehRtuc6ZrFlTeffsWgz9SmwovrNHDw0-MB2oGqsAtNi/w1200-h800-c-rw/it-fresher-career-growth-2026.webp' width='1200'/>
-                    <div class='vtj-hero-gradient-overlay'/>
-                  </div>
-                  <div class='vtj-hero-card-body'>
-                    <span class='vtj-hero-badge vtj-badge-career'>CAREER &amp; JOBS</span>
-                    <h1 class='vtj-hero-title-main'>10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide</h1>
-                    <p class='vtj-hero-desc'>Explore top in-demand IT entry-level career paths, required skills, high-growth roles, and actionable roadmap strategies for freshers in 2026.</p>
-                    <div class='vtj-hero-meta'>
-                      <img alt='VICKY TECH JOURNAL' class='vtj-hero-author-avatar' height='20' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='20'/>
-                      <span class='vtj-hero-author'>VICKY TECH JOURNAL</span>
-                      <span class='vtj-hero-dot'>&#8226;</span>
-                      <span class='vtj-hero-date'>Sep 4, 2026</span>
-                      <span class='vtj-hero-dot'>&#8226;</span>
-                      <span class='vtj-hero-readtime'>6 min read</span>
-                    </div>
-                  </div>
-                </a>
-              </article>
-
-              <!-- RIGHT: 2 Stacked Smaller Articles (Posts 2 & 3) -->
-              <div class='vtj-hero-sidebar-cards'>
-                <article class='vtj-hero-card vtj-hero-card-small'>
-                  <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/09/it-jobs-entry-level-2026.html' title='IT Jobs Entry Level 2026: Jobs, Skills &amp; Career Guide'>
-                    <div class='vtj-hero-img-wrapper'>
-                      <img alt='IT Jobs Entry Level 2026: Jobs, Skills &amp; Career Guide' class='vtj-hero-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1yv0InclscXE4xSN57XkOqtOdNLU52_-JHFBHqAgmlxkWOEHjhd0mMePgn6loaEYcsDp4EeAn5slESjjcZOF7ZRkm7QWGFLFn32oZX_OPZZv6z4lDAKhdMh8Xs4wTBZhue4tZXGOaZbQiccAPvh0RhQpLkEeFNp2tQKEIb7xPfOeWdxNOdegocgKfvHtd/w800-h500-c-rw/it-jobs-entry-level-2026-guide.webp' width='800'/>
-                      <div class='vtj-hero-gradient-overlay'/>
-                    </div>
-                    <div class='vtj-hero-card-body'>
-                      <span class='vtj-hero-badge vtj-badge-coding'>CAREER GUIDE</span>
-                      <h2 class='vtj-hero-title-sub'>IT Jobs Entry Level 2026: Jobs, Skills &amp; Career Guide</h2>
-                      <div class='vtj-hero-meta'>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Sep 3, 2026</span>
-                        <span class='vtj-hero-dot'>&#8226;</span>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 5 min read</span>
-                      </div>
-                    </div>
-                  </a>
-                </article>
-
-                <article class='vtj-hero-card vtj-hero-card-small'>
-                  <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/09/easy-technology-to-learn-2026.html' title='Easy Technology: Simple Technologies Anyone Can Learn in 2026'>
-                    <div class='vtj-hero-img-wrapper'>
-                      <img alt='Easy Technology: Simple Technologies Anyone Can Learn in 2026' class='vtj-hero-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEfBVXAeThSBygItxNCBeuLxr0Yr4GXm9-u-9cP3NSLGrTGQELeQxzwf8Nlmnnvky0SHN5YXS23XqHSfKSWnFR5B4rU5ASQAcAhwzWZtUqVJUqlNkDK33uI3OLQVColmwGlbgZMa4ZI48Nqd_o0RpzEV4s6dKJBEgOMMjSwkDZ19rSuVFpZxjVp8NvuNB_/w800-h500-c-rw/easy-technology-to-learn-2026.webp' width='800'/>
-                      <div class='vtj-hero-gradient-overlay'/>
-                    </div>
-                    <div class='vtj-hero-card-body'>
-                      <span class='vtj-hero-badge vtj-badge-cloud'>TECHNOLOGY</span>
-                      <h2 class='vtj-hero-title-sub'>Easy Technology: Simple Technologies Anyone Can Learn in 2026</h2>
-                      <div class='vtj-hero-meta'>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Sep 2, 2026</span>
-                        <span class='vtj-hero-dot'>&#8226;</span>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 4 min read</span>
-                      </div>
-                    </div>
-                  </a>
-                </article>
+          <!-- LEFT: LARGE FEATURED ARTICLE (Latest / 1st Published Article) -->
+          <article class='vtj-hero-card vtj-hero-card-large'>
+            <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/09/it-entry-level-jobs-for-freshers.html' title='10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide'>
+              <div class='vtj-hero-img-wrapper'>
+                <img alt='10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide' class='vtj-hero-card-img' fetchpriority='high' height='675' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzGy1FuQ9S2s2c_EqbgAkwCDvjdvkoGsO0qh8UxrOdXmRfXf2y79lrIWZmvV1hA57tJ0ZmmfrOg7fjauYx5g5Wtwkqdjwb1EkWu_GIBo6PRRKC1t-beTdbU6kbTlHvM3w61OFl63oR6WGdANrEvehRtuc6ZrFlTeffsWgz9SmwovrNHDw0-MB2oGqsAtNi/w1200-h800-c-rw/it-fresher-career-growth-2026.webp' width='1200'/>
+                <div class='vtj-hero-gradient-overlay'/>
               </div>
-            </div>
+              <div class='vtj-hero-card-body'>
+                <span class='vtj-hero-badge vtj-badge-career'>CAREER &amp; JOBS</span>
+                <h1 class='vtj-hero-title-main'>10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide</h1>
+                <p class='vtj-hero-desc'>Explore top in-demand IT entry-level career paths, required skills, high-growth roles, and actionable roadmap strategies for freshers in 2026.</p>
+                <div class='vtj-hero-meta'>
+                  <img alt='Vicky TJ' class='vtj-hero-author-avatar' height='20' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='20'/>
+                  <span class='vtj-hero-author'>Vicky TJ</span>
+                  <span class='vtj-hero-dot'>&#8226;</span>
+                  <span class='vtj-hero-date'>Sep 4, 2026</span>
+                  <span class='vtj-hero-dot'>&#8226;</span>
+                  <span class='vtj-hero-readtime'>6 min read</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- RIGHT: TWO STACKED SMALLER ARTICLES (2nd and 3rd Latest Articles) -->
+          <div class='vtj-hero-sidebar-cards'>
+
+            <!-- RIGHT CARD 1: 2nd Latest Article -->
+            <article class='vtj-hero-card vtj-hero-card-small'>
+              <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/09/it-jobs-entry-level-2026.html' title='IT Jobs Entry Level 2026: Jobs, Skills &amp; Career Guide'>
+                <div class='vtj-hero-img-wrapper'>
+                  <img alt='IT Jobs Entry Level 2026: Jobs, Skills &amp; Career Guide' class='vtj-hero-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1yv0InclscXE4xSN57XkOqtOdNLU52_-JHFBHqAgmlxkWOEHjhd0mMePgn6loaEYcsDp4EeAn5slESjjcZOF7ZRkm7QWGFLFn32oZX_OPZZv6z4lDAKhdMh8Xs4wTBZhue4tZXGOaZbQiccAPvh0RhQpLkEeFNp2tQKEIb7xPfOeWdxNOdegocgKfvHtd/w800-h500-c-rw/it-jobs-entry-level-2026-guide.webp' width='800'/>
+                  <div class='vtj-hero-gradient-overlay'/>
+                </div>
+                <div class='vtj-hero-card-body'>
+                  <span class='vtj-hero-badge vtj-badge-coding'>CAREER GUIDE</span>
+                  <h2 class='vtj-hero-title-sub'>IT Jobs Entry Level 2026: Jobs, Skills &amp; Career Guide</h2>
+                  <div class='vtj-hero-meta'>
+                    <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Sep 3, 2026</span>
+                    <span class='vtj-hero-dot'>&#8226;</span>
+                    <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 5 min read</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- RIGHT CARD 2: 3rd Latest Article -->
+            <article class='vtj-hero-card vtj-hero-card-small'>
+              <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/09/easy-technology-to-learn-2026.html' title='Easy Technology: Simple Technologies Anyone Can Learn in 2026'>
+                <div class='vtj-hero-img-wrapper'>
+                  <img alt='Easy Technology: Simple Technologies Anyone Can Learn in 2026' class='vtj-hero-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEfBVXAeThSBygItxNCBeuLxr0Yr4GXm9-u-9cP3NSLGrTGQELeQxzwf8Nlmnnvky0SHN5YXS23XqHSfKSWnFR5B4rU5ASQAcAhwzWZtUqVJUqlNkDK33uI3OLQVColmwGlbgZMa4ZI48Nqd_o0RpzEV4s6dKJBEgOMMjSwkDZ19rSuVFpZxjVp8NvuNB_/w800-h500-c-rw/easy-technology-to-learn-2026.webp' width='800'/>
+                  <div class='vtj-hero-gradient-overlay'/>
+                </div>
+                <div class='vtj-hero-card-body'>
+                  <span class='vtj-hero-badge vtj-badge-cloud'>TECHNOLOGY</span>
+                  <h2 class='vtj-hero-title-sub'>Easy Technology: Simple Technologies Anyone Can Learn in 2026</h2>
+                  <div class='vtj-hero-meta'>
+                    <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Sep 2, 2026</span>
+                    <span class='vtj-hero-dot'>&#8226;</span>
+                    <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 4 min read</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
           </div>
 
-          <!-- SLIDE 2 (Posts 4, 5, 6) -->
-          <div class='vtj-hero-slide' data-slide='1'>
-            <div class='vtj-hero-editorial-grid'>
-              <!-- LEFT: Large Featured Article (Post 4) -->
-              <article class='vtj-hero-card vtj-hero-card-large'>
-                <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/09/best-ai-tools-for-students-2026.html' title='Best AI Tools for Students in 2026: 10 Free &amp; Powerful AI Tools for Studying'>
-                  <div class='vtj-hero-img-wrapper'>
-                    <img alt='Best AI Tools for Students in 2026: 10 Free &amp; Powerful AI Tools for Studying' class='vtj-hero-card-img' decoding='async' height='675' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQsy7bwIGNnQFdUby88J4CHrFslIi52kw9y04tghCq8w_wOH4dG4nNAzrpHax0dQuZi-_4BmzoxqVGQgowIsfSK-OihT20NpB_6hvYBkx1jdQAck34o4HEh5AJG39XaYc8j8BG_guBNX5_E5LXouLVt-jH1aLkx09w2BTEBKC76L9Iugaa1f6plcGw_m6U/w1200-h800-c-rw/best-ai-tools-for-students-2026.png' width='1200'/>
-                    <div class='vtj-hero-gradient-overlay'/>
-                  </div>
-                  <div class='vtj-hero-card-body'>
-                    <span class='vtj-hero-badge vtj-badge-ai'>AI TOOLS</span>
-                    <h1 class='vtj-hero-title-main'>Best AI Tools for Students in 2026: 10 Free &amp; Powerful AI Tools for Studying</h1>
-                    <p class='vtj-hero-desc'>Discover the best free and powerful artificial intelligence tools designed to help students learn faster, write notes, and study efficiently.</p>
-                    <div class='vtj-hero-meta'>
-                      <img alt='VICKY TECH JOURNAL' class='vtj-hero-author-avatar' height='20' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='20'/>
-                      <span class='vtj-hero-author'>VICKY TECH JOURNAL</span>
-                      <span class='vtj-hero-dot'>&#8226;</span>
-                      <span class='vtj-hero-date'>Sep 1, 2026</span>
-                      <span class='vtj-hero-dot'>&#8226;</span>
-                      <span class='vtj-hero-readtime'>5 min read</span>
-                    </div>
-                  </div>
-                </a>
-              </article>
-
-              <!-- RIGHT: 2 Stacked Smaller Articles (Posts 5 & 6) -->
-              <div class='vtj-hero-sidebar-cards'>
-                <article class='vtj-hero-card vtj-hero-card-small'>
-                  <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/08/how-to-protect-your-data-2026.html' title='How to Protect Your Data: 10 Practical Cybersecurity Tips for Everyday Users'>
-                    <div class='vtj-hero-img-wrapper'>
-                      <img alt='How to Protect Your Data: 10 Practical Cybersecurity Tips for Everyday Users' class='vtj-hero-card-img' decoding='async' height='450' loading='lazy' src='https://gravitywrite.sgp1.digitaloceanspaces.com/blog/img_4561298_2350662_2026_08_22_06_41_17_vMIssjBL.jpg' width='800'/>
-                      <div class='vtj-hero-gradient-overlay'/>
-                    </div>
-                    <div class='vtj-hero-card-body'>
-                      <span class='vtj-hero-badge vtj-badge-career'>CYBERSECURITY</span>
-                      <h2 class='vtj-hero-title-sub'>How to Protect Your Data: 10 Practical Cybersecurity Tips for Everyday Users</h2>
-                      <div class='vtj-hero-meta'>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Aug 30, 2026</span>
-                        <span class='vtj-hero-dot'>&#8226;</span>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 5 min read</span>
-                      </div>
-                    </div>
-                  </a>
-                </article>
-
-                <article class='vtj-hero-card vtj-hero-card-small'>
-                  <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/08/vibe-coding-beginners-guide-ai-coding.html' title='Vibe Coding: Complete Beginner&apos;s Guide to AI Coding (2026)'>
-                    <div class='vtj-hero-img-wrapper'>
-                      <img alt='Vibe Coding: Complete Beginner&apos;s Guide to AI Coding (2026)' class='vtj-hero-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEiQM0F8MnYoRWXWIQf64cwR8h-0uMBIcqf7kMvqKf3kbyquGIUGu_SPWX4poI-8yhirTOvL45guCvH8lS5jxXMnULPH9UE5XBdK-YzikXFXe-T9g4HTSqMNJxCDvK2nFhs-4JaRboLYmCIvjiIYRVc2xPNGSqfqWAKiSBSRQTrKG7JPdOKr2zFdSMW1fy7X=w800-h500-c-rw' width='800'/>
-                      <div class='vtj-hero-gradient-overlay'/>
-                    </div>
-                    <div class='vtj-hero-card-body'>
-                      <span class='vtj-hero-badge vtj-badge-coding'>AI CODING</span>
-                      <h2 class='vtj-hero-title-sub'>Vibe Coding: Complete Beginner&#39;s Guide to AI Coding (2026)</h2>
-                      <div class='vtj-hero-meta'>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Aug 30, 2026</span>
-                        <span class='vtj-hero-dot'>&#8226;</span>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 6 min read</span>
-                      </div>
-                    </div>
-                  </a>
-                </article>
-              </div>
-            </div>
-          </div>
-
-          <!-- SLIDE 3 (Posts 7, 8, 9) -->
-          <div class='vtj-hero-slide' data-slide='2'>
-            <div class='vtj-hero-editorial-grid'>
-              <!-- LEFT: Large Featured Article (Post 7) -->
-              <article class='vtj-hero-card vtj-hero-card-large'>
-                <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/08/best-ai-coding-agents-developers-2026.html' title='Best AI Coding Agents for Developers in 2026 (Simple Guide)'>
-                  <div class='vtj-hero-img-wrapper'>
-                    <img alt='Best AI Coding Agents for Developers in 2026 (Simple Guide)' class='vtj-hero-card-img' decoding='async' height='675' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgUcoJ9U2L7JDlUViWRVWUegunYtsTugK0hhBiuADCjNOfI8FYR9TubL2rNrtZOa-OD9-g5LxdZmvyWmNoipMCMLnoAYdwHcg9wvhRmZw7jIbxj95O70QNaWvzDx-DjwKW0HullrGRiEVL00HT5sFFbScXDruaTW2qx9aCtaoBvpaJ7IqHwNmg0KGsCTFiu=w1200-h800-c-rw' width='1200'/>
-                    <div class='vtj-hero-gradient-overlay'/>
-                  </div>
-                  <div class='vtj-hero-card-body'>
-                    <span class='vtj-hero-badge vtj-badge-cloud'>DEVELOPER TOOLS</span>
-                    <h1 class='vtj-hero-title-main'>Best AI Coding Agents for Developers in 2026 (Simple Guide)</h1>
-                    <p class='vtj-hero-desc'>Explore the best autonomous AI coding agents for software developers in 2026, comparing their workflow capabilities, speeds, and use cases.</p>
-                    <div class='vtj-hero-meta'>
-                      <img alt='VICKY TECH JOURNAL' class='vtj-hero-author-avatar' height='20' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='20'/>
-                      <span class='vtj-hero-author'>VICKY TECH JOURNAL</span>
-                      <span class='vtj-hero-dot'>&#8226;</span>
-                      <span class='vtj-hero-date'>Aug 29, 2026</span>
-                      <span class='vtj-hero-dot'>&#8226;</span>
-                      <span class='vtj-hero-readtime'>6 min read</span>
-                    </div>
-                  </div>
-                </a>
-              </article>
-
-              <!-- RIGHT: 2 Stacked Smaller Articles (Posts 8 & 9) -->
-              <div class='vtj-hero-sidebar-cards'>
-                <article class='vtj-hero-card vtj-hero-card-small'>
-                  <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/08/how-to-build-ai-agent-from-scratch-2026.html' title='How to Build an AI Agent from Scratch in 2026 (Beginner&apos;s Step-by-Step Guide)'>
-                    <div class='vtj-hero-img-wrapper'>
-                      <img alt='How to Build an AI Agent from Scratch in 2026 (Beginner&apos;s Step-by-Step Guide)' class='vtj-hero-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEjYNtPxsYdPjuWUd3Y9fahvEvsy3F1SSmpDZtqK4KuVHk2RIIPST_bssTRJP5K2NtfWLFwbJC7yAQdWmz2ThMZT0vQZCKnCMx5K9AOFQf0wyPCb-WL7I-FIoVi6NR-XlFOKKqD_Y0EFy8GknHsElr_kA1RHIT5RVH8WOZG1Jj_vQOz92jNhBqK7PghW-la2=w800-h500-c-rw' width='800'/>
-                      <div class='vtj-hero-gradient-overlay'/>
-                    </div>
-                    <div class='vtj-hero-card-body'>
-                      <span class='vtj-hero-badge vtj-badge-coding'>GUIDES</span>
-                      <h2 class='vtj-hero-title-sub'>How to Build an AI Agent from Scratch in 2026 (Step-by-Step Guide)</h2>
-                      <div class='vtj-hero-meta'>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Aug 28, 2026</span>
-                        <span class='vtj-hero-dot'>&#8226;</span>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 7 min read</span>
-                      </div>
-                    </div>
-                  </a>
-                </article>
-
-                <article class='vtj-hero-card vtj-hero-card-small'>
-                  <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/08/ai-agents-roadmap-for-beginners-2026.html' title='AI Agents Roadmap for Beginners in 2026: A Complete Step-by-Step Guide'>
-                    <div class='vtj-hero-img-wrapper'>
-                      <img alt='AI Agents Roadmap for Beginners in 2026: A Complete Step-by-Step Guide' class='vtj-hero-card-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEjARYlFnjFv8h3heZ3j2Z06ZoF1SsWmEJaoIfZTcmo8rZTBBXcIDhXQIpJlwzhj7Ny4f1TkQTMJbAlR34P6du_mVZruTKYW-xLWGCKQAlDnduHs2lFqWIU32h3I5KU1MuxAMqhs-yvsxUXnLEZIsdteQe2_YwKg0o6E5MNZCx9IZduFPEKVtrbI6_Yi4XFG=w800-h500-c-rw' width='800'/>
-                      <div class='vtj-hero-gradient-overlay'/>
-                    </div>
-                    <div class='vtj-hero-card-body'>
-                      <span class='vtj-hero-badge vtj-badge-cloud'>ROADMAPS</span>
-                      <h2 class='vtj-hero-title-sub'>AI Agents Roadmap for Beginners in 2026: A Complete Guide</h2>
-                      <div class='vtj-hero-meta'>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'/><line x1='16' x2='16' y1='2' y2='6'/><line x1='8' x2='8' y1='2' y2='6'/><line x1='3' x2='21' y1='10' y2='10'/></svg> Aug 27, 2026</span>
-                        <span class='vtj-hero-dot'>&#8226;</span>
-                        <span class='vtj-hero-meta-item'><svg class='vtj-meta-icon' height='12' viewBox='0 0 24 24' width='12'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg> 8 min read</span>
-                      </div>
-                    </div>
-                  </a>
-                </article>
-              </div>
-            </div>
+          <div class='vtj-hero-dots-indicator'>
+            <span class='vtj-dot active'/>
+            <span class='vtj-dot'/>
+            <span class='vtj-dot'/>
           </div>
 
         </div>
-
-        <!-- 3 DOTS INDICATOR -->
-        <div class='vtj-hero-dots-indicator' id='vtj-hero-dots'>
-          <button aria-label='Slide 1' class='vtj-dot active' data-index='0'/>
-          <button aria-label='Slide 2' class='vtj-dot' data-index='1'/>
-          <button aria-label='Slide 3' class='vtj-dot' data-index='2'/>
-        </div>
-
       </div>
     </section>
 
@@ -12238,49 +12055,274 @@ html.dark .vtj-sidebar-nl-input {
       }
     }
 
-    /* ---- Featured Hero 3-Slide Carousel ---- */
+    /* ---- Featured Post Slider ---- */
+    var sliderEntries = [];
+    var sliderCurrent = 0;
+    var sliderTimer = null;
+    var sliderInterval = 4000;
+    var sliderIsPaused = false;
+    var DEFAULT_FEATURED_IMAGE = "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80";
+
+    function escapeHtml(str) {
+      return (str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function getHighQualityImage(url) {
+      if (!url) return DEFAULT_FEATURED_IMAGE;
+
+      return url
+        .replace(/\/s72-c\//, "/w800-h450-c-rw/")
+        .replace(/\/s100-c\//, "/w800-h450-c-rw/")
+        .replace(/\/s150-c\//, "/w800-h450-c-rw/")
+        .replace(/\/s[0-9]+(-c)?\//, "/w800-h450-c-rw/")
+        .replace(/=s[0-9]+(-c)?/, "=w800-h450-c-rw")
+        .replace(/\/w[0-9]+-h[0-9]+(-c)?\//, "/w800-h450-c-rw/")
+        .replace(/\/w[0-9]+-h[0-9]+-p-k-no-nu\//, "/w800-h450-c-rw/");
+    }
+
     function loadHeroSlider() {
-      var wrap = document.getElementById("vtj-hero-slider-wrap");
-      if (!wrap) return;
-      var slides = wrap.querySelectorAll(".vtj-hero-slide");
-      var dots = document.querySelectorAll("#vtj-hero-dots .vtj-dot");
-      if (slides.length <= 1) return;
+      if (!document.getElementById("vtj-featured-slider-container")) return;
+      var s = document.createElement("script");
+      s.src = BLOG_URL + "feeds/posts/summary?alt=json-in-script&max-results=10&callback=vtjHeroSliderCb";
+      document.body.appendChild(s);
+      setTimeout(function() {
+        if (sliderEntries.length === 0) renderHeroSliderFallback();
+      }, 5000);
+    }
 
-      var current = 0;
-      var timer = null;
+    window.vtjHeroSliderCb = function(data) {
+      var entries = data.feed && data.feed.entry ? data.feed.entry : [];
+      if (entries.length === 0) { renderHeroSliderFallback(); return; }
+      sliderEntries = entries;
+      renderHeroSlider(entries);
+    };
 
-      function showSlide(idx) {
-        current = (idx + slides.length) % slides.length;
-        for (var i = 0; i < slides.length; i++) {
-          slides[i].classList.toggle("active", i === current);
-          if (dots[i]) dots[i].classList.toggle("active", i === current);
-        }
+    function renderHeroSliderFallback() {
+      var mockups = [
+        { title: "Top 10 AI Tools to Boost Your Daily Productivity", cat: "AI Tools", img: "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80", summary: "Discover the best artificial intelligence tools that can help automate your workflow, write code faster, and design premium assets.", date: "Jul 20, 2026", rt: 5 },
+        { title: "Essential Software Guides Every Student Should Read", cat: "Software", img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&auto=format&fit=crop&q=80", summary: "Learn about the most useful open source software, desktop apps, and coding editors for college and high school students.", date: "Jul 19, 2026", rt: 4 },
+        { title: "How to Secure Your Digital Footprint Online in 2026", cat: "Cyber Security", img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80", summary: "A comprehensive guide on online privacy, securing password managers, browser extensions, and routing traffic securely.", date: "Jul 18, 2026", rt: 6 },
+        { title: "15 Chrome Extensions That Save Hours of Coding Work", cat: "Extensions", img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80", summary: "A handpicked list of extensions for developer tools, color picking, CSS inspection, and console formatting.", date: "Jul 18, 2026", rt: 5 }
+      ];
+      var mockEntries = mockups.map(function(m) {
+        return {
+          title: { $t: m.title },
+          summary: { $t: m.summary },
+          published: { $t: new Date(m.date).toISOString() },
+          category: [{ term: m.cat }],
+          link: [{ rel: "alternate", href: "#" }],
+          media$thumbnail: { url: m.img }
+        };
+      });
+      sliderEntries = mockEntries;
+      renderHeroSlider(mockEntries);
+    }
+
+    function renderHeroSlider(entries) {
+      var container = document.getElementById("vtj-featured-slider-container");
+      if (!container) return;
+
+      var track = document.createElement("div");
+      track.className = "featured-slider-track";
+      track.id = "vtj-featured-slider-track";
+      track.setAttribute("aria-live", "polite");
+
+      var dotsHtml = "";
+      for (var i = 0; i < entries.length; i++) {
+        var slide = document.createElement("div");
+        slide.className = "featured-slide" + (i === 0 ? " active" : "");
+        slide.setAttribute("role", "group");
+        slide.setAttribute("aria-roledescription", "slide");
+        slide.setAttribute("aria-label", "Slide " + (i + 1) + " of " + entries.length);
+        slide.innerHTML = buildHeroSlideHtml(entries[i], i);
+        track.appendChild(slide);
+
+        dotsHtml += "<button class='vtj-featured-slider-dot" + (i === 0 ? " active" : "") + "' data-index='" + i + "' aria-label='Go to slide " + (i + 1) + "'></button>";
       }
 
-      function nextSlide() { showSlide(current + 1); }
-      function startTimer() { if (!timer) timer = setInterval(nextSlide, 5000); }
-      function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+      container.innerHTML = "";
+      container.appendChild(track);
 
-      for (var d = 0; d < dots.length; d++) {
-        (function(i) {
-          dots[i].addEventListener("click", function() {
-            showSlide(i);
-            stopTimer();
-            startTimer();
-          });
-        })(d);
+      var dotsContainer = document.getElementById("vtj-featured-slider-dots");
+      if (dotsContainer) dotsContainer.innerHTML = dotsHtml;
+
+      initHeroSlider();
+    }
+
+    function buildHeroSlideHtml(entry, index) {
+      var title = entry.title ? entry.title.$t : "";
+      var safeTitle = escapeHtml(title);
+      var postUrl   = getUrl(entry);
+      var category   = getCategory(entry);
+      var publishedDate  = formatDate(entry.published ? entry.published.$t : "");
+      var description  = cleanSummary(entry.summary ? entry.summary.$t : "", 150);
+      var highQualityImage   = getHighQualityImage(getFirstImgSrc(entry));
+      var readingTime    = getReadingTime(entry) + " min read";
+      var isFirstSlide = (index === 0);
+
+      return "<a class='featured-image-link' href='" + postUrl + "' aria-label='Open " + safeTitle + "'>" +
+        "<div class='featured-image-wrapper'>" +
+          "<img class='featured-image' src='" + highQualityImage + "' alt='" + safeTitle + "' " +
+          (isFirstSlide ? "loading='eager' fetchpriority='high'" : "loading='lazy' decoding='async'") +
+          " width='800' height='450'/>" +
+        "</div>" +
+      "</a>" +
+      "<div class='featured-content'>" +
+        "<span class='featured-category'>" + category + "</span>" +
+        "<h2 class='featured-title'><a href='" + postUrl + "'>" + safeTitle + "</a></h2>" +
+        "<p class='featured-description'>" + description + "</p>" +
+        "<div class='featured-meta'>" +
+          "<span>" + publishedDate + "</span>" +
+          "<span>" + readingTime + "</span>" +
+        "</div>" +
+        "<a class='featured-read-button' href='" + postUrl + "'>" +
+          "Read Full Article <span aria-hidden='true'>\u2192</span>" +
+        "</a>" +
+      "</div>";
+    }
+
+    function initHeroSlider() {
+      var prevBtn = document.getElementById("vtj-featured-slider-prev");
+      var nextBtn = document.getElementById("vtj-featured-slider-next");
+      var dotsContainer = document.getElementById("vtj-featured-slider-dots");
+      var container = document.getElementById("vtj-featured-slider-container");
+      var section = document.getElementById("vtj-featured-slider-section");
+
+      if (prevBtn) prevBtn.addEventListener("click", function() { goToSlide(sliderCurrent - 1); });
+      if (nextBtn) nextBtn.addEventListener("click", function() { goToSlide(sliderCurrent + 1); });
+
+      if (dotsContainer) {
+        dotsContainer.addEventListener("click", function(e) {
+          var dot = e.target.closest(".vtj-featured-slider-dot");
+          if (dot) {
+            var idx = parseInt(dot.getAttribute("data-index"));
+            if (!isNaN(idx)) goToSlide(idx);
+          }
+        });
       }
 
-      wrap.addEventListener("mouseenter", stopTimer);
-      wrap.addEventListener("mouseleave", startTimer);
-      wrap.addEventListener("touchstart", stopTimer, { passive: true });
-      wrap.addEventListener("touchend", startTimer, { passive: true });
+      if (container) {
+        var touchStartX = 0;
+        container.addEventListener("touchstart", function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        container.addEventListener("touchend", function(e) {
+          var diff = touchStartX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 50) {
+            goToSlide(diff > 0 ? sliderCurrent + 1 : sliderCurrent - 1);
+          }
+        }, { passive: true });
+      }
+
+      if (section) {
+        section.addEventListener("keydown", function(e) {
+          if (e.key === "ArrowLeft") { goToSlide(sliderCurrent - 1); e.preventDefault(); }
+          if (e.key === "ArrowRight") { goToSlide(sliderCurrent + 1); e.preventDefault(); }
+        });
+      }
+
+      if (container) {
+        container.addEventListener("mouseenter", pauseSlider);
+        container.addEventListener("mouseleave", resumeSlider);
+      }
+
+      if (section) {
+        section.addEventListener("focusin", pauseSlider);
+        section.addEventListener("focusout", function(e) {
+          if (!section.contains(e.relatedTarget)) resumeSlider();
+        });
+      }
 
       document.addEventListener("visibilitychange", function() {
-        if (document.hidden) stopTimer(); else startTimer();
+        if (document.hidden) pauseSlider(); else resumeSlider();
       });
 
-      startTimer();
+      startSliderTimer();
+    }
+
+    function goToSlide(index) {
+      var track = document.getElementById("vtj-featured-slider-track");
+      if (!track) return;
+      var slides = track.querySelectorAll(".featured-slide");
+      if (slides.length === 0) return;
+
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+
+      slides.forEach(function(s, i) {
+        var isActive = i === index;
+        s.classList.toggle("active", isActive);
+        s.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      sliderCurrent = index;
+
+      document.querySelectorAll(".vtj-featured-slider-dot").forEach(function(d, i) {
+        d.classList.toggle("active", i === index);
+      });
+
+      resetSliderTimer();
+
+      var nextIdx = index + 1 >= slides.length ? 0 : index + 1;
+      var nextSlide = slides[nextIdx];
+      if (nextSlide) {
+        var nextImg = nextSlide.querySelector(".featured-image");
+        if (nextImg) {
+          var src = nextImg.getAttribute("src");
+          if (src) { var p = new Image(); p.src = src; }
+        }
+      }
+    }
+
+    function startSliderTimer() {
+      stopSliderTimer();
+      if (sliderIsPaused) return;
+      sliderTimer = setInterval(function() {
+        if (!sliderIsPaused) goToSlide(sliderCurrent + 1);
+      }, sliderInterval);
+      startProgressBar();
+    }
+
+    function stopSliderTimer() {
+      if (sliderTimer) { clearInterval(sliderTimer); sliderTimer = null; }
+      stopProgressBar();
+    }
+
+    function resetSliderTimer() {
+      stopSliderTimer();
+      if (!sliderIsPaused) startSliderTimer();
+    }
+
+    function pauseSlider() {
+      sliderIsPaused = true;
+      stopSliderTimer();
+    }
+
+    function resumeSlider() {
+      sliderIsPaused = false;
+      startSliderTimer();
+    }
+
+    function startProgressBar() {
+      var bar = document.getElementById("vtj-featured-slider-progress-bar");
+      if (!bar) return;
+      bar.style.transition = "none";
+      bar.style.width = "0%";
+      bar.offsetHeight;
+      bar.style.transition = "width " + sliderInterval + "ms linear";
+      bar.style.width = "100%";
+    }
+
+    function stopProgressBar() {
+      var bar = document.getElementById("vtj-featured-slider-progress-bar");
+      if (!bar) return;
+      bar.style.transition = "none";
+      bar.style.width = "0%";
     }
 
     /* ---- Magazine Category Blocks ---- */
