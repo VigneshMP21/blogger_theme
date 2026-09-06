@@ -491,244 +491,6 @@
   html.dark .nav-menu-link::after {
     background: #3B82F6;
   }
-
-  .nav-item.has-dropdown {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-  .nav-item.has-dropdown .nav-menu-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-  }
-  .nav-arrow {
-    width: 12px;
-    height: 12px;
-    fill: currentColor;
-    transition: transform 0.2s ease;
-  }
-  .nav-item.has-dropdown:hover .nav-arrow {
-    transform: rotate(180deg);
-  }
-  .nav-dropdown-menu {
-    position: absolute;
-    top: calc(100% + 4px);
-    left: 50%;
-    transform: translateX(-50%) translateY(8px);
-    width: 380px;
-    max-width: 90vw;
-    background: var(--bg-card, #FFFFFF);
-    border: 1px solid var(--border, #E2E8F0);
-    border-radius: 16px;
-    box-shadow: 0 16px 40px -10px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.05);
-    padding: 14px;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
-    z-index: 500;
-  }
-  .nav-item.has-dropdown:hover .nav-dropdown-menu,
-  .nav-item.has-dropdown:focus-within .nav-dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-  }
-  html.dark .nav-dropdown-menu {
-    background: #131B2E;
-    border-color: #1E293B;
-    box-shadow: 0 16px 40px -10px rgba(0,0,0,0.5);
-  }
-  .nav-dd-labels {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 12px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border, #E2E8F0);
-  }
-  .nav-dd-label-chip {
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 999px;
-    background: var(--bg-muted, #F1F5F9);
-    color: var(--text-secondary, #64748B);
-    text-decoration: none;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .nav-dd-label-chip:hover {
-    background: var(--primary, #2563EB);
-    color: #FFFFFF;
-  }
-  html.dark .nav-dd-label-chip {
-    background: #1E293B;
-    color: #94A3B8;
-  }
-  html.dark .nav-dd-label-chip:hover {
-    background: #2563EB;
-    color: #FFFFFF;
-  }
-  .nav-dd-posts {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .nav-dd-post-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 6px 8px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background 0.15s;
-  }
-  .nav-dd-post-item:hover {
-    background: var(--bg-muted, #F8FAFC);
-  }
-  html.dark .nav-dd-post-item:hover {
-    background: #1E293B;
-  }
-  .nav-dd-post-thumb {
-    width: 60px;
-    height: 38px;
-    border-radius: 6px;
-    object-fit: cover;
-    flex-shrink: 0;
-    background: #0F172A;
-  }
-  .nav-dd-post-info {
-    flex: 1;
-    min-width: 0;
-  }
-  .nav-dd-post-cat {
-    display: block;
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--primary, #2563EB);
-    letter-spacing: 0.5px;
-  }
-  .nav-dd-post-title {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text, #0F172A);
-    margin: 0;
-    line-height: 1.35;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  html.dark .nav-dd-post-title {
-    color: #F8FAFC;
-  }
-  .nav-dd-footer {
-    margin-top: 10px;
-    padding-top: 8px;
-    border-top: 1px solid var(--border, #E2E8F0);
-    text-align: center;
-  }
-  .nav-dd-viewall {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--primary, #2563EB);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .nav-dd-viewall:hover {
-    text-decoration: underline;
-  }
-  .nav-dd-empty {
-    font-size: 0.82rem;
-    color: var(--text-secondary, #64748B);
-    padding: 12px 6px;
-    text-align: center;
-  }
-  .nav-dd-loading {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 8px 0;
-  }
-  .nav-dd-skel {
-    height: 40px;
-    background: linear-gradient(90deg, rgba(0,0,0,0.04) 25%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0.04) 75%);
-    background-size: 200% 100%;
-    animation: vtjNavSkel 1.5s infinite;
-    border-radius: 8px;
-  }
-  @keyframes vtjNavSkel {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-  html.dark .nav-dd-skel {
-    background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.03) 75%);
-  }
-  /* Mobile Drawer Subnav */
-  .drawer-nav-item {
-    display: flex;
-    flex-direction: column;
-  }
-  .drawer-nav-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .drawer-nav-toggle {
-    background: transparent;
-    border: none;
-    color: var(--text-muted, #94A3B8);
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  .drawer-nav-toggle svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-    transition: transform 0.2s;
-  }
-  .drawer-nav-item.open .drawer-nav-toggle svg {
-    transform: rotate(180deg);
-  }
-  .drawer-subnav {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    padding: 4px 0 8px 16px;
-    border-left: 2px solid var(--primary, #2563EB);
-    margin-left: 12px;
-  }
-  .drawer-nav-item.open .drawer-subnav {
-    display: flex;
-  }
-  .drawer-subnav-link {
-    font-size: 0.82rem;
-    color: var(--text-secondary, #64748B);
-    text-decoration: none;
-    padding: 4px 0;
-    line-height: 1.35;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .drawer-subnav-viewall {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--primary, #2563EB);
-    text-decoration: none;
-    margin-top: 4px;
-  }
-
   .nav-actions {
     display: flex;
     align-items: center;
@@ -8665,42 +8427,10 @@ html.dark .vtj-sidebar-nl-input {
         <nav aria-label='Main Navigation' class='nav-menu'>
           <a class='nav-menu-link' expr:class='data:view.isHomepage ? &quot;active&quot; : &quot;&quot;' href='/'>Home</a>
           <a class='nav-menu-link' href='/p/articles.html'>Articles</a>
-          <div class='nav-item has-dropdown' data-nav-cat='AI Tools'>
-            <a class='nav-menu-link' href='/p/articles.html?category=AI+Tools'>
-              AI Tools
-              <svg class='nav-arrow' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
-            </a>
-            <div class='nav-dropdown-menu' id='nav-dd-ai-tools'>
-              <div class='nav-dd-loading'><div class='nav-dd-skel'/><div class='nav-dd-skel'/></div>
-            </div>
-          </div>
-          <div class='nav-item has-dropdown' data-nav-cat='Roadmaps'>
-            <a class='nav-menu-link' href='/p/articles.html?category=Roadmaps'>
-              Roadmaps
-              <svg class='nav-arrow' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
-            </a>
-            <div class='nav-dropdown-menu' id='nav-dd-roadmaps'>
-              <div class='nav-dd-loading'><div class='nav-dd-skel'/><div class='nav-dd-skel'/></div>
-            </div>
-          </div>
-          <div class='nav-item has-dropdown' data-nav-cat='Coding Websites'>
-            <a class='nav-menu-link' href='/p/articles.html?category=Coding+Websites'>
-              Coding &amp; Websites
-              <svg class='nav-arrow' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
-            </a>
-            <div class='nav-dropdown-menu' id='nav-dd-coding-websites'>
-              <div class='nav-dd-loading'><div class='nav-dd-skel'/><div class='nav-dd-skel'/></div>
-            </div>
-          </div>
-          <div class='nav-item has-dropdown' data-nav-cat='Developer Tools'>
-            <a class='nav-menu-link' href='/p/articles.html?category=Developer+Tools'>
-              Developer Tools
-              <svg class='nav-arrow' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
-            </a>
-            <div class='nav-dropdown-menu' id='nav-dd-developer-tools'>
-              <div class='nav-dd-loading'><div class='nav-dd-skel'/><div class='nav-dd-skel'/></div>
-            </div>
-          </div>
+          <a class='nav-menu-link' href='/search/label/AI%20Tools'>AI Tools</a>
+          <a class='nav-menu-link' href='/search/label/Roadmaps'>Roadmaps</a>
+          <a class='nav-menu-link' href='/search/label/Coding%20Websites'>Coding Websites</a>
+          <a class='nav-menu-link' href='/search/label/Developer%20Tools'>Developer Tools</a>
           <a class='nav-menu-link' href='/p/about-us.html'>About Us</a>
         </nav>
 
@@ -8773,42 +8503,10 @@ html.dark .vtj-sidebar-nl-input {
     <nav class='drawer-nav'>
       <a class='drawer-nav-link' href='/'>Home</a>
       <a class='drawer-nav-link' href='/p/articles.html'>Articles</a>
-      <div class='drawer-nav-item' data-drawer-cat='AI Tools'>
-        <div class='drawer-nav-row'>
-          <a class='drawer-nav-link' href='/p/articles.html?category=AI+Tools'>AI Tools</a>
-          <button aria-label='Toggle AI Tools' class='drawer-nav-toggle' type='button'>
-            <svg viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
-          </button>
-        </div>
-        <div class='drawer-subnav' id='drawer-sub-ai-tools'/>
-      </div>
-      <div class='drawer-nav-item' data-drawer-cat='Roadmaps'>
-        <div class='drawer-nav-row'>
-          <a class='drawer-nav-link' href='/p/articles.html?category=Roadmaps'>Roadmaps</a>
-          <button aria-label='Toggle Roadmaps' class='drawer-nav-toggle' type='button'>
-            <svg viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
-          </button>
-        </div>
-        <div class='drawer-subnav' id='drawer-sub-roadmaps'/>
-      </div>
-      <div class='drawer-nav-item' data-drawer-cat='Coding Websites'>
-        <div class='drawer-nav-row'>
-          <a class='drawer-nav-link' href='/p/articles.html?category=Coding+Websites'>Coding &amp; Websites</a>
-          <button aria-label='Toggle Coding &amp; Websites' class='drawer-nav-toggle' type='button'>
-            <svg viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
-          </button>
-        </div>
-        <div class='drawer-subnav' id='drawer-sub-coding-websites'/>
-      </div>
-      <div class='drawer-nav-item' data-drawer-cat='Developer Tools'>
-        <div class='drawer-nav-row'>
-          <a class='drawer-nav-link' href='/p/articles.html?category=Developer+Tools'>Developer Tools</a>
-          <button aria-label='Toggle Developer Tools' class='drawer-nav-toggle' type='button'>
-            <svg viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
-          </button>
-        </div>
-        <div class='drawer-subnav' id='drawer-sub-developer-tools'/>
-      </div>
+      <a class='drawer-nav-link' href='/search/label/AI%20Tools'>AI Tools</a>
+      <a class='drawer-nav-link' href='/search/label/Roadmaps'>Roadmaps</a>
+      <a class='drawer-nav-link' href='/search/label/Coding%20Websites'>Coding Websites</a>
+      <a class='drawer-nav-link' href='/search/label/Developer%20Tools'>Developer Tools</a>
       <a class='drawer-nav-link' href='/p/about-us.html'>About Us</a>
     </nav>
     <div class='drawer-socials'>
@@ -12645,284 +12343,10 @@ html.dark .vtj-sidebar-nl-input {
       document.body.appendChild(s);
     }
 
-    /* ============================================================
-       CENTRALIZED CATEGORY ENGINE & HEADER NAV DROPDOWNS
-    ============================================================ */
-    const CATEGORY_LABELS = {
-      "AI Tools": [
-        "AI Tools", "Artificial Intelligence", "Productivity Tools", "Students",
-        "Note Taking", "Presentation Tools", "Image Generation", "Creative Tools",
-        "Video Generation", "Research Tools", "Writing Tools", "AI Agents",
-        "AI Chatbots", "AI Coding"
-      ],
-      "Coding Websites": [
-        "Coding Websites", "Programming", "Learning Resources", "Coding", "Beginners"
-      ],
-      "Software": [
-        "Software", "Technology Tools", "Online Tools", "PDF Tools",
-        "Image Editing", "Video Editing", "File Sharing", "Creative Tools",
-        "Productivity Tools"
-      ],
-      "Developer Tools": [
-        "Developer Tools", "Git", "GitHub", "Software Development", "Coding",
-        "Programming", "Developer Skills", "Linux", "Hosting"
-      ],
-      "Guides": [
-        "Guides", "Beginners", "Coding", "Programming", "Artificial Intelligence",
-        "AI Agents", "AI Chatbots", "AI Development", "AI Coding",
-        "Vibe Coding", "Security Guides", "Technology Skills"
-      ],
-      "Roadmaps": [
-        "Roadmaps", "Python", "Java", "JavaScript", "Data Structures", "Algorithms",
-        "SQL", "Data Analytics", "Linux", "Full Stack Development", "DevOps",
-        "Cloud", "Cybersecurity", "Cloud Computing", "Machine Learning",
-        "AI Engineering", "AI Agents", "TypeScript", "React", "Node.js",
-        "Frontend Development", "Backend Development", "Developer Skills", "IT Skills"
-      ],
-      "Resources": [
-        "Resources", "Learning Resources", "Students", "Coding Projects",
-        "Projects", "Hosting", "Developer Tools", "Technology Tools",
-        "Online Tools", "Career Resources"
-      ],
-      "Technology": [
-        "Technology", "Technology Tools", "Software", "Online Tools",
-        "Productivity Tools", "Technology Skills"
-      ],
-      "Career & Jobs": [
-        "Career & Jobs", "Resume", "Freshers", "Career Resources", "IT Skills",
-        "Data Analyst", "Security Analyst", "Cloud Engineer", "Developer Skills",
-        "IT Jobs", "Career Guide", "Entry Level Jobs", "Portfolio", "Projects"
-      ],
-      "Cybersecurity": [
-        "Cybersecurity", "Data Protection", "Privacy", "Online Security",
-        "Security Guides", "Security Analyst", "IT Skills"
-      ]
-    };
-
-    function normalizeLabel(str) {
-      return (str || '').toString().toLowerCase().trim().replace(/\s+/g, ' ');
-    }
-
-    var NORMALIZED_CATEGORY_LABELS = {};
-    for (var cat in CATEGORY_LABELS) {
-      if (CATEGORY_LABELS.hasOwnProperty(cat)) {
-        NORMALIZED_CATEGORY_LABELS[cat] = new Set(CATEGORY_LABELS[cat].map(normalizeLabel));
-      }
-    }
-
-    function getPrimaryCat(categories) {
-      if (!categories || categories.length === 0) return 'Technology';
-      var normCats = categories.map(normalizeLabel);
-      var mainCats = [
-        'AI Tools', 'Coding Websites', 'Software', 'Developer Tools',
-        'Guides', 'Roadmaps', 'Resources', 'Technology', 'Career & Jobs', 'Cybersecurity'
-      ];
-      for (var i = 0; i < mainCats.length; i++) {
-        var targetSet = NORMALIZED_CATEGORY_LABELS[mainCats[i]];
-        if (targetSet) {
-          for (var j = 0; j < normCats.length; j++) {
-            if (targetSet.has(normCats[j])) return mainCats[i];
-          }
-        }
-      }
-      return categories[0];
-    }
-
-    function filterPostsByCategory(category, posts) {
-      var source = posts || (typeof allArticlesList !== 'undefined' ? allArticlesList : []);
-      if (!category || category === 'all') {
-        return source.slice();
-      }
-      var targetSet = NORMALIZED_CATEGORY_LABELS[category];
-      if (!targetSet) return [];
-
-      var seen = new Set();
-      var matched = [];
-
-      for (var i = 0; i < source.length; i++) {
-        var post = source[i];
-        var id = post.url || post.title || i;
-        if (seen.has(id)) continue;
-
-        var labels = post.normalizedLabels;
-        if (!labels && post.categories) {
-          labels = post.categories.map(normalizeLabel);
-          post.normalizedLabels = labels;
-        }
-        if (labels) {
-          for (var j = 0; j < labels.length; j++) {
-            if (targetSet.has(labels[j])) {
-              seen.add(id);
-              matched.push(post);
-              break;
-            }
-          }
-        }
-      }
-      return matched;
-    }
-
-    function parseEntry(e) {
-      var title = e.title ? e.title.$t : '';
-      var url = getUrl(e);
-      var rawDate = e.published ? e.published.$t : '';
-      var date = formatDate(rawDate);
-      var categories = [];
-      if (e.category) {
-        for (var c = 0; c < e.category.length; c++) {
-          if (e.category[c].term) categories.push(e.category[c].term);
-        }
-      }
-      var normalizedLabels = categories.map(normalizeLabel);
-      var primaryCat = getPrimaryCat(categories);
-      var img = getFirstImgSrc(e);
-      var summary = '';
-      if (e.summary && e.summary.$t) {
-        summary = e.summary.$t.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-      } else if (e.content && e.content.$t) {
-        summary = e.content.$t.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-      }
-      if (summary.length > 175) {
-        summary = summary.substring(0, 175).trim() + '...';
-      }
-      var readTime = getReadingTime(e) + ' min read';
-
-      return {
-        title: title,
-        url: url,
-        rawDate: rawDate,
-        date: date,
-        categories: categories,
-        normalizedLabels: normalizedLabels,
-        primaryCat: primaryCat,
-        img: img,
-        summary: summary,
-        readTime: readTime
-      };
-    }
-
-    var VTJ_POSTS_CACHE = null;
-    var vtjNavLoaded = false;
-
-    function initNavDropdowns() {
-      var navCats = ['AI Tools', 'Roadmaps', 'Coding Websites', 'Developer Tools'];
-      var ddIds = {
-        'AI Tools': 'nav-dd-ai-tools',
-        'Roadmaps': 'nav-dd-roadmaps',
-        'Coding Websites': 'nav-dd-coding-websites',
-        'Developer Tools': 'nav-dd-developer-tools'
-      };
-      var drawerIds = {
-        'AI Tools': 'drawer-sub-ai-tools',
-        'Roadmaps': 'drawer-sub-roadmaps',
-        'Coding Websites': 'drawer-sub-coding-websites',
-        'Developer Tools': 'drawer-sub-developer-tools'
-      };
-
-      function renderNav() {
-        if (!VTJ_POSTS_CACHE || VTJ_POSTS_CACHE.length === 0) return;
-        for (var i = 0; i < navCats.length; i++) {
-          var cat = navCats[i];
-          var matches = filterPostsByCategory(cat, VTJ_POSTS_CACHE);
-          var dd = document.getElementById(ddIds[cat]);
-          var drawerEl = document.getElementById(drawerIds[cat]);
-
-          if (dd) {
-            var topLabels = (CATEGORY_LABELS[cat] || []).slice(0, 5);
-            var lblHtml = '<div class="nav-dd-labels">';
-            for (var l = 0; l < topLabels.length; l++) {
-              lblHtml += '<a href="/search/label/' + encodeURIComponent(topLabels[l]) + '" class="nav-dd-label-chip">' + escapeHtml(topLabels[l]) + '</a>';
-            }
-            lblHtml += '</div>';
-
-            var postsHtml = '<div class="nav-dd-posts">';
-            var topPosts = matches.slice(0, 4);
-            if (topPosts.length > 0) {
-              for (var p = 0; p < topPosts.length; p++) {
-                var item = topPosts[p];
-                var safeT = escapeHtml(item.title);
-                postsHtml += '<a href="' + item.url + '" class="nav-dd-post-item">' +
-                  (item.img ? '<img src="' + item.img + '" alt="' + safeT + '" class="nav-dd-post-thumb" loading="lazy" width="60" height="38"/>' : '') +
-                  '<div class="nav-dd-post-info">' +
-                    '<span class="nav-dd-post-cat">' + escapeHtml(item.primaryCat || cat) + '</span>' +
-                    '<h4 class="nav-dd-post-title">' + safeT + '</h4>' +
-                  '</div>' +
-                '</a>';
-              }
-            } else {
-              postsHtml += '<div class="nav-dd-empty">No articles found in this category.</div>';
-            }
-            postsHtml += '</div>';
-
-            var footerHtml = '<div class="nav-dd-footer">' +
-              '<a href="/p/articles.html?category=' + encodeURIComponent(cat) + '" class="nav-dd-viewall">' +
-                'Explore All ' + escapeHtml(cat) + ' Guides (' + matches.length + ') &rarr;' +
-              '</a>' +
-            '</div>';
-
-            dd.innerHTML = lblHtml + postsHtml + footerHtml;
-          }
-
-          if (drawerEl) {
-            var dHtml = '';
-            var dPosts = matches.slice(0, 4);
-            for (var dp = 0; dp < dPosts.length; dp++) {
-              dHtml += '<a href="' + dPosts[dp].url + '" class="drawer-subnav-link">' + escapeHtml(dPosts[dp].title) + '</a>';
-            }
-            dHtml += '<a href="/p/articles.html?category=' + encodeURIComponent(cat) + '" class="drawer-subnav-viewall">View All ' + escapeHtml(cat) + ' &rarr;</a>';
-            drawerEl.innerHTML = dHtml;
-          }
-        }
-      }
-
-      function loadNavFeed() {
-        if (vtjNavLoaded) return;
-        vtjNavLoaded = true;
-
-        if (typeof allArticlesList !== 'undefined' && allArticlesList && allArticlesList.length > 0) {
-          VTJ_POSTS_CACHE = allArticlesList;
-          renderNav();
-          return;
-        }
-
-        window.vtjNavPostsCb = function(data) {
-          try { delete window.vtjNavPostsCb; } catch(e) {}
-          var entries = (data && data.feed && data.feed.entry) || [];
-          VTJ_POSTS_CACHE = [];
-          for (var i = 0; i < entries.length; i++) {
-            VTJ_POSTS_CACHE.push(parseEntry(entries[i]));
-          }
-          renderNav();
-        };
-
-        var s = document.createElement("script");
-        s.src = BLOG_URL + "feeds/posts/summary?alt=json-in-script&max-results=50&callback=vtjNavPostsCb";
-        document.body.appendChild(s);
-      }
-
-      var navItems = document.querySelectorAll('.nav-item.has-dropdown, .drawer-nav-item');
-      for (var n = 0; n < navItems.length; n++) {
-        navItems[n].addEventListener('mouseenter', loadNavFeed, { once: true });
-        navItems[n].addEventListener('touchstart', loadNavFeed, { once: true, passive: true });
-      }
-      setTimeout(loadNavFeed, 2000);
-
-      var toggles = document.querySelectorAll('.drawer-nav-toggle');
-      for (var t = 0; t < toggles.length; t++) {
-        toggles[t].addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          var parent = this.closest('.drawer-nav-item');
-          if (parent) parent.classList.toggle('open');
-        });
-      }
-    }
-
     /* ---- Init All ---- */
     loadHeroSlider();
     loadLatestArticles();
     buildPagination();
-    initNavDropdowns();
 
     /* ============================================================
        PREMIUM ARTICLES ARCHIVE & KNOWLEDGE HUB LOGIC
@@ -12958,17 +12382,121 @@ html.dark .vtj-sidebar-nl-input {
         spotAvatar.src = logoImg.src;
       }
 
+      const CATEGORY_LABELS = {
+        "AI Tools": [
+          "AI Tools", "Artificial Intelligence", "Productivity Tools", "Students",
+          "Note Taking", "Presentation Tools", "Image Generation", "Creative Tools",
+          "Video Generation", "Research Tools", "Writing Tools", "AI Agents",
+          "AI Chatbots", "AI Coding"
+        ],
+        "Coding Websites": [
+          "Coding Websites", "Programming", "Learning Resources", "Coding", "Beginners"
+        ],
+        "Software": [
+          "Software", "Technology Tools", "Online Tools", "PDF Tools",
+          "Image Editing", "Video Editing", "File Sharing", "Creative Tools",
+          "Productivity Tools"
+        ],
+        "Developer Tools": [
+          "Developer Tools", "Git", "GitHub", "Software Development", "Coding",
+          "Programming", "Developer Skills", "Linux", "Hosting"
+        ],
+        "Guides": [
+          "Guides", "Beginners", "Coding", "Programming", "Artificial Intelligence",
+          "AI Agents", "AI Chatbots", "AI Development", "AI Coding",
+          "Vibe Coding", "Security Guides", "Technology Skills"
+        ],
+        "Roadmaps": [
+          "Roadmaps", "Python", "Java", "JavaScript", "Data Structures", "Algorithms",
+          "SQL", "Data Analytics", "Linux", "Full Stack Development", "DevOps",
+          "Cloud", "Cybersecurity", "Cloud Computing", "Machine Learning",
+          "AI Engineering", "AI Agents", "TypeScript", "React", "Node.js",
+          "Frontend Development", "Backend Development", "Developer Skills", "IT Skills"
+        ],
+        "Resources": [
+          "Resources", "Learning Resources", "Students", "Coding Projects",
+          "Projects", "Hosting", "Developer Tools", "Technology Tools",
+          "Online Tools", "Career Resources"
+        ],
+        "Technology": [
+          "Technology", "Technology Tools", "Software", "Online Tools",
+          "Productivity Tools", "Technology Skills"
+        ],
+        "Career & Jobs": [
+          "Career & Jobs", "Resume", "Freshers", "Career Resources", "IT Skills",
+          "Data Analyst", "Security Analyst", "Cloud Engineer", "Developer Skills",
+          "IT Jobs", "Career Guide", "Entry Level Jobs", "Portfolio", "Projects"
+        ],
+        "Cybersecurity": [
+          "Cybersecurity", "Data Protection", "Privacy", "Online Security",
+          "Security Guides", "Security Analyst", "IT Skills"
+        ]
+      };
 
+      function normalizeLabel(str) {
+        return (str || '').toString().toLowerCase().trim().replace(/\s+/g, ' ');
+      }
 
-      var initialCat = 'all';
-      try {
-        var urlParams = new URLSearchParams(window.location.search);
-        var qCat = urlParams.get('category');
-        if (qCat && CATEGORY_LABELS[qCat]) {
-          initialCat = qCat;
+      var NORMALIZED_CATEGORY_LABELS = {};
+      for (var cat in CATEGORY_LABELS) {
+        if (CATEGORY_LABELS.hasOwnProperty(cat)) {
+          NORMALIZED_CATEGORY_LABELS[cat] = new Set(CATEGORY_LABELS[cat].map(normalizeLabel));
         }
-      } catch(e) {}
-      var currentFilter = initialCat;
+      }
+
+      function getPrimaryCat(categories) {
+        if (!categories || categories.length === 0) return 'Technology';
+        var normCats = categories.map(normalizeLabel);
+        var mainCats = [
+          'AI Tools', 'Coding Websites', 'Software', 'Developer Tools',
+          'Guides', 'Roadmaps', 'Resources', 'Technology', 'Career & Jobs', 'Cybersecurity'
+        ];
+        for (var i = 0; i < mainCats.length; i++) {
+          var targetSet = NORMALIZED_CATEGORY_LABELS[mainCats[i]];
+          if (targetSet) {
+            for (var j = 0; j < normCats.length; j++) {
+              if (targetSet.has(normCats[j])) return mainCats[i];
+            }
+          }
+        }
+        return categories[0];
+      }
+
+      function filterPostsByCategory(category, posts) {
+        var source = posts || allArticlesList;
+        if (!category || category === 'all') {
+          return source.slice();
+        }
+        var targetSet = NORMALIZED_CATEGORY_LABELS[category];
+        if (!targetSet) return [];
+
+        var seen = new Set();
+        var matched = [];
+
+        for (var i = 0; i < source.length; i++) {
+          var post = source[i];
+          var id = post.url || post.title || i;
+          if (seen.has(id)) continue;
+
+          var labels = post.normalizedLabels;
+          if (!labels && post.categories) {
+            labels = post.categories.map(normalizeLabel);
+            post.normalizedLabels = labels;
+          }
+          if (labels) {
+            for (var j = 0; j < labels.length; j++) {
+              if (targetSet.has(labels[j])) {
+                seen.add(id);
+                matched.push(post);
+                break;
+              }
+            }
+          }
+        }
+        return matched;
+      }
+
+      var currentFilter = 'all';
       var currentSort = 'newest';
       var currentSearch = '';
       var allArticlesList = [];
@@ -13347,12 +12875,6 @@ html.dark .vtj-sidebar-nl-input {
 
           if (!eventsSetupDone) {
             setupEvents();
-            if (currentFilter !== 'all') {
-              var pBtns = document.querySelectorAll('.vtj-articles-pill-btn');
-              for (var pb = 0; pb < pBtns.length; pb++) {
-                pBtns[pb].classList.toggle('active', pBtns[pb].getAttribute('data-category') === currentFilter);
-              }
-            }
             eventsSetupDone = true;
           }
 
