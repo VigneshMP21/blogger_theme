@@ -1855,38 +1855,16 @@
     opacity: 0.5;
   }
 
-  /* Section B: Trending Topics Smooth Marquee */
-  .vtj-marquee-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
-    padding: 6px 0;
-  }
-  .vtj-marquee-track {
-    display: flex;
-    width: max-content;
+  /* Section B: Trending Topics Grid */
+  .vtj-topic-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.25rem;
-    animation: vtjMarqueeScroll 35s linear infinite;
-  }
-  .vtj-marquee-track:hover {
-    animation-play-state: paused;
-  }
-  .vtj-marquee-group {
-    display: flex;
-    gap: 1.25rem;
-    flex-shrink: 0;
-  }
-  @keyframes vtjMarqueeScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 0.625rem)); }
   }
   .vtj-topic-card {
     position: relative;
-    width: 220px;
-    height: 195px;
-    border-radius: 16px;
+    height: 215px;
+    border-radius: 14px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1894,18 +1872,17 @@
     justify-content: center;
     text-align: center;
     text-decoration: none;
-    padding: 1.25rem 1rem;
+    padding: 1.5rem 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.2), transparent 70%), linear-gradient(155deg, #0B1120 0%, #111C35 100%);
+    background: radial-gradient(circle at 50% 25%, rgba(37, 99, 235, 0.18), transparent 70%), linear-gradient(155deg, #0B1120 0%, #111C35 100%);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    flex-shrink: 0;
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
   }
   .vtj-topic-card::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 14px 14px;
     pointer-events: none;
     opacity: 0.6;
@@ -1915,21 +1892,11 @@
     border-color: rgba(59, 130, 246, 0.55);
     box-shadow: 0 12px 28px rgba(11, 17, 32, 0.4), 0 0 20px rgba(37, 99, 235, 0.25);
   }
-  .vtj-topic-card-ai { background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.22), transparent 70%), linear-gradient(155deg, #0B1120 0%, #0F1D36 100%); }
-  .vtj-topic-card-coding { background: radial-gradient(circle at 50% 20%, rgba(129, 140, 248, 0.22), transparent 70%), linear-gradient(155deg, #0B1120 0%, #17153B 100%); }
-  .vtj-topic-card-software { background: radial-gradient(circle at 50% 20%, rgba(52, 211, 153, 0.22), transparent 70%), linear-gradient(155deg, #0B1120 0%, #07261F 100%); }
-  .vtj-topic-card-devtools { background: radial-gradient(circle at 50% 20%, rgba(251, 191, 36, 0.22), transparent 70%), linear-gradient(155deg, #0B1120 0%, #281D0A 100%); }
-  .vtj-topic-card-guides { background: radial-gradient(circle at 50% 20%, rgba(244, 114, 182, 0.22), transparent 70%), linear-gradient(155deg, #0B1120 0%, #2A1024 100%); }
-  .vtj-topic-card-roadmaps { background: radial-gradient(circle at 50% 20%, rgba(96, 165, 250, 0.22), transparent 70%), linear-gradient(155deg, #0B1120 0%, #0E2245 100%); }
-  .vtj-topic-card-resources { background: radial-gradient(circle at 50% 20%, rgba(192, 132, 252, 0.22), transparent 70%), linear-gradient(155deg, #0B1120 0%, #231038 100%); }
-  .vtj-topic-card-tech { background: radial-gradient(circle at 50% 20%, rgba(34, 211, 238, 0.22), transparent 70%), linear-gradient(155deg, #0B1120 0%, #082530 100%); }
-  .vtj-topic-card-career { background: radial-gradient(circle at 50% 20%, rgba(74, 222, 128, 0.22), transparent 70%), linear-gradient(155deg, #0B1120 0%, #092818 100%); }
-  .vtj-topic-card-security { background: radial-gradient(circle at 50% 20%, rgba(251, 113, 133, 0.22), transparent 70%), linear-gradient(155deg, #0B1120 0%, #2C0C14 100%); }
   .vtj-topic-icon-badge {
     position: relative;
     z-index: 1;
-    width: 54px;
-    height: 54px;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.14);
@@ -1937,7 +1904,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
   .vtj-topic-card:hover .vtj-topic-icon-badge {
@@ -1950,7 +1917,7 @@
     position: relative;
     z-index: 1;
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     font-weight: 700;
     color: #FFFFFF;
     line-height: 1.35;
@@ -8220,26 +8187,36 @@ html.dark .vtj-sidebar-nl-input {
     -webkit-line-clamp: 2 !important;
   }
 
-  /* 7. TRENDING TOPICS MARQUEE ON MOBILE */
+  /* 7. TRENDING TOPICS (Horizontal Swipe Carousel) */
   .vtj-trending-section {
     overflow: hidden !important;
   }
+  .vtj-topic-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 12px !important;
+    padding: 4px 14px 12px !important;
+    margin: 0 -14px !important;
+  }
+  .vtj-topic-grid::-webkit-scrollbar {
+    display: none !important;
+  }
   .vtj-topic-card {
-    width: 175px !important;
-    height: 150px !important;
-    padding: 1rem 0.75rem !important;
-  }
-  .vtj-topic-icon-badge {
-    width: 44px !important;
-    height: 44px !important;
-    margin-bottom: 0.65rem !important;
-  }
-  .vtj-topic-icon-badge svg {
-    width: 22px !important;
-    height: 22px !important;
+    flex: 0 0 160px !important;
+    min-width: 160px !important;
+    max-width: 175px !important;
+    scroll-snap-align: start !important;
+    border-radius: 16px !important;
+    height: 125px !important;
+    padding: 14px !important;
+    box-sizing: border-box !important;
   }
   .vtj-topic-title {
-    font-size: 0.86rem !important;
+    font-size: 0.88rem !important;
   }
 
   /* 8, 9, 10, 11. LATEST IN TECHNOLOGY + STAY CONNECTED */
@@ -9175,211 +9152,66 @@ html.dark .vtj-sidebar-nl-input {
             </a>
           </div>
 
-          <div class='vtj-marquee-container'>
-            <div class='vtj-marquee-track'>
-              <div class='vtj-marquee-group'>
-            <!-- TOPIC 1: AI Tools -->
-            <a class='vtj-topic-card vtj-topic-card-ai' href='/p/articles.html?category=AI+Tools' title='Explore AI Tools'>
+          <div class='vtj-topic-grid'>
+
+            <!-- TOPIC 1: Artificial Intelligence -->
+            <a class='vtj-topic-card' href='/search/label/AI%20Tools' title='Explore Artificial Intelligence'>
               <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#38BDF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <rect height='16' rx='2' ry='2' width='16' x='4' y='4'/><rect height='6' width='6' x='9' y='9'/><line x1='9' x2='9' y1='1' y2='4'/><line x1='15' x2='15' y1='1' y2='4'/><line x1='9' x2='9' y1='20' y2='23'/><line x1='15' x2='15' y1='20' y2='23'/><line x1='20' x2='23' y1='9' y2='9'/><line x1='20' x2='23' y1='14' y2='14'/><line x1='1' x2='4' y1='9' y2='9'/><line x1='1' x2='4' y1='14' y2='14'/>
+                <svg fill='none' height='26' stroke='#38BDF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='26'>
+                  <path d='M12 2a4 4 0 0 1 4 4v1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4v-1a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2V6a4 4 0 0 1 4-4z'/>
+                  <circle cx='9' cy='10' fill='#38BDF8' r='1'/>
+                  <circle cx='15' cy='10' fill='#38BDF8' r='1'/>
+                  <path d='M9.5 15a2.5 2.5 0 0 0 5 0'/>
                 </svg>
               </div>
-              <h3 class='vtj-topic-title'>AI Tools</h3>
+              <h3 class='vtj-topic-title'>Artificial Intelligence</h3>
             </a>
 
-            <!-- TOPIC 2: Coding Websites -->
-            <a class='vtj-topic-card vtj-topic-card-coding' href='/p/articles.html?category=Coding+Websites' title='Explore Coding Websites'>
+            <!-- TOPIC 2: Coding &amp; Development -->
+            <a class='vtj-topic-card' href='/search/label/Coding%20Websites' title='Explore Coding &amp; Development'>
               <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#818CF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/>
+                <svg fill='none' height='26' stroke='#818CF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='26'>
+                  <polyline points='16 18 22 12 16 6'/>
+                  <polyline points='8 6 2 12 8 18'/>
                 </svg>
               </div>
-              <h3 class='vtj-topic-title'>Coding Websites</h3>
+              <h3 class='vtj-topic-title'>Coding &amp; Development</h3>
             </a>
 
-            <!-- TOPIC 3: Software -->
-            <a class='vtj-topic-card vtj-topic-card-software' href='/p/articles.html?category=Software' title='Explore Software'>
+            <!-- TOPIC 3: Technology -->
+            <a class='vtj-topic-card' href='/search/label/Software' title='Explore Technology'>
               <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#34D399' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <rect height='14' rx='2' width='18' x='3' y='4'/><line x1='3' x2='21' y1='10' y2='10'/><circle cx='7' cy='7' fill='#34D399' r='1'/><circle cx='11' cy='7' fill='#34D399' r='1'/>
+                <svg fill='none' height='26' stroke='#38BDF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='26'>
+                  <path d='M5 12.55a11 11 0 0 1 14.08 0'/>
+                  <path d='M1.42 9a16 16 0 0 1 21.16 0'/>
+                  <path d='M8.53 16.11a6 6 0 0 1 6.95 0'/>
+                  <line stroke-width='3' x1='12' x2='12.01' y1='20' y2='20'/>
                 </svg>
               </div>
-              <h3 class='vtj-topic-title'>Software</h3>
+              <h3 class='vtj-topic-title'>Technology</h3>
             </a>
 
             <!-- TOPIC 4: Developer Tools -->
-            <a class='vtj-topic-card vtj-topic-card-devtools' href='/p/articles.html?category=Developer+Tools' title='Explore Developer Tools'>
+            <a class='vtj-topic-card' href='/search/label/Developer%20Tools' title='Explore Developer Tools'>
               <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#FBBF24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
+                <svg fill='none' height='26' stroke='#FBBF24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='26'>
                   <path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/>
                 </svg>
               </div>
               <h3 class='vtj-topic-title'>Developer Tools</h3>
             </a>
 
-            <!-- TOPIC 5: Guides -->
-            <a class='vtj-topic-card vtj-topic-card-guides' href='/p/articles.html?category=Guides' title='Explore Guides'>
+            <!-- TOPIC 5: Cybersecurity -->
+            <a class='vtj-topic-card' href='/search/label/Cyber%20Security' title='Explore Cybersecurity'>
               <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#F472B6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <path d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/><path d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Guides</h3>
-            </a>
-
-            <!-- TOPIC 6: Roadmaps -->
-            <a class='vtj-topic-card vtj-topic-card-roadmaps' href='/p/articles.html?category=Roadmaps' title='Explore Roadmaps'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#60A5FA' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <polygon points='3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21'/><line x1='9' x2='9' y1='3' y2='18'/><line x1='15' x2='15' y1='6' y2='21'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Roadmaps</h3>
-            </a>
-
-            <!-- TOPIC 7: Resources -->
-            <a class='vtj-topic-card vtj-topic-card-resources' href='/p/articles.html?category=Resources' title='Explore Resources'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#C084FC' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <path d='M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Resources</h3>
-            </a>
-
-            <!-- TOPIC 8: Technology -->
-            <a class='vtj-topic-card vtj-topic-card-tech' href='/p/articles.html?category=Technology' title='Explore Technology'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#22D3EE' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <rect height='14' rx='2' width='20' x='2' y='3'/><line x1='8' x2='16' y1='21' y2='21'/><line x1='12' x2='12' y1='17' y2='21'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Technology</h3>
-            </a>
-
-            <!-- TOPIC 9: Career & Jobs -->
-            <a class='vtj-topic-card vtj-topic-card-career' href='/p/articles.html?category=Career+%26+Jobs' title='Explore Career &amp; Jobs'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#4ADE80' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <rect height='14' rx='2' ry='2' width='20' x='2' y='7'/><path d='M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Career &amp; Jobs</h3>
-            </a>
-
-            <!-- TOPIC 10: Cybersecurity -->
-            <a class='vtj-topic-card vtj-topic-card-security' href='/p/articles.html?category=Cybersecurity' title='Explore Cybersecurity'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#FB7185' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
+                <svg fill='none' height='26' stroke='#34D399' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='26'>
                   <path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/>
+                  <polyline points='9 12 11 14 15 10'/>
                 </svg>
               </div>
               <h3 class='vtj-topic-title'>Cybersecurity</h3>
             </a>
-              </div>
-              <div aria-hidden='true' class='vtj-marquee-group'>
-            <!-- TOPIC 1: AI Tools -->
-            <a class='vtj-topic-card vtj-topic-card-ai' href='/p/articles.html?category=AI+Tools' title='Explore AI Tools'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#38BDF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <rect height='16' rx='2' ry='2' width='16' x='4' y='4'/><rect height='6' width='6' x='9' y='9'/><line x1='9' x2='9' y1='1' y2='4'/><line x1='15' x2='15' y1='1' y2='4'/><line x1='9' x2='9' y1='20' y2='23'/><line x1='15' x2='15' y1='20' y2='23'/><line x1='20' x2='23' y1='9' y2='9'/><line x1='20' x2='23' y1='14' y2='14'/><line x1='1' x2='4' y1='9' y2='9'/><line x1='1' x2='4' y1='14' y2='14'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>AI Tools</h3>
-            </a>
 
-            <!-- TOPIC 2: Coding Websites -->
-            <a class='vtj-topic-card vtj-topic-card-coding' href='/p/articles.html?category=Coding+Websites' title='Explore Coding Websites'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#818CF8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Coding Websites</h3>
-            </a>
-
-            <!-- TOPIC 3: Software -->
-            <a class='vtj-topic-card vtj-topic-card-software' href='/p/articles.html?category=Software' title='Explore Software'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#34D399' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <rect height='14' rx='2' width='18' x='3' y='4'/><line x1='3' x2='21' y1='10' y2='10'/><circle cx='7' cy='7' fill='#34D399' r='1'/><circle cx='11' cy='7' fill='#34D399' r='1'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Software</h3>
-            </a>
-
-            <!-- TOPIC 4: Developer Tools -->
-            <a class='vtj-topic-card vtj-topic-card-devtools' href='/p/articles.html?category=Developer+Tools' title='Explore Developer Tools'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#FBBF24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Developer Tools</h3>
-            </a>
-
-            <!-- TOPIC 5: Guides -->
-            <a class='vtj-topic-card vtj-topic-card-guides' href='/p/articles.html?category=Guides' title='Explore Guides'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#F472B6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <path d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/><path d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Guides</h3>
-            </a>
-
-            <!-- TOPIC 6: Roadmaps -->
-            <a class='vtj-topic-card vtj-topic-card-roadmaps' href='/p/articles.html?category=Roadmaps' title='Explore Roadmaps'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#60A5FA' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <polygon points='3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21'/><line x1='9' x2='9' y1='3' y2='18'/><line x1='15' x2='15' y1='6' y2='21'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Roadmaps</h3>
-            </a>
-
-            <!-- TOPIC 7: Resources -->
-            <a class='vtj-topic-card vtj-topic-card-resources' href='/p/articles.html?category=Resources' title='Explore Resources'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#C084FC' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <path d='M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Resources</h3>
-            </a>
-
-            <!-- TOPIC 8: Technology -->
-            <a class='vtj-topic-card vtj-topic-card-tech' href='/p/articles.html?category=Technology' title='Explore Technology'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#22D3EE' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <rect height='14' rx='2' width='20' x='2' y='3'/><line x1='8' x2='16' y1='21' y2='21'/><line x1='12' x2='12' y1='17' y2='21'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Technology</h3>
-            </a>
-
-            <!-- TOPIC 9: Career & Jobs -->
-            <a class='vtj-topic-card vtj-topic-card-career' href='/p/articles.html?category=Career+%26+Jobs' title='Explore Career &amp; Jobs'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#4ADE80' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <rect height='14' rx='2' ry='2' width='20' x='2' y='7'/><path d='M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Career &amp; Jobs</h3>
-            </a>
-
-            <!-- TOPIC 10: Cybersecurity -->
-            <a class='vtj-topic-card vtj-topic-card-security' href='/p/articles.html?category=Cybersecurity' title='Explore Cybersecurity'>
-              <div class='vtj-topic-icon-badge'>
-                <svg fill='none' height='24' stroke='#FB7185' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='24'>
-                  <path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/>
-                </svg>
-              </div>
-              <h3 class='vtj-topic-title'>Cybersecurity</h3>
-            </a>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -13124,7 +12956,7 @@ html.dark .vtj-sidebar-nl-input {
         }
 
         // Header & footer category links instant switching on article page
-        var pageNavLinks = document.querySelectorAll('.nav-menu-link, .drawer-nav-link, .vtj-footer-link, .vtj-topic-card');
+        var pageNavLinks = document.querySelectorAll('.nav-menu-link, .drawer-nav-link, .vtj-footer-link');
         for (var pl = 0; pl < pageNavLinks.length; pl++) {
           (function(link) {
             var h = link.getAttribute('href') || '';
