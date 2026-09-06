@@ -32,27 +32,17 @@
   gtag(&#39;config&#39;, &#39;G-9ZTGH90N11&#39;);
 </script>
 
-  <!-- SEO Meta Tags & Performance Directives (Google 2026 Optimized) -->
+  <!-- SEO Meta Tags (Google 2026 Optimized) -->
   <b:if cond='data:view.isHomepage'>
     <meta content='Discover tested AI tools, coding tutorials, student technology stacks, and productivity software guides. Upgrade your digital workflow with Vicky Tech Journal.' name='description'/>
-    <meta content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' name='robots'/>
-    <link href='https://vickytechjournal.blogspot.com/' rel='canonical'/>
     <meta content='Vicky Tech Journal | AI Tools, Software Guides &amp; Coding' property='og:title'/>
     <meta content='Discover tested AI tools, coding tutorials, student technology stacks, and productivity software guides. Upgrade your digital workflow with Vicky Tech Journal.' property='og:description'/>
     <meta content='website' property='og:type'/>
-    <meta content='https://vickytechjournal.blogspot.com/' property='og:url'/>
-    <meta content='Vicky Tech Journal' property='og:site_name'/>
-    <meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzGy1FuQ9S2s2c_EqbgAkwCDvjdvkoGsO0qh8UxrOdXmRfXf2y79lrIWZmvV1hA57tJ0ZmmfrOg7fjauYx5g5Wtwkqdjwb1EkWu_GIBo6PRRKC1t-beTdbU6kbTlHvM3w61OFl63oR6WGdANrEvehRtuc6ZrFlTeffsWgz9SmwovrNHDw0-MB2oGqsAtNi/w1200-h800-c-rw/it-fresher-career-growth-2026.webp' property='og:image'/>
-    <meta content='1200' property='og:image:width'/>
-    <meta content='800' property='og:image:height'/>
     <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' rel='icon' type='image/png'/>
-    <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' rel='apple-touch-icon'/>
-    <meta content='summary_large_image' name='twitter:card'/>
+  <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' rel='apple-touch-icon'/>
+  <meta content='summary_large_image' name='twitter:card'/>
     <meta content='Vicky Tech Journal | AI Tools, Software Guides &amp; Coding' name='twitter:title'/>
     <meta content='Discover tested AI tools, coding tutorials, student technology stacks, and productivity software guides.' name='twitter:description'/>
-    <meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzGy1FuQ9S2s2c_EqbgAkwCDvjdvkoGsO0qh8UxrOdXmRfXf2y79lrIWZmvV1hA57tJ0ZmmfrOg7fjauYx5g5Wtwkqdjwb1EkWu_GIBo6PRRKC1t-beTdbU6kbTlHvM3w61OFl63oR6WGdANrEvehRtuc6ZrFlTeffsWgz9SmwovrNHDw0-MB2oGqsAtNi/w1200-h800-c-rw/it-fresher-career-growth-2026.webp' name='twitter:image'/>
-    <!-- LCP Preload for Hero Featured Image -->
-    <link as='image' fetchpriority='high' href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzGy1FuQ9S2s2c_EqbgAkwCDvjdvkoGsO0qh8UxrOdXmRfXf2y79lrIWZmvV1hA57tJ0ZmmfrOg7fjauYx5g5Wtwkqdjwb1EkWu_GIBo6PRRKC1t-beTdbU6kbTlHvM3w61OFl63oR6WGdANrEvehRtuc6ZrFlTeffsWgz9SmwovrNHDw0-MB2oGqsAtNi/w1200-h800-c-rw/it-fresher-career-growth-2026.webp' rel='preload'/>
   </b:if>
   <b:if cond='data:view.isPost'>
     <b:loop values='data:posts' var='p'>
@@ -207,83 +197,15 @@
             "https://www.youtube.com/@VickyTechJournal",
             "https://www.instagram.com/vicky_tech_journal/"
           ]
-        },
-        {
-          "@type": "ItemList",
-          "@id": "https://vickytechjournal.blogspot.com/#featured-articles",
-          "name": "Featured Technology & AI Guides",
-          "description": "Latest curated guides on AI tools, coding roadmaps, and developer workflows.",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "10 Best IT Entry-Level Jobs for Freshers in 2026: Skills & Career Guide",
-              "url": "https://vickytechjournal.blogspot.com/2026/09/it-entry-level-jobs-for-freshers.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "IT Jobs Entry Level 2026: Jobs, Skills & Career Guide",
-              "url": "https://vickytechjournal.blogspot.com/2026/08/it-jobs-entry-level-2026-guide.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Easy Technology: Simple Technologies Anyone Can Learn in 2026",
-              "url": "https://vickytechjournal.blogspot.com/2026/08/easy-technology-to-learn-2026.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 4,
-              "name": "Best AI Tools for Students in 2026: 10 Free & Powerful AI Tools for Studying",
-              "url": "https://vickytechjournal.blogspot.com/2026/09/best-ai-tools-for-students-2026.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 5,
-              "name": "How to Protect Your Data: 10 Practical Cybersecurity Tips for Everyday Users",
-              "url": "https://vickytechjournal.blogspot.com/2026/08/cybersecurity-tips-everyday-users.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 6,
-              "name": "Vibe Coding: Complete Beginner's Guide to AI Coding (2026)",
-              "url": "https://vickytechjournal.blogspot.com/2026/08/vibe-coding-guide-2026.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 7,
-              "name": "Best AI Coding Agents for Developers in 2026 (Simple Guide)",
-              "url": "https://vickytechjournal.blogspot.com/2026/08/best-ai-coding-agents-2026.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 8,
-              "name": "How to Build an AI Agent from Scratch in 2026 (Beginner's Step-by-Step Guide)",
-              "url": "https://vickytechjournal.blogspot.com/2026/08/build-ai-agent-scratch-2026.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 9,
-              "name": "AI Agents Roadmap for Beginners in 2026: A Complete Step-by-Step Guide",
-              "url": "https://vickytechjournal.blogspot.com/2026/08/ai-agents-roadmap-beginners-2026.html"
-            }
-          ]
         }
       ]
     }
     //]]></script>
   </b:if>
 
-  <!-- High Performance Preconnect & DNS-Prefetch Hints -->
-  <link crossorigin='anonymous' href='https://blogger.googleusercontent.com' rel='preconnect'/>
-  <link href='https://blogger.googleusercontent.com' rel='dns-prefetch'/>
+  <!-- Google Fonts (Optimized for FCP & CWV) -->
   <link href='https://fonts.googleapis.com' rel='preconnect'/>
-  <link href='https://fonts.googleapis.com' rel='dns-prefetch'/>
   <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
-  <link href='https://fonts.gstatic.com' rel='dns-prefetch'/>
-  <link href='https://resources.blogblog.com' rel='dns-prefetch'/>
-  <link href='https://www.googletagmanager.com' rel='dns-prefetch'/>
   <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap' media='print' onload='this.media=&quot;all&quot;' rel='stylesheet'/>
   <noscript>
     <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap' rel='stylesheet'/>
@@ -8743,29 +8665,6 @@ html.dark .vtj-sidebar-nl-input {
     font-size: 0.82rem !important;
   }
 }
-  
-  /* High-Performance Rendering & CLS Zero Optimizations */
-  .vtj-hero-editorial-grid,
-  .vtj-magazine-grid,
-  .vtj-article-grid,
-  .vtj-tech-grid,
-  .vtj-ai-showcase-grid,
-  .vtj-coding-grid,
-  .vtj-devtool-grid {
-    contain: layout style;
-  }
-  .vtj-tech-section,
-  .vtj-ai-section,
-  .vtj-coding-section,
-  .vtj-devtool-section,
-  .vtj-editors-popular-section,
-  .vtj-mustread-section,
-  .vtj-spotlight-section,
-  .vtj-site-footer {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 450px;
-  }
-
   ]]></b:skin>
 </head>
 
@@ -8797,7 +8696,7 @@ html.dark .vtj-sidebar-nl-input {
             </b:widget-settings>
             <b:includable id='main'>
               <a class='nav-logo' expr:href='data:blog.homepageUrl' title='Vicky Tech Journal'>
-                <img alt='Vicky Tech Journal' class='nav-logo-img' decoding='async' fetchpriority='high' height='42' id='header-logo-img' loading='eager' onerror='this.onerror=null;this.src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png";' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='42'/>
+                <img alt='Vicky Tech Journal' class='nav-logo-img' id='header-logo-img' onerror='this.onerror=null;this.src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png";' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png'/>
                 <div class='nav-brand-wrap'>
                   <span class='nav-brand-title'><span class='brand-dark'>VICKY</span> <span class='brand-blue'>TECH JOURNAL</span></span>
                   <span class='nav-brand-tagline'>LEARN &#8226; EXPLORE &#8226; GROW</span>
@@ -8908,7 +8807,7 @@ html.dark .vtj-sidebar-nl-input {
   <div class='mobile-drawer' id='mobile-drawer'>
     <div class='drawer-header'>
       <div class='drawer-brand-wrap' style='display:flex;align-items:center;gap:10px;'>
-        <img alt='Vicky Tech Journal' class='drawer-logo-img' decoding='async' height='38' id='drawer-logo-img' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' style='display:block;width:38px;height:38px;border-radius:10px;object-fit:cover;' width='38'/>
+        <img alt='Vicky Tech Journal' class='drawer-logo-img' id='drawer-logo-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' style='display:block;width:38px;height:38px;border-radius:10px;object-fit:cover;'/>
         <span class='drawer-logo' id='drawer-logo-text'>Vicky Tech <span class='logo-accent'>Journal</span></span>
       </div>
       <button aria-label='Close Menu' class='drawer-close' id='drawer-close'>&#215;</button>
@@ -8954,7 +8853,7 @@ html.dark .vtj-sidebar-nl-input {
               <article class='vtj-hero-card vtj-hero-card-large'>
                 <a class='vtj-hero-card-link' href='https://vickytechjournal.blogspot.com/2026/09/it-entry-level-jobs-for-freshers.html' title='10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide'>
                   <div class='vtj-hero-img-wrapper'>
-                    <img alt='10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide' class='vtj-hero-card-img' decoding='async' fetchpriority='high' height='675' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzGy1FuQ9S2s2c_EqbgAkwCDvjdvkoGsO0qh8UxrOdXmRfXf2y79lrIWZmvV1hA57tJ0ZmmfrOg7fjauYx5g5Wtwkqdjwb1EkWu_GIBo6PRRKC1t-beTdbU6kbTlHvM3w61OFl63oR6WGdANrEvehRtuc6ZrFlTeffsWgz9SmwovrNHDw0-MB2oGqsAtNi/w1200-h800-c-rw/it-fresher-career-growth-2026.webp' width='1200'/>
+                    <img alt='10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide' class='vtj-hero-card-img' fetchpriority='high' height='675' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzGy1FuQ9S2s2c_EqbgAkwCDvjdvkoGsO0qh8UxrOdXmRfXf2y79lrIWZmvV1hA57tJ0ZmmfrOg7fjauYx5g5Wtwkqdjwb1EkWu_GIBo6PRRKC1t-beTdbU6kbTlHvM3w61OFl63oR6WGdANrEvehRtuc6ZrFlTeffsWgz9SmwovrNHDw0-MB2oGqsAtNi/w1200-h800-c-rw/it-fresher-career-growth-2026.webp' width='1200'/>
                     <div class='vtj-hero-gradient-overlay'/>
                   </div>
                   <div class='vtj-hero-card-body'>
@@ -8962,7 +8861,7 @@ html.dark .vtj-sidebar-nl-input {
                     <h1 class='vtj-hero-title-main'>10 Best IT Entry-Level Jobs for Freshers in 2026: Skills &amp; Career Guide</h1>
                     <p class='vtj-hero-desc'>Explore top in-demand IT entry-level career paths, required skills, high-growth roles, and actionable roadmap strategies for freshers in 2026.</p>
                     <div class='vtj-hero-meta'>
-                      <img alt='VICKY TECH JOURNAL' class='vtj-hero-author-avatar' decoding='async' height='20' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='20'/>
+                      <img alt='VICKY TECH JOURNAL' class='vtj-hero-author-avatar' height='20' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='20'/>
                       <span class='vtj-hero-author'>VICKY TECH JOURNAL</span>
                       <span class='vtj-hero-dot'>&#8226;</span>
                       <span class='vtj-hero-date'>Sep 4, 2026</span>
@@ -10072,7 +9971,7 @@ html.dark .vtj-sidebar-nl-input {
             <article class='vtj-devtool-card'>
               <a class='vtj-card-link-overlay' href='https://vickytechjournal.blogspot.com/2026/08/best-ai-coding-agents-developers-2026.html'/>
               <div class='vtj-devtool-img-wrap'>
-                <img alt='Best AI Coding Agents for Developers in 2026' class='vtj-devtool-img' decoding='async' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgUcoJ9U2L7JDlUViWRVWUegunYtsTugK0hhBiuADCjNOfI8FYR9TubL2rNrtZOa-OD9-g5LxdZmvyWmNoipMCMLnoAYdwHcg9wvhRmZw7jIbxj95O70QNaWvzDx-DjwKW0HullrGRiEVL00HT5sFFbScXDruaTW2qx9aCtaoBvpaJ7IqHwNmg0KGsCTFiu=w800-h450-c-rw' width='250'/>
+                <img alt='Best AI Coding Agents for Developers in 2026' class='vtj-devtool-img' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgUcoJ9U2L7JDlUViWRVWUegunYtsTugK0hhBiuADCjNOfI8FYR9TubL2rNrtZOa-OD9-g5LxdZmvyWmNoipMCMLnoAYdwHcg9wvhRmZw7jIbxj95O70QNaWvzDx-DjwKW0HullrGRiEVL00HT5sFFbScXDruaTW2qx9aCtaoBvpaJ7IqHwNmg0KGsCTFiu=w800-h450-c-rw' width='250'/>
                 <div class='vtj-devtool-icon-badge vtj-icon-purple'>
                   <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><rect height='16' rx='2' ry='2' width='16' x='4' y='4'/><rect height='6' width='6' x='9' y='9'/><line x1='9' x2='9' y1='1' y2='4'/><line x1='15' x2='15' y1='1' y2='4'/><line x1='9' x2='9' y1='20' y2='23'/><line x1='15' x2='15' y1='20' y2='23'/><line x1='20' x2='23' y1='9' y2='9'/><line x1='20' x2='23' y1='14' y2='14'/><line x1='1' x2='4' y1='9' y2='9'/><line x1='1' x2='4' y1='14' y2='14'/></svg>
                 </div>
@@ -10097,7 +9996,7 @@ html.dark .vtj-sidebar-nl-input {
             <article class='vtj-devtool-card'>
               <a class='vtj-card-link-overlay' href='https://vickytechjournal.blogspot.com/2026/08/best-free-developer-tools-students-2026_02024092790.html'/>
               <div class='vtj-devtool-img-wrap'>
-                <img alt='Best Free Developer Tools for Students in 2026' class='vtj-devtool-img' decoding='async' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEjyh1jhlMZ-tGWwYytmrY9U_Uc5ZS3L9f7ETKvzR8pyqVVLAG9AsRAyD3lpFUCM1_AZFrl2fKHgV1yfRY7Sua51OFOmZhxI_XTdilYNyThDeWkb8SDNMPUlzTv94Ki0f5aGWQ40m_Kgyt_K9S7ad6oYE86qFYz9WHWQfRAOp-iEzIJqgrIRkk8duPvjB6om=w800-h450-c-rw' width='250'/>
+                <img alt='Best Free Developer Tools for Students in 2026' class='vtj-devtool-img' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEjyh1jhlMZ-tGWwYytmrY9U_Uc5ZS3L9f7ETKvzR8pyqVVLAG9AsRAyD3lpFUCM1_AZFrl2fKHgV1yfRY7Sua51OFOmZhxI_XTdilYNyThDeWkb8SDNMPUlzTv94Ki0f5aGWQ40m_Kgyt_K9S7ad6oYE86qFYz9WHWQfRAOp-iEzIJqgrIRkk8duPvjB6om=w800-h450-c-rw' width='250'/>
                 <div class='vtj-devtool-icon-badge vtj-icon-blue'>
                   <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><polyline points='4 17 10 11 4 5'/><line x1='12' x2='20' y1='19' y2='19'/></svg>
                 </div>
@@ -10122,7 +10021,7 @@ html.dark .vtj-sidebar-nl-input {
             <article class='vtj-devtool-card'>
               <a class='vtj-card-link-overlay' href='https://vickytechjournal.blogspot.com/2026/08/best-free-hosting-student-projects-2026.html'/>
               <div class='vtj-devtool-img-wrap'>
-                <img alt='Best Free Hosting for Student Projects in 2026' class='vtj-devtool-img' decoding='async' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEjiI6sB1dh9KB6WnkF58TZNcWSGrKx88KYZmqkMpezpNvBblmNqxutBH_kWLpV9ewyaswtMvfy8-dKHXcBYlNP5S8vePiNELFgYkXHDAQcGiZWVcd96_oeg28kQ3ykce4EbNYtBO8Y_EiDCkaPAlAY-eCckB0dIME_2owa10Q5la2HmLvnwxuMUemMAKIPQ=w800-h450-c-rw' width='250'/>
+                <img alt='Best Free Hosting for Student Projects in 2026' class='vtj-devtool-img' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEjiI6sB1dh9KB6WnkF58TZNcWSGrKx88KYZmqkMpezpNvBblmNqxutBH_kWLpV9ewyaswtMvfy8-dKHXcBYlNP5S8vePiNELFgYkXHDAQcGiZWVcd96_oeg28kQ3ykce4EbNYtBO8Y_EiDCkaPAlAY-eCckB0dIME_2owa10Q5la2HmLvnwxuMUemMAKIPQ=w800-h450-c-rw' width='250'/>
                 <div class='vtj-devtool-icon-badge vtj-icon-green'>
                   <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>
                 </div>
@@ -10147,7 +10046,7 @@ html.dark .vtj-sidebar-nl-input {
             <article class='vtj-devtool-card'>
               <a class='vtj-card-link-overlay' href='https://vickytechjournal.blogspot.com/2026/08/github-portfolio-2026.html'/>
               <div class='vtj-devtool-img-wrap'>
-                <img alt='GitHub Portfolio 2026: Complete Step-by-Step Guide' class='vtj-devtool-img' decoding='async' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgQhSdKxBwLhr-D3Yq-jbGX--qacNjakFa5u_L14-yXNhYTR27UgIM7Ed7CF77vzw02FLEb06nGVjsTX9t-6-rir1oSO6RO9kQJe6oV2o6izfUl7TC4VmimwIEzCEnsCeQLVCZq6BDWMv27OLW9Aipw5cCZf4TObtZLfg2RsYb2QR4i65vxxaUGtD_uMoZl=w800-h450-c-rw' width='250'/>
+                <img alt='GitHub Portfolio 2026: Complete Step-by-Step Guide' class='vtj-devtool-img' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgQhSdKxBwLhr-D3Yq-jbGX--qacNjakFa5u_L14-yXNhYTR27UgIM7Ed7CF77vzw02FLEb06nGVjsTX9t-6-rir1oSO6RO9kQJe6oV2o6izfUl7TC4VmimwIEzCEnsCeQLVCZq6BDWMv27OLW9Aipw5cCZf4TObtZLfg2RsYb2QR4i65vxxaUGtD_uMoZl=w800-h450-c-rw' width='250'/>
                 <div class='vtj-devtool-icon-badge vtj-icon-orange'>
                   <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><path d='M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z'/><path d='m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z'/></svg>
                 </div>
@@ -10172,7 +10071,7 @@ html.dark .vtj-sidebar-nl-input {
             <article class='vtj-devtool-card'>
               <a class='vtj-card-link-overlay' href='https://vickytechjournal.blogspot.com/2026/08/best-free-websites-to-learn-programming-2026.html'/>
               <div class='vtj-devtool-img-wrap'>
-                <img alt='Best Free Websites to Learn Programming in 2026' class='vtj-devtool-img' decoding='async' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgq8eD3WRYz8HPRtJFXZgszHWp4I_xYz5cCMm8JtakFde9hWvLGA0HOk_i6cWIzvhQcZ0aoGhZCjrCRxfFIZpDHQ4qyoxUajnQzUOuzGN3qHWK3lXkYwt8xJbQS1JJEMo_ET6E6BH6V-LHGT-K80mITHkwJt7Pvm5YfUEwUWEJvFnUuGWYTMDpFzpo4xcXv=w800-h450-c-rw' width='250'/>
+                <img alt='Best Free Websites to Learn Programming in 2026' class='vtj-devtool-img' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgq8eD3WRYz8HPRtJFXZgszHWp4I_xYz5cCMm8JtakFde9hWvLGA0HOk_i6cWIzvhQcZ0aoGhZCjrCRxfFIZpDHQ4qyoxUajnQzUOuzGN3qHWK3lXkYwt8xJbQS1JJEMo_ET6E6BH6V-LHGT-K80mITHkwJt7Pvm5YfUEwUWEJvFnUuGWYTMDpFzpo4xcXv=w800-h450-c-rw' width='250'/>
                 <div class='vtj-devtool-icon-badge vtj-icon-indigo'>
                   <svg fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'><rect height='7' width='7' x='3' y='3'/><rect height='7' width='7' x='14' y='3'/><rect height='7' width='7' x='14' y='14'/><rect height='7' width='7' x='3' y='14'/></svg>
                 </div>
@@ -10207,7 +10106,7 @@ html.dark .vtj-sidebar-nl-input {
               <!-- Item 1 -->
               <a class='vtj-editors-item' href='https://vickytechjournal.blogspot.com/2026/08/ai-agents-roadmap-for-beginners-2026.html'>
                 <div class='vtj-editors-img-wrap'>
-                  <img alt='The Future of AI: 7 Trends to Watch in 2026' class='vtj-editors-img' decoding='async' height='64' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgeTwYiExeEb00ryNiAHbhGlZ-TJcqjD7l7TS8_xtywfE1wYD_mYADZzrvYjj3OiftZw78HnXquRJWbfe9uFC4KazdIIUSGAqe4BTZfpS-oy2G5TIkHqbyMGOlNQXYwBiAtGP8A17cRqW6dgiTv3VRGthpq3ctBO5rSFwoxl60iGhMTWnJh9BY0K-redv0W=w400-h300-c-rw' width='72'/>
+                  <img alt='The Future of AI: 7 Trends to Watch in 2026' class='vtj-editors-img' height='64' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgeTwYiExeEb00ryNiAHbhGlZ-TJcqjD7l7TS8_xtywfE1wYD_mYADZzrvYjj3OiftZw78HnXquRJWbfe9uFC4KazdIIUSGAqe4BTZfpS-oy2G5TIkHqbyMGOlNQXYwBiAtGP8A17cRqW6dgiTv3VRGthpq3ctBO5rSFwoxl60iGhMTWnJh9BY0K-redv0W=w400-h300-c-rw' width='72'/>
                 </div>
                 <div class='vtj-editors-body'>
                   <span class='vtj-editors-badge vtj-badge-purple'>AI</span>
@@ -10219,7 +10118,7 @@ html.dark .vtj-sidebar-nl-input {
               <!-- Item 2 -->
               <a class='vtj-editors-item' href='https://vickytechjournal.blogspot.com/2026/09/easy-technology-to-learn-2026.html'>
                 <div class='vtj-editors-img-wrap'>
-                  <img alt='5G and Beyond: How Connectivity is Changing the World' class='vtj-editors-img' decoding='async' height='64' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEfBVXAeThSBygItxNCBeuLxr0Yr4GXm9-u-9cP3NSLGrTGQELeQxzwf8Nlmnnvky0SHN5YXS23XqHSfKSWnFR5B4rU5ASQAcAhwzWZtUqVJUqlNkDK33uI3OLQVColmwGlbgZMa4ZI48Nqd_o0RpzEV4s6dKJBEgOMMjSwkDZ19rSuVFpZxjVp8NvuNB_/w400-h300-c-rw/easy-technology-to-learn-2026.webp' width='72'/>
+                  <img alt='5G and Beyond: How Connectivity is Changing the World' class='vtj-editors-img' height='64' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEfBVXAeThSBygItxNCBeuLxr0Yr4GXm9-u-9cP3NSLGrTGQELeQxzwf8Nlmnnvky0SHN5YXS23XqHSfKSWnFR5B4rU5ASQAcAhwzWZtUqVJUqlNkDK33uI3OLQVColmwGlbgZMa4ZI48Nqd_o0RpzEV4s6dKJBEgOMMjSwkDZ19rSuVFpZxjVp8NvuNB_/w400-h300-c-rw/easy-technology-to-learn-2026.webp' width='72'/>
                 </div>
                 <div class='vtj-editors-body'>
                   <span class='vtj-editors-badge vtj-badge-blue'>Technology</span>
@@ -10231,7 +10130,7 @@ html.dark .vtj-sidebar-nl-input {
               <!-- Item 3 -->
               <a class='vtj-editors-item' href='https://vickytechjournal.blogspot.com/2026/08/how-to-protect-your-data-2026.html'>
                 <div class='vtj-editors-img-wrap'>
-                  <img alt='Cybersecurity Best Practices for Developers in 2026' class='vtj-editors-img' decoding='async' height='64' loading='lazy' src='https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vpLHe__0Vx1Mmjq9Nu8w4JpvUSkEsXbRlr39Xrh6Rx2nuyDtLkJNtj9F9yMVfKtogtudBZsT3_o0B8_sPINK2ECEEYF-EH2IMIyj2Ez9BEpAGZm6_-l4r7hRGF9E6ZRJthKYWXc-A1A39PoS_P89bL3TC8_7Oiw4cNfvuoER345mVj8aCtgqcgkZEPagA=w400-h300-c-rw' width='72'/>
+                  <img alt='Cybersecurity Best Practices for Developers in 2026' class='vtj-editors-img' height='64' loading='lazy' src='https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vpLHe__0Vx1Mmjq9Nu8w4JpvUSkEsXbRlr39Xrh6Rx2nuyDtLkJNtj9F9yMVfKtogtudBZsT3_o0B8_sPINK2ECEEYF-EH2IMIyj2Ez9BEpAGZm6_-l4r7hRGF9E6ZRJthKYWXc-A1A39PoS_P89bL3TC8_7Oiw4cNfvuoER345mVj8aCtgqcgkZEPagA=w400-h300-c-rw' width='72'/>
                 </div>
                 <div class='vtj-editors-body'>
                   <span class='vtj-editors-badge vtj-badge-green'>Cybersecurity</span>
@@ -10268,7 +10167,7 @@ html.dark .vtj-sidebar-nl-input {
           <!-- LEFT: Featured Large Article -->
           <article class='vtj-mustread-featured'>
             <a class='vtj-card-link-overlay' href='https://vickytechjournal.blogspot.com/2026/08/how-to-build-ai-agent-from-scratch-2026.html'/>
-            <img alt='How to Build an AI Agent from Scratch in 2026' class='vtj-mustread-bg-img' decoding='async' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEjYNtPxsYdPjuWUd3Y9fahvEvsy3F1SSmpDZtqK4KuVHk2RIIPST_bssTRJP5K2NtfWLFwbJC7yAQdWmz2ThMZT0vQZCKnCMx5K9AOFQf0wyPCb-WL7I-FIoVi6NR-XlFOKKqD_Y0EFy8GknHsElr_kA1RHIT5RVH8WOZG1Jj_vQOz92jNhBqK7PghW-la2=w800-h450-c-rw' width='800'/>
+            <img alt='How to Build an AI Agent from Scratch in 2026' class='vtj-mustread-bg-img' height='450' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEjYNtPxsYdPjuWUd3Y9fahvEvsy3F1SSmpDZtqK4KuVHk2RIIPST_bssTRJP5K2NtfWLFwbJC7yAQdWmz2ThMZT0vQZCKnCMx5K9AOFQf0wyPCb-WL7I-FIoVi6NR-XlFOKKqD_Y0EFy8GknHsElr_kA1RHIT5RVH8WOZG1Jj_vQOz92jNhBqK7PghW-la2=w800-h450-c-rw' width='800'/>
             <div class='vtj-mustread-overlay'/>
             <span class='vtj-mustread-featured-badge'>Featured</span>
             <div class='vtj-mustread-featured-content'>
@@ -10277,7 +10176,7 @@ html.dark .vtj-sidebar-nl-input {
               </h3>
               <p class='vtj-mustread-featured-desc'>A complete step-by-step guide to building your own AI agent, even if you&apos;re a beginner.</p>
               <div class='vtj-mustread-author-row'>
-                <img alt='Vicky Tech Journal' class='vtj-mustread-avatar' decoding='async' height='26' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='26'/>
+                <img alt='Vicky Tech Journal' class='vtj-mustread-avatar' height='26' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='26'/>
                 <span class='vtj-mustread-author-name'>VICKY TECH JOURNAL</span>
                 <span>&#8226;</span>
                 <span>May 25, 2026</span>
@@ -10293,7 +10192,7 @@ html.dark .vtj-sidebar-nl-input {
             <article class='vtj-mustread-compact-card'>
               <a class='vtj-card-link-overlay' href='https://vickytechjournal.blogspot.com/2026/08/vibe-coding-beginners-guide-ai-coding.html'/>
               <div class='vtj-mustread-compact-img-wrap'>
-                <img alt='Vibe Coding: Complete Beginner&apos;s Guide to AI Coding (2026)' class='vtj-mustread-compact-img' decoding='async' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEiQM0F8MnYoRWXWIQf64cwR8h-0uMBIcqf7kMvqKf3kbyquGIUGu_SPWX4poI-8yhirTOvL45guCvH8lS5jxXMnULPH9UE5XBdK-YzikXFXe-T9g4HTSqMNJxCDvK2nFhs-4JaRboLYmCIvjiIYRVc2xPNGSqfqWAKiSBSRQTrKG7JPdOKr2zFdSMW1fy7X=w600-h380-c-rw' width='240'/>
+                <img alt='Vibe Coding: Complete Beginner&apos;s Guide to AI Coding (2026)' class='vtj-mustread-compact-img' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEiQM0F8MnYoRWXWIQf64cwR8h-0uMBIcqf7kMvqKf3kbyquGIUGu_SPWX4poI-8yhirTOvL45guCvH8lS5jxXMnULPH9UE5XBdK-YzikXFXe-T9g4HTSqMNJxCDvK2nFhs-4JaRboLYmCIvjiIYRVc2xPNGSqfqWAKiSBSRQTrKG7JPdOKr2zFdSMW1fy7X=w600-h380-c-rw' width='240'/>
               </div>
               <div class='vtj-mustread-compact-body'>
                 <span class='vtj-editors-badge vtj-badge-purple'>Guide</span>
@@ -10314,7 +10213,7 @@ html.dark .vtj-sidebar-nl-input {
             <article class='vtj-mustread-compact-card'>
               <a class='vtj-card-link-overlay' href='https://vickytechjournal.blogspot.com/2026/08/cloud-engineer-roadmap-for-beginners-2026.html'/>
               <div class='vtj-mustread-compact-img-wrap'>
-                <img alt='What is Cloud Computing? A Simple Guide for Beginners' class='vtj-mustread-compact-img' decoding='async' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEi3NxtMyBYUfomAlc3Le-bdfM1o_fxirh1CKMo3HPFVt_6P-xeKZBqhsEUk66-WWCZKFBalefF4wZQlPJg2MATdmWv2QxK3DmGA1JueQ2x0GIfscpUYuCdXGVhsWrE1lyp3lvKdH_BI2_k0_u75s2sLLdcWk-rmRWSlLYZitSDPAQRi25JoWkwtdM72q4gk=w600-h380-c-rw' width='240'/>
+                <img alt='What is Cloud Computing? A Simple Guide for Beginners' class='vtj-mustread-compact-img' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEi3NxtMyBYUfomAlc3Le-bdfM1o_fxirh1CKMo3HPFVt_6P-xeKZBqhsEUk66-WWCZKFBalefF4wZQlPJg2MATdmWv2QxK3DmGA1JueQ2x0GIfscpUYuCdXGVhsWrE1lyp3lvKdH_BI2_k0_u75s2sLLdcWk-rmRWSlLYZitSDPAQRi25JoWkwtdM72q4gk=w600-h380-c-rw' width='240'/>
               </div>
               <div class='vtj-mustread-compact-body'>
                 <span class='vtj-editors-badge vtj-badge-blue'>Explainer</span>
@@ -10335,7 +10234,7 @@ html.dark .vtj-sidebar-nl-input {
             <article class='vtj-mustread-compact-card'>
               <a class='vtj-card-link-overlay' href='https://vickytechjournal.blogspot.com/2026/08/ai-agents-vs-ai-chatbots-difference.html'/>
               <div class='vtj-mustread-compact-img-wrap'>
-                <img alt='AI Agents vs AI Chatbots: What&apos;s the Difference?' class='vtj-mustread-compact-img' decoding='async' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgeTwYiExeEb00ryNiAHbhGlZ-TJcqjD7l7TS8_xtywfE1wYD_mYADZzrvYjj3OiftZw78HnXquRJWbfe9uFC4KazdIIUSGAqe4BTZfpS-oy2G5TIkHqbyMGOlNQXYwBiAtGP8A17cRqW6dgiTv3VRGthpq3ctBO5rSFwoxl60iGhMTWnJh9BY0K-redv0W=w600-h380-c-rw' width='240'/>
+                <img alt='AI Agents vs AI Chatbots: What&apos;s the Difference?' class='vtj-mustread-compact-img' height='160' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgeTwYiExeEb00ryNiAHbhGlZ-TJcqjD7l7TS8_xtywfE1wYD_mYADZzrvYjj3OiftZw78HnXquRJWbfe9uFC4KazdIIUSGAqe4BTZfpS-oy2G5TIkHqbyMGOlNQXYwBiAtGP8A17cRqW6dgiTv3VRGthpq3ctBO5rSFwoxl60iGhMTWnJh9BY0K-redv0W=w600-h380-c-rw' width='240'/>
               </div>
               <div class='vtj-mustread-compact-body'>
                 <span class='vtj-editors-badge vtj-badge-green'>Comparison</span>
@@ -10367,7 +10266,7 @@ html.dark .vtj-sidebar-nl-input {
               <a class='vtj-popular-item' href='https://vickytechjournal.blogspot.com/2026/09/best-ai-tools-for-students-2026.html'>
                 <span class='vtj-popular-rank'>01</span>
                 <div class='vtj-popular-img-wrap'>
-                  <img alt='What is Generative AI? A Complete Guide for Beginners' class='vtj-popular-img' decoding='async' height='50' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQsy7bwIGNnQFdUby88J4CHrFslIi52kw9y04tghCq8w_wOH4dG4nNAzrpHax0dQuZi-_4BmzoxqVGQgowIsfSK-OihT20NpB_6hvYBkx1jdQAck34o4HEh5AJG39XaYc8j8BG_guBNX5_E5LXouLVt-jH1aLkx09w2BTEBKC76L9Iugaa1f6plcGw_m6U/w200-h160-c-rw/best-ai-tools-for-students-2026.png' width='56'/>
+                  <img alt='What is Generative AI? A Complete Guide for Beginners' class='vtj-popular-img' height='50' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQsy7bwIGNnQFdUby88J4CHrFslIi52kw9y04tghCq8w_wOH4dG4nNAzrpHax0dQuZi-_4BmzoxqVGQgowIsfSK-OihT20NpB_6hvYBkx1jdQAck34o4HEh5AJG39XaYc8j8BG_guBNX5_E5LXouLVt-jH1aLkx09w2BTEBKC76L9Iugaa1f6plcGw_m6U/w200-h160-c-rw/best-ai-tools-for-students-2026.png' width='56'/>
                 </div>
                 <div class='vtj-popular-body'>
                   <h4 class='vtj-popular-title'>What is Generative AI? A Complete Guide for Beginners</h4>
@@ -10379,7 +10278,7 @@ html.dark .vtj-sidebar-nl-input {
               <a class='vtj-popular-item' href='https://vickytechjournal.blogspot.com/2026/08/complete-python-roadmap-beginners-2026.html'>
                 <span class='vtj-popular-rank'>02</span>
                 <div class='vtj-popular-img-wrap'>
-                  <img alt='Python Roadmap for Beginners in 2026' class='vtj-popular-img' decoding='async' height='50' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEhaepw3UXasEta7qgJ2j6dW-zjZB20iAHYlX8Tq1ndvDurAZIhBy35RGmnyXTdW-eqvQRZEROaVZuUXQ-pdnQmUAz1XL_7iVsiz6VaxJ7L-FlM1nygheLIadku1hSARCwXI4c6pLawBUOpiOQ7WW8p967Jfoxm9LdO_G9f4351ncfXLhl-VtlnBEfjndBzf=w200-h160-c-rw' width='56'/>
+                  <img alt='Python Roadmap for Beginners in 2026' class='vtj-popular-img' height='50' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEhaepw3UXasEta7qgJ2j6dW-zjZB20iAHYlX8Tq1ndvDurAZIhBy35RGmnyXTdW-eqvQRZEROaVZuUXQ-pdnQmUAz1XL_7iVsiz6VaxJ7L-FlM1nygheLIadku1hSARCwXI4c6pLawBUOpiOQ7WW8p967Jfoxm9LdO_G9f4351ncfXLhl-VtlnBEfjndBzf=w200-h160-c-rw' width='56'/>
                 </div>
                 <div class='vtj-popular-body'>
                   <h4 class='vtj-popular-title'>Python Roadmap for Beginners in 2026</h4>
@@ -10391,7 +10290,7 @@ html.dark .vtj-sidebar-nl-input {
               <a class='vtj-popular-item' href='https://vickytechjournal.blogspot.com/2026/08/javascript-roadmap-for-beginners-2026.html'>
                 <span class='vtj-popular-rank'>03</span>
                 <div class='vtj-popular-img-wrap'>
-                  <img alt='VS Code Tips &amp; Tricks That Will Boost Your Productivity' class='vtj-popular-img' decoding='async' height='50' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgGECDFAxHxs4ojOtt1_OplQ3aEDwMH-2I4ofwhzZXV7pqyZN_1agcc0FnqKc1j7IbejiTG-u0UV7ocdCRqysDd4Q0Uiu9p1zyweas1hvdsBDNzD-8kCganoxT1PCMpP7AJZzsxxXIHnrrXRvrH7wb6yc2zDA-iNbwfHM37V6wQMzDm97Wa0LzGgAwaSDck=w200-h160-c-rw' width='56'/>
+                  <img alt='VS Code Tips &amp; Tricks That Will Boost Your Productivity' class='vtj-popular-img' height='50' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEgGECDFAxHxs4ojOtt1_OplQ3aEDwMH-2I4ofwhzZXV7pqyZN_1agcc0FnqKc1j7IbejiTG-u0UV7ocdCRqysDd4Q0Uiu9p1zyweas1hvdsBDNzD-8kCganoxT1PCMpP7AJZzsxxXIHnrrXRvrH7wb6yc2zDA-iNbwfHM37V6wQMzDm97Wa0LzGgAwaSDck=w200-h160-c-rw' width='56'/>
                 </div>
                 <div class='vtj-popular-body'>
                   <h4 class='vtj-popular-title'>VS Code Tips &amp; Tricks That Will Boost Your Productivity</h4>
@@ -10403,7 +10302,7 @@ html.dark .vtj-sidebar-nl-input {
               <a class='vtj-popular-item' href='https://vickytechjournal.blogspot.com/2026/08/cybersecurity-analyst-roadmap-2026.html'>
                 <span class='vtj-popular-rank'>04</span>
                 <div class='vtj-popular-img-wrap'>
-                  <img alt='Top 10 Cybersecurity Skills to Learn in 2026' class='vtj-popular-img' decoding='async' height='50' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEilQ5osw6tEqgkDMsOHQwgi56IvsyteQSTSreb1_Qc4VjLu3DTQCy_nAz4DSBoAeRFiHZ-FpQTe5IvfJGX2MTU9hYe0Gws70vIFNI-RhsyuXxXi--BZh_wZMHo1BIgK_1sY22bZ9DHwA9R2gmPFmH7FCGBulVlPs4Ii-Vj8IRSJhrzdZTVPijITpnRqjw42=w200-h160-c-rw' width='56'/>
+                  <img alt='Top 10 Cybersecurity Skills to Learn in 2026' class='vtj-popular-img' height='50' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEilQ5osw6tEqgkDMsOHQwgi56IvsyteQSTSreb1_Qc4VjLu3DTQCy_nAz4DSBoAeRFiHZ-FpQTe5IvfJGX2MTU9hYe0Gws70vIFNI-RhsyuXxXi--BZh_wZMHo1BIgK_1sY22bZ9DHwA9R2gmPFmH7FCGBulVlPs4Ii-Vj8IRSJhrzdZTVPijITpnRqjw42=w200-h160-c-rw' width='56'/>
                 </div>
                 <div class='vtj-popular-body'>
                   <h4 class='vtj-popular-title'>Top 10 Cybersecurity Skills to Learn in 2026</h4>
@@ -10415,7 +10314,7 @@ html.dark .vtj-sidebar-nl-input {
               <a class='vtj-popular-item' href='https://vickytechjournal.blogspot.com/2026/09/it-entry-level-jobs-for-freshers.html'>
                 <span class='vtj-popular-rank'>05</span>
                 <div class='vtj-popular-img-wrap'>
-                  <img alt='Best Laptops for Developers in 2026' class='vtj-popular-img' decoding='async' height='50' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzGy1FuQ9S2s2c_EqbgAkwCDvjdvkoGsO0qh8UxrOdXmRfXf2y79lrIWZmvV1hA57tJ0ZmmfrOg7fjauYx5g5Wtwkqdjwb1EkWu_GIBo6PRRKC1t-beTdbU6kbTlHvM3w61OFl63oR6WGdANrEvehRtuc6ZrFlTeffsWgz9SmwovrNHDw0-MB2oGqsAtNi/w200-h160-c-rw/it-fresher-career-growth-2026.webp' width='56'/>
+                  <img alt='Best Laptops for Developers in 2026' class='vtj-popular-img' height='50' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzGy1FuQ9S2s2c_EqbgAkwCDvjdvkoGsO0qh8UxrOdXmRfXf2y79lrIWZmvV1hA57tJ0ZmmfrOg7fjauYx5g5Wtwkqdjwb1EkWu_GIBo6PRRKC1t-beTdbU6kbTlHvM3w61OFl63oR6WGdANrEvehRtuc6ZrFlTeffsWgz9SmwovrNHDw0-MB2oGqsAtNi/w200-h160-c-rw/it-fresher-career-growth-2026.webp' width='56'/>
                 </div>
                 <div class='vtj-popular-body'>
                   <h4 class='vtj-popular-title'>Best Laptops for Developers in 2026</h4>
@@ -10525,7 +10424,7 @@ html.dark .vtj-sidebar-nl-input {
             <!-- Spotlight Article (Latest Top Feature) -->
             <div class='vtj-articles-spotlight' id='vtj-articles-spotlight' style='display:none'>
               <div class='vtj-spotlight-media'>
-                <img alt='Featured Article' class='vtj-spotlight-img' decoding='async' height='225' id='vtj-spotlight-img' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQsy7bwIGNnQFdUby88J4CHrFslIi52kw9y04tghCq8w_wOH4dG4nNAzrpHax0dQuZi-_4BmzoxqVGQgowIsfSK-OihT20NpB_6hvYBkx1jdQAck34o4HEh5AJG39XaYc8j8BG_guBNX5_E5LXouLVt-jH1aLkx09w2BTEBKC76L9Iugaa1f6plcGw_m6U/w800-h450-c-rw/best-ai-tools-for-students-2026.png' width='400'/>
+                <img alt='Featured Article' class='vtj-spotlight-img' id='vtj-spotlight-img' src=''/>
               </div>
               <div class='vtj-spotlight-body'>
                 <span class='vtj-spotlight-badge'>&#9733; SPOTLIGHT ARTICLE</span>
@@ -10542,7 +10441,7 @@ html.dark .vtj-sidebar-nl-input {
                 </div>
                 <div class='vtj-spotlight-footer'>
                   <div class='vtj-spotlight-author'>
-                    <img alt='VICKY TECH JOURNAL' class='vtj-spotlight-author-img' decoding='async' height='24' id='vtj-spotlight-author-img' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' width='24'/>
+                    <img alt='VICKY TECH JOURNAL' class='vtj-spotlight-author-img' id='vtj-spotlight-author-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png'/>
                     <span class='vtj-spotlight-author-name'>VICKY TECH JOURNAL</span>
                   </div>
                   <a class='vtj-spotlight-cta' href='#' id='vtj-spotlight-cta'>
@@ -11695,7 +11594,7 @@ html.dark .vtj-sidebar-nl-input {
         <div class='vtj-footer-col vtj-col-brand'>
           <div class='vtj-footer-brand-header'>
             <div class='vtj-footer-logo-badge' style='overflow:hidden;border-radius:10px;padding:0;'>
-              <img alt='Vicky Tech Journal' class='vtj-footer-logo-img' decoding='async' height='42' id='footer-logo-img' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' style='width:100%;height:100%;object-fit:cover;display:block;' width='42'/>
+              <img alt='Vicky Tech Journal' class='vtj-footer-logo-img' id='footer-logo-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' style='width:100%;height:100%;object-fit:cover;display:block;'/>
             </div>
             <div class='vtj-footer-brand-title'>
               <span class='vtj-footer-brand-name'>VICKY <span class='vtj-footer-brand-accent'>TECH JOURNAL</span></span>
@@ -12191,7 +12090,7 @@ html.dark .vtj-sidebar-nl-input {
 
         matches.slice(0, 10).forEach(function (m) {
           var art = m.item;
-          var thumbHtml = art.thumb ? '<img class="search-result-thumb" src="' + art.thumb + '" alt="" width="60" height="45" loading="lazy" decoding="async"/>' : '<div class="search-result-thumb" style="display:flex;align-items:center;justify-content:center;color:#38BDF8;font-size:1.2rem;">&#9889;</div>';
+          var thumbHtml = art.thumb ? '<img class="search-result-thumb" src="' + art.thumb + '" alt="" loading="lazy"/>' : '<div class="search-result-thumb" style="display:flex;align-items:center;justify-content:center;color:#38BDF8;font-size:1.2rem;">&#9889;</div>';
           html += '<a class="search-result-item" href="' + art.url + '">' +
             thumbHtml +
             '<div class="search-result-info">' +
@@ -13184,7 +13083,7 @@ html.dark .vtj-sidebar-nl-input {
           html += '<article class="vtj-article-card">' +
             '<div class="vtj-article-thumb-wrap">' +
               '<a href="' + p.url + '" aria-label="Read ' + safeT + '">' +
-                '<img class="vtj-article-thumb-img" src="' + p.img + '" alt="' + safeT + '" loading="lazy" decoding="async" width="400" height="225"/>' +
+                '<img class="vtj-article-thumb-img" src="' + p.img + '" alt="' + safeT + '" loading="lazy" width="400" height="225"/>' +
               '</a>' +
             '</div>' +
             '<div class="vtj-article-card-body">' +
@@ -13688,7 +13587,7 @@ html.dark .vtj-sidebar-nl-input {
             }
 
             html += '<a class="vtj-mustread-item" href="' + postUrl + '">' +
-              '<img class="vtj-mustread-thumb" src="' + thumb + '" alt="' + title.replace(/"/g, '&quot;') + '" loading="lazy" decoding="async" width="72" height="54"/>' +
+              '<img class="vtj-mustread-thumb" src="' + thumb + '" alt="' + title.replace(/"/g, '&quot;') + '" loading="lazy" width="72" height="54"/>' +
               '<div class="vtj-mustread-info">' +
                 '<h4 class="vtj-mustread-title">' + title + '</h4>' +
                 '<span class="vtj-mustread-meta">By ' + authorName + (dateStr ? ' / ' + dateStr : '') + '</span>' +
