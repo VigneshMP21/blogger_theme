@@ -11274,11 +11274,11 @@ html.dark .vtj-sidebar-nl-input {
         <div class='vtj-footer-col'>
           <h3 class='vtj-footer-heading'>EXPLORE</h3>
           <ul class='vtj-footer-links'>
-            <li><a class='vtj-footer-link' href='/p/articles.html?category=AI+Tools'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><rect height='16' rx='2' ry='2' width='16' x='4' y='4'/><rect height='6' width='6' x='9' y='9'/><line x1='9' x2='9' y1='1' y2='4'/><line x1='15' x2='15' y1='1' y2='4'/><line x1='9' x2='9' y1='20' y2='23'/><line x1='15' x2='15' y1='20' y2='23'/><line x1='20' x2='23' y1='9' y2='9'/><line x1='20' x2='23' y1='14' y2='14'/><line x1='1' x2='4' y1='9' y2='9'/><line x1='1' x2='4' y1='14' y2='14'/></svg> AI &amp; Artificial Intelligence</a></li>
-            <li><a class='vtj-footer-link' href='/p/articles.html?category=Coding+Websites'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg> Coding &amp; Development</a></li>
-            <li><a class='vtj-footer-link' href='/p/articles.html?category=Technology'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><rect height='14' rx='2' width='20' x='2' y='3'/><line x1='8' x2='16' y1='21' y2='21'/><line x1='12' x2='12' y1='17' y2='21'/></svg> Technology</a></li>
-            <li><a class='vtj-footer-link' href='/p/articles.html?category=Developer+Tools'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/></svg> Developer Tools</a></li>
-            <li><a class='vtj-footer-link' href='/p/articles.html?category=Guides'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/><path d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'/></svg> Guides &amp; Tutorials</a></li>
+            <li><a class='vtj-footer-link' href='/search/label/AI%20Tools'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><rect height='16' rx='2' ry='2' width='16' x='4' y='4'/><rect height='6' width='6' x='9' y='9'/><line x1='9' x2='9' y1='1' y2='4'/><line x1='15' x2='15' y1='1' y2='4'/><line x1='9' x2='9' y1='20' y2='23'/><line x1='15' x2='15' y1='20' y2='23'/><line x1='20' x2='23' y1='9' y2='9'/><line x1='20' x2='23' y1='14' y2='14'/><line x1='1' x2='4' y1='9' y2='9'/><line x1='1' x2='4' y1='14' y2='14'/></svg> AI &amp; Artificial Intelligence</a></li>
+            <li><a class='vtj-footer-link' href='/search/label/Coding'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg> Coding &amp; Development</a></li>
+            <li><a class='vtj-footer-link' href='/search/label/Technology'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><rect height='14' rx='2' width='20' x='2' y='3'/><line x1='8' x2='16' y1='21' y2='21'/><line x1='12' x2='12' y1='17' y2='21'/></svg> Technology</a></li>
+            <li><a class='vtj-footer-link' href='/search/label/Developer%20Tools'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/></svg> Developer Tools</a></li>
+            <li><a class='vtj-footer-link' href='/search/label/Guides'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/><path d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'/></svg> Guides &amp; Tutorials</a></li>
             <li><a class='vtj-footer-link' href='/search/label/News'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2'/><path d='M18 14h-8'/><path d='M15 18h-5'/><path d='M10 6h8v4h-8V6Z'/></svg> Tech News</a></li>
             <li><a class='vtj-footer-link' href='/search/label/Reviews'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/></svg> Reviews</a></li>
           </ul>
@@ -11288,11 +11288,11 @@ html.dark .vtj-sidebar-nl-input {
         <div class='vtj-footer-col'>
           <h3 class='vtj-footer-heading'>RESOURCES</h3>
           <ul class='vtj-footer-links'>
-            <li><a class='vtj-footer-link vtj-chevron-link' href='/p/articles.html?category=Guides'><span class='vtj-chevron'>&#8250;</span> Beginner Guides</a></li>
-            <li><a class='vtj-footer-link vtj-chevron-link' href='/p/articles.html?category=Roadmaps'><span class='vtj-chevron'>&#8250;</span> Roadmaps</a></li>
-            <li><a class='vtj-footer-link vtj-chevron-link' href='/p/articles.html?category=Developer+Tools'><span class='vtj-chevron'>&#8250;</span> Best Tools</a></li>
+            <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Guides'><span class='vtj-chevron'>&#8250;</span> Beginner Guides</a></li>
+            <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Roadmaps'><span class='vtj-chevron'>&#8250;</span> Roadmaps</a></li>
+            <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Developer%20Tools'><span class='vtj-chevron'>&#8250;</span> Best Tools</a></li>
             <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Cheat%20Sheets'><span class='vtj-chevron'>&#8250;</span> Cheat Sheets</a></li>
-            <li><a class='vtj-footer-link vtj-chevron-link' href='/p/articles.html?category=Resources'><span class='vtj-chevron'>&#8250;</span> Free Resources</a></li>
+            <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Resources'><span class='vtj-chevron'>&#8250;</span> Free Resources</a></li>
             <li><a class='vtj-footer-link vtj-chevron-link' href='/search/label/Newsletter'><span class='vtj-chevron'>&#8250;</span> Newsletter Archive</a></li>
           </ul>
         </div>
@@ -12997,8 +12997,8 @@ html.dark .vtj-sidebar-nl-input {
           }
         }
 
-        // Header & footer category links instant switching on article page
-        var pageNavLinks = document.querySelectorAll('.nav-menu-link, .drawer-nav-link, .vtj-footer-link');
+        // Header nav links instant switching on article page
+        var pageNavLinks = document.querySelectorAll('.nav-menu-link, .drawer-nav-link');
         for (var pl = 0; pl < pageNavLinks.length; pl++) {
           (function(link) {
             var h = link.getAttribute('href') || '';
@@ -13021,9 +13021,6 @@ html.dark .vtj-sidebar-nl-input {
                 }
                 try { history.pushState(null, '', link.href); } catch(err) {}
                 renderArticles();
-                if (link.classList.contains('vtj-footer-link')) {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
                 e.preventDefault();
               });
             }
