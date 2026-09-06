@@ -8670,10 +8670,42 @@ html.dark .vtj-sidebar-nl-input {
         <nav aria-label='Main Navigation' class='nav-menu'>
           <a class='nav-menu-link' expr:class='data:view.isHomepage ? &quot;active&quot; : &quot;&quot;' href='/'>Home</a>
           <a class='nav-menu-link' href='/p/articles.html'>Articles</a>
-          <a class='nav-menu-link' href='/p/articles.html?category=AI+Tools'>AI Tools</a>
-          <a class='nav-menu-link' href='/p/articles.html?category=Roadmaps'>Roadmaps</a>
-          <a class='nav-menu-link' href='/p/articles.html?category=Coding+Websites'>Coding &amp; Websites</a>
-          <a class='nav-menu-link' href='/p/articles.html?category=Developer+Tools'>Developer Tools</a>
+          <div class='nav-item has-dropdown' data-nav-cat='AI Tools'>
+            <a class='nav-menu-link' href='/search/label/AI%20Tools'>
+              AI Tools
+              <svg class='nav-arrow' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
+            </a>
+            <div class='nav-dropdown-menu' id='nav-dd-ai-tools'>
+              <div class='nav-dd-loading'><div class='nav-dd-skel'/><div class='nav-dd-skel'/></div>
+            </div>
+          </div>
+          <div class='nav-item has-dropdown' data-nav-cat='Roadmaps'>
+            <a class='nav-menu-link' href='/search/label/Roadmaps'>
+              Roadmaps
+              <svg class='nav-arrow' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
+            </a>
+            <div class='nav-dropdown-menu' id='nav-dd-roadmaps'>
+              <div class='nav-dd-loading'><div class='nav-dd-skel'/><div class='nav-dd-skel'/></div>
+            </div>
+          </div>
+          <div class='nav-item has-dropdown' data-nav-cat='Coding Websites'>
+            <a class='nav-menu-link' href='/search/label/Coding%20Websites'>
+              Coding &amp; Websites
+              <svg class='nav-arrow' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
+            </a>
+            <div class='nav-dropdown-menu' id='nav-dd-coding-websites'>
+              <div class='nav-dd-loading'><div class='nav-dd-skel'/><div class='nav-dd-skel'/></div>
+            </div>
+          </div>
+          <div class='nav-item has-dropdown' data-nav-cat='Developer Tools'>
+            <a class='nav-menu-link' href='/search/label/Developer%20Tools'>
+              Developer Tools
+              <svg class='nav-arrow' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
+            </a>
+            <div class='nav-dropdown-menu' id='nav-dd-developer-tools'>
+              <div class='nav-dd-loading'><div class='nav-dd-skel'/><div class='nav-dd-skel'/></div>
+            </div>
+          </div>
           <a class='nav-menu-link' href='/p/about-us.html'>About Us</a>
         </nav>
 
@@ -8746,10 +8778,42 @@ html.dark .vtj-sidebar-nl-input {
     <nav class='drawer-nav'>
       <a class='drawer-nav-link' href='/'>Home</a>
       <a class='drawer-nav-link' href='/p/articles.html'>Articles</a>
-      <a class='drawer-nav-link' href='/p/articles.html?category=AI+Tools'>AI Tools</a>
-      <a class='drawer-nav-link' href='/p/articles.html?category=Roadmaps'>Roadmaps</a>
-      <a class='drawer-nav-link' href='/p/articles.html?category=Coding+Websites'>Coding &amp; Websites</a>
-      <a class='drawer-nav-link' href='/p/articles.html?category=Developer+Tools'>Developer Tools</a>
+      <div class='drawer-nav-item' data-nav-cat='AI Tools'>
+        <div class='drawer-nav-row'>
+          <a class='drawer-nav-link' href='/search/label/AI%20Tools'>AI Tools</a>
+          <button aria-label='Toggle AI Tools' class='drawer-nav-toggle' type='button'>
+            <svg viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
+          </button>
+        </div>
+        <div class='drawer-subnav' id='drawer-sub-ai-tools'/>
+      </div>
+      <div class='drawer-nav-item' data-nav-cat='Roadmaps'>
+        <div class='drawer-nav-row'>
+          <a class='drawer-nav-link' href='/search/label/Roadmaps'>Roadmaps</a>
+          <button aria-label='Toggle Roadmaps' class='drawer-nav-toggle' type='button'>
+            <svg viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
+          </button>
+        </div>
+        <div class='drawer-subnav' id='drawer-sub-roadmaps'/>
+      </div>
+      <div class='drawer-nav-item' data-nav-cat='Coding Websites'>
+        <div class='drawer-nav-row'>
+          <a class='drawer-nav-link' href='/search/label/Coding%20Websites'>Coding &amp; Websites</a>
+          <button aria-label='Toggle Coding Websites' class='drawer-nav-toggle' type='button'>
+            <svg viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
+          </button>
+        </div>
+        <div class='drawer-subnav' id='drawer-sub-coding-websites'/>
+      </div>
+      <div class='drawer-nav-item' data-nav-cat='Developer Tools'>
+        <div class='drawer-nav-row'>
+          <a class='drawer-nav-link' href='/search/label/Developer%20Tools'>Developer Tools</a>
+          <button aria-label='Toggle Developer Tools' class='drawer-nav-toggle' type='button'>
+            <svg viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>
+          </button>
+        </div>
+        <div class='drawer-subnav' id='drawer-sub-developer-tools'/>
+      </div>
       <a class='drawer-nav-link' href='/p/about-us.html'>About Us</a>
     </nav>
     <div class='drawer-socials'>
@@ -11985,7 +12049,176 @@ html.dark .vtj-sidebar-nl-input {
     }
 
 
-    function isArticlesRoute() {
+    /* ============================================================
+       HEADER CATEGORY DROPDOWNS & FEED LOADER
+    ============================================================ */
+    var VTJ_NAV_CATEGORIES = {
+      "AI Tools": ["AI Tools", "Artificial Intelligence", "Productivity Tools", "Students", "Note Taking", "Presentation Tools", "Image Generation", "Creative Tools", "Video Generation", "Research Tools", "Writing Tools", "AI Agents", "AI Chatbots", "AI Coding"],
+      "Roadmaps": ["Roadmaps", "Python", "Java", "JavaScript", "Data Structures", "Algorithms", "SQL", "Data Analytics", "Linux", "Full Stack Development", "DevOps", "Cloud", "Cybersecurity", "Cloud Computing", "Machine Learning", "AI Engineering", "AI Agents", "TypeScript", "React", "Node.js", "Frontend Development", "Backend Development", "Developer Skills", "IT Skills"],
+      "Coding Websites": ["Coding Websites", "Programming", "Learning Resources", "Coding", "Beginners"],
+      "Developer Tools": ["Developer Tools", "Git", "GitHub", "Software Development", "Coding", "Programming", "Developer Skills", "Linux", "Hosting"]
+    };
+
+    function vtjNorm(s) {
+      return (s || '').toString().toLowerCase().trim().replace(/\s+/g, ' ');
+    }
+
+    var VTJ_NORM_NAV_CATS = {};
+    for (var nc in VTJ_NAV_CATEGORIES) {
+      if (VTJ_NAV_CATEGORIES.hasOwnProperty(nc)) {
+        VTJ_NORM_NAV_CATS[nc] = new Set(VTJ_NAV_CATEGORIES[nc].map(vtjNorm));
+      }
+    }
+
+    var vtjNavLoaded = false;
+    var vtjNavPosts = [];
+
+    function initNavDropdowns() {
+      var navCats = ['AI Tools', 'Roadmaps', 'Coding Websites', 'Developer Tools'];
+      var ddIds = {
+        'AI Tools': 'nav-dd-ai-tools',
+        'Roadmaps': 'nav-dd-roadmaps',
+        'Coding Websites': 'nav-dd-coding-websites',
+        'Developer Tools': 'nav-dd-developer-tools'
+      };
+      var drawerIds = {
+        'AI Tools': 'drawer-sub-ai-tools',
+        'Roadmaps': 'drawer-sub-roadmaps',
+        'Coding Websites': 'drawer-sub-coding-websites',
+        'Developer Tools': 'drawer-sub-developer-tools'
+      };
+
+      function renderNavItems() {
+        if (!vtjNavPosts || vtjNavPosts.length === 0) return;
+        for (var i = 0; i < navCats.length; i++) {
+          var cat = navCats[i];
+          var targetSet = VTJ_NORM_NAV_CATS[cat];
+          var matches = [];
+          for (var p = 0; p < vtjNavPosts.length; p++) {
+            var post = vtjNavPosts[p];
+            var pLabels = post.normLabels;
+            if (pLabels) {
+              for (var l = 0; l < pLabels.length; l++) {
+                if (targetSet && targetSet.has(pLabels[l])) {
+                  matches.push(post);
+                  break;
+                }
+              }
+            }
+          }
+
+          var dd = document.getElementById(ddIds[cat]);
+          var drawerEl = document.getElementById(drawerIds[cat]);
+
+          if (dd) {
+            var topLabels = (VTJ_NAV_CATEGORIES[cat] || []).slice(0, 5);
+            var lblHtml = '<div class="nav-dd-labels">';
+            for (var l = 0; l < topLabels.length; l++) {
+              lblHtml += '<a href="/search/label/' + encodeURIComponent(topLabels[l]) + '" class="nav-dd-label-chip">' + topLabels[l] + '</a>';
+            }
+            lblHtml += '</div>';
+
+            var postsHtml = '<div class="nav-dd-posts">';
+            var topPosts = matches.slice(0, 4);
+            if (topPosts.length > 0) {
+              for (var tp = 0; tp < topPosts.length; tp++) {
+                var item = topPosts[tp];
+                postsHtml += '<a href="' + item.url + '" class="nav-dd-post-item">' +
+                  '<img src="' + item.img + '" alt="" class="nav-dd-post-thumb" loading="lazy"/>' +
+                  '<div class="nav-dd-post-info">' +
+                    '<div class="nav-dd-post-title">' + item.title + '</div>' +
+                  '</div>' +
+                '</a>';
+              }
+            } else {
+              postsHtml += '<div class="nav-dd-empty">No articles found in this category.</div>';
+            }
+            postsHtml += '</div>';
+
+            var footerHtml = '<div class="nav-dd-footer">' +
+              '<a href="/p/articles.html?category=' + encodeURIComponent(cat) + '" class="nav-dd-viewall">' +
+                'Explore All ' + cat + ' Guides (' + matches.length + ') &rarr;' +
+              '</a>' +
+            '</div>';
+
+            dd.innerHTML = lblHtml + postsHtml + footerHtml;
+          }
+
+          if (drawerEl) {
+            var dHtml = '';
+            var dPosts = matches.slice(0, 4);
+            for (var dp = 0; dp < dPosts.length; dp++) {
+              dHtml += '<a href="' + dPosts[dp].url + '" class="drawer-subnav-link">' + dPosts[dp].title + '</a>';
+            }
+            dHtml += '<a href="/p/articles.html?category=' + encodeURIComponent(cat) + '" class="drawer-subnav-viewall">View All ' + cat + ' &rarr;</a>';
+            drawerEl.innerHTML = dHtml;
+          }
+        }
+      }
+
+      function loadNavFeed() {
+        if (vtjNavLoaded) return;
+        vtjNavLoaded = true;
+
+        window.vtjNavPostsCb = function(data) {
+          try { delete window.vtjNavPostsCb; } catch(e) {}
+          var entries = (data && data.feed && data.feed.entry) || [];
+          vtjNavPosts = [];
+          for (var i = 0; i < entries.length; i++) {
+            var e = entries[i];
+            var title = (e.title && e.title.$t) || '';
+            var url = '';
+            if (e.link) {
+              for (var k = 0; k < e.link.length; k++) {
+                if (e.link[k].rel === 'alternate') { url = e.link[k].href; break; }
+              }
+            }
+            var cats = [];
+            if (e.category) {
+              for (var c = 0; c < e.category.length; c++) {
+                if (e.category[c].term) cats.push(e.category[c].term);
+              }
+            }
+            var img = '';
+            if (e.media$thumbnail && e.media$thumbnail.url) {
+              img = e.media$thumbnail.url.replace(/\/s[0-9]+(-c)?\//, '/w100-h75-c-rw/');
+            }
+            vtjNavPosts.push({
+              title: title,
+              url: url,
+              img: img,
+              normLabels: cats.map(vtjNorm)
+            });
+          }
+          renderNavItems();
+        };
+
+        var s = document.createElement("script");
+        s.src = BLOG_URL + "feeds/posts/summary?alt=json-in-script&max-results=50&callback=vtjNavPostsCb";
+        document.body.appendChild(s);
+      }
+
+      var navItems = document.querySelectorAll('.nav-item.has-dropdown, .drawer-nav-item');
+      for (var n = 0; n < navItems.length; n++) {
+        navItems[n].addEventListener('mouseenter', loadNavFeed, { once: true });
+        navItems[n].addEventListener('touchstart', loadNavFeed, { once: true, passive: true });
+      }
+      setTimeout(loadNavFeed, 2000);
+
+      var toggles = document.querySelectorAll('.drawer-nav-toggle');
+      for (var t = 0; t < toggles.length; t++) {
+        toggles[t].addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var parent = this.closest('.drawer-nav-item');
+          if (parent) parent.classList.toggle('open');
+        });
+      }
+    }
+
+    initNavDropdowns();
+
+        function isArticlesRoute() {
       var p = window.location.pathname.toLowerCase();
       var s = window.location.search.toLowerCase();
       var h = window.location.hash.toLowerCase();
@@ -12598,6 +12831,20 @@ html.dark .vtj-sidebar-nl-input {
     function loadArticlesPage() {
       document.body.classList.add('articles-view');
 
+      // Highlight Articles nav link
+      try {
+        var navLinks = document.querySelectorAll('.nav-menu-link, .drawer-nav-link');
+        for (var n = 0; n < navLinks.length; n++) {
+          var href = navLinks[n].getAttribute('href') || '';
+          var cleanHref = href.split('?')[0].split('#')[0].replace(/\/$/, '');
+          if (cleanHref === '/p/articles.html' || cleanHref === '/p/articles') {
+            navLinks[n].classList.add('active');
+          } else {
+            navLinks[n].classList.remove('active');
+          }
+        }
+      } catch(e) {}
+
       var wrap = document.getElementById('articles-page-wrap');
       if (!wrap) return;
       wrap.style.display = 'block';
@@ -12675,38 +12922,6 @@ html.dark .vtj-sidebar-nl-input {
         }
       }
 
-      var initialCat = 'all';
-      try {
-        var qCat = (new URLSearchParams(window.location.search)).get('category');
-        if (qCat) {
-          var cleanQ = qCat.replace(/\+/g, ' ').trim().toLowerCase();
-          for (var ck in CATEGORY_LABELS) {
-            if (ck.toLowerCase() === cleanQ) { initialCat = ck; break; }
-          }
-        }
-      } catch(e) {}
-
-      function updateNavHighlight(activeCategory) {
-        try {
-          var navLinks = document.querySelectorAll('.nav-menu-link, .drawer-nav-link');
-          for (var n = 0; n < navLinks.length; n++) {
-            var href = navLinks[n].getAttribute('href') || '';
-            var isMatch = false;
-            var hasQuery = href.indexOf('?') !== -1;
-            var cleanHref = href.split('?')[0].split('#')[0].replace(/\/$/, '');
-            if (activeCategory === 'all') {
-              isMatch = !hasQuery && (cleanHref === '/p/articles.html' || cleanHref === '/p/articles');
-            } else {
-              var normH = href.toLowerCase().replace(/\+/g, ' ');
-              isMatch = (normH.indexOf('category=' + activeCategory.toLowerCase()) !== -1);
-            }
-            navLinks[n].classList.toggle('active', isMatch);
-          }
-        } catch(e) {}
-      }
-
-      updateNavHighlight(initialCat);
-
       function getPrimaryCat(categories) {
         if (!categories || categories.length === 0) return 'Technology';
         var normCats = categories.map(normalizeLabel);
@@ -12759,7 +12974,7 @@ html.dark .vtj-sidebar-nl-input {
         return matched;
       }
 
-      var currentFilter = initialCat;
+      var currentFilter = 'all';
       var currentSort = 'newest';
       var currentSearch = '';
       var allArticlesList = [];
@@ -12989,44 +13204,6 @@ html.dark .vtj-sidebar-nl-input {
       }
 
       function setupEvents() {
-        // Activate initial pill if category specified
-        if (currentFilter !== 'all') {
-          var pBtns = document.querySelectorAll('.vtj-articles-pill-btn');
-          for (var pb = 0; pb < pBtns.length; pb++) {
-            pBtns[pb].classList.toggle('active', (pBtns[pb].getAttribute('data-category') || 'all') === currentFilter);
-          }
-        }
-
-        // Header nav links instant switching on article page
-        var pageNavLinks = document.querySelectorAll('.nav-menu-link, .drawer-nav-link');
-        for (var pl = 0; pl < pageNavLinks.length; pl++) {
-          (function(link) {
-            var h = link.getAttribute('href') || '';
-            if (h.indexOf('/p/articles') !== -1) {
-              link.addEventListener('click', function(e) {
-                var q = (new URL(link.href, window.location.origin)).searchParams.get('category');
-                var target = 'all';
-                if (q) {
-                  var norm = q.replace(/\+/g, ' ').trim().toLowerCase();
-                  for (var ck in CATEGORY_LABELS) {
-                    if (ck.toLowerCase() === norm) { target = ck; break; }
-                  }
-                }
-                currentFilter = target;
-                currentPage = 1;
-                updateNavHighlight(currentFilter);
-                var btns = document.querySelectorAll('.vtj-articles-pill-btn');
-                for (var b = 0; b < btns.length; b++) {
-                  btns[b].classList.toggle('active', (btns[b].getAttribute('data-category') || 'all') === currentFilter);
-                }
-                try { history.pushState(null, '', link.href); } catch(err) {}
-                renderArticles();
-                e.preventDefault();
-              });
-            }
-          })(pageNavLinks[pl]);
-        }
-
         var pillsBar = document.getElementById('vtj-articles-pills-bar');
         if (pillsBar) {
           pillsBar.addEventListener('click', function(e) {
@@ -13037,11 +13214,6 @@ html.dark .vtj-sidebar-nl-input {
             btn.classList.add('active');
             currentFilter = btn.getAttribute('data-category') || 'all';
             currentPage = 1;
-            updateNavHighlight(currentFilter);
-            try {
-              var newUrl = currentFilter === 'all' ? '/p/articles.html' : ('/p/articles.html?category=' + encodeURIComponent(currentFilter));
-              history.pushState(null, '', newUrl);
-            } catch(err) {}
             renderArticles();
           });
         }
