@@ -11911,14 +11911,6 @@ html.dark .vtj-sidebar-nl-input {
       var words = text ? text.trim().split(/\s+/).length : 200;
       return Math.max(1, Math.round(words / 220));
     }
-    function escapeHtml(str) {
-      if (!str) return '';
-      return String(str).replace(/&/g, '&amp;')
-                        .replace(/</g, '&lt;')
-                        .replace(/>/g, '&gt;')
-                        .replace(/"/g, '&quot;')
-                        .replace(/'/g, '&#39;');
-    }
 
     /* ---- Theme Toggle ---- */
     function toggleTheme() {
