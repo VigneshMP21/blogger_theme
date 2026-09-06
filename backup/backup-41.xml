@@ -8768,31 +8768,30 @@ html.dark .vtj-sidebar-nl-input {
 
   
   /* ============================================================
-     3D FUTURISTIC PRELOADER OVERLAY (LIGHT & DARK TRANSPARENT)
+     3D FUTURISTIC PRELOADER OVERLAY
   ============================================================ */
   .vtj-preloader-overlay {
     position: fixed;
     inset: 0;
     z-index: 999999;
-    background: rgba(248, 250, 252, 0.78);
+    background: #0B0F19;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s ease;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.45s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     overflow: hidden;
-    pointer-events: all;
   }
   .vtj-preloader-overlay::before {
     content: '';
     position: absolute;
-    width: 380px;
-    height: 380px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.16) 0%, rgba(6, 182, 212, 0.08) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, rgba(6, 182, 212, 0.1) 45%, transparent 70%);
     filter: blur(40px);
     pointer-events: none;
     animation: vtjPulseAmbient 4s ease-in-out infinite alternate;
@@ -8801,12 +8800,6 @@ html.dark .vtj-sidebar-nl-input {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-  }
-  html.dark .vtj-preloader-overlay {
-    background: rgba(11, 15, 25, 0.82);
-  }
-  html.dark .vtj-preloader-overlay::before {
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.24) 0%, rgba(6, 182, 212, 0.12) 50%, transparent 70%);
   }
   .vtj-3d-loader-container {
     display: flex;
@@ -8837,22 +8830,18 @@ html.dark .vtj-sidebar-nl-input {
     position: absolute;
     width: 48px;
     height: 48px;
-    background: rgba(37, 99, 235, 0.08);
-    border: 1.5px solid rgba(6, 182, 212, 0.85);
-    box-shadow: 0 0 16px rgba(6, 182, 212, 0.35), inset 0 0 10px rgba(37, 99, 235, 0.25);
+    background: rgba(37, 99, 235, 0.12);
+    border: 1.5px solid rgba(6, 182, 212, 0.7);
+    box-shadow: 0 0 14px rgba(6, 182, 212, 0.35), inset 0 0 10px rgba(37, 99, 235, 0.3);
     border-radius: 6px;
     backdrop-filter: blur(4px);
-  }
-  html.dark .vtj-cube-face {
-    background: rgba(37, 99, 235, 0.14);
-    box-shadow: 0 0 18px rgba(6, 182, 212, 0.45), inset 0 0 12px rgba(37, 99, 235, 0.35);
   }
   .vtj-face-front  { transform: rotateY(0deg) translateZ(24px); }
   .vtj-face-back   { transform: rotateY(180deg) translateZ(24px); }
   .vtj-face-right  { transform: rotateY(90deg) translateZ(24px); }
   .vtj-face-left   { transform: rotateY(-90deg) translateZ(24px); }
-  .vtj-face-top    { transform: rotateX(90deg) translateZ(24px); border-color: rgba(99, 102, 241, 0.85); }
-  .vtj-face-bottom { transform: rotateX(-90deg) translateZ(24px); border-color: rgba(99, 102, 241, 0.85); }
+  .vtj-face-top    { transform: rotateX(90deg) translateZ(24px); border-color: rgba(99, 102, 241, 0.8); }
+  .vtj-face-bottom { transform: rotateX(-90deg) translateZ(24px); border-color: rgba(99, 102, 241, 0.8); }
 
   .vtj-3d-core-orb {
     position: absolute;
@@ -8873,7 +8862,7 @@ html.dark .vtj-sidebar-nl-input {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 1.5px dashed rgba(6, 182, 212, 0.55);
+    border: 1.5px dashed rgba(6, 182, 212, 0.45);
     pointer-events: none;
   }
   .vtj-3d-orbit-ring.ring-1 {
@@ -8882,7 +8871,7 @@ html.dark .vtj-sidebar-nl-input {
   .vtj-3d-orbit-ring.ring-2 {
     width: 96px;
     height: 96px;
-    border: 1px solid rgba(124, 58, 237, 0.5);
+    border: 1px solid rgba(124, 58, 237, 0.4);
     animation: vtjRingRotate2 7s linear infinite reverse;
   }
 
@@ -8898,21 +8887,13 @@ html.dark .vtj-sidebar-nl-input {
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #0F172A;
-  }
-  .vtj-loader-title .brand-dark {
-    color: #0F172A;
-  }
-  html.dark .vtj-loader-title .brand-dark {
-    color: #FFFFFF;
+    color: #F8FAFC;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   }
-  .vtj-loader-title .brand-blue {
-    background: linear-gradient(135deg, #0284C7 0%, #2563EB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .vtj-loader-title .brand-dark {
+    color: #FFFFFF;
   }
-  html.dark .vtj-loader-title .brand-blue {
+  .vtj-loader-title .brand-blue {
     background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -8920,13 +8901,10 @@ html.dark .vtj-sidebar-nl-input {
   .vtj-loader-progress-track {
     width: 140px;
     height: 3px;
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 999px;
     overflow: hidden;
     position: relative;
-  }
-  html.dark .vtj-loader-progress-track {
-    background: rgba(255, 255, 255, 0.12);
   }
   .vtj-loader-progress-bar {
     position: absolute;
@@ -8975,7 +8953,7 @@ html.dark .vtj-sidebar-nl-input {
   (function(){var t=localStorage.getItem('tvh-theme');var s=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(t===null&&s)){document.documentElement.classList.add('dark');}})();
   //]]></script>
 
-  <!-- 3D Futuristic Preloader Overlay (Transparent Glassmorphic) -->
+  <!-- 3D Futuristic Preloader Overlay -->
   <div class='vtj-preloader-overlay' id='vtj-preloader'>
     <div class='vtj-3d-loader-container'>
       <div class='vtj-3d-cube-scene'>
@@ -8999,26 +8977,6 @@ html.dark .vtj-sidebar-nl-input {
       </div>
     </div>
   </div>
-  <script type='text/javascript'>//<![CDATA[
-  (function(){
-    var p = document.getElementById('vtj-preloader');
-    if(!p) return;
-    var done = false;
-    function closeLoader(){
-      if(done) return;
-      done = true;
-      p.classList.add('loaded');
-      setTimeout(function(){ if(p && p.parentNode) p.parentNode.removeChild(p); }, 450);
-    }
-    if(document.readyState === 'complete'){
-      setTimeout(closeLoader, 200);
-    } else {
-      window.addEventListener('load', function(){ setTimeout(closeLoader, 200); });
-      document.addEventListener('DOMContentLoaded', function(){ setTimeout(closeLoader, 350); });
-      setTimeout(closeLoader, 1200);
-    }
-  })();
-  //]]></script>
 
   <!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;
        STICKY HEADER
@@ -14541,7 +14499,28 @@ html.dark .vtj-sidebar-nl-input {
       });
     }
   
-
+    /* ---- 3D Preloader Dismiss Logic ---- */
+    (function () {
+      var preloader = document.getElementById('vtj-preloader');
+      if (!preloader) return;
+      var dismissed = false;
+      function dismiss() {
+        if (dismissed) return;
+        dismissed = true;
+        preloader.classList.add('loaded');
+        setTimeout(function () {
+          if (preloader && preloader.parentNode) {
+            preloader.parentNode.removeChild(preloader);
+          }
+        }, 500);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(dismiss, 120);
+      } else {
+        window.addEventListener('load', function () { setTimeout(dismiss, 120); });
+        setTimeout(dismiss, 2000); // Safe fallback
+      }
+    })();
 
   })();
   //]]></script>
