@@ -9059,9 +9059,16 @@ html.dark .vtj-related-skeleton-card {
   }
   .vtj-footer-col:not(.vtj-col-brand).is-open .vtj-footer-links {
     display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 6px 0 16px !important;
   }
   .vtj-footer-col:not(.vtj-col-brand).is-open .vtj-footer-pills {
     display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    padding: 8px 0 16px !important;
   }
   .vtj-footer-col:not(.vtj-col-brand) .vtj-footer-link {
     font-size: 0.84rem !important;
@@ -12591,7 +12598,7 @@ html.dark .vtj-related-skeleton-card {
 
         <!-- COLUMN 2: Explore -->
         <div class='vtj-footer-col'>
-          <h3 class='vtj-footer-heading'>EXPLORE</h3>
+          <h3 class='vtj-footer-heading' onclick='this.closest(".vtj-footer-col").classList.toggle("is-open");'>EXPLORE</h3>
           <ul class='vtj-footer-links'>
             <li><a class='vtj-footer-link' href='/p/articles.html?category=AI+Tools'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><rect height='16' rx='2' ry='2' width='16' x='4' y='4'/><rect height='6' width='6' x='9' y='9'/><line x1='9' x2='9' y1='1' y2='4'/><line x1='15' x2='15' y1='1' y2='4'/><line x1='9' x2='9' y1='20' y2='23'/><line x1='15' x2='15' y1='20' y2='23'/><line x1='20' x2='23' y1='9' y2='9'/><line x1='20' x2='23' y1='14' y2='14'/><line x1='1' x2='4' y1='9' y2='9'/><line x1='1' x2='4' y1='14' y2='14'/></svg> AI &amp; Artificial Intelligence</a></li>
             <li><a class='vtj-footer-link' href='/p/articles.html?category=Coding+Websites'><svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='14'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg> Coding &amp; Development</a></li>
@@ -12605,7 +12612,7 @@ html.dark .vtj-related-skeleton-card {
 
         <!-- COLUMN 3: Resources -->
         <div class='vtj-footer-col'>
-          <h3 class='vtj-footer-heading'>RESOURCES</h3>
+          <h3 class='vtj-footer-heading' onclick='this.closest(".vtj-footer-col").classList.toggle("is-open");'>RESOURCES</h3>
           <ul class='vtj-footer-links'>
             <li><a class='vtj-footer-link vtj-chevron-link' href='/p/articles.html?category=Guides'><span class='vtj-chevron'>&#8250;</span> Beginner Guides</a></li>
             <li><a class='vtj-footer-link vtj-chevron-link' href='/p/articles.html?category=Roadmaps'><span class='vtj-chevron'>&#8250;</span> Roadmaps</a></li>
@@ -12618,7 +12625,7 @@ html.dark .vtj-related-skeleton-card {
 
         <!-- COLUMN 4: Company -->
         <div class='vtj-footer-col'>
-          <h3 class='vtj-footer-heading'>COMPANY</h3>
+          <h3 class='vtj-footer-heading' onclick='this.closest(".vtj-footer-col").classList.toggle("is-open");'>COMPANY</h3>
           <ul class='vtj-footer-links'>
             <li><a class='vtj-footer-link' href='/p/about-us.html'>About Us</a></li>
             <li><a class='vtj-footer-link' href='/p/contact-us.html'>Contact</a></li>
@@ -12631,7 +12638,7 @@ html.dark .vtj-related-skeleton-card {
 
         <!-- COLUMN 5: Popular Topics -->
         <div class='vtj-footer-col'>
-          <h3 class='vtj-footer-heading'>POPULAR TOPICS</h3>
+          <h3 class='vtj-footer-heading' onclick='this.closest(".vtj-footer-col").classList.toggle("is-open");'>POPULAR TOPICS</h3>
           <div class='vtj-footer-pills'>
             <a class='vtj-topic-pill' href='/search/label/AI%20Tools'>
               <svg fill='currentColor' height='14' viewBox='0 0 24 24' width='14'><path d='M12 2a2 2 0 0 1 2 2v1h1a3 3 0 0 1 3 3v1h1a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1v1a3 3 0 0 1-3 3h-1v1a2 2 0 0 1-4 0v-1H9a3 3 0 0 1-3-3v-1H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1V8a3 3 0 0 1 3-3h1V4a2 2 0 0 1 2-2zm-3 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z'/></svg>
@@ -12658,7 +12665,7 @@ html.dark .vtj-related-skeleton-card {
 
         <!-- COLUMN 6: Stay Connected -->
         <div class='vtj-footer-col'>
-          <h3 class='vtj-footer-heading'>STAY CONNECTED</h3>
+          <h3 class='vtj-footer-heading' onclick='this.closest(".vtj-footer-col").classList.toggle("is-open");'>STAY CONNECTED</h3>
           <ul class='vtj-footer-links vtj-connected-links'>
             <li>
               <a class='vtj-footer-link' href='mailto:vickytechjournal@gmail.com'>
@@ -12704,7 +12711,7 @@ html.dark .vtj-related-skeleton-card {
           <span>Made with passion for learners &amp; builders</span>
         </div>
         <div class='vtj-footer-back-to-top'>
-          <button aria-label='Back to top' class='vtj-btt-btn' id='vtj-btt-btn' type='button'>
+          <button aria-label='Back to top' class='vtj-btt-btn' id='vtj-btt-btn' onclick='window.scrollTo({top: 0, behavior: "smooth"});' type='button'>
             <svg class='vtj-btt-sun' fill='none' height='15' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='15'><circle cx='12' cy='12' r='5'/><line x1='12' x2='12' y1='1' y2='3'/><line x1='12' x2='12' y1='21' y2='23'/><line x1='4.22' x2='5.64' y1='4.22' y2='5.64'/><line x1='18.36' x2='19.78' y1='18.36' y2='19.78'/><line x1='1' x2='3' y1='12' y2='12'/><line x1='21' x2='23' y1='12' y2='12'/><line x1='4.22' x2='5.64' y1='19.78' y2='18.36'/><line x1='18.36' x2='19.78' y1='5.64' y2='4.22'/></svg>
             <span>Back to Top</span>
             <span class='vtj-btt-circle'>
