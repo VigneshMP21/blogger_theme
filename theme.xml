@@ -353,6 +353,7 @@
 
     --max-width: 1280px;
     --nav-height: 76px;
+    --header-height: 72px;
   }
 
   html.dark {
@@ -376,18 +377,23 @@
      2. RESET & BASE
   ============================================================ */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; font-size: 16px; }
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    scroll-padding-top: var(--header-height, 72px);
+  }
   body {
     font-family: var(--font-sans);
     background: var(--bg-body);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-top: var(--header-height, 72px) !important;
   }
   img { max-width: 100%; height: auto; display: block; }
   a { color: inherit; text-decoration: none; transition: var(--transition); }
@@ -408,25 +414,28 @@
   }
 
   /* ============================================================
-     3. STICKY NAVIGATION (Editorial Technology Magazine)
+     3. STICKY / FIXED NAVIGATION HEADER (Desktop & Mobile)
   ============================================================ */
   .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 150;
-    background: #FFFFFF;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: #FFFFFF !important;
     border-bottom: 1px solid var(--border);
     transition: box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
   }
   html.dark .site-header {
-    background: #0F172A;
-    border-bottom-color: #1E293B;
+    background: #0F172A !important;
+    border-bottom-color: #1E293B !important;
   }
   .site-header.scrolled {
-    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08) !important;
   }
   html.dark .site-header.scrolled {
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
   }
   .header-container {
     max-width: 1380px;
@@ -1235,7 +1244,7 @@
   .drawer-overlay {
     position: fixed;
     inset: 0;
-    z-index: 300;
+    z-index: 9990 !important;
     background: rgba(0,0,0,0.55);
     opacity: 0;
     visibility: hidden;
@@ -1248,7 +1257,7 @@
     width: 300px;
     max-width: 85vw;
     height: 100%;
-    z-index: 350;
+    z-index: 9995 !important;
     background: var(--bg-card);
     box-shadow: var(--shadow-xl);
     display: flex;
@@ -1669,16 +1678,19 @@
      }
      .vtj-hero-editorial-grid {
        grid-template-columns: 1fr;
-       gap: 14px;
+       gap: 10px;
      }
      .vtj-hero-sidebar-cards {
-       display: flex;
-       flex-direction: column;
-       gap: 14px;
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 10px;
      }
-     .vtj-hero-card-large,
-     .vtj-hero-card-small {
+     .vtj-hero-card-large {
        aspect-ratio: 16 / 9;
+       width: 100%;
+     }
+     .vtj-hero-card-small {
+       aspect-ratio: 16 / 10;
        width: 100%;
      }
      .vtj-hero-card-large .vtj-hero-card-body {
@@ -1692,13 +1704,14 @@
        display: none;
      }
      .vtj-hero-card-small .vtj-hero-card-body {
-       padding: 0.75rem 0.85rem;
+       padding: 0.55rem 0.65rem;
      }
      .vtj-hero-title-sub {
-       font-size: 0.85rem;
+       font-size: 0.78rem;
+       line-height: 1.22;
      }
      .vtj-hero-meta {
-       font-size: 0.68rem;
+       font-size: 0.62rem;
      }
     }
 
@@ -5970,25 +5983,22 @@ html.dark .vtj-static-page-title {
 
 @media (max-width: 991px) {
   .vtj-post-page-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    padding: 12px 10px 30px;
+    display: block !important;
+    padding: 12px 10px 24px !important;
+    width: 100% !important;
   }
   .vtj-post-card {
-    order: 1;
-    width: 100%;
+    width: 100% !important;
   }
-  .vtj-post-toc-rail {
-    order: 2;
-    width: 100%;
-    position: static !important;
-    max-height: none !important;
-  }
+  /* Mobile View: Completely hide TOC rail and Must Read / Newsletter sidebar */
+  .vtj-post-toc-rail,
   .vtj-post-sidebar {
-    order: 3;
-    width: 100%;
-    position: static !important;
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 
@@ -6241,50 +6251,58 @@ html.dark .vtj-post-cat-badge {
 .vtj-post-author-meta {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .vtj-post-author-avatar {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   overflow: hidden;
   background: linear-gradient(135deg, #2563EB, #7C3AED);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 0.72rem;
-  color: #FFFFFF;
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 .vtj-post-author-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 
 .vtj-post-author-details {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
-  color: var(--post-muted);
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
 }
 
 .vtj-post-author-name {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--post-title-color);
+  line-height: 1.25;
+}
+
+.vtj-post-meta-subline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--post-muted);
+  line-height: 1.2;
 }
 
 .vtj-post-meta-dot {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--post-muted);
-  opacity: 0.6;
+  color: var(--post-muted);
+  font-size: 0.7rem;
+  line-height: 1;
+  opacity: 0.7;
 }
 
 .vtj-post-date-item,
@@ -6292,6 +6310,7 @@ html.dark .vtj-post-cat-badge {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
 }
 .vtj-post-date-item svg,
 .vtj-post-read-item svg {
@@ -6483,12 +6502,15 @@ html.dark .vtj-post-body blockquote {
   height: auto;
   border-radius: 8px;
   display: block;
-  margin: 1rem auto;
+  margin: 0.6rem auto;
 }
 .vtj-post-body .separator {
   clear: both;
   text-align: center;
-  margin: 1rem 0;
+  margin: 0.6rem 0;
+}
+.vtj-post-body .separator img {
+  margin: 0 auto !important;
 }
 .vtj-post-body .separator a {
   display: inline-block;
@@ -6981,6 +7003,276 @@ html.dark .vtj-sidebar-nl-input {
   align-items: center;
   justify-content: center;
   gap: 4px;
+}
+
+/* ============================================================
+   RELATED ARTICLES SECTION (Single Post Page Ending)
+============================================================ */
+.vtj-related-section {
+  width: 100%;
+  max-width: 1400px;
+  margin: 32px auto 48px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.vtj-related-container {
+  background: var(--post-card-bg, #FFFFFF);
+  border: 1px solid var(--post-border, #E2E8F0);
+  border-radius: 18px;
+  padding: 28px 26px 32px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+  box-sizing: border-box;
+}
+html.dark .vtj-related-container {
+  background: #111827;
+  border-color: #1E293B;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.vtj-related-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--post-border, #E2E8F0);
+}
+html.dark .vtj-related-head {
+  border-bottom-color: #1E293B;
+}
+
+.vtj-related-head-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vtj-related-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #2563EB;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.vtj-related-badge-tag svg {
+  width: 14px;
+  height: 14px;
+}
+html.dark .vtj-related-badge-tag {
+  color: #38BDF8;
+}
+
+.vtj-related-heading {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--post-title-color, #0F172A);
+  margin: 0;
+  line-height: 1.2;
+}
+html.dark .vtj-related-heading {
+  color: #F8FAFC;
+}
+
+.vtj-related-explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #2563EB;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.vtj-related-explore-link:hover {
+  background: #2563EB;
+  color: #FFFFFF;
+}
+.vtj-related-explore-link svg {
+  width: 14px;
+  height: 14px;
+}
+html.dark .vtj-related-explore-link {
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.1);
+}
+html.dark .vtj-related-explore-link:hover {
+  background: #38BDF8;
+  color: #0F172A;
+}
+
+/* 3 Articles in a single row on desktop -> 2 rows for 6 articles */
+.vtj-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Related Post Card */
+.vtj-rel-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+html.dark .vtj-rel-card {
+  background: #0F172A;
+  border-color: #1E293B;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.vtj-rel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  border-color: #93C5FD;
+}
+html.dark .vtj-rel-card:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.vtj-rel-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0F172A;
+  overflow: hidden;
+}
+.vtj-rel-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.vtj-rel-card:hover .vtj-rel-thumb {
+  transform: scale(1.04);
+}
+
+.vtj-rel-cat-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #38BDF8;
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 2;
+}
+
+.vtj-rel-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 14px 14px 16px;
+}
+
+.vtj-rel-title {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--post-title-color, #0F172A);
+  margin: 0 0 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.18s ease;
+}
+html.dark .vtj-rel-title {
+  color: #F8FAFC;
+}
+.vtj-rel-card:hover .vtj-rel-title {
+  color: #2563EB;
+}
+html.dark .vtj-rel-card:hover .vtj-rel-title {
+  color: #60A5FA;
+}
+
+.vtj-rel-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  color: #64748B;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid #F1F5F9;
+}
+html.dark .vtj-rel-meta {
+  color: #94A3B8;
+  border-top-color: #1E293B;
+}
+
+.vtj-rel-author-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.vtj-rel-dot {
+  color: #CBD5E1;
+}
+
+/* Skeleton Loading Cards */
+.vtj-related-skeleton-card {
+  height: 250px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
+  background-size: 200% 100%;
+  animation: vtjSkelShimmer 1.5s infinite;
+}
+html.dark .vtj-related-skeleton-card {
+  background: linear-gradient(90deg, #1E293B 25%, #334155 50%, #1E293B 75%);
+  background-size: 200% 100%;
+}
+
+@media (max-width: 991px) {
+  .vtj-related-section {
+    margin: 20px auto 32px;
+    padding: 0 10px;
+  }
+  .vtj-related-container {
+    padding: 18px 14px 20px;
+    border-radius: 14px;
+  }
+  .vtj-related-heading {
+    font-size: 1.25rem;
+  }
+  .vtj-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vtj-related-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
   /* ============================================================
@@ -7762,7 +8054,6 @@ html.dark .vtj-sidebar-nl-input {
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   }
   @media (max-width: 900px) {
-    .nav-menu { display: none; }
     .nav-hamburger { display: flex; }
     .main-grid { grid-template-columns: 1fr; }
     .single-post-grid { grid-template-columns: 1fr; }
@@ -7777,14 +8068,23 @@ html.dark .vtj-sidebar-nl-input {
     .post-nav-next { text-align: left; justify-content: flex-start; }
   }
 /* ============================================================
-   19. COMPREHENSIVE MOBILE RESPONSIVE SYSTEM (320px - 767px)
+   19. COMPREHENSIVE MOBILE RESPONSIVE SYSTEM (320px - 900px)
 ============================================================ */
-@media (max-width: 767px) {
+@media (max-width: 900px) {
+  :root {
+    --header-height: 94px;
+  }
+  html {
+    scroll-padding-top: var(--header-height, 94px) !important;
+  }
   /* Global viewport safety & spacing */
   html, body {
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     width: 100% !important;
     max-width: 100vw !important;
+  }
+  body {
+    padding-top: var(--header-height, 94px) !important;
   }
   .container,
   .header-container,
@@ -7800,9 +8100,12 @@ html.dark .vtj-sidebar-nl-input {
 
   /* 2 & 3. MOBILE HEADER (2-ROW STRICT CSS GRID) */
   .site-header {
-    position: sticky !important;
+    position: fixed !important;
     top: 0 !important;
-    z-index: 999 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
     background: #FFFFFF !important;
     border-bottom: 1px solid #E2E8F0 !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
@@ -8033,7 +8336,7 @@ html.dark .vtj-sidebar-nl-input {
 
   /* 4 & 5. MOBILE HERO SECTION */
   .vtj-hero-editorial {
-    padding: 14px 0 16px !important;
+    padding: 12px 0 14px !important;
     margin: 0 !important;
     position: relative !important;
     clear: both !important;
@@ -8041,18 +8344,22 @@ html.dark .vtj-sidebar-nl-input {
   .vtj-hero-editorial-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 14px !important;
+    gap: 10px !important;
     width: 100% !important;
   }
-  /* Primary Hero Card */
+  /* Primary Hero Card (16:9 Proportional Aspect Ratio) */
   .vtj-hero-card-large {
-    border-radius: 18px !important;
+    aspect-ratio: 16 / 9 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    border-radius: 14px !important;
     overflow: hidden !important;
     margin: 0 !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
     background: #0F172A !important;
     position: relative !important;
-    width: 100% !important;
     box-sizing: border-box !important;
   }
   .vtj-hero-card-large .vtj-hero-card-link {
@@ -8063,33 +8370,36 @@ html.dark .vtj-sidebar-nl-input {
     text-decoration: none !important;
   }
   .vtj-hero-card-large .vtj-hero-img-wrapper {
+    position: absolute !important;
+    inset: 0 !important;
     width: 100% !important;
-    height: 380px !important;
-    min-height: 360px !important;
-    max-height: 420px !important;
-    position: relative !important;
+    height: 100% !important;
+    min-height: unset !important;
+    max-height: unset !important;
     overflow: hidden !important;
+    background: #1E293B !important;
   }
   .vtj-hero-card-large .vtj-hero-card-img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center 20% !important;
+    object-position: center !important;
     display: block !important;
   }
   .vtj-hero-card-large .vtj-hero-gradient-overlay {
     display: block !important;
     position: absolute !important;
     inset: 0 !important;
-    background: linear-gradient(to top, rgba(10, 15, 30, 0.98) 0%, rgba(10, 15, 30, 0.85) 45%, rgba(10, 15, 30, 0.25) 75%, transparent 100%) !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 30%, rgba(10,15,30,0.65) 60%, rgba(10,15,30,0.95) 100%) !important;
     pointer-events: none !important;
   }
   .vtj-hero-card-large .vtj-hero-card-body {
     position: absolute !important;
+    inset: 0 !important;
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    padding: 18px 16px !important;
+    padding: 10px 12px 10px !important;
     z-index: 2 !important;
     display: flex !important;
     flex-direction: column !important;
@@ -8097,142 +8407,157 @@ html.dark .vtj-sidebar-nl-input {
     box-sizing: border-box !important;
   }
   .vtj-hero-badge {
-    font-size: 0.65rem !important;
+    font-size: 0.58rem !important;
     font-weight: 700 !important;
-    padding: 3px 9px !important;
-    border-radius: 6px !important;
+    padding: 2px 7px !important;
+    border-radius: 4px !important;
     letter-spacing: 0.04em !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 4px !important;
     display: inline-block !important;
     align-self: flex-start !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
   }
   .vtj-hero-title-main {
-    font-size: 1.25rem !important;
-    font-weight: 800 !important;
-    line-height: 1.25 !important;
+    font-size: 0.98rem !important;
+    font-weight: 700 !important;
+    line-height: 1.28 !important;
     color: #FFFFFF !important;
-    margin-bottom: 6px !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 3 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
-  }
-  .vtj-hero-desc {
-    font-size: 0.82rem !important;
-    line-height: 1.4 !important;
-    color: rgba(255, 255, 255, 0.85) !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 4px !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6) !important;
+  }
+  .vtj-hero-desc {
+    display: none !important;
   }
   .vtj-hero-meta {
-    font-size: 0.72rem !important;
-    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.66rem !important;
+    color: rgba(255, 255, 255, 0.85) !important;
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
+    gap: 4px !important;
     flex-wrap: wrap !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6) !important;
   }
   .vtj-hero-author-avatar {
-    width: 20px !important;
-    height: 20px !important;
+    width: 16px !important;
+    height: 16px !important;
     border-radius: 50% !important;
   }
 
-  /* Secondary Hero Cards (Horizontal Cards) */
+  /* Secondary Hero Cards (Side-by-Side 2-Column Grid on Mobile) */
   .vtj-hero-sidebar-cards {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
     width: 100% !important;
   }
   .vtj-hero-card-small {
-    border-radius: 16px !important;
-    background: #FFFFFF !important;
-    border: 1px solid #E2E8F0 !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
-    overflow: hidden !important;
+    aspect-ratio: 16 / 10 !important;
     width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    border-radius: 12px !important;
+    background: #0F172A !important;
+    border: none !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+    position: relative !important;
     box-sizing: border-box !important;
   }
   html.dark .vtj-hero-card-small {
     background: #0F172A !important;
-    border-color: #1E293B !important;
+    border: none !important;
   }
   .vtj-hero-card-small .vtj-hero-card-link {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    padding: 12px !important;
-    gap: 12px !important;
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
     text-decoration: none !important;
-    min-height: 115px !important;
+    min-height: unset !important;
     box-sizing: border-box !important;
   }
   .vtj-hero-card-small .vtj-hero-img-wrapper {
-    width: 110px !important;
-    min-width: 100px !important;
-    max-width: 120px !important;
-    height: 90px !important;
-    border-radius: 12px !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
-    flex-shrink: 0 !important;
-    position: relative !important;
+    background: #1E293B !important;
   }
   .vtj-hero-card-small .vtj-hero-card-img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
   }
   .vtj-hero-card-small .vtj-hero-gradient-overlay {
-    display: none !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 25%, rgba(10,15,30,0.7) 60%, rgba(10,15,30,0.96) 100%) !important;
+    pointer-events: none !important;
   }
   .vtj-hero-card-small .vtj-hero-card-body {
-    position: static !important;
-    padding: 0 !important;
-    background: transparent !important;
+    position: absolute !important;
+    inset: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 8px 9px !important;
+    z-index: 2 !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 4px !important;
-    flex: 1 !important;
-    min-width: 0 !important;
+    justify-content: flex-end !important;
+    gap: 2px !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
   }
   .vtj-hero-card-small .vtj-hero-badge {
     align-self: flex-start !important;
-    padding: 2px 7px !important;
-    font-size: 0.62rem !important;
-    border-radius: 5px !important;
+    padding: 1.5px 5px !important;
+    font-size: 0.52rem !important;
+    border-radius: 3px !important;
     font-weight: 700 !important;
     margin-bottom: 2px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
   }
   .vtj-hero-card-small .vtj-hero-title-sub {
-    font-size: 0.88rem !important;
+    font-size: 0.78rem !important;
     font-weight: 700 !important;
-    color: #0F172A !important;
-    line-height: 1.3 !important;
+    color: #FFFFFF !important;
+    line-height: 1.24 !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
-    margin: 0 !important;
+    margin: 0 0 2px !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7) !important;
   }
   html.dark .vtj-hero-card-small .vtj-hero-title-sub {
-    color: #F8FAFC !important;
+    color: #FFFFFF !important;
   }
   .vtj-hero-card-small .vtj-hero-meta {
-    font-size: 0.7rem !important;
-    color: #64748B !important;
+    font-size: 0.62rem !important;
+    color: #CBD5E1 !important;
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    margin-top: 4px !important;
+    gap: 4px !important;
+    margin-top: 0 !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important;
   }
   .vtj-hero-card-small .vtj-hero-meta svg {
-    width: 11px !important;
-    height: 11px !important;
-    stroke: #64748B !important;
+    width: 9px !important;
+    height: 9px !important;
+    stroke: #CBD5E1 !important;
     fill: none !important;
   }
   .vtj-hero-dots-indicator {
@@ -8240,17 +8565,17 @@ html.dark .vtj-sidebar-nl-input {
     justify-content: center !important;
     align-items: center !important;
     gap: 6px !important;
-    margin: 12px 0 4px !important;
+    margin: 10px 0 2px !important;
   }
   .vtj-hero-dots-indicator .vtj-dot {
-    width: 7px !important;
-    height: 7px !important;
+    width: 6px !important;
+    height: 6px !important;
     border-radius: 50% !important;
     background: #CBD5E1 !important;
   }
   .vtj-hero-dots-indicator .vtj-dot.active {
-    width: 24px !important;
-    height: 7px !important;
+    width: 20px !important;
+    height: 6px !important;
     border-radius: 999px !important;
     background: #2563EB !important;
   }
@@ -8645,13 +8970,13 @@ html.dark .vtj-sidebar-nl-input {
   }
   .vtj-footer-grid {
     grid-template-columns: 1fr !important;
-    gap: 8px !important;
+    gap: 0 !important;
   }
   .vtj-footer-col.vtj-col-brand {
     text-align: center !important;
     align-items: center !important;
-    margin-bottom: 16px !important;
-    padding-bottom: 20px !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 24px !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
   .vtj-footer-brand-header {
@@ -8661,61 +8986,326 @@ html.dark .vtj-sidebar-nl-input {
     max-width: 420px !important;
     margin: 0 auto 16px !important;
     text-align: center !important;
+    font-size: 0.84rem !important;
+    line-height: 1.55 !important;
   }
   .vtj-footer-socials {
     justify-content: center !important;
+    gap: 12px !important;
   }
 
   /* Footer Accordion Items */
+  .vtj-footer-col:not(.vtj-col-brand) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
   .vtj-footer-col:not(.vtj-col-brand) .vtj-footer-heading {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     cursor: pointer !important;
-    padding: 14px 0 !important;
+    padding: 16px 0 !important;
     margin: 0 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border: none !important;
     user-select: none !important;
-    font-size: 0.88rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
     letter-spacing: 0.08em !important;
+    color: #FFFFFF !important;
+    position: relative !important;
+    width: 100% !important;
+    transition: color 0.2s ease !important;
+  }
+  .vtj-footer-col:not(.vtj-col-brand) .vtj-footer-heading:hover,
+  .vtj-footer-col:not(.vtj-col-brand).is-open .vtj-footer-heading {
+    color: #38BDF8 !important;
   }
   .vtj-footer-col:not(.vtj-col-brand) .vtj-footer-heading::after {
     content: '' !important;
+    position: static !important;
+    inset: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    background: transparent !important;
+    border-radius: 0 !important;
     display: inline-block !important;
     width: 8px !important;
     height: 8px !important;
     border-right: 2px solid #94A3B8 !important;
     border-bottom: 2px solid #94A3B8 !important;
+    border-top: none !important;
+    border-left: none !important;
     transform: rotate(45deg) !important;
-    transition: transform 0.25s ease !important;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease !important;
     margin-right: 4px !important;
+    flex-shrink: 0 !important;
   }
   .vtj-footer-col:not(.vtj-col-brand).is-open .vtj-footer-heading::after {
     transform: rotate(-135deg) !important;
+    border-color: #38BDF8 !important;
   }
-  .vtj-footer-col:not(.vtj-col-brand) .vtj-footer-links,
+  .vtj-footer-col:not(.vtj-col-brand) .vtj-footer-links {
+    display: none !important;
+    padding: 4px 0 16px !important;
+    gap: 12px !important;
+  }
   .vtj-footer-col:not(.vtj-col-brand) .vtj-footer-pills {
     display: none !important;
-    padding: 12px 0 16px !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    padding: 6px 0 16px !important;
+    gap: 8px !important;
   }
-  .vtj-footer-col:not(.vtj-col-brand).is-open .vtj-footer-links,
+  .vtj-footer-col:not(.vtj-col-brand).is-open .vtj-footer-links {
+    display: flex !important;
+  }
   .vtj-footer-col:not(.vtj-col-brand).is-open .vtj-footer-pills {
     display: flex !important;
   }
+  .vtj-footer-col:not(.vtj-col-brand) .vtj-footer-link {
+    font-size: 0.84rem !important;
+    padding: 2px 0 !important;
+  }
+  .vtj-footer-col:not(.vtj-col-brand) .vtj-topic-pill {
+    padding: 6px 12px !important;
+    font-size: 0.78rem !important;
+  }
+
+  /* Footer Bottom Bar */
   .vtj-footer-bottom {
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 16px !important;
+    margin-top: 32px !important;
     padding-top: 24px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 14px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
   .vtj-footer-back-to-top {
     width: 100% !important;
     display: flex !important;
     justify-content: center !important;
+    order: -1 !important;
+    margin-bottom: 4px !important;
   }
   .vtj-btt-btn {
-    height: 44px !important;
-    padding: 0 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 42px !important;
+    padding: 0 20px !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #CBD5E1 !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+  }
+  .vtj-btt-btn:hover {
+    background: rgba(37, 99, 235, 0.2) !important;
+    border-color: #3B82F6 !important;
+    color: #FFFFFF !important;
+  }
+  .vtj-footer-center-tag {
+    font-size: 0.78rem !important;
+    color: #94A3B8 !important;
+  }
+  .vtj-footer-copyright {
+    font-size: 0.74rem !important;
+    color: #64748B !important;
+  }
+
+  /* ============================================================
+     24. MOBILE BLOG POST & CONTENT OPTIMIZATION (Zero Dead Spacing)
+  ============================================================ */
+  body.item-view .main-layout,
+  body.static_page .main-layout,
+  .main-layout:not(.vtj-home-hidden) {
+    padding: 6px 0 20px !important;
+  }
+  .container.vtj-post-container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .vtj-post-page-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  .vtj-post-card {
+    padding: 12px 12px 16px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .vtj-post-cat-badge-wrap {
+    margin-bottom: 6px !important;
+  }
+  .vtj-post-cat-badge {
+    padding: 3px 10px !important;
+    font-size: 0.65rem !important;
+  }
+  .vtj-post-title {
+    font-size: clamp(1.35rem, 5vw, 1.68rem) !important;
+    line-height: 1.22 !important;
+    margin: 0 0 8px !important;
+  }
+  .vtj-post-meta-row {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 12px !important;
+  }
+  .vtj-post-author-meta {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  .vtj-post-author-avatar {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+  }
+  .vtj-post-author-details {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 2px !important;
+  }
+  .vtj-post-author-name {
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    color: var(--post-title-color) !important;
+    line-height: 1.2 !important;
+  }
+  .vtj-post-meta-subline {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 0.74rem !important;
+    color: var(--post-muted) !important;
+    line-height: 1.2 !important;
+  }
+  .vtj-post-meta-dot {
+    color: var(--post-muted) !important;
+    font-size: 0.68rem !important;
+  }
+  .vtj-post-date-item,
+  .vtj-post-read-item {
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 3px !important;
+    font-size: 0.72rem !important;
+  }
+  .vtj-post-date-item svg,
+  .vtj-post-read-item svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+  .vtj-post-share-area {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    margin-top: 2px !important;
+  }
+  .vtj-post-share-label {
+    font-size: 0.74rem !important;
+  }
+  .vtj-post-share-btn {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .vtj-post-share-btn svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  /* Post Body & Typography Spacing on Mobile */
+  .vtj-post-body {
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
+    margin: 0 !important;
+  }
+  .vtj-post-body > :first-child {
+    margin-top: 0 !important;
+  }
+  .vtj-post-body .separator {
+    margin: 0.4rem 0 0.5rem !important;
+    clear: both !important;
+  }
+  .vtj-post-body img {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    display: block !important;
+    margin: 0.4rem auto 0.5rem !important;
+  }
+  .vtj-post-body .separator img {
+    margin: 0 auto !important;
+  }
+  .vtj-post-body h1 {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    margin: 0.85rem 0 0.35rem !important;
+  }
+  .vtj-post-body h2 {
+    font-size: 1.22rem !important;
+    line-height: 1.25 !important;
+    margin: 0.8rem 0 0.3rem !important;
+  }
+  .vtj-post-body h3 {
+    font-size: 1.08rem !important;
+    line-height: 1.28 !important;
+    margin: 0.7rem 0 0.25rem !important;
+  }
+  .vtj-post-body h4 {
+    font-size: 0.98rem !important;
+    margin: 0.6rem 0 0.2rem !important;
+  }
+  .vtj-post-body p {
+    margin: 0 0 0.65rem !important;
+  }
+  .vtj-post-body blockquote {
+    margin: 0.7rem 0 !important;
+    padding: 0.6rem 0.9rem !important;
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+  }
+  .vtj-post-body ul,
+  .vtj-post-body ol {
+    margin: 0 0 0.65rem !important;
+    padding-left: 1.25rem !important;
+  }
+  .vtj-post-body li {
+    margin-bottom: 0.25rem !important;
+  }
+  .vtj-post-body p:empty,
+  .vtj-post-body p:has(> br:only-child),
+  .vtj-post-body div:has(> br:only-child) {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    line-height: 0 !important;
+  }
+  .vtj-post-nav {
+    margin-top: 16px !important;
+    gap: 8px !important;
+  }
+  .vtj-post-nav-card {
+    padding: 10px 12px !important;
   }
 }
 
@@ -8732,15 +9322,10 @@ html.dark .vtj-sidebar-nl-input {
     font-size: 0.72rem !important;
   }
   .vtj-hero-title-main {
-    font-size: 1.18rem !important;
-  }
-  .vtj-hero-card-small .vtj-hero-img-wrapper {
-    width: 95px !important;
-    min-width: 90px !important;
-    height: 80px !important;
+    font-size: 0.92rem !important;
   }
   .vtj-hero-card-small .vtj-hero-title-sub {
-    font-size: 0.82rem !important;
+    font-size: 0.74rem !important;
   }
 }
   
@@ -11018,21 +11603,22 @@ html.dark .vtj-sidebar-nl-input {
                               <b:if cond='data:post.author.authorPhoto.url'>
                                 <img expr:alt='data:post.author.name' expr:src='data:post.author.authorPhoto.url'/>
                               <b:else/>
-                                <img alt='Vicky TJ' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png' style='width:100%;height:100%;object-fit:cover;border-radius:50%;'/>
+                                <img alt='Vicky Tech Journal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png'/>
                               </b:if>
                             </div>
                             <div class='vtj-post-author-details'>
-                              <span class='vtj-post-author-name'><b:eval expr='data:post.author.name ?: "Vicky TJ"'/></span>
-                              <span class='vtj-post-meta-dot'/>
-                              <span class='vtj-post-date-item'>
-                                <svg fill='currentColor' viewBox='0 0 24 24'><path d='M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z'/></svg>
-                                <data:post.date/>
-                              </span>
-                              <span class='vtj-post-meta-dot'/>
-                              <span class='vtj-post-read-item'>
-                                <svg fill='currentColor' viewBox='0 0 24 24'><path d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z'/></svg>
-                                <span id='vtj-read-time'>3 min read</span>
-                              </span>
+                              <span class='vtj-post-author-name'><b:eval expr='data:post.author.name ?: "Vicky Tech Journal"'/></span>
+                              <div class='vtj-post-meta-subline'>
+                                <span class='vtj-post-date-item'>
+                                  <svg fill='currentColor' viewBox='0 0 24 24'><path d='M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z'/></svg>
+                                  <data:post.date/>
+                                </span>
+                                <span class='vtj-post-meta-dot'>&#8226;</span>
+                                <span class='vtj-post-read-item'>
+                                  <svg fill='currentColor' viewBox='0 0 24 24'><path d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z'/></svg>
+                                  <span id='vtj-read-time'>3 min read</span>
+                                </span>
+                              </div>
                             </div>
                           </div>
 
@@ -11118,6 +11704,40 @@ html.dark .vtj-sidebar-nl-input {
                         </div>
                       </aside>
                     </div>
+
+                    <!-- RELATED ARTICLES SECTION (6 Cards, 3 Columns on Desktop) -->
+                    <section class='vtj-related-section' expr:data-current-url='data:post.url' expr:data-primary-label='data:post.labels and data:post.labels.size &gt; 0 ? data:post.labels[0].name : &quot;&quot;' id='vtj-related-section'>
+                      <div class='vtj-related-container'>
+                        <div class='vtj-related-head'>
+                          <div class='vtj-related-head-left'>
+                            <span class='vtj-related-badge-tag'>
+                              <svg fill='none' stroke='currentColor' stroke-width='2.2' viewBox='0 0 24 24'><path d='M13 10V3L4 14h7v7l9-11h-7z' stroke-linecap='round' stroke-linejoin='round'/></svg>
+                              Recommended Articles
+                            </span>
+                            <h2 class='vtj-related-heading'>Related Articles</h2>
+                          </div>
+                          <b:if cond='data:post.labels and data:post.labels.size &gt; 0'>
+                            <b:loop index='li' values='data:post.labels' var='label'>
+                              <b:if cond='data:li == 0'>
+                                <a class='vtj-related-explore-link' expr:href='data:label.url'>
+                                  <span>Explore <data:label.name/></span>
+                                  <svg fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path d='M5 12h14M12 5l7 7-7 7' stroke-linecap='round' stroke-linejoin='round'/></svg>
+                                </a>
+                              </b:if>
+                            </b:loop>
+                          </b:if>
+                        </div>
+
+                        <div class='vtj-related-grid' id='vtj-related-posts-grid'>
+                          <div class='vtj-related-skeleton-card'/>
+                          <div class='vtj-related-skeleton-card'/>
+                          <div class='vtj-related-skeleton-card'/>
+                          <div class='vtj-related-skeleton-card'/>
+                          <div class='vtj-related-skeleton-card'/>
+                          <div class='vtj-related-skeleton-card'/>
+                        </div>
+                      </div>
+                    </section>
                   </b:loop>
                 </b:if>
 </b:includable>
@@ -12491,11 +13111,22 @@ html.dark .vtj-sidebar-nl-input {
     if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
     if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
 
-    /* ---- Sticky Header Scroll ---- */
+    /* ---- Sticky / Fixed Header Scroll & Metrics ---- */
     var siteHeader = document.getElementById('site-header');
+    function updateHeaderMetrics() {
+      if (!siteHeader) return;
+      var h = siteHeader.offsetHeight;
+      if (h > 0) {
+        document.documentElement.style.setProperty('--header-height', h + 'px');
+      }
+    }
+    updateHeaderMetrics();
+    window.addEventListener('resize', updateHeaderMetrics, { passive: true });
+    window.addEventListener('load', updateHeaderMetrics, { passive: true });
+
     window.addEventListener('scroll', function() {
       if (!siteHeader) return;
-      if (100 > window.scrollY) { siteHeader.classList.remove('scrolled'); }
+      if (20 > window.scrollY) { siteHeader.classList.remove('scrolled'); }
       else { siteHeader.classList.add('scrolled'); }
     }, { passive: true });
 
@@ -13986,194 +14617,167 @@ html.dark .vtj-sidebar-nl-input {
         }
       }
 
-      /* ========================================
-         Related Posts Carousel - High Resolution Images
-         Fixed: Uses same image method as Articles page (getFirstImgSrc)
-         ======================================== */
-      (function() {
-        var relSection = document.getElementById("related-section");
-        var relTrack = document.getElementById("related-track");
-        if (!relSection || !relTrack) return;
+      /* ============================================================
+         RELATED ARTICLES LOADER (Random 6 Articles from Category)
+      ============================================================ */
+      (function initRelatedPosts() {
+        var relSection = document.getElementById('vtj-related-section');
+        var relGrid = document.getElementById('vtj-related-posts-grid');
+        if (!relSection || !relGrid) return;
 
-        // ========== Configuration ==========
-        var CAROUSEL_CONFIG = {
-          postCount: 10,
-          placeholderImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=70'
-        };
+        var currentUrl = (relSection.getAttribute('data-current-url') || window.location.href).split('?')[0].split('#')[0];
+        var label = (relSection.getAttribute('data-primary-label') || '').trim();
+        var DEFAULT_IMG = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzGy1FuQ9S2s2c_EqbgAkwCDvjdvkoGsO0qh8UxrOdXmRfXf2y79lrIWZmvV1hA57tJ0ZmmfrOg7fjauYx5g5Wtwkqdjwb1EkWu_GIBo6PRRKC1t-beTdbU6kbTlHvM3w61OFl63oR6WGdANrEvehRtuc6ZrFlTeffsWgz9SmwovrNHDw0-MB2oGqsAtNi/w1200-h800-c-rw/it-fresher-career-growth-2026.webp';
+        var LOGO_IMG = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge9Td0E3H4yHTPNowC7tK97amSK1BNQL2HGnDb5qX_kTLpdobP6lV2xOsS-vu2yIubYFH6MDMe5oKLfKNdK_fc3G1eOrml03rD1MPH8f6bB9gfK9f8A6UNtr9zqiwVgyPYv4XhKtitj43HscUphwGzPzLqNaAhir-ATrqBhi7_ptIUS98/s1600/profile_image.png';
 
-        // ========== High-Resolution Image Function (Same as Articles Page) ==========
-        // This extracts first image from content and converts to s1200 for sharp quality
-        function getHighResImage(entry) {
-          var content = (entry.content && entry.content.$t) || '';
-          if (content) {
-            var cm = content.match(/<img[^>]+src=["']([^"']+)["']/i);
-            if (cm && cm[1] && cm[1].indexOf('data:') !== 0) {
-              return cm[1]
-                .replace(/\/s\d+(-c)?\//, '/w800-h450-c-rw/')
-                .replace(/\/w\d+-h\d+(-c)?\//, '/w800-h450-c-rw/')
-                .replace(/\/w\d+-h\d+-p-k-no-nu\//, '/w800-h450-c-rw/')
-                .replace(/=w\d+-h\d+.*$/, '=w800-h450-c-rw')
-                .replace(/=s\d+.*$/, '=w800-h450-c-rw');
-            }
-          }
+        function getHighResThumb(entry) {
           if (entry.media$thumbnail && entry.media$thumbnail.url) {
             return entry.media$thumbnail.url
-              .replace(/\/s\d+(-c)?\//, '/w800-h450-c-rw/')
-              .replace(/\/w\d+-h\d+(-c)?\//, '/w800-h450-c-rw/')
-              .replace(/\/w\d+-h\d+-p-k-no-nu\//, '/w800-h450-c-rw/')
-              .replace(/=w\d+-h\d+.*$/, '=w800-h450-c-rw')
-              .replace(/=s\d+.*$/, '=w800-h450-c-rw');
+              .replace(/\/s\d+(-c)?\//, '/w600-h338-c-rw/')
+              .replace(/\/w\d+-h\d+(-c)?\//, '/w600-h338-c-rw/')
+              .replace(/\/w\d+-h\d+-p-k-no-nu\//, '/w600-h338-c-rw/')
+              .replace(/=w\d+-h\d+.*$/, '=w600-h338-c-rw')
+              .replace(/=s\d+.*$/, '=w600-h338-c-rw');
           }
-          var summary = (entry.summary && entry.summary.$t) || '';
-          if (summary) {
-            var sm = summary.match(/<img[^>]+src=["']([^"']+)["']/i);
-            if (sm && sm[1]) return sm[1];
-          }
-          return CAROUSEL_CONFIG.placeholderImage;
-        }
-
-        // ========== Srcset Generator (Same as Articles Page) ==========
-        // Creates responsive srcset for different screen sizes
-        function imgSrcset(url) {
-          var s1 = url.replace(/\/s\d+(-c)?\//, '/w400-h225-c-rw/').replace(/\/w\d+-h\d+(-c)?\//, '/w400-h225-c-rw/').replace(/\/w\d+-h\d+-p-k-no-nu\//, '/w400-h225-c-rw/').replace(/=s\d+.*$/, '=w400-h225-c-rw').replace(/=w\d+-h\d+.*$/, '=w400-h225-c-rw');
-          var s2 = url.replace(/\/s\d+(-c)?\//, '/w800-h450-c-rw/').replace(/\/w\d+-h\d+(-c)?\//, '/w800-h450-c-rw/').replace(/\/w\d+-h\d+-p-k-no-nu\//, '/w800-h450-c-rw/').replace(/=s\d+.*$/, '=w800-h450-c-rw').replace(/=w\d+-h\d+.*$/, '=w800-h450-c-rw');
-          return s1 + ' 400w, ' + s2 + ' 800w';
-        }
-
-        // ========== Get Post URL ==========
-        function getPostUrl(entry) {
-          if (!entry) return "#";
-          if (entry.link) {
-            for (var i = 0; i < entry.link.length; i++) {
-              if (entry.link[i].rel === "alternate") return entry.link[i].href;
+          var content = (entry.content && entry.content.$t) || (entry.summary && entry.summary.$t) || '';
+          if (content) {
+            var match = content.match(/<img[^>]+src=["']([^"']+)["']/i);
+            if (match && match[1]) {
+              return match[1]
+                .replace(/\/s\d+(-c)?\//, '/w600-h338-c-rw/')
+                .replace(/\/w\d+-h\d+(-c)?\//, '/w600-h338-c-rw/')
+                .replace(/\/w\d+-h\d+-p-k-no-nu\//, '/w600-h338-c-rw/')
+                .replace(/=w\d+-h\d+.*$/, '=w600-h338-c-rw')
+                .replace(/=s\d+.*$/, '=w600-h338-c-rw');
             }
           }
-          return "#";
+          return DEFAULT_IMG;
         }
 
-        // ========== Get Current Post ID for Exclusion ==========
-        function getCurrentPostId() {
-          var path = window.location.pathname;
-          var match = path.match(/\/(\d{4})\/(\d{2})\/([^/.]+)/);
-          return match ? match[3] : path;
+        function getPostUrl(entry) {
+          if (!entry || !entry.link) return '#';
+          for (var i = 0; i < entry.link.length; i++) {
+            if (entry.link[i].rel === 'alternate') return entry.link[i].href;
+          }
+          return '#';
         }
 
-        // ========== Shuffle Array (Randomization) ==========
-        function shuffleArray(array) {
-          var shuffled = array.slice();
-          for (var i = shuffled.length - 1; i > 0; i--) {
+        function formatDate(isoStr) {
+          if (!isoStr) return '';
+          try {
+            var d = new Date(isoStr);
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+          } catch(e) {
+            return '';
+          }
+        }
+
+        function calcReadTime(entry) {
+          var text = (entry.content && entry.content.$t) || (entry.summary && entry.summary.$t) || '';
+          var stripped = text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+          var words = stripped ? stripped.split(' ').length : 300;
+          var mins = Math.max(1, Math.round(words / 200));
+          return mins + ' min read';
+        }
+
+        function shuffle(arr) {
+          var a = arr.slice();
+          for (var i = a.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
-            var temp = shuffled[i];
-            shuffled[i] = shuffled[j];
-            shuffled[j] = temp;
+            var t = a[i];
+            a[i] = a[j];
+            a[j] = t;
           }
-          return shuffled;
+          return a;
         }
 
-        // ========== Main Callback ==========
-        window.vtjCarouselCb = function(data) {
-          // Hide section if no data
-          if (!data || !data.feed || !data.feed.entry) {
-            relSection.style.display = "none";
+        function renderCards(posts) {
+          if (!posts || !posts.length) {
+            relSection.style.display = 'none';
             return;
           }
 
-          var entries = data.feed.entry;
-          var currentPostId = getCurrentPostId();
-          var validPosts = [];
-          var seenUrls = {};
+          var html = '';
+          for (var i = 0; i < posts.length; i++) {
+            var post = posts[i];
+            var url = getPostUrl(post);
+            var title = (post.title && post.title.$t) ? post.title.$t : 'Related Article';
+            var thumb = getHighResThumb(post);
+            var cat = (post.category && post.category.length) ? post.category[0].term : (label || 'Technology');
+            var dateStr = formatDate(post.published ? post.published.$t : '');
+            var readTime = calcReadTime(post);
 
-          // Filter valid posts (exclude current, remove duplicates)
+            html += '<a class="vtj-rel-card" href="' + url + '">';
+            html += '  <div class="vtj-rel-thumb-wrap">';
+            html += '    <img class="vtj-rel-thumb" src="' + thumb + '" alt="' + title.replace(/"/g, '&quot;') + '" loading="lazy" decoding="async" width="400" height="225"/>';
+            html += '    <span class="vtj-rel-cat-badge">' + cat + '</span>';
+            html += '  </div>';
+            html += '  <div class="vtj-rel-body">';
+            html += '    <h3 class="vtj-rel-title">' + title + '</h3>';
+            html += '    <div class="vtj-rel-meta">';
+            html += '      <img class="vtj-rel-author-avatar" src="' + LOGO_IMG + '" alt="Vicky Tech Journal" width="20" height="20"/>';
+            if (dateStr) {
+              html += '    <span>' + dateStr + '</span>';
+              html += '    <span class="vtj-rel-dot">&#8226;</span>';
+            }
+            html += '      <span>' + readTime + '</span>';
+            html += '    </div>';
+            html += '  </div>';
+            html += '</a>';
+          }
+
+          relGrid.innerHTML = html;
+        }
+
+        window.vtjRelatedFeedCallback = function(data) {
+          var entries = (data && data.feed && data.feed.entry) ? data.feed.entry : [];
+          var valid = [];
+          var seen = {};
+
           for (var i = 0; i < entries.length; i++) {
-            var entry = entries[i];
-            var url = getPostUrl(entry);
-            if (url === "#" || !url) continue;
-            if (seenUrls[url]) continue;
-            if (currentPostId && url.indexOf(currentPostId) !== -1) continue;
-            seenUrls[url] = true;
-            validPosts.push(entry);
+            var e = entries[i];
+            var u = getPostUrl(e);
+            if (!u || u === '#' || seen[u]) continue;
+            if (currentUrl && (u === currentUrl || currentUrl.indexOf(u) !== -1 || u.indexOf(currentUrl) !== -1)) continue;
+            seen[u] = true;
+            valid.push(e);
           }
 
-          // Randomize and limit to configured count
-          var randomizedPosts = shuffleArray(validPosts);
-          var selectedPosts = randomizedPosts.slice(0, CAROUSEL_CONFIG.postCount);
+          var randomized = shuffle(valid);
+          var selected = randomized.slice(0, 6);
 
-          // Hide if fewer than 2 posts
-          if (selectedPosts.length < 2) {
-            relSection.style.display = "none";
+          if (selected.length < 6) {
+            window.vtjFallbackRelatedCallback = function(allData) {
+              var allEntries = (allData && allData.feed && allData.feed.entry) ? allData.feed.entry : [];
+              for (var k = 0; k < allEntries.length; k++) {
+                var ae = allEntries[k];
+                var au = getPostUrl(ae);
+                if (!au || au === '#' || seen[au]) continue;
+                if (currentUrl && (au === currentUrl || currentUrl.indexOf(au) !== -1 || au.indexOf(currentUrl) !== -1)) continue;
+                seen[au] = true;
+                selected.push(ae);
+                if (selected.length >= 6) break;
+              }
+              renderCards(selected);
+            };
+
+            var sFallback = document.createElement('script');
+            sFallback.src = '/feeds/posts/summary?alt=json-in-script&max-results=25&callback=vtjFallbackRelatedCallback';
+            document.head.appendChild(sFallback);
             return;
           }
 
-          // Build HTML with HIGH-RESOLUTION IMAGES
-          var html = "";
-          for (var j = 0; j < selectedPosts.length; j++) {
-            var post = selectedPosts[j];
-            var postUrl = getPostUrl(post);
-            var postTitle = (post.title && post.title.$t) ? post.title.$t : "Untitled Post";
-
-            // USE HIGH-RESOLUTION IMAGE FUNCTION (Same as Articles Page)
-            var img = getHighResImage(post);
-            var srcsetAttr = imgSrcset(img);
-
-            var safeTitle = escapeHtml(postTitle);
-            // Build card with srcset, sizes, width, height attributes
-            html += "<div class='related-card'>";
-            html += "<div class='related-card-img'>";
-            html += "<a href='" + postUrl + "' aria-label='Open " + safeTitle + "'>";
-            // HIGH-QUALITY IMAGE with srcset for responsive sizes
-            html += "<img src='" + img + "' alt='" + safeTitle + "' loading='lazy' decoding='async' width='400' height='225' srcset='" + srcsetAttr + "' sizes='(max-width: 640px) 400px, 400px'/>";
-            html += "</a>";
-            html += "</div>";
-            html += "<div class='related-card-body'>";
-            html += "<p class='related-card-title'><a href='" + postUrl + "'>" + postTitle + "</a></p>";
-            html += "</div>";
-            html += "</div>";
-          }
-
-          // Duplicate for seamless infinite scroll
-          relTrack.innerHTML = html + html;
-          relTrack.parentNode.classList.remove("paused");
+          renderCards(selected);
         };
 
-        // ========== Load Posts ==========
-        var blogUrl = document.body.getAttribute("data-url") || "/";
-        if (blogUrl.indexOf("blogger.com") !== -1) blogUrl = "/";
-        if (blogUrl.charAt(blogUrl.length - 1) !== "/") blogUrl += "/";
+        var feedUrl = label 
+          ? '/feeds/posts/summary/-/' + encodeURIComponent(label) + '?alt=json-in-script&max-results=30&callback=vtjRelatedFeedCallback'
+          : '/feeds/posts/summary?alt=json-in-script&max-results=30&callback=vtjRelatedFeedCallback';
 
-        var script = document.createElement("script");
-        // Fetch more posts (50) to ensure we have enough after filtering
-        script.src = blogUrl + "feeds/posts/summary?alt=json-in-script&max-results=50&callback=vtjCarouselCb";
-        document.body.appendChild(script);
-
-        // ========== Carousel Interactions ==========
-        var carousel = document.getElementById("related-carousel");
-        if (carousel) {
-          // Pause on hover
-          carousel.addEventListener("mouseenter", function() { this.classList.add("paused"); });
-          carousel.addEventListener("mouseleave", function() { this.classList.remove("paused"); });
-
-          // Touch/scroll support for mobile
-          var touchStartX = 0, touchScrollLeft = 0, isTouching = false;
-          carousel.addEventListener("touchstart", function(e) {
-            if (e.touches.length === 1) {
-              touchStartX = e.touches[0].clientX;
-              touchScrollLeft = this.scrollLeft;
-              isTouching = true;
-              this.classList.add("paused");
-            }
-          }, { passive: true });
-
-          carousel.addEventListener("touchmove", function(e) {
-            if (isTouching && e.touches.length === 1) {
-              this.scrollLeft = touchScrollLeft + (touchStartX - e.touches[0].clientX);
-            }
-          }, { passive: true });
-
-          carousel.addEventListener("touchend", function() {
-            isTouching = false;
-            setTimeout(function() { carousel.classList.remove("paused"); }, 1000);
-          }, { passive: true });
-        }
+        var script = document.createElement('script');
+        script.src = feedUrl;
+        document.head.appendChild(script);
       })();
 
       /* FAQ accordion - independent per section */
@@ -14519,18 +15123,37 @@ html.dark .vtj-sidebar-nl-input {
       initCodeBlocks();
     }
 
-    /* ---- Mobile Footer Accordion ---- */
-    var footerCols = document.querySelectorAll('.site-footer .vtj-footer-col:not(.vtj-col-brand)');
-    footerCols.forEach(function (col) {
-      var heading = col.querySelector('.vtj-footer-heading');
-      if (heading) {
-        heading.addEventListener('click', function () {
-          if (window.innerWidth <= 767) {
+    /* ---- Mobile Footer Accordion (Robust Click & Tap Handling) ---- */
+    function initFooterAccordion() {
+      var footerCols = document.querySelectorAll('.site-footer .vtj-footer-col:not(.vtj-col-brand)');
+      footerCols.forEach(function (col) {
+        var heading = col.querySelector('.vtj-footer-heading');
+        if (heading && !heading.getAttribute('data-accordion-bound')) {
+          heading.setAttribute('data-accordion-bound', 'true');
+          heading.addEventListener('click', function (e) {
+            e.preventDefault();
             col.classList.toggle('is-open');
-          }
-        });
+          });
+        }
+      });
+    }
+
+    // Global Event Delegation fallback for footer accordion
+    document.addEventListener('click', function (e) {
+      var heading = e.target.closest('.vtj-footer-heading');
+      if (!heading) return;
+      var col = heading.closest('.vtj-footer-col:not(.vtj-col-brand)');
+      if (!col) return;
+      if (!heading.getAttribute('data-accordion-bound')) {
+        col.classList.toggle('is-open');
       }
     });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFooterAccordion);
+    } else {
+      initFooterAccordion();
+    }
 
     /* ---- Back to Top Smooth Scroll ---- */
     var bttBtn = document.getElementById('vtj-btt-btn');
@@ -14539,6 +15162,23 @@ html.dark .vtj-sidebar-nl-input {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    }
+
+    /* ---- Clean Empty Spacing in Post Content ---- */
+    function cleanPostSpacing() {
+      var postContent = document.getElementById('post-content');
+      if (!postContent) return;
+      var ps = postContent.querySelectorAll('p, div');
+      ps.forEach(function (el) {
+        if (!el.textContent.trim() && !el.querySelector('img, iframe, svg, pre, table, hr, video, audio')) {
+          el.style.display = 'none';
+        }
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', cleanPostSpacing);
+    } else {
+      cleanPostSpacing();
     }
   
 
