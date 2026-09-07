@@ -5895,10 +5895,11 @@ body.item-view .sidebar-area,
 
 /* Post Container Wrappers */
 .container.vtj-post-container {
-  max-width: 1400px !important;
+  max-width: 1680px !important;
   width: 100% !important;
-  padding: 0 !important;
+  padding: 0 16px !important;
   margin: 0 auto !important;
+  box-sizing: border-box !important;
 }
 .main-grid.vtj-post-wide-layout {
   display: block !important;
@@ -5915,7 +5916,7 @@ body.item-view .sidebar-area,
 /* Static Page Layout (About, Contact, Privacy, Terms, Disclaimer) */
 .vtj-static-page-layout {
   width: 100%;
-  max-width: 1060px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 10px 20px 60px;
   box-sizing: border-box;
@@ -5952,14 +5953,14 @@ html.dark .vtj-static-page-title {
   }
 }
 
-/* Base Post Page 3-Column Layout: Left TOC, Center Article, Right Sidebar */
+/* Base Post Page 3-Column Layout: Left TOC, Center Article, Right Sidebar (Expanded Middle Section) */
 .vtj-post-page-layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr) 300px;
-  gap: 20px;
-  max-width: 1400px;
+  grid-template-columns: 240px minmax(0, 1fr) 290px;
+  gap: 24px;
+  max-width: 1680px;
   margin: 0 auto;
-  padding: 18px 16px 40px;
+  padding: 18px 8px 48px;
   box-sizing: border-box;
   width: 100%;
   align-items: start;
@@ -5967,17 +5968,18 @@ html.dark .vtj-static-page-title {
 
 @media (min-width: 1440px) {
   .vtj-post-page-layout {
-    grid-template-columns: 270px minmax(0, 1fr) 310px;
-    gap: 24px;
-    padding: 20px 20px 48px;
+    grid-template-columns: 250px minmax(0, 1fr) 300px;
+    gap: 28px;
+    padding: 20px 12px 56px;
+    max-width: 1720px;
   }
 }
 
 @media (max-width: 1200px) {
   .vtj-post-page-layout {
-    grid-template-columns: 230px minmax(0, 1fr) 270px;
+    grid-template-columns: 220px minmax(0, 1fr) 260px;
     gap: 16px;
-    padding: 14px 12px 30px;
+    padding: 14px 8px 30px;
   }
 }
 
@@ -7010,7 +7012,7 @@ html.dark .vtj-sidebar-nl-input {
 ============================================================ */
 .vtj-related-section {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1680px;
   margin: 32px auto 48px;
   padding: 0 16px;
   box-sizing: border-box;
