@@ -6283,12 +6283,122 @@ html.dark .vtj-post-cat-badge {
   gap: 2px;
 }
 
+.vtj-post-author-name-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .vtj-post-author-name {
   font-family: var(--font-heading, sans-serif);
   font-size: 0.92rem;
   font-weight: 700;
   color: var(--post-title-color);
   line-height: 1.25;
+}
+
+.vtj-post-follow-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 3px 11px 3px 9px;
+  font-family: inherit;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: #1d4ed8 !important;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.24);
+  border-radius: 9999px;
+  text-decoration: none !important;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+.vtj-post-follow-btn:hover {
+  background: #2563eb;
+  color: #ffffff !important;
+  border-color: #2563eb;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.32), 0 1px 2px rgba(37, 99, 235, 0.2);
+  transform: translateY(-1px);
+}
+.vtj-post-follow-btn:active {
+  transform: scale(0.96) translateY(0);
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+}
+.vtj-post-follow-btn svg {
+  width: 11px;
+  height: 11px;
+  stroke-width: 2.4;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.vtj-post-follow-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.vtj-post-follow-btn.is-following {
+  background: rgba(16, 185, 129, 0.09);
+  color: #047857 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: none;
+  padding: 3px 10px;
+}
+.vtj-post-follow-btn.is-following svg {
+  color: #059669;
+  stroke-width: 2.6;
+}
+.vtj-post-follow-btn.is-following:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626 !important;
+  border-color: rgba(239, 68, 68, 0.35);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.16);
+  transform: translateY(-1px);
+}
+.vtj-post-follow-btn.is-following:hover svg {
+  display: none;
+}
+.vtj-post-follow-btn.is-following:hover span {
+  font-size: 0;
+}
+.vtj-post-follow-btn.is-following:hover span::before {
+  content: 'Unfollow';
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+html.dark .vtj-post-follow-btn {
+  color: #93c5fd !important;
+  background: rgba(59, 130, 246, 0.14);
+  border-color: rgba(96, 165, 250, 0.32);
+  box-shadow: none;
+}
+html.dark .vtj-post-follow-btn:hover {
+  background: #3b82f6;
+  color: #ffffff !important;
+  border-color: #3b82f6;
+  box-shadow: 0 3px 12px rgba(59, 130, 246, 0.38);
+}
+html.dark .vtj-post-follow-btn.is-following {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7 !important;
+  border-color: rgba(52, 211, 153, 0.3);
+  box-shadow: none;
+}
+html.dark .vtj-post-follow-btn.is-following svg {
+  color: #34d399;
+}
+html.dark .vtj-post-follow-btn.is-following:hover {
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5 !important;
+  border-color: rgba(248, 113, 113, 0.4);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.25);
 }
 
 .vtj-post-meta-subline {
@@ -9192,11 +9302,23 @@ html.dark .vtj-related-skeleton-card {
     justify-content: center !important;
     gap: 2px !important;
   }
+  .vtj-post-author-name-wrap {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
   .vtj-post-author-name {
     font-size: 0.88rem !important;
     font-weight: 700 !important;
     color: var(--post-title-color) !important;
     line-height: 1.2 !important;
+  }
+  .vtj-post-follow-btn {
+    padding: 2.5px 8px 2.5px 7px !important;
+    font-size: 0.69rem !important;
+  }
+  .vtj-post-follow-btn.is-following:hover span::before {
+    font-size: 0.69rem !important;
   }
   .vtj-post-meta-subline {
     display: flex !important;
@@ -12253,7 +12375,15 @@ html.dark .vtj-related-skeleton-card {
                               </b:if>
                             </div>
                             <div class='vtj-post-author-details'>
-                              <span class='vtj-post-author-name'><b:eval expr='data:post.author.name ?: "Vicky Tech Journal"'/></span>
+                              <div class='vtj-post-author-name-wrap'>
+                                <span class='vtj-post-author-name'><b:eval expr='data:post.author.name ?: "Vicky Tech Journal"'/></span>
+                                <a aria-label='Follow Vicky Tech Journal on Blogger' class='vtj-post-follow-btn' expr:data-blogid='data:blog.blogId' expr:href='&quot;https://www.blogger.com/follow.g?blogID=&quot; + data:blog.blogId' id='vtj-post-follow-btn' onclick='return vtjOpenFollow(this);' rel='noopener' target='_blank' title='Follow Vicky Tech Journal'>
+                                  <svg fill='none' height='11' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.4' viewBox='0 0 24 24' width='11'>
+                                    <path d='M12 5v14M5 12h14'/>
+                                  </svg>
+                                  <span>Follow</span>
+                                </a>
+                              </div>
                               <div class='vtj-post-meta-subline'>
                                 <span class='vtj-post-date-item'>
                                   <svg fill='currentColor' viewBox='0 0 24 24'><path d='M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z'/></svg>
@@ -15053,6 +15183,65 @@ html.dark .vtj-related-skeleton-card {
           btn.classList.remove('is-copied');
         }, 2000);
       }
+
+      // Blogger Follow State & Popup Handler
+      function updateFollowBtnUI(btn, isFollowing) {
+        if (!btn) return;
+        if (isFollowing) {
+          btn.classList.add('is-following');
+          btn.setAttribute('title', 'Following Vicky Tech Journal (Click to manage)');
+          btn.innerHTML = '<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" viewBox="0 0 24 24" width="11"><polyline points="20 6 9 17 4 12"/></svg><span>Following</span>';
+        } else {
+          btn.classList.remove('is-following');
+          btn.setAttribute('title', 'Follow Vicky Tech Journal');
+          btn.innerHTML = '<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewBox="0 0 24 24" width="11"><path d="M12 5v14M5 12h14"/></svg><span>Follow</span>';
+        }
+      }
+
+      var followBtn = document.getElementById('vtj-post-follow-btn');
+      if (followBtn) {
+        try {
+          if (localStorage.getItem('vtj_blog_followed') === 'true') {
+            updateFollowBtnUI(followBtn, true);
+          }
+        } catch (e) {}
+      }
+
+      window.vtjOpenFollow = function (el) {
+        var btn = (typeof el === 'object' && el) ? el : document.getElementById('vtj-post-follow-btn');
+        var href = (typeof el === 'string') ? el : (btn ? (btn.getAttribute('href') || '') : '');
+        var blogId = (btn && btn.getAttribute) ? btn.getAttribute('data-blogid') : '';
+        if (!href || href.indexOf('blogID=') === -1 || href.indexOf('blogID=undefined') !== -1) {
+          if (blogId) {
+            href = 'https://www.blogger.com/follow.g?blogID=' + blogId;
+          } else if (window._WidgetManager && window._WidgetManager._GetAllData && window._WidgetManager._GetAllData().blog) {
+            href = 'https://www.blogger.com/follow.g?blogID=' + window._WidgetManager._GetAllData().blog.blogId;
+          }
+        }
+        var w = 640;
+        var h = 540;
+        var left = Math.max(0, Math.floor((window.screen.width - w) / 2));
+        var top = Math.max(0, Math.floor((window.screen.height - h) / 2));
+
+        var isCurrentlyFollowed = false;
+        try {
+          isCurrentlyFollowed = localStorage.getItem('vtj_blog_followed') === 'true';
+          if (!isCurrentlyFollowed) {
+            localStorage.setItem('vtj_blog_followed', 'true');
+            updateFollowBtnUI(btn, true);
+          } else {
+            localStorage.removeItem('vtj_blog_followed');
+            updateFollowBtnUI(btn, false);
+          }
+        } catch (err) {}
+
+        var popup = window.open(href, 'bloggerFollow', 'width=' + w + ',height=' + h + ',top=' + top + ',left=' + left + ',toolbar=no,menubar=no,location=no,status=no,resizable=yes,scrollbars=yes');
+        if (popup && !popup.closed) {
+          popup.focus();
+          return false;
+        }
+        return true;
+      };
 
       // 3. TABLE OF CONTENTS GENERATOR (H1, H2 ONLY; IF NO H1, SHOW ONLY H2; NEVER H3)
       // Hide static page duplicate title if hero banner exists
