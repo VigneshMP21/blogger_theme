@@ -13581,6 +13581,85 @@ html.dark .vtj-related-skeleton-card {
       var searchIndex = [];
       var searchIndexMap = {};
 
+      // Helper to extract clean query words
+      function extractSearchWords(query) {
+        if (!query) return [];
+        return query.toLowerCase().trim().split(/\s+/).filter(function(w) { return w.length > 0; });
+      }
+
+      // Advanced Multi-Keyword Scoring & Matching Engine (Split Words & Relevance)
+      function scoreSearchItem(item, query, words) {
+        if (!item) return { isMatch: false, score: 0, matchedWordsCount: 0, allWordsMatched: false };
+        var title = (item.title || '').toLowerCase();
+        var catList = item.categories && item.categories.length ? item.categories : (item.label ? [item.label] : []);
+        var catStr = catList.join(' ').toLowerCase();
+        var desc = (item.desc || item.summary || '').toLowerCase();
+
+        var q = query.toLowerCase().trim();
+        var score = 0;
+        var matchedWordsCount = 0;
+        var titleMatches = 0;
+        var labelMatches = 0;
+        var descMatches = 0;
+
+        // Exact full phrase bonus
+        if (q.length > 1) {
+          if (title.indexOf(q) !== -1) score += 220;
+          if (catStr.indexOf(q) !== -1) score += 160;
+          if (desc.indexOf(q) !== -1) score += 60;
+        }
+
+        // Individual Word by Word Matching (Requirement 1 & Requirement 2)
+        for (var i = 0; i < words.length; i++) {
+          var w = words[i];
+          if (!w) continue;
+
+          var inTitle = title.indexOf(w) !== -1;
+          var inLabel = catStr.indexOf(w) !== -1;
+          var inDesc = desc.indexOf(w) !== -1;
+
+          if (inTitle || inLabel || inDesc) {
+            matchedWordsCount++;
+            if (inTitle) {
+              titleMatches++;
+              score += 65;
+              // Exact word boundary regex check
+              var re = new RegExp('(?:^|[^a-z0-9])' + w.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + '(?:$|[^a-z0-9])', 'i');
+              if (re.test(title)) score += 40;
+            }
+            if (inLabel) {
+              labelMatches++;
+              score += 55;
+            }
+            if (inDesc) {
+              descMatches++;
+              score += 15;
+            }
+          }
+        }
+
+        if (matchedWordsCount > 0) {
+          // Multiplier for matching more query words
+          score += (matchedWordsCount * 35);
+          // High bonus if ALL query words matched in the article
+          if (words.length > 1 && matchedWordsCount === words.length) {
+            score += 260;
+          }
+          if (titleMatches > 0 || labelMatches > 0) {
+            score += 45;
+          }
+        }
+
+        return {
+          isMatch: matchedWordsCount > 0,
+          score: score,
+          matchedWordsCount: matchedWordsCount,
+          allWordsMatched: (words.length > 0 && matchedWordsCount === words.length)
+        };
+      }
+      window.vtjScoreSearchItem = scoreSearchItem;
+      window.vtjExtractSearchWords = extractSearchWords;
+
       // Helper to add article to search index
       function addToIndex(item, isFromFeed) {
         if (!item || !item.url || !item.title) return;
@@ -13594,6 +13673,7 @@ html.dark .vtj-related-skeleton-card {
                 if (item.title) searchIndex[i].title = item.title.trim();
                 if (item.desc) searchIndex[i].desc = item.desc.trim();
                 if (item.label) searchIndex[i].label = item.label;
+                if (item.categories) searchIndex[i].categories = item.categories;
                 break;
               }
             }
@@ -13606,6 +13686,7 @@ html.dark .vtj-related-skeleton-card {
           url: item.url,
           thumb: item.thumb || '',
           label: item.label || 'Technology',
+          categories: item.categories || [item.label || 'Technology'],
           desc: item.desc ? item.desc.trim() : ''
         });
       }
@@ -13634,11 +13715,13 @@ html.dark .vtj-related-skeleton-card {
             var descEl = card.querySelector('p, .vtj-hero-desc, .vtj-card-desc, .vtj-tech-card-excerpt, .vtj-ai-featured-desc, .vtj-coding-card-desc, .vtj-devtool-excerpt, .vtj-mustread-featured-desc');
 
             if (link && titleEl) {
+              var lbl = badgeEl ? badgeEl.textContent.trim() : 'Technology';
               addToIndex({
                 title: titleEl.textContent || '',
                 url: link.href || '',
                 thumb: imgEl ? (imgEl.getAttribute('src') || '') : '',
-                label: badgeEl ? badgeEl.textContent.trim() : 'Technology',
+                label: lbl,
+                categories: [lbl],
                 desc: descEl ? descEl.textContent.trim() : ''
               }, false);
             }
@@ -13668,7 +13751,13 @@ html.dark .vtj-related-skeleton-card {
             var title = entry.title ? entry.title.$t : '';
             var summary = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : '');
             var text = summary.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-            var label = (entry.category && entry.category.length) ? entry.category[0].term : 'Article';
+            var categories = [];
+            if (entry.category && entry.category.length) {
+              for (var k = 0; k < entry.category.length; k++) {
+                if (entry.category[k].term) categories.push(entry.category[k].term);
+              }
+            }
+            var label = categories.length ? categories[0] : 'Technology';
             var url = '';
             if (entry.link) {
               for (var i = 0; i < entry.link.length; i++) {
@@ -13698,12 +13787,13 @@ html.dark .vtj-related-skeleton-card {
               url: url,
               thumb: thumb,
               label: label,
-              desc: text.slice(0, 160)
+              categories: categories,
+              desc: text.slice(0, 180)
             }, true);
           });
 
           // Refresh live search results if user is currently searching
-          if (overlay && overlay.classList.contains('active') && overlayInput && overlayInput.value.trim().length >= 2) {
+          if (overlay && overlay.classList.contains('active') && overlayInput && overlayInput.value.trim().length >= 1) {
             performLiveSearch();
           }
 
@@ -13732,10 +13822,14 @@ html.dark .vtj-related-skeleton-card {
           indexPageArticles();
           loadBloggerFeed();
           setTimeout(function () {
-            if (overlayInput) overlayInput.focus();
+            if (overlayInput) {
+              overlayInput.focus();
+              if (overlayInput.value.trim()) performLiveSearch();
+            }
           }, 100);
         }
       }
+      window.vtjOpenSearchOverlay = openSearch;
 
       function closeSearch() {
         if (overlay) {
@@ -13760,8 +13854,24 @@ html.dark .vtj-related-skeleton-card {
           if (e.target === overlay) closeSearch();
         });
       }
+
+      // Keyboard shortcuts: ESC to close, Ctrl+K/Cmd+K or '/' to open
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeSearch();
+        if (e.key === 'Escape') {
+          closeSearch();
+          return;
+        }
+        var activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+        var isTyping = activeTag === 'input' || activeTag === 'textarea' || (document.activeElement && document.activeElement.isContentEditable);
+        if (!isTyping) {
+          if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+            e.preventDefault();
+            openSearch();
+          } else if (e.key === '/') {
+            e.preventDefault();
+            openSearch();
+          }
+        }
       });
 
       // Highlight matching words helper
@@ -13769,18 +13879,19 @@ html.dark .vtj-related-skeleton-card {
         if (!text || !words || !words.length) return text || '';
         var escaped = words.map(function (w) {
           return w.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-        }).join('|');
+        }).filter(Boolean).join('|');
+        if (!escaped) return text;
         var regex = new RegExp('(' + escaped + ')', 'gi');
-        return text.replace(regex, '<mark>$1</mark>');
+        return text.replace(regex, '<mark class="vtj-search-mark">$1</mark>');
       }
 
-      // Live search filter execution
+      // Live search filter execution with keyword splitting & multi-token ranking
       var debounceTimer = null;
       function performLiveSearch() {
         if (!overlayInput || !resultsContainer) return;
         var q = overlayInput.value.trim().toLowerCase();
 
-        if (q.length < 2) {
+        if (q.length < 1) {
           resultsContainer.innerHTML = '';
           if (quickTags) quickTags.style.display = 'flex';
           return;
@@ -13788,63 +13899,51 @@ html.dark .vtj-related-skeleton-card {
 
         if (quickTags) quickTags.style.display = 'none';
 
-        var words = q.split(/\\s+/).filter(Boolean);
+        var words = extractSearchWords(q);
+        if (words.length === 0) {
+          resultsContainer.innerHTML = '';
+          return;
+        }
+
         var matches = [];
 
         searchIndex.forEach(function (item) {
-          var titleLow = item.title.toLowerCase();
-          var descLow = item.desc.toLowerCase();
-          var labelLow = item.label.toLowerCase();
-          var score = 0;
-
-          // Full phrase match
-          if (titleLow.indexOf(q) !== -1) score += 120;
-          if (labelLow.indexOf(q) !== -1) score += 80;
-          if (descLow.indexOf(q) !== -1) score += 40;
-
-          // Word by word matching
-          var allWordsFound = true;
-          words.forEach(function (w) {
-            var inTitle = titleLow.indexOf(w) !== -1;
-            var inLabel = labelLow.indexOf(w) !== -1;
-            var inDesc = descLow.indexOf(w) !== -1;
-
-            if (inTitle) score += 30;
-            if (inLabel) score += 20;
-            if (inDesc) score += 10;
-
-            if (!inTitle && !inLabel && !inDesc) {
-              allWordsFound = false;
-            }
-          });
-
-          if (score > 0 || allWordsFound) {
-            matches.push({ item: item, score: score });
+          var res = scoreSearchItem(item, q, words);
+          if (res.isMatch) {
+            matches.push({
+              item: item,
+              score: res.score,
+              matchedWordsCount: res.matchedWordsCount,
+              allWordsMatched: res.allWordsMatched
+            });
           }
         });
 
-        // Sort by score descending
+        // Sort by relevance score descending
         matches.sort(function (a, b) {
           return b.score - a.score;
         });
 
         if (matches.length === 0) {
           resultsContainer.innerHTML = '<div class="search-no-results">' +
-            '<p>No articles found matching <strong>"' + q.replace(/</g, '&lt;') + '"</strong></p>' +
-            '<p style="margin-top:6px;font-size:0.8rem;color:#64748B;">Try searching for: AI, Python, Coding, Tools, Jobs, or Guides.</p>' +
+            '<p>No articles found matching <strong>"' + q.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '"</strong></p>' +
+            '<p style="margin-top:6px;font-size:0.8rem;color:#64748B;">Try searching for keywords like: AI, Tools, Python, Jobs, Coding, or Guides.</p>' +
             '</div>';
           return;
         }
 
-        var html = '<div class="search-results-count">Found ' + matches.length + ' matching ' + (matches.length === 1 ? 'article' : 'articles') + '</div>';
+        var wordsNotice = words.length > 1 ? (' <span style="font-weight:400;font-size:0.82rem;opacity:0.85;">(matching terms: ' + words.map(function(w){ return '<strong>' + w + '</strong>'; }).join(', ') + ')</span>') : '';
+        var html = '<div class="search-results-count">Found ' + matches.length + ' ' + (matches.length === 1 ? 'article' : 'articles') + wordsNotice + '</div>';
 
-        matches.slice(0, 10).forEach(function (m) {
+        matches.slice(0, 25).forEach(function (m) {
           var art = m.item;
           var thumbHtml = art.thumb ? '<img class="search-result-thumb" src="' + art.thumb + '" alt="" width="60" height="45" loading="lazy" decoding="async"/>' : '<div class="search-result-thumb" style="display:flex;align-items:center;justify-content:center;color:#38BDF8;font-size:1.2rem;">&#9889;</div>';
+          var catLabels = (art.categories && art.categories.length) ? art.categories.slice(0, 2).map(function(c){ return highlight(c, words); }).join(' &#8226; ') : highlight(art.label, words);
+          
           html += '<a class="search-result-item" href="' + art.url + '">' +
             thumbHtml +
             '<div class="search-result-info">' +
-              '<span class="search-result-badge">' + highlight(art.label, words) + '</span>' +
+              '<span class="search-result-badge">' + catLabels + '</span>' +
               '<h4 class="search-result-title">' + highlight(art.title, words) + '</h4>' +
               (art.desc ? '<p class="search-result-desc">' + highlight(art.desc, words) + '</p>' : '') +
             '</div>' +
@@ -13857,9 +13956,45 @@ html.dark .vtj-related-skeleton-card {
       if (overlayInput) {
         overlayInput.addEventListener('input', function () {
           clearTimeout(debounceTimer);
-          debounceTimer = setTimeout(performLiveSearch, 100);
+          debounceTimer = setTimeout(performLiveSearch, 80);
         });
       }
+
+      // Search overlay form submit handler (prevents page jump, triggers live search)
+      var overlayForm = document.querySelector('.search-overlay-form');
+      if (overlayForm) {
+        overlayForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          performLiveSearch();
+        });
+      }
+
+      // Hook up sidebar search form and inputs to open advanced search overlay
+      var sidebarSearchForms = document.querySelectorAll('.sidebar-search-form');
+      sidebarSearchForms.forEach(function (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var inp = form.querySelector('.sidebar-search-input, input[name="q"]');
+          var val = inp ? inp.value.trim() : '';
+          openSearch();
+          if (overlayInput && val) {
+            overlayInput.value = val;
+            performLiveSearch();
+          }
+        });
+      });
+
+      var sidebarInputs = document.querySelectorAll('.sidebar-search-input');
+      sidebarInputs.forEach(function (inp) {
+        inp.addEventListener('focus', function () {
+          var val = inp.value.trim();
+          openSearch();
+          if (overlayInput && val) {
+            overlayInput.value = val;
+            performLiveSearch();
+          }
+        });
+      });
 
       // Quick Tags click handler
       document.querySelectorAll('.quick-tag-btn').forEach(function (btn) {
@@ -13873,7 +14008,7 @@ html.dark .vtj-related-skeleton-card {
 
       // Init on load
       indexPageArticles();
-      setTimeout(loadBloggerFeed, 1000);
+      setTimeout(loadBloggerFeed, 800);
     })();
 
     /* ---- Mobile Drawer ---- */
@@ -14748,24 +14883,52 @@ html.dark .vtj-related-skeleton-card {
         // Reusable category filtering
         var categoryFiltered = filterPostsByCategory(currentFilter);
 
-        // Search query filtering
-        var filtered = categoryFiltered.filter(function(post) {
-          if (!currentSearch) return true;
-          var q = currentSearch.toLowerCase();
-          var t = (post.title || '').toLowerCase();
-          var s = (post.summary || '').toLowerCase();
-          var c = (post.categories || []).join(' ').toLowerCase();
-          return t.indexOf(q) !== -1 || s.indexOf(q) !== -1 || c.indexOf(q) !== -1;
-        });
+        // Advanced Multi-Keyword Search Filtering (Tokens Split & Relevance Score)
+        var filtered = [];
+        if (!currentSearch) {
+          filtered = categoryFiltered.slice();
+          // Sorting
+          filtered.sort(function(a, b) {
+            if (currentSort === 'newest') return (b.rawDate || '').localeCompare(a.rawDate || '');
+            if (currentSort === 'oldest') return (a.rawDate || '').localeCompare(b.rawDate || '');
+            if (currentSort === 'title-asc') return (a.title || '').localeCompare(b.title || '');
+            if (currentSort === 'title-desc') return (b.title || '').localeCompare(a.title || '');
+            return 0;
+          });
+        } else {
+          var q = currentSearch.toLowerCase().trim();
+          var words = typeof window.vtjExtractSearchWords === 'function' ? window.vtjExtractSearchWords(q) : q.split(/\s+/).filter(Boolean);
+          var scored = [];
 
-        // Sorting
-        filtered.sort(function(a, b) {
-          if (currentSort === 'newest') return (b.rawDate || '').localeCompare(a.rawDate || '');
-          if (currentSort === 'oldest') return (a.rawDate || '').localeCompare(b.rawDate || '');
-          if (currentSort === 'title-asc') return (a.title || '').localeCompare(b.title || '');
-          if (currentSort === 'title-desc') return (b.title || '').localeCompare(a.title || '');
-          return 0;
-        });
+          categoryFiltered.forEach(function(post) {
+            var res = typeof window.vtjScoreSearchItem === 'function'
+              ? window.vtjScoreSearchItem({
+                  title: post.title,
+                  categories: post.categories,
+                  desc: post.summary
+                }, q, words)
+              : { isMatch: false, score: 0 };
+
+            if (res.isMatch) {
+              scored.push({
+                post: post,
+                score: res.score
+              });
+            }
+          });
+
+          // Sort by search relevance score, with currentSort tie-breaker
+          scored.sort(function(a, b) {
+            if (b.score !== a.score) return b.score - a.score;
+            if (currentSort === 'newest') return (b.post.rawDate || '').localeCompare(a.post.rawDate || '');
+            if (currentSort === 'oldest') return (a.post.rawDate || '').localeCompare(b.post.rawDate || '');
+            if (currentSort === 'title-asc') return (a.post.title || '').localeCompare(b.post.title || '');
+            if (currentSort === 'title-desc') return (b.post.title || '').localeCompare(a.post.title || '');
+            return 0;
+          });
+
+          filtered = scored.map(function(s) { return s.post; });
+        }
 
         if (resetBtn) resetBtn.style.display = (currentFilter !== 'all' || currentSearch) ? 'inline-flex' : 'none';
 
